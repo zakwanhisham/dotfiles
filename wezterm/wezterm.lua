@@ -38,7 +38,7 @@ return {
   bidi_direction = "AutoLeftToRight",
   color_scheme = "tokyonight_night",
   font = font_with_fallback({
-    family = "FiraCode",
+    family = "JetBrains Mono NF",
     harfbuzz_features = {
       "zero",
     },
@@ -47,7 +47,7 @@ return {
     {
       intensity = "Bold",
       font = font_with_fallback({
-        family = "FiraCode",
+        family = "JetBrains Mono NF",
         harfbuzz_features = {
           "zero",
         },
@@ -58,7 +58,7 @@ return {
       italic = true,
       intensity = "Bold",
       font = font_with_fallback({
-        family = "FiraCode",
+        family = "JetBrains Mono NF",
         -- family = "Dank Mono",
         weight = "Medium",
         italic = true,
@@ -68,7 +68,7 @@ return {
       italic = true,
       font = font_with_fallback({
         -- family = "Dank Mono",
-        family = "FiraCode",
+        family = "JetBrains Mono NF",
         weight = "Regular",
         italic = true,
       }),
