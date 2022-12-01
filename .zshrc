@@ -134,6 +134,7 @@ alias filesize='du -sh'
 alias i3='vim ~/.config/i3'
 alias zshrc='vim ~/.zshrc'
 alias wez='vim ~/.config/wezterm/wezterm.lua'
+alias lunar='vim ~/.config/lvim/config.lua'
 
 # Navigating files
 alias vim='lvim'
@@ -144,6 +145,7 @@ alias root='cd /'
 alias download='cd ~/Downloads'
 alias document='cd ~/Documents'
 alias config='cd ~/.config'
+alias dotfile='cd ~/.dotfiles'
 
 # System using paru and pacman
 alias upall='paru && sudo pacman -Syyu'
