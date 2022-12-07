@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/zakwan/.local/bin:$PATH
 
-# GO PATH
+# GO PATH AND RUST PATH
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export CARGO=$HOME/.cargo/bin
@@ -147,7 +147,7 @@ alias document='cd ~/Documents'
 alias config='cd ~/.config'
 alias dotfile='cd ~/.dotfiles'
 
-# System using paru and pacman
+# System update using paru and pacman
 alias upall='paru && sudo pacman -Syyu'
 alias autoremove='sudo pacman -Rns $(sudo pacman -Qtdq)'  # remove orphaned packages
 

@@ -108,7 +108,7 @@ return {
   use_dead_keys = false,
   window_padding = padding,
   window_decorations = "RESIZE",
-  hide_tab_bar_if_only_one_tab = false,
+  hide_tab_bar_if_only_one_tab = true,
   selection_word_boundary = " \t\n{}[]()\"'`,;:@",
   line_height = 1.25,
   font_size = 10,

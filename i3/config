@@ -237,7 +237,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
@@ -285,6 +285,7 @@ bindsym $mod+m exec /usr/bin/thunderbird
 bindsym $mod+s exec /usr/bin/spotify
 bindsym $mod+g exec /usr/bin/google-chrome-stable
 bindsym $mod+c exec /usr/bin/code
+bindsym $mod+f exec /usr/bin/firefox
 #bindsym Print exec scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym Print exec /usr/bin/flameshot
 
@@ -342,20 +343,20 @@ workspace $ws10 output DP1
  assign [class="Thunar"] $ws4
  assign [class="thunderbird"] $ws5
  assign [class="Google-chrome"] $ws6
- assign [class="RStudio"] $ws7
+ assign [class="Code"] $ws7
  assign [class="Spotify"] $ws8
- assign [class="Code"] $ws9
+ assign [class="RStudio"] $ws9
 
 # automatic set focus new window if it opens on another workspace then the current:
  for_window [class=Xfce4-terminal] focus
  for_window [class=org.wezfurlong.wezterm] focus
- for_window [class=Code] focus
- for_window [class=RStudio] focus
  for_window [class=Brave] focus
  for_window [class=Thunar] focus
  for_window [class=thunderbird] focus
  for_window [class=Google-chrome] focus
+ for_window [class=RStudio] focus
  for_window [class=Spotify] focus
+ for_window [class=Code] focus
 
 ##############
 # compositor # 
