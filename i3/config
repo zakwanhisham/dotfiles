@@ -345,7 +345,7 @@ workspace $ws10 output DP1
  assign [class="Google-chrome"] $ws6
  assign [class="Code"] $ws7
  assign [class="Spotify"] $ws8
- assign [class="RStudio"] $ws9
+ assign [class="(?i)firefox"] $ws9
 
 # automatic set focus new window if it opens on another workspace then the current:
  for_window [class=Xfce4-terminal] focus
@@ -354,7 +354,7 @@ workspace $ws10 output DP1
  for_window [class=Thunar] focus
  for_window [class=thunderbird] focus
  for_window [class=Google-chrome] focus
- for_window [class=RStudio] focus
+ for_window [class=(?i)firefox] focus
  for_window [class=Spotify] focus
  for_window [class=Code] focus
 
@@ -402,40 +402,40 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dex --autostart --environment i3
 
 # start welcome app
-#exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
+# exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
 
 # num lock activated
-#exec --no-startup-id numlockx on
+# exec --no-startup-id numlockx on
 
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-#exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
+# exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
 
 # start conky:
-#exec_always --no-startup-id conky
+# exec_always --no-startup-id conky
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/monitor.sh
-#exec --no-startup-id ~/.screenlayout/monitor2.sh
+# exec --no-startup-id ~/.screenlayout/monitor2.sh
 
 # set wallpaper
 exec --no-startup-id sleep 2 && nitrogen --restore
-#exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
+# exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 # set powersavings for display:
-#exec --no-startup-id xset s 480 dpms 600 600 600
+# exec --no-startup-id xset s 480 dpms 600 600 600
 
 # disable power saving (for example if using xscreensaver)
-#exec --no-startup-id xset -dpms
+# exec --no-startup-id xset -dpms
 
 # use xautolock to use autosuspend rules for mobile devices
 # https://wiki.archlinux.org/title/Session_lock#xautolock
-#exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
+# exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
 
 
 # xscreensaver
 # https://www.jwz.org/xscreensaver
-#exec --no-startup-id xscreensaver --no-splash
+# exec --no-startup-id xscreensaver --no-splash
 
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
@@ -449,8 +449,6 @@ exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
 exec --no-startup-id sleep 2 && wezterm 
-#exec --no-startup-id sleep 3 && discord
-#exec --no-startup-id sleep 3 && thunar
 
 ###############
 # system tray #
@@ -459,13 +457,13 @@ exec --no-startup-id sleep 2 && wezterm
 # you need to have tray apps started manually one by one:
 
 # start blueberry app for managing bluetooth devices from tray:
-#exec --no-startup-id blueberry-tray
+# exec --no-startup-id blueberry-tray
 
 # networkmanager-applet
-#exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # clipman-applet
-#exec --no-startup-id xfce4-clipman
+# exec --no-startup-id xfce4-clipman
 
 ##################
 # floating rules #
@@ -602,7 +600,7 @@ strip_workspace_numbers no
 bindsym $mod+d exec rofi -modi drun -show drun \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-#bindsym F9 exec rofi -modi drun -show drun \
+# bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
@@ -610,11 +608,11 @@ bindsym $mod+d exec rofi -modi drun -show drun \
 bindsym $mod+t exec rofi -show window \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-#bindsym F10 exec rofi -show window \
+# bindsym F10 exec rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
 
 #exec --no-startup-id greenclip daemon>/dev/null
-#bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
+# bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
 #		-config ~/.config/rofi/rofidmenu.rasi
