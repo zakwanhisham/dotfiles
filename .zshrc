@@ -129,6 +129,7 @@ alias cls='clear'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias filesize='du -sh'
+alias vim='lvim'
 
 # Configuration
 alias i3='vim ~/.config/i3'
@@ -137,7 +138,6 @@ alias wez='vim ~/.config/wezterm/wezterm.lua'
 alias lunar='vim ~/.config/lvim/config.lua'
 
 # Navigating files
-alias vim='lvim'
 alias personal='cd ~/Documents/Personal'
 alias work='cd ~/Documents/Work'
 alias home='cd '
@@ -146,6 +146,7 @@ alias download='cd ~/Downloads'
 alias document='cd ~/Documents'
 alias config='cd ~/.config'
 alias dotfile='cd ~/.dotfiles'
+alias tempfile='cd ~/Temp'
 
 # System update using paru and pacman
 alias upall='paru && sudo pacman -Syyu'
@@ -155,3 +156,8 @@ alias autoremove='sudo pacman -Rns $(sudo pacman -Qtdq)'  # remove orphaned pack
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# Android Studio
+# export ANDROID_HOME=$HOME/Library/Android/Sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
