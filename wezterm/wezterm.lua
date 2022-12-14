@@ -125,7 +125,7 @@ return {
         "zero",
       },
     }),
-    font_size = 10.0,
+    font_size = 12.0,
     active_titlebar_bg = "#1a1b26",
     inactive_titlebar_bg = "#1a1b26",
   },
