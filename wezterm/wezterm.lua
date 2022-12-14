@@ -3,10 +3,10 @@ local wezterm = require("wezterm")
 -- local launch_menu = {}
 -- local default_shell = "/bin/zsh"
 local padding = {
-  left = "1cell",
-  right = "1cell",
-  top = "0.5cell",
-  bottom = "0.5cell",
+  left = "0cell",
+  right = "0cell",
+  top = "0cell",
+  bottom = "0cell",
 }
 
 -- Reload the configuration every ten minutes
@@ -114,7 +114,27 @@ return {
   font_size = 10,
   window_background_opacity = 1.00,
   bold_brightens_ansi_colors = true,
-  -- tab_bar_at_bottom = true,
+  tab_bar_at_bottom = true,
+
+  -- fancy_tab_bar
+  fancy_tab_bar = true,
+  window_frame = {
+    font = font_with_fallback({
+      family = "JetBrains Mono NF",
+      harfbuzz_features = {
+        "zero",
+      },
+    }),
+    font_size = 10.0,
+    active_titlebar_bg = "#1a1b26",
+    inactive_titlebar_bg = "#1a1b26",
+  },
+  colors = {
+    tab_bar = {
+      color_scheme = "tokyonight_night",
+    },
+  },
+
   -- term = "wezterm",
   -- disable_default_key_bindings = true,
   -- swap_backspace_and_delete = false,
