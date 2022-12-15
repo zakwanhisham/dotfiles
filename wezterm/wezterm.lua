@@ -1,7 +1,5 @@
 local wezterm = require("wezterm")
 
--- local launch_menu = {}
--- local default_shell = "/bin/zsh"
 local padding = {
   left = "0cell",
   right = "0cell",
@@ -9,29 +7,11 @@ local padding = {
   bottom = "0cell",
 }
 
--- Reload the configuration every ten minutes
--- wezterm.time.call_after(600, function()
---   wezterm.reload_configuration()
--- end)
-
--- A helper function for my fallback fonts
+-- A helper function for fallback fonts
 local function font_with_fallback(name, params)
   local names = { name }
   return wezterm.font_with_fallback(names, params)
 end
-
--- local function get_theme()
---   local _time = os.date("*t")
---   if _time.hour >= 1 and _time.hour < 9 then
---     return "Rosé Pine (base16)"
---   elseif _time.hour >= 9 and _time.hour < 17 then
---     return "tokyonight_night"
---   elseif _time.hour >= 17 and _time.hour < 21 then
---     return "Catppuccin Mocha"
---   elseif _time.hour >= 21 and _time.hour < 24 or _time.hour >= 0 and _time.hour < 1 then
---     return "kanagawabones"
---   end
--- end
 
 return {
   bidi_enabled = true,
@@ -59,7 +39,6 @@ return {
       intensity = "Bold",
       font = font_with_fallback({
         family = "JetBrains Mono NF",
-        -- family = "Dank Mono",
         weight = "Medium",
         italic = true,
       }),
@@ -67,7 +46,6 @@ return {
     {
       italic = true,
       font = font_with_fallback({
-        -- family = "Dank Mono",
         family = "JetBrains Mono NF",
         weight = "Regular",
         italic = true,
@@ -75,8 +53,8 @@ return {
     },
   },
 
-  initial_cols = 128,
-  initial_rows = 32,
+  initial_cols = 1920,
+  initial_rows = 1080,
   use_dead_keys = false,
   window_padding = padding,
   window_decorations = "RESIZE",
@@ -98,22 +76,22 @@ return {
       },
     }),
     font_size = 10.0,
-    active_titlebar_bg = "#0e0e14",
+    active_titlebar_bg = "#1a1b26",
     inactive_titlebar_bg = "#0e0e14",
   },
   colors = {
     tab_bar = {
       inactive_tab_edge = "#33467c",
       active_tab = {
-        bg_color = "#1a1b26",
+        bg_color = "#0e0e14",
         fg_color = "#c0caf5",
       },
       inactive_tab = {
-        bg_color = "#0e0e14",
+        bg_color = "#1a1b26",
         fg_color = "#c0caf5",
       },
       new_tab = {
-        bg_color = "#0e0e14",
+        bg_color = "#1a1b26",
         fg_color = "#c0caf5",
       },
     },
