@@ -10,7 +10,7 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save.enabled = false
+lvim.format_on_save.enabled = true
 lvim.colorscheme = "tokyonight-night"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -86,12 +86,24 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.rainbow.enable = true
 
 -- customization
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80"
-vim.opt.smartindent = true
-vim.opt.nu = true
+vim.opt.cmdheight = 1
+vim.opt.spell = true
+
+-- no need to set style = "lvim"
+local components = require("lvim.core.lualine.components")
+
+lvim.builtin.lualine.sections.lualine_a = { "mode" }
+lvim.builtin.lualine.sections.lualine_b = { "branch" }
+lvim.builtin.lualine.sections.lualine_c = { "filename" }
+lvim.builtin.lualine.sections.lualine_y = {
+  components.spaces,
+  components.location
+}
 
 -- generic LSP settings
 
@@ -100,17 +112,18 @@ vim.opt.nu = true
 --     "sumneko_lua",
 --     "jsonls",
 -- }
+-- WARN: Dont enable any of this cause it will break the lsp
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
-lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = true
-lvim.lsp.installer.setup.ui.border = "rounded"
-lvim.lsp.installer.setup.ui.keymaps = {
-    uninstall_server = "d",
-    toggle_server_expand = "o",
-}
+-- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = true
+-- lvim.lsp.installer.setup.ui.border = "rounded"
+-- lvim.lsp.installer.setup.ui.keymaps = {
+--   uninstall_server = "d",
+--   toggle_server_expand = "o",
+-- }
 
 -- ---@usage disable automatic installation of servers
-lvim.lsp.installer.setup.automatic_installation = true
+-- lvim.lsp.installer.setup.automatic_installation = true
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
@@ -170,14 +183,68 @@ lvim.lsp.installer.setup.automatic_installation = true
 
 -- Additional Plugins
 lvim.plugins = {
-  {"kdheepak/lazygit.nvim"},
-  {"catppuccin/nvim", as = "catppuccin"},
+  { "kdheepak/lazygit.nvim" },
+  { "catppuccin/nvim", as = "catppuccin" },
   {
     "folke/todo-comments.nvim",
     config = function()
       require("todo-comments").setup {}
     end
-  }
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup({
+        filetypes = { "html", "xml" },
+      })
+    end,
+  },
+  {
+    -- You must install glow globally
+    -- https://github.com/charmbracelet/glow
+    -- yay -S glow
+    "npxbr/glow.nvim",
+    ft = { "markdown" }
+    -- run = "yay -S glow"
+  },
+  {
+    "p00f/nvim-ts-rainbow",
+  },
+  {
+    "romgrk/nvim-treesitter-context",
+    config = function()
+      require("treesitter-context").setup {
+        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+        throttle = true, -- Throttles plugin updates (may improve performance)
+        max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+        patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+          -- For all filetypes
+          -- Note that setting an entry here replaces all other patterns for this entry.
+          -- By setting the 'default' entry below, you can control which nodes you want to
+          -- appear in the context window.
+          default = {
+            'class',
+            'function',
+            'method',
+          },
+        },
+      }
+    end
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      })
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
