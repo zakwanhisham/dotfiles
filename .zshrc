@@ -99,9 +99,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='lvim'
+  export EDITOR='vim'
 else
-  export EDITOR='lvim'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -129,13 +129,12 @@ alias cls='clear'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias filesize='du -sh'
-alias vim='lvim'
 
 # Configuration
-alias i3='vim ~/.config/i3/config'
-alias zshrc='vim ~/.zshrc'
-alias wez='vim ~/.config/wezterm/wezterm.lua'
-alias lunar='vim ~/.config/lvim/config.lua'
+alias i3='lvim ~/.config/i3/config'
+alias zshrc='lvim ~/.zshrc'
+alias wez='lvim ~/.config/wezterm/wezterm.lua'
+alias lunar='lvim ~/.config/lvim/config.lua'
 
 # Navigating files
 alias personal='cd ~/Documents/Personal'
