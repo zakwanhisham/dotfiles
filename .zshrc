@@ -19,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="trapd00r"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -135,6 +135,7 @@ alias i3='lvim ~/.config/i3/config'
 alias zshrc='lvim ~/.zshrc'
 alias wez='lvim ~/.config/wezterm/wezterm.lua'
 alias lunar='lvim ~/.config/lvim/config.lua'
+alias neo='nvim ~/.config/nvim/init.lua'
 
 # Navigating files
 alias personal='cd ~/Documents/Personal'
