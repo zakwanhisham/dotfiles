@@ -146,7 +146,7 @@ alias download='cd ~/Downloads'
 alias document='cd ~/Documents'
 alias config='cd ~/.config'
 alias dotfile='cd ~/.dotfiles'
-alias tempfile='cd ~/Temp'
+alias temp='cd ~/Temp'
 
 # System update using paru and pacman
 alias upall='paru && sudo pacman -Syyu'
