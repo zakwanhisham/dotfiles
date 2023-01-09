@@ -112,7 +112,7 @@ lvim.builtin.lualine.sections.lualine_y = {
 --     "sumneko_lua",
 --     "jsonls",
 -- }
--- WARN: Dont enable any of this cause it will break the lsp
+-- WARN: Don't enable any of this cause it will break the lsp
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
 -- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = true
