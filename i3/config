@@ -333,26 +333,20 @@ workspace $ws10 output DP1
 # workspace $ws10 output eDP1
 
 # bind program to workspace and focus to them on startup:
-assign [class="Xfce4-terminal"] $ws1
-assign [class="org.wezfurlong.wezterm"] $ws2
-assign [class="Brave"] $ws3
-assign [class="Thunar"] $ws4
+assign [class="org.wezfurlong.wezterm"] $ws1
+assign [class="Brave"] $ws2
+assign [class="Google-chrome"] $ws3
+assign [class="Code"] $ws4
 assign [class="thunderbird"] $ws5
-assign [class="Google-chrome"] $ws6
-assign [class="Code"] $ws7
-assign [class="Spotify"] $ws8
-assign [class="(?i)firefox"] $ws9
+assign [class="(?i)firefox"] $ws6
 
 # automatic set focus new window if it opens on another workspace then the current:
-for_window [class=Xfce4-terminal] focus
 for_window [class=org.wezfurlong.wezterm] focus
 for_window [class=Brave] focus
-for_window [class=Thunar] focus
-for_window [class=thunderbird] focus
 for_window [class=Google-chrome] focus
-for_window [class=(?i)firefox] focus
-for_window [class=Spotify] focus
 for_window [class=Code] focus
+for_window [class=thunderbird] focus
+for_window [class=(?i)firefox] focus
 
 ##############
 # compositor # 
