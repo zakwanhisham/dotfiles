@@ -129,6 +129,8 @@ alias cls='clear'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias filesize='du -sh'
+alias weather='curl wttr.in'
+alias screensaver='cbonsai -S'
 
 # Configuration
 alias i3='lvim ~/.config/i3/config'
