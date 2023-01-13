@@ -281,7 +281,6 @@ bindsym $mod+m exec /usr/bin/thunderbird
 bindsym $mod+s exec /usr/bin/spotify
 bindsym $mod+g exec /usr/bin/google-chrome-stable
 bindsym $mod+c exec /usr/bin/code
-bindsym $mod+f exec /usr/bin/firefox
 # bindsym Print exec scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym Print exec /usr/bin/flameshot
 
@@ -338,7 +337,6 @@ assign [class="Brave"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="Code"] $ws4
 assign [class="thunderbird"] $ws5
-assign [class="(?i)firefox"] $ws6
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=org.wezfurlong.wezterm] focus
@@ -346,7 +344,6 @@ for_window [class=Brave] focus
 for_window [class=Google-chrome] focus
 for_window [class=Code] focus
 for_window [class=thunderbird] focus
-for_window [class=(?i)firefox] focus
 
 ##############
 # compositor # 
