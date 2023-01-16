@@ -129,8 +129,13 @@ alias cls='clear'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias filesize='du -sh'
+
+# Changing program name
+alias v='lvim'
+alias c='code'
+alias cat='bat'
 alias weather='curl wttr.in'
-alias screensaver='cbonsai -S'
+alias screen='cbonsai -S'
 
 # Configuration
 alias i3='lvim ~/.config/i3/config'
@@ -142,8 +147,6 @@ alias neo='nvim ~/.config/nvim/init.lua'
 # Navigating files
 alias personal='cd ~/Documents/Personal'
 alias work='cd ~/Documents/Work'
-alias home='cd '
-alias root='cd /'
 alias download='cd ~/Downloads'
 alias document='cd ~/Documents'
 alias config='cd ~/.config'
@@ -152,10 +155,9 @@ alias temp='cd ~/Temp'
 
 # System update using paru and pacman
 alias upall='paru && sudo pacman -Syyu'
-alias autoremove='sudo pacman -Rns $(sudo pacman -Qtdq)'  # remove orphaned packages
+alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'  # remove orphaned packages
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-# pnpm end
 
