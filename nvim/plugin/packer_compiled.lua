@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/zakwan/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/zakwan/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/zakwan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -145,6 +150,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/zakwan/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/zakwan/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
