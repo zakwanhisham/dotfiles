@@ -118,11 +118,11 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Changing "ls" to "exa"
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ls='exa  --color=always --group-directories-first' # my preferred listing
+alias la='exa -al --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'                             # list all dotfiles & dotfolder
+alias l.='exa -a | rg "^\."'                             # list all dotfiles & dotfolder
 
 # For convenience
 alias reload='source ~/.zshrc && cls'
@@ -136,7 +136,7 @@ alias v='lvim'
 alias c='code'
 alias cat='bat'
 alias weather='curl wttr.in'
-alias screen='cbonsai -S'
+alias screen='cbonsai -liv'
 
 # Configuration
 alias i3='lvim ~/.config/i3/'
