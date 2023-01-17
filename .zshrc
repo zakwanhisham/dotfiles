@@ -19,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -86,6 +86,7 @@ plugins=(
     git
     zsh-syntax-highlighting
     zsh-autosuggestions
+    web-search
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -99,9 +100,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='lvim'
 else
-  export EDITOR='vim'
+  export EDITOR='lvim'
 fi
 
 # Compilation flags
@@ -138,7 +139,7 @@ alias weather='curl wttr.in'
 alias screen='cbonsai -S'
 
 # Configuration
-alias i3='lvim ~/.config/i3/config'
+alias i3='lvim ~/.config/i3/'
 alias zshrc='lvim ~/.zshrc'
 alias wez='lvim ~/.config/wezterm/wezterm.lua'
 alias lunar='lvim ~/.config/lvim/config.lua'
