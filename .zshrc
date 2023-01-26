@@ -125,8 +125,7 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | rg "^\."'                             # list all dotfiles & dotfolder
 
 # For convenience
-alias reload='source ~/.zshrc && cls'
-alias cls='clear'
+alias reload='source ~/.zshrc && clear'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias filesize='du -sh'
