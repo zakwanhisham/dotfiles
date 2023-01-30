@@ -184,7 +184,6 @@ lvim.builtin.lualine.sections.lualine_y = {
 -- Additional Plugins
 lvim.plugins = {
   { "kdheepak/lazygit.nvim" },
-  -- { "catppuccin/nvim", as = "catppuccin" },
   {
     "folke/todo-comments.nvim",
     config = function()
@@ -203,14 +202,15 @@ lvim.plugins = {
       })
     end,
   },
-  {
-    -- You must install glow globally
-    -- https://github.com/charmbracelet/glow
-    -- yay -S glow
-    "npxbr/glow.nvim",
-    ft = { "markdown" }
-    -- run = "yay -S glow"
-  },
+  -- {
+  --   -- You must install glow globally
+  --   -- https://github.com/charmbracelet/glow
+  --   -- yay -S glow
+  --   "npxbr/glow.nvim",
+  --   ft = { "markdown" }
+  --   -- run = "yay -S glow"
+  -- },
+  { "ellisonleao/glow.nvim" },
   {
     "p00f/nvim-ts-rainbow",
   },
