@@ -118,10 +118,10 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Changing "ls" to "exa"
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias ls='exa -alG --color=always --group-directories-first --icons --git' # my preferred listing
+alias la='exa -a --color=always --group-directories-first --icons --git'  # all files and dirs
+alias ll='exa -lG --color=always --group-directories-first --icons --git'  # long format
+alias lt='exa -aT --color=always --group-directories-first --icons --git' # tree listing
 alias l.='exa -a | rg "^\."'                             # list all dotfiles & dotfolder
 
 # For convenience
