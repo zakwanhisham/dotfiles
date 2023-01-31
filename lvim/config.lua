@@ -18,7 +18,7 @@ lvim.colorscheme = "tokyonight-night"
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
--- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -65,12 +65,13 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "right"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
+lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
+  "c",
   "javascript",
   "json",
   "lua",
@@ -79,10 +80,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "tsx",
   "css",
   "rust",
+  "java",
   "yaml",
-  "markdown",
-  "html",
-  "go"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -105,7 +104,6 @@ lvim.builtin.lualine.sections.lualine_y = {
   components.spaces,
   components.location
 }
-
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
@@ -113,18 +111,17 @@ lvim.builtin.lualine.sections.lualine_y = {
 --     "sumneko_lua",
 --     "jsonls",
 -- }
--- WARN: Don't enable any of this cause it will break the lsp
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
--- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = true
+-- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
 -- lvim.lsp.installer.setup.ui.border = "rounded"
 -- lvim.lsp.installer.setup.ui.keymaps = {
---   uninstall_server = "d",
---   toggle_server_expand = "o",
+--     uninstall_server = "d",
+--     toggle_server_expand = "o",
 -- }
 
 -- ---@usage disable automatic installation of servers
-lvim.lsp.installer.setup.automatic_installation = true
+-- lvim.lsp.installer.setup.automatic_installation = true
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
@@ -149,7 +146,12 @@ lvim.lsp.installer.setup.automatic_installation = true
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "lvim.lsp.null-ls.formatters"
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "eslint",
+    filetype = { "javascript" }
+  },
+}
 -- formatters.setup {
 --   { command = "black", filetypes = { "python" } },
 --   { command = "isort", filetypes = { "python" } },
@@ -160,12 +162,17 @@ lvim.lsp.installer.setup.automatic_installation = true
 --     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
 --     extra_args = { "--print-with", "100" },
 --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+--     filetypes = { "typescript", "typescriptreact" },
 --   },
 -- }
 
 -- -- set additional linters
--- local linters = require "lvim.lsp.null-ls.linters"
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { command = "eslint",
+    filetypes = { "javascript" }
+  },
+}
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
 --   {
@@ -250,6 +257,32 @@ lvim.plugins = {
       })
     end,
   },
+  {
+    "kevinhwang91/nvim-bqf",
+    event = { "BufRead", "BufNew" },
+    config = function()
+      require("bqf").setup({
+        auto_enable = true,
+        preview = {
+          win_height = 12,
+          win_vheight = 12,
+          delay_syntax = 80,
+          border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
+        },
+        func_map = {
+          vsplit = "",
+          ptogglemode = "z,",
+          stoggleup = "",
+        },
+        filter = {
+          fzf = {
+            action_for = { ["ctrl-s"] = "split" },
+            extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
+          },
+        },
+      })
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -258,10 +291,10 @@ lvim.plugins = {
 --   -- enable wrap mode for json files only
 --   command = "setlocal wrap",
 -- })
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "zsh",
-  callback = function()
-    -- let treesitter use bash highlight for zsh files as well
-    require("nvim-treesitter.highlight").attach(0, "bash")
-  end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "zsh",
+--   callback = function()
+--     -- let treesitter use bash highlight for zsh files as well
+--     require("nvim-treesitter.highlight").attach(0, "bash")
+--   end,
+-- })
