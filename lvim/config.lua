@@ -71,7 +71,6 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
-  "c",
   "javascript",
   "json",
   "lua",
@@ -80,8 +79,10 @@ lvim.builtin.treesitter.ensure_installed = {
   "tsx",
   "css",
   "rust",
-  "java",
   "yaml",
+  "markdown",
+  "html",
+  "go"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -123,7 +124,7 @@ lvim.builtin.lualine.sections.lualine_y = {
 -- }
 
 -- ---@usage disable automatic installation of servers
--- lvim.lsp.installer.setup.automatic_installation = true
+lvim.lsp.installer.setup.automatic_installation = true
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
