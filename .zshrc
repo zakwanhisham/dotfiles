@@ -19,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -118,9 +118,9 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Changing "ls" to "exa"
-alias ls='exa -alG --color=always --group-directories-first --icons --git' # my preferred listing
+alias ls='exa -al --color=always --group-directories-first --icons --git' # my preferred listing
 alias la='exa -a --color=always --group-directories-first --icons --git'  # all files and dirs
-alias ll='exa -lG --color=always --group-directories-first --icons --git'  # long format
+alias ll='exa -l --color=always --group-directories-first --icons --git'  # long format
 alias lt='exa -aT --color=always --group-directories-first --icons --git' # tree listing
 alias l.='exa -a | rg "^\."'                             # list all dotfiles & dotfolder
 
@@ -161,3 +161,5 @@ alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'  # remove orphaned packages
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+# Starship
+eval "$(starship init zsh)"
