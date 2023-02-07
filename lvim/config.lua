@@ -66,7 +66,7 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "right"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -104,6 +104,7 @@ lvim.builtin.lualine.sections.lualine_y = {
   components.spaces,
   components.location
 }
+
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
