@@ -30,18 +30,18 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
-  -- for input mode
-  i = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-    ["<C-n>"] = actions.cycle_history_next,
-    ["<C-p>"] = actions.cycle_history_prev,
-  },
-  -- for normal mode
-  n = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-  },
+    -- for input mode
+    i = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+    },
+    -- for normal mode
+    n = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+    },
 }
 
 -- Change theme settings
@@ -51,13 +51,13 @@ lvim.builtin.telescope.defaults.mappings = {
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+    name = "+Trouble",
+    r = { "<cmd>Trouble lsp_references<cr>", "References" },
+    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+    d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 }
 
 -- TODO: User Config for predefined plugins
@@ -70,18 +70,18 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+    "bash",
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "java",
+    "yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -101,8 +101,8 @@ lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_b = { "branch" }
 lvim.builtin.lualine.sections.lualine_c = { "filename" }
 lvim.builtin.lualine.sections.lualine_y = {
-  components.spaces,
-  components.location
+    components.spaces,
+    components.location
 }
 
 -- generic LSP settings
@@ -149,9 +149,12 @@ lvim.builtin.lualine.sections.lualine_y = {
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { command = "eslint",
-    filetype = { "javascript" }
-  },
+    { command = "eslint",
+        filetype = { "javascript" }
+    },
+    { command = "prettier",
+        filetype = { "typescript", "typescriptreact" }
+    }
 }
 -- formatters.setup {
 --   { command = "black", filetypes = { "python" } },
@@ -170,9 +173,12 @@ formatters.setup {
 -- -- set additional linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { command = "eslint",
-    filetypes = { "javascript" }
-  },
+    { command = "eslint",
+        filetypes = { "javascript" }
+    },
+    -- { command = "prettier",
+    --     filetype = { "typescript", "typescriptreact" }
+    -- }
 }
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
@@ -192,98 +198,98 @@ linters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  { "kdheepak/lazygit.nvim" },
-  {
-    "folke/todo-comments.nvim",
-    config = function()
-      require("todo-comments").setup {}
-    end
-  },
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup({
-        filetypes = { "html", "xml" },
-      })
-    end,
-  },
-  -- {
-  --   -- You must install glow globally
-  --   -- https://github.com/charmbracelet/glow
-  --   -- yay -S glow
-  --   "npxbr/glow.nvim",
-  --   ft = { "markdown" }
-  --   -- run = "yay -S glow"
-  -- },
-  { "ellisonleao/glow.nvim" },
-  {
-    "p00f/nvim-ts-rainbow",
-  },
-  {
-    "romgrk/nvim-treesitter-context",
-    config = function()
-      require("treesitter-context").setup {
-        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-        throttle = true, -- Throttles plugin updates (may improve performance)
-        max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-        patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
-          -- For all filetypes
-          -- Note that setting an entry here replaces all other patterns for this entry.
-          -- By setting the 'default' entry below, you can control which nodes you want to
-          -- appear in the context window.
-          default = {
-            'class',
-            'function',
-            'method',
-          },
-        },
-      }
-    end
-  },
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-      })
-    end,
-  },
-  {
-    "kevinhwang91/nvim-bqf",
-    event = { "BufRead", "BufNew" },
-    config = function()
-      require("bqf").setup({
-        auto_enable = true,
-        preview = {
-          win_height = 12,
-          win_vheight = 12,
-          delay_syntax = 80,
-          border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
-        },
-        func_map = {
-          vsplit = "",
-          ptogglemode = "z,",
-          stoggleup = "",
-        },
-        filter = {
-          fzf = {
-            action_for = { ["ctrl-s"] = "split" },
-            extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
-          },
-        },
-      })
-    end,
-  },
+    { "kdheepak/lazygit.nvim" },
+    {
+        "folke/todo-comments.nvim",
+        config = function()
+          require("todo-comments").setup {}
+        end
+    },
+    {
+        "folke/trouble.nvim",
+        cmd = "TroubleToggle",
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        config = function()
+          require("nvim-ts-autotag").setup({
+              filetypes = { "html", "xml" },
+          })
+        end,
+    },
+    -- {
+    --   -- You must install glow globally
+    --   -- https://github.com/charmbracelet/glow
+    --   -- yay -S glow
+    --   "npxbr/glow.nvim",
+    --   ft = { "markdown" }
+    --   -- run = "yay -S glow"
+    -- },
+    { "ellisonleao/glow.nvim" },
+    {
+        "p00f/nvim-ts-rainbow",
+    },
+    {
+        "romgrk/nvim-treesitter-context",
+        config = function()
+          require("treesitter-context").setup {
+              enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+              throttle = true, -- Throttles plugin updates (may improve performance)
+              max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+              patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+                  -- For all filetypes
+                  -- Note that setting an entry here replaces all other patterns for this entry.
+                  -- By setting the 'default' entry below, you can control which nodes you want to
+                  -- appear in the context window.
+                  default = {
+                      'class',
+                      'function',
+                      'method',
+                  },
+              },
+          }
+        end
+    },
+    {
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+          require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
+              RGB = true, -- #RGB hex codes
+              RRGGBB = true, -- #RRGGBB hex codes
+              RRGGBBAA = true, -- #RRGGBBAA hex codes
+              rgb_fn = true, -- CSS rgb() and rgba() functions
+              hsl_fn = true, -- CSS hsl() and hsla() functions
+              css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+              css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+          })
+        end,
+    },
+    {
+        "kevinhwang91/nvim-bqf",
+        event = { "BufRead", "BufNew" },
+        config = function()
+          require("bqf").setup({
+              auto_enable = true,
+              preview = {
+                  win_height = 12,
+                  win_vheight = 12,
+                  delay_syntax = 80,
+                  border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
+              },
+              func_map = {
+                  vsplit = "",
+                  ptogglemode = "z,",
+                  stoggleup = "",
+              },
+              filter = {
+                  fzf = {
+                      action_for = { ["ctrl-s"] = "split" },
+                      extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
+                  },
+              },
+          })
+        end,
+    },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
