@@ -152,9 +152,9 @@ formatters.setup {
     { command = "eslint",
         filetype = { "javascript" }
     },
-    { command = "prettier",
-        filetype = { "typescript", "typescriptreact" }
-    }
+    -- { command = "prettier",
+    --     filetype = { "typescript", "typescriptreact" }
+    -- }
 }
 -- formatters.setup {
 --   { command = "black", filetypes = { "python" } },
