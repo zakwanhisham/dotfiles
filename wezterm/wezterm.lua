@@ -66,6 +66,7 @@ return {
     tab_bar_at_bottom = true,
     -- fancy_tab_bar
     fancy_tab_bar = true,
+    max_tab_width = 8,
     window_frame = {
         font = font_with_fallback({
             family = "JetBrains Mono NF",
@@ -74,22 +75,22 @@ return {
             },
         }),
         font_size = 10.0,
-        active_titlebar_bg = "#1a1b26",
-        inactive_titlebar_bg = "#0e0e14",
+        active_titlebar_bg = "#0e0e14",
+        inactive_titlebar_bg = "#1a1b26",
     },
     colors = {
         tab_bar = {
             inactive_tab_edge = "#33467c",
             active_tab = {
-                bg_color = "#0e0e14",
+                bg_color = "#1a1b26",
                 fg_color = "#c0caf5",
             },
             inactive_tab = {
-                bg_color = "#1a1b26",
+                bg_color = "#0e0e14",
                 fg_color = "#c0caf5",
             },
             new_tab = {
-                bg_color = "#1a1b26",
+                bg_color = "#0e0e14",
                 fg_color = "#c0caf5",
             },
         },
