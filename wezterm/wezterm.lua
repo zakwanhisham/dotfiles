@@ -56,7 +56,7 @@ return {
     initial_rows = 1080,
     use_dead_keys = false,
     window_padding = padding,
-    window_decorations = "RESIZE",
+    use_resize_increment = true,
     hide_tab_bar_if_only_one_tab = true,
     selection_word_boundary = " \t\n{}[]()\"'`,;:@",
     line_height = 1.00,
@@ -64,6 +64,7 @@ return {
     window_background_opacity = 1.00,
     bold_brightens_ansi_colors = true,
     tab_bar_at_bottom = true,
+    show_tab_index_in_tab_bar = false,
     -- fancy_tab_bar
     fancy_tab_bar = true,
     max_tab_width = 8,
@@ -74,23 +75,23 @@ return {
                 "zero",
             },
         }),
-        font_size = 10.0,
-        active_titlebar_bg = "#0e0e14",
-        inactive_titlebar_bg = "#1a1b26",
+        font_size = 9,
+        active_titlebar_bg = "#1a1b26",
+        inactive_titlebar_bg = "#0e0e14",
     },
     colors = {
         tab_bar = {
             inactive_tab_edge = "#33467c",
             active_tab = {
-                bg_color = "#1a1b26",
+                bg_color = "#0e0e14",
                 fg_color = "#c0caf5",
             },
             inactive_tab = {
-                bg_color = "#0e0e14",
+                bg_color = "#1a1b26",
                 fg_color = "#c0caf5",
             },
             new_tab = {
-                bg_color = "#0e0e14",
+                bg_color = "#1a1b26",
                 fg_color = "#c0caf5",
             },
         },
