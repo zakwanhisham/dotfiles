@@ -226,9 +226,7 @@ lvim.plugins = {
     --   -- run = "yay -S glow"
     -- },
     { "ellisonleao/glow.nvim" },
-    {
-        "p00f/nvim-ts-rainbow",
-    },
+    { "p00f/nvim-ts-rainbow" },
     {
         "romgrk/nvim-treesitter-context",
         config = function()
@@ -261,32 +259,6 @@ lvim.plugins = {
               hsl_fn = true, -- CSS hsl() and hsla() functions
               css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
               css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-          })
-        end,
-    },
-    {
-        "kevinhwang91/nvim-bqf",
-        event = { "BufRead", "BufNew" },
-        config = function()
-          require("bqf").setup({
-              auto_enable = true,
-              preview = {
-                  win_height = 12,
-                  win_vheight = 12,
-                  delay_syntax = 80,
-                  border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
-              },
-              func_map = {
-                  vsplit = "",
-                  ptogglemode = "z,",
-                  stoggleup = "",
-              },
-              filter = {
-                  fzf = {
-                      action_for = { ["ctrl-s"] = "split" },
-                      extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
-                  },
-              },
           })
         end,
     },
