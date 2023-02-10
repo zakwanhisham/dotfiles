@@ -152,9 +152,6 @@ formatters.setup {
     { command = "eslint",
         filetype = { "javascript" }
     },
-    -- { command = "prettier",
-    --     filetype = { "typescript", "typescriptreact" }
-    -- }
 }
 -- formatters.setup {
 --   { command = "black", filetypes = { "python" } },
@@ -176,9 +173,6 @@ linters.setup {
     { command = "eslint",
         filetypes = { "javascript" }
     },
-    -- { command = "prettier",
-    --     filetype = { "typescript", "typescriptreact" }
-    -- }
 }
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
@@ -262,6 +256,10 @@ lvim.plugins = {
           })
         end,
     },
+    {
+        "folke/lsp-colors.nvim",
+        event = "BufRead",
+    },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -270,10 +268,10 @@ lvim.plugins = {
 --   -- enable wrap mode for json files only
 --   command = "setlocal wrap",
 -- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "zsh",
+    callback = function()
+      -- let treesitter use bash highlight for zsh files as well
+      require("nvim-treesitter.highlight").attach(0, "bash")
+    end,
+})
