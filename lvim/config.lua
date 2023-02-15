@@ -176,6 +176,10 @@ formatters.setup({
 		command = "stylua",
 		filetypes = { "lua" },
 	},
+	{
+		command = "shfmt",
+		filetype = { "sh" },
+	},
 })
 
 -- set additional linters
