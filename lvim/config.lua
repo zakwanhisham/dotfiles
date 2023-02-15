@@ -82,6 +82,7 @@ lvim.builtin.treesitter.ensure_installed = {
 	"rust",
 	"java",
 	"yaml",
+	"go",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -93,6 +94,9 @@ vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80"
 vim.opt.cmdheight = 1
 vim.opt.spell = true
+vim.opt.scrolloff = 999
+vim.opt.incsearch = true
+vim.opt.hlsearch = false
 
 -- no need to set style = "lvim"
 local components = require("lvim.core.lualine.components")
@@ -101,6 +105,7 @@ lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_b = { "branch" }
 lvim.builtin.lualine.sections.lualine_c = {
 	components.filename,
+	components.diff,
 }
 lvim.builtin.lualine.sections.lualine_x = {
 	components.diagnostics,
@@ -158,7 +163,7 @@ lvim.builtin.lualine.sections.lualine_y = {
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ command = "eslint", filetypes = { "javascript" } },
-	{ command = "prettierd", filetypes = { "typescript", "typescriptreact", "css", "html", "markdown" } },
+	{ command = "prettierd", filetypes = { "typescript", "typescriptreact", "css", "html", "markdown", "json" } },
 	{
 		command = "gofmt",
 		filetypes = { "go" },
