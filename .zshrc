@@ -142,6 +142,7 @@ alias i3='lvim ~/.config/i3/'
 alias zshrc='lvim ~/.zshrc'
 alias wez='lvim ~/.config/wezterm/wezterm.lua'
 alias lunar='lvim ~/.config/lvim/config.lua'
+alias star='lvim ~/.config/starship.toml'
 alias neo='nvim ~/.config/nvim/init.lua'
 
 # Navigating files
@@ -161,5 +162,23 @@ alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'  # remove orphaned packages
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# keyboard mapping
+source ~/.xinitrc
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/zakwan/Temp/google-cloud-sdk/path.zsh.inc' ]; then . '/home/zakwan/Temp/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/zakwan/Temp/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/zakwan/Temp/google-cloud-sdk/completion.zsh.inc'; fi
+
 # Starship
 eval "$(starship init zsh)"
+
