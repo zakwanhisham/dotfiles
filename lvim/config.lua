@@ -7,7 +7,7 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80"
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 vim.opt.spell = true
 vim.opt.scrolloff = 999
 vim.opt.incsearch = true
@@ -20,9 +20,11 @@ lvim.colorscheme = "tokyonight-night"
 
 -- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
--- add your own keymapping
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<A-1>"] = false
+lvim.keys.normal_mode["<A-2>"] = false
+lvim.keys.normal_mode["<A-3>"] = false
 
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
@@ -136,7 +138,6 @@ lvim.plugins = {
 			})
 		end,
 	},
-	{ "ellisonleao/glow.nvim" },
 	{ "p00f/nvim-ts-rainbow" },
 	{
 		"romgrk/nvim-treesitter-context",
