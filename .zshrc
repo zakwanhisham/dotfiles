@@ -35,7 +35,7 @@ ZSH_THEME=""
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -49,7 +49,7 @@ ZSH_THEME=""
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -86,7 +86,6 @@ plugins=(
     git
     zsh-syntax-highlighting
     zsh-autosuggestions
-    web-search
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,13 +128,13 @@ alias reload='source ~/.zshrc && clear'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias filesize='du -sh'
+alias asdf='setxkbmap -option caps:swapescape &'
 
 # Changing program name
 alias v='lvim'
 alias c='code'
 alias cat='bat'
 alias weather='curl wttr.in'
-alias screen='cbonsai -liv'
 
 # Configuration
 alias i3='lvim ~/.config/i3/'
@@ -143,13 +142,12 @@ alias zshrc='lvim ~/.zshrc'
 alias wez='lvim ~/.config/wezterm/wezterm.lua'
 alias lunar='lvim ~/.config/lvim/config.lua'
 alias star='lvim ~/.config/starship.toml'
-alias neo='nvim ~/.config/nvim/init.lua'
 
 # Navigating files
 alias personal='cd ~/Documents/Personal'
 alias work='cd ~/Documents/Work'
-alias download='cd ~/Downloads'
-alias document='cd ~/Documents'
+alias down='cd ~/Downloads'
+alias doc='cd ~/Documents'
 alias config='cd ~/.config'
 alias dotfile='cd ~/.dotfiles'
 alias temp='cd ~/Temp'
@@ -161,23 +159,6 @@ alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'  # remove orphaned packages
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-# keyboard mapping
-source ~/.xinitrc
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/zakwan/Temp/google-cloud-sdk/path.zsh.inc' ]; then . '/home/zakwan/Temp/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/zakwan/Temp/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/zakwan/Temp/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Starship
 eval "$(starship init zsh)"

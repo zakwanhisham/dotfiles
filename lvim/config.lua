@@ -1,13 +1,9 @@
---[[
- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
- `lvim` is the global options object
-]]
 -- vim options
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80"
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 vim.opt.spell = true
 vim.opt.scrolloff = 999
 vim.opt.incsearch = true
@@ -179,7 +175,7 @@ lvim.plugins = {
 		event = "BufRead",
 	},
 }
--- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
+-- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "zsh",
 	callback = function()
