@@ -49,7 +49,7 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -134,6 +134,7 @@ alias asdf='setxkbmap -option caps:swapescape &'
 alias v='lvim'
 alias c='code'
 alias cat='bat'
+alias man='tldr'
 alias weather='curl wttr.in'
 
 # Configuration
@@ -153,8 +154,8 @@ alias dotfile='cd ~/.dotfiles'
 alias temp='cd ~/Temp'
 
 # System update using paru and pacman
-alias upall='paru && sudo pacman -Syyu'
 alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'  # remove orphaned packages
+alias orphan='pacman -Qtdq'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
