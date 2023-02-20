@@ -58,7 +58,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.highlight.enable = true
-lvim.builtin.treesitter.rainbow.enable = true
+-- lvim.builtin.treesitter.rainbow.enable = true
 
 -- no need to set style = "lvim"
 local components = require("lvim.core.lualine.components")
@@ -134,7 +134,7 @@ lvim.plugins = {
 			})
 		end,
 	},
-	{ "p00f/nvim-ts-rainbow" },
+	-- { "p00f/nvim-ts-rainbow" },
 	{
 		"romgrk/nvim-treesitter-context",
 		config = function()
