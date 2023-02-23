@@ -1,6 +1,6 @@
 -- vim options
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80"
 vim.opt.cmdheight = 1
@@ -84,7 +84,10 @@ lvim.builtin.lualine.sections.lualine_y = {
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	{ command = "eslint", filetypes = { "javascript" } },
+	{
+		command = "eslint",
+		filetypes = { "javascript" },
+	},
 	{
 		command = "prettierd",
 		filetypes = { "typescript", "typescriptreact", "css", "html", "markdown", "jsonc", "json" },
@@ -110,7 +113,14 @@ formatters.setup({
 -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-	{ command = "eslint", filetypes = { "javascript", "typescript", "typescriptreact" } },
+	{
+		command = "eslint",
+		filetypes = { "javascript", "typescript", "typescriptreact" },
+	},
+	{
+		command = "golangci-lint",
+		filetypes = { "go" },
+	},
 })
 
 -- Additional Plugins
@@ -174,6 +184,19 @@ lvim.plugins = {
 		"folke/lsp-colors.nvim",
 		event = "BufRead",
 	},
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("rose-pine").setup()
+			vim.cmd("colorscheme rose-pine")
+		end,
+	},
+	{ "catppuccin/nvim", name = "catppuccin" },
+	{ "rebelot/kanagawa.nvim" },
+	{ "yazeed1s/oh-lucy.nvim" },
 }
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 vim.api.nvim_create_autocmd("FileType", {
