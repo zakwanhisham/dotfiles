@@ -1,6 +1,6 @@
 -- vim options
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80"
 vim.opt.cmdheight = 1
@@ -10,7 +10,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
 -- general
-lvim.log.level = "info"
+lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
 lvim.colorscheme = "tokyonight-night"
 
@@ -48,6 +48,12 @@ lvim.builtin.which_key.mappings["t"] = {
 	l = { "<cmd>Trouble loclist<cr>", "LocationList" },
 	w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 }
+lvim.builtin.which_key.mappings["l"]["f"] = {
+	function()
+		require("lvim.lsp.utils").format({ timeout_ms = 2000 })
+	end,
+	"Format",
+}
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -84,13 +90,13 @@ lvim.builtin.lualine.sections.lualine_y = {
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	{
-		command = "eslint",
-		filetypes = { "javascript" },
-	},
+	-- {
+	-- 	command = "eslint",
+	-- 	filetypes = { "javascript" },
+	-- },
 	{
 		command = "prettierd",
-		filetypes = { "typescript", "typescriptreact", "css", "html", "markdown", "jsonc", "json" },
+		filetypes = { "javascript", "typescript", "typescriptreact", "css", "html", "markdown", "jsonc", "json" },
 	},
 	{
 		command = "gofmt",
@@ -184,19 +190,6 @@ lvim.plugins = {
 		"folke/lsp-colors.nvim",
 		event = "BufRead",
 	},
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("rose-pine").setup()
-			vim.cmd("colorscheme rose-pine")
-		end,
-	},
-	{ "catppuccin/nvim", name = "catppuccin" },
-	{ "rebelot/kanagawa.nvim" },
-	{ "yazeed1s/oh-lucy.nvim" },
 }
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 vim.api.nvim_create_autocmd("FileType", {
