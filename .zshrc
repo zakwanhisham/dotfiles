@@ -129,6 +129,8 @@ alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias filesize='du -sh'
 alias asdf='setxkbmap -option caps:swapescape &'
+alias laptop='xrandr --output eDP1 --scale 0.8x0.8 &'
+alias monitor='xrandr --output eDP1 --scale 1x1 &'
 
 # Changing program name
 alias v='lvim'
