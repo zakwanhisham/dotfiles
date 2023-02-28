@@ -153,9 +153,8 @@ alias config='cd ~/.config'
 alias dotfile='cd ~/.dotfiles'
 alias temp='cd ~/Temp'
 
-# System update using paru and pacman
-alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'  # remove orphaned packages
-alias orphan='pacman -Qtdq'
+# autoremove orphaned packages
+alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"

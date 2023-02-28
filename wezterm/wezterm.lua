@@ -61,11 +61,11 @@ return {
 	selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 	line_height = 1.00,
 	font_size = 10.5,
-	-- font_size = 11,
 	window_background_opacity = 1.00,
 	bold_brightens_ansi_colors = true,
 	tab_bar_at_bottom = true,
 	show_tab_index_in_tab_bar = true,
+	-- enable_tab_bar = false,
 	-- fancy_tab_bar
 	fancy_tab_bar = true,
 	max_tab_width = 8,

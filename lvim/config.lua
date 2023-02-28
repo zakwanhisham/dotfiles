@@ -7,7 +7,7 @@ vim.opt.cmdheight = 1
 vim.opt.spell = true
 vim.opt.scrolloff = 999
 vim.opt.incsearch = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 
 -- general
 lvim.log.level = "warn"
@@ -64,7 +64,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.highlight.enable = true
--- lvim.builtin.treesitter.rainbow.enable = true
+lvim.builtin.treesitter.rainbow.enable = true
 
 -- no need to set style = "lvim"
 local components = require("lvim.core.lualine.components")
@@ -90,13 +90,13 @@ lvim.builtin.lualine.sections.lualine_y = {
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	-- {
-	-- 	command = "eslint",
-	-- 	filetypes = { "javascript" },
-	-- },
+	{
+		command = "eslint",
+		filetypes = { "javascript" },
+	},
 	{
 		command = "prettierd",
-		filetypes = { "javascript", "typescript", "typescriptreact", "css", "html", "markdown", "jsonc", "json" },
+		filetypes = { "typescript", "typescriptreact", "css", "html", "markdown", "jsonc", "json" },
 	},
 	{
 		command = "gofmt",
@@ -150,7 +150,6 @@ lvim.plugins = {
 			})
 		end,
 	},
-	-- { "p00f/nvim-ts-rainbow" },
 	{
 		"romgrk/nvim-treesitter-context",
 		config = function()
@@ -189,6 +188,9 @@ lvim.plugins = {
 	{
 		"folke/lsp-colors.nvim",
 		event = "BufRead",
+	},
+	{
+		"mrjones2014/nvim-ts-rainbow",
 	},
 }
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
