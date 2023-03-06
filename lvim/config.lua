@@ -103,6 +103,10 @@ formatters.setup({
 		filetypes = { "go" },
 	},
 	{
+		command = "clang-format",
+		filetypes = { "cpp" },
+	},
+	{
 		command = "rustfmt",
 		filetypes = { "rust" },
 	},
@@ -126,6 +130,10 @@ linters.setup({
 	{
 		command = "golangci-lint",
 		filetypes = { "go" },
+	},
+	{
+		command = "clang-check",
+		filetypes = { "cpp" },
 	},
 })
 
