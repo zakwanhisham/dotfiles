@@ -121,22 +121,20 @@ alias ls='exa -al --color=always --group-directories-first --icons --git' # my p
 alias la='exa -a --color=always --group-directories-first --icons --git'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first --icons --git'  # long format
 alias lt='exa -aT --color=always --group-directories-first --icons --git' # tree listing
-alias l.='exa -a | rg "^\."'                             # list all dotfiles & dotfolder
+alias l.='exa -a | rg "^\."'                                              # list all dotfiles & dotfolder
 
 # For convenience
-alias reload='source ~/.zshrc && clear'
+alias reload='source ~/.zshrc;clear'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
-alias filesize='du -sh'
 alias asdf='setxkbmap -option caps:swapescape &'
 alias laptop='xrandr --output eDP1 --scale 0.8x0.8 &'
 alias monitor='xrandr --output eDP1 --scale 1x1 &'
+alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 
 # Changing program name
 alias v='lvim'
-alias c='code'
 alias cat='bat'
-alias man='tldr'
 alias weather='curl wttr.in'
 
 # Configuration
@@ -146,17 +144,14 @@ alias wez='lvim ~/.config/wezterm/wezterm.lua'
 alias lunar='lvim ~/.config/lvim/config.lua'
 alias star='lvim ~/.config/starship.toml'
 
-# Navigating files
+# Navigating folder
 alias personal='cd ~/Documents/Personal'
 alias work='cd ~/Documents/Work'
 alias down='cd ~/Downloads'
 alias doc='cd ~/Documents'
 alias config='cd ~/.config'
 alias dotfile='cd ~/.dotfiles'
-alias temp='cd ~/Temp'
-
-# autoremove orphaned packages
-alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
+alias tmp='cd ~/Temp'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
