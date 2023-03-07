@@ -124,7 +124,7 @@ alias lt='exa -aT --color=always --group-directories-first --icons --git' # tree
 alias l.='exa -a | rg "^\."'                                              # list all dotfiles & dotfolder
 
 # For convenience
-alias reload='source ~/.zshrc;clear'
+alias reload='source ~/.zshrc && clear'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias asdf='setxkbmap -option caps:swapescape &'
