@@ -211,12 +211,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		require("nvim-treesitter.highlight").attach(0, "bash")
 	end,
 })
-
--- Center screen automatically when entering insert mode
-vim.api.nvim_create_autocmd("InsertEnter", {
-	group = vim.api.nvim_create_augroup("center_on_insert", {}),
-	pattern = "*",
-	callback = function()
-		vim.cmd.normal({ bang = true, "zz" })
-	end,
-})
