@@ -136,6 +136,7 @@ alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 alias v='lvim'
 alias cat='bat'
 alias weather='curl wttr.in'
+alias z='zellij'
 
 # Configuration
 alias i3='lvim ~/.config/i3/'
@@ -143,6 +144,7 @@ alias zshrc='lvim ~/.zshrc'
 alias wez='lvim ~/.config/wezterm/wezterm.lua'
 alias lunar='lvim ~/.config/lvim/config.lua'
 alias star='lvim ~/.config/starship.toml'
+alias zel='lvim ~/.config/zellij/config.kdl'
 
 # Navigating folder
 alias personal='cd ~/Documents/Personal'
