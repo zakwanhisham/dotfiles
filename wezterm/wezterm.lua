@@ -60,7 +60,7 @@ return {
 	hide_tab_bar_if_only_one_tab = true,
 	selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 	line_height = 1.00,
-	font_size = 10.5,
+	font_size = 11.0,
 	window_background_opacity = 1.00,
 	bold_brightens_ansi_colors = true,
 	tab_bar_at_bottom = true,
