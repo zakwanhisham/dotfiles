@@ -46,8 +46,8 @@ gaps inner 0
 gaps outer 0
 
 # show window title bars (not officially supported with i3gaps)
-# default_border pixel 1
-#default_floating_border pixel 1
+default_border pixel 1
+default_floating_border pixel 1
 for_window [class="^.*"] border pixel 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
