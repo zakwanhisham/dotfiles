@@ -134,9 +134,9 @@ alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 
 # Changing program name
 alias v='lvim'
+alias z='zellij'
 alias cat='bat'
 alias weather='curl wttr.in'
-alias z='zellij'
 
 # Configuration
 alias i3='lvim ~/.config/i3/'
