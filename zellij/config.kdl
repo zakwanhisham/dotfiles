@@ -11,8 +11,8 @@ keybinds {
         bind "Alt n" { NewPane; }
         bind "Alt h" { MoveFocusOrTab "Left"; }
         bind "Alt l" { MoveFocusOrTab "Right"; }
-//      bind "Alt j" { MoveFocus "Down"; }
-//      bind "Alt k" { MoveFocus "Up"; }
+        bind "Alt [" { PreviousSwapLayout; }
+        bind "Alt ]" { NextSwapLayout; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
     }

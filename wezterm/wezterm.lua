@@ -56,19 +56,18 @@ return {
 	initial_rows = 1080,
 	use_dead_keys = false,
 	window_padding = padding,
-	use_resize_increment = false,
+	use_resize_increments = false,
 	hide_tab_bar_if_only_one_tab = true,
 	selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 	line_height = 1.00,
-	font_size = 11.0,
+	font_size = 10.5,
 	window_background_opacity = 1.00,
 	bold_brightens_ansi_colors = true,
 	tab_bar_at_bottom = true,
 	show_tab_index_in_tab_bar = true,
 	show_new_tab_button_in_tab_bar = false,
-	hide_mouse_button_when_typing = true,
 	-- fancy_tab_bar
-	fancy_tab_bar = true,
+	use_fancy_tab_bar = true,
 	tab_max_width = 8,
 	window_frame = {
 		font = font_with_fallback({
