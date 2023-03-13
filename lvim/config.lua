@@ -1,4 +1,5 @@
 -- vim options
+vim.opt.guicursor = ""
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -9,7 +10,7 @@ vim.opt.cmdheight = 1
 vim.opt.spell = true
 vim.opt.scrolloff = 999
 vim.opt.incsearch = true
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 
 -- general
 lvim.log.level = "warn"
@@ -92,13 +93,13 @@ lvim.builtin.lualine.sections.lualine_y = {
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	{
-		command = "eslint",
-		filetypes = { "javascript" },
-	},
+	-- {
+	-- 	command = "eslint",
+	-- 	filetypes = { "javascript" },
+	-- },
 	{
 		command = "prettierd",
-		filetypes = { "typescript", "typescriptreact", "css", "html", "markdown", "jsonc", "json" },
+		filetypes = { "javascript", "typescript", "typescriptreact", "css", "html", "markdown", "jsonc", "json" },
 	},
 	{
 		command = "gofmt",
@@ -125,10 +126,10 @@ formatters.setup({
 -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-	{
-		command = "eslint",
-		filetypes = { "javascript", "typescript", "typescriptreact" },
-	},
+	-- {
+	-- 	command = "eslint",
+	-- 	filetypes = { "javascript", "typescript", "typescriptreact" },
+	-- },
 	{
 		command = "golangci-lint",
 		filetypes = { "go" },
