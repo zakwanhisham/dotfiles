@@ -93,13 +93,28 @@ lvim.builtin.lualine.sections.lualine_y = {
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	-- {
-	-- 	command = "eslint",
-	-- 	filetypes = { "javascript" },
-	-- },
+	{
+		command = "eslint",
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+		},
+	},
 	{
 		command = "prettierd",
-		filetypes = { "javascript", "typescript", "typescriptreact", "css", "html", "markdown", "jsonc", "json" },
+		filetypes = {
+			-- "javascript",
+			-- "javascriptreact",
+			-- "typescript",
+			-- "typescriptreact",
+			"css",
+			"html",
+			"markdown",
+			"jsonc",
+			"json",
+		},
 	},
 	{
 		command = "gofmt",
@@ -126,10 +141,10 @@ formatters.setup({
 -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-	-- {
-	-- 	command = "eslint",
-	-- 	filetypes = { "javascript", "typescript", "typescriptreact" },
-	-- },
+	{
+		command = "eslint",
+		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+	},
 	{
 		command = "golangci-lint",
 		filetypes = { "go" },
