@@ -141,7 +141,7 @@ alias weather='curl wttr.in'
 # Configuration
 alias i3='lvim ~/.config/i3/'
 alias zshrc='lvim ~/.zshrc'
-alias wez='lvim ~/.config/wezterm/wezterm.lua'
+alias ala='lvim ~/.config/alacritty/alacritty.yml'
 alias lunar='lvim ~/.config/lvim/config.lua'
 alias star='lvim ~/.config/starship.toml'
 alias zel='lvim ~/.config/zellij/config.kdl'
