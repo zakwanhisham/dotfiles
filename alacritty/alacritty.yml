@@ -1,0 +1,180 @@
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: alacritty
+
+window:
+  # Window dimensions (changes require restart)
+  #
+
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  position:
+    x: 0
+    y: 0
+
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 0
+    y: 0
+
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 1.0
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Windowed
+
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Scrolling distance multiplier.
+  multiplier: 3
+
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    # Font family
+    #
+    # Default:
+    #   - (macOS) Menlo
+    #   - (Linux/BSD) monospace
+    #   - (Windows) Consolas
+    family: JetBrains Mono NF
+
+    # The `style` can be specified to pick a specific face.
+    style: Regular
+
+  # Bold font face
+  bold:
+    # Font family
+    #
+    # If the bold family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: JetBrains Mono NF
+
+    # The `style` can be specified to pick a specific face.
+    style: Bold
+
+  # Italic font face
+  italic:
+    # Font family
+    #
+    # If the italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: JetBrains Mono NF
+
+    # The `style` can be specified to pick a specific face.
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    # Font family
+    #
+    # If the bold italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: JetBrains Mono NF
+
+    # The `style` can be specified to pick a specific face.
+    style: Bold Italic
+
+  # Point size
+  size: 7.0
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+schemes:
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  tokyo-night: &tokyo-night # Default colors
+    primary:
+      background: "#1a1b26"
+      foreground: "#a9b1d6"
+
+    # Normal colors
+    normal:
+      black: "#32344a"
+      red: "#f7768e"
+      green: "#9ece6a"
+      yellow: "#e0af68"
+      blue: "#7aa2f7"
+      magenta: "#ad8ee6"
+      cyan: "#449dab"
+      white: "#787c99"
+
+    # Bright colors
+    bright:
+      black: "#444b6a"
+      red: "#ff7a93"
+      green: "#b9f27c"
+      yellow: "#ff9e64"
+      blue: "#7da6ff"
+      magenta: "#bb9af7"
+      cyan: "#0db9d7"
+      white: "#acb0d0"
+
+colors: *tokyo-night
+
+cursor:
+  # Cursor style
+  style:
+    # Cursor shape
+    #
+    # Values for `shape`:
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    shape: Block
+
+    # Cursor blinking state
+    #
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: Never
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  #double_click: { threshold: 300 }
+  #triple_click: { threshold: 300 }
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: false
