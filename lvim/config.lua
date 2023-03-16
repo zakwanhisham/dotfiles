@@ -114,6 +114,7 @@ formatters.setup({
 			"markdown",
 			"jsonc",
 			"json",
+			"yaml",
 		},
 	},
 	{
