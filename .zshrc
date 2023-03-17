@@ -137,6 +137,7 @@ alias v='lvim'
 alias z='zellij'
 alias cat='bat'
 alias weather='curl wttr.in'
+alias lg='lazygit'
 
 # Configuration
 alias i3='lvim ~/.config/i3/'
