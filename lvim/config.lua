@@ -61,7 +61,7 @@ lvim.builtin.which_key.mappings["l"]["f"] = {
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 -- Automatically install missing parsers when entering buffer
@@ -105,10 +105,6 @@ formatters.setup({
 	{
 		command = "prettierd",
 		filetypes = {
-			-- "javascript",
-			-- "javascriptreact",
-			-- "typescript",
-			-- "typescriptreact",
 			"css",
 			"html",
 			"markdown",
@@ -144,7 +140,12 @@ local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
 	{
 		command = "eslint",
-		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+		},
 	},
 	{
 		command = "golangci-lint",
