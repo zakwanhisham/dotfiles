@@ -163,21 +163,21 @@ auto_layout true
 // Default: default
 //
 themes {
-     tokyo-night-dark {
-         fg 169 177 214
-         bg 26 27 38
-         black 56 62 90
-         red 249 51 87
-         green 158 206 106
-         yellow 224 175 104
-         blue 122 162 247
-         magenta 187 154 247
-         cyan 42 195 222
-         white 192 202 245
-         orange 255 158 100
-     }
+    rose-pine {
+		bg "#191724"
+		fg "#e0def4"
+		red "#eb6f92"
+		green "#31748f"
+		blue "#9ccfd8"
+		yellow "#f6c177"
+		magenta "#c4a7e7"
+		orange "#fe640b"
+		cyan "#ebbcba"
+		black "#26233a"
+		white "#e0def4"
+	}
 }
-theme "tokyo-night-dark"
+theme "rose-pine"
 
 // The name of the default layout to load on startup
 // Default: "default"

@@ -15,7 +15,7 @@ vim.opt.hlsearch = false
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "tokyonight-night"
+lvim.colorscheme = "rose-pine"
 
 -- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
@@ -220,6 +220,7 @@ lvim.plugins = {
 	{
 		"mrjones2014/nvim-ts-rainbow",
 	},
+	{ "rose-pine/neovim", as = "rose-pine" },
 }
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 vim.api.nvim_create_autocmd("FileType", {
