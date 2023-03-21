@@ -42,9 +42,6 @@ window:
   #   - Windowed
   #   - Maximized
   #   - Fullscreen
-  #
-  # Values for `startup_mode` (macOS only):
-  #   - SimpleFullscreen
   startup_mode: Windowed
 
   # Allow terminal applications to change Alacritty's window title.
@@ -87,37 +84,6 @@ font:
 draw_bold_text_with_bright_colors: true
 
 schemes:
-  tokyo-night: &tokyo-night # Default colors
-    primary:
-      background: "0x1a1b26"
-      foreground: "0xc0caf5"
-
-    # Normal colors
-    normal:
-      black: "0x15161E"
-      red: "0xf7768e"
-      green: "0x9ece6a"
-      yellow: "0xe0af68"
-      blue: "0x7aa2f7"
-      magenta: "0xbb9af7"
-      cyan: "0x7dcfff"
-      white: "0xa9b1d6"
-
-    # Bright colors
-    bright:
-      black: "0x414868"
-      red: "0xf7768e"
-      green: "0x9ece6a"
-      yellow: "0xe0af68"
-      blue: "0x7aa2f7"
-      magenta: "0xbb9af7"
-      cyan: "0x7dcfff"
-      white: "0xc0caf5"
-
-    indexed_colors:
-      - { index: 16, color: "0xff9e64" }
-      - { index: 17, color: "0xdb4b4b" }
-
   rose-pine: &rose-pine
     primary:
       background: "0x191724"
@@ -186,14 +152,6 @@ cursor:
 live_config_reload: true
 
 mouse:
-  # Click settings
-  #
-  # The `double_click` and `triple_click` settings control the time
-  # alacritty should wait for accepting multiple clicks as one double
-  # or triple click.
-  #double_click: { threshold: 300 }
-  #triple_click: { threshold: 300 }
-
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
 
