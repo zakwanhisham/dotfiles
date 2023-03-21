@@ -195,7 +195,6 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/brave
-bindsym $mod+n exec /usr/bin/thunar
 bindsym $mod+m exec /usr/bin/thunderbird
 bindsym $mod+g exec /usr/bin/google-chrome-stable
 bindsym Print exec flameshot gui
@@ -377,9 +376,8 @@ bar {
 
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
-# bindsym $mod+Shift+d exec rofi -modi drun -show drun \
-# 		-config ~/.config/rofi/rofidmenu.rasi
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec rofi -modi drun -show drun \
+		-config ~/.config/rofi/rofidmenu.rasi
 
 bindsym $mod+t exec rofi -show window \
 		-config ~/.config/rofi/rofidmenu.rasi
