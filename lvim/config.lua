@@ -122,7 +122,11 @@ formatters.setup({
 	},
 	{
 		command = "shfmt",
-		filetype = { "sh" },
+		filetypes = { "sh" },
+	},
+	{
+		command = "taplo",
+		filetypes = { "toml" },
 	},
 })
 
