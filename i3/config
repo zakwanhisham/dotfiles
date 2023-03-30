@@ -274,7 +274,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec --no-startup-id ~/.screenlayout/monitor.sh
+exec --no-startup-id ~/.config/screenlayout/monitor.sh
 
 # set wallpaper
 exec --no-startup-id nitrogen --restore
@@ -344,7 +344,7 @@ client.background       #ffffff
 bar {
 		font pango: JetBrainsMono NF Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        position bottom 
+        position top 
 # i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
