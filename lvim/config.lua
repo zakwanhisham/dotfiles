@@ -1,5 +1,4 @@
 -- vim options
-vim.opt.guicursor = ""
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -52,7 +51,7 @@ lvim.builtin.which_key.mappings["l"]["f"] = {
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "right"
+lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 -- Automatically install missing parsers when entering buffer
@@ -96,6 +95,10 @@ formatters.setup({
 	{
 		command = "prettierd",
 		filetypes = {
+			-- "javascript",
+			-- "javascriptreact",
+			-- "typescript",
+			-- "typescriptreact",
 			"css",
 			"html",
 			"markdown",
