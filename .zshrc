@@ -74,6 +74,8 @@ alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias asdf='setxkbmap -option caps:swapescape &'
 alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
+alias laptop='~/.screenlayout/laptop.sh'
+alias monitor='~/.screenlayout/monitor.sh'
 
 # Changing program name
 alias v='lvim'
