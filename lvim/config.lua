@@ -13,7 +13,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
 -- general
-lvim.log.level = "warn"
+lvim.log.level = "info"
 lvim.format_on_save.enabled = true
 lvim.colorscheme = "rose-pine"
 
@@ -161,16 +161,15 @@ lvim.plugins = {
 	{ "kdheepak/lazygit.nvim" },
 	{
 		"folke/todo-comments.nvim",
+		event = "BufRead",
 		config = function()
-			require("todo-comments").setup({})
+			require("todo-comments").setup()
 		end,
 	},
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()
-			require("nvim-ts-autotag").setup({
-				filetypes = { "html", "xml" },
-			})
+			require("nvim-ts-autotag").setup()
 		end,
 	},
 	{
@@ -212,10 +211,8 @@ lvim.plugins = {
 		"folke/lsp-colors.nvim",
 		event = "BufRead",
 	},
-	{
-		"mrjones2014/nvim-ts-rainbow",
-	},
-	{ "rose-pine/neovim", as = "rose-pine" },
+	{ "mrjones2014/nvim-ts-rainbow" },
+	{ "rose-pine/neovim", name = "rose-pine" },
 }
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 vim.api.nvim_create_autocmd("FileType", {
