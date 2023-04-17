@@ -274,7 +274,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec --no-startup-id ~/.config/screenlayout/monitor.sh
+exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 exec --no-startup-id nitrogen --restore
@@ -299,8 +299,10 @@ for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="flameshot" instance="flameshot"] floating enable
+for_window [class="zoom" instance="zoom"] floating enable
 
 # set floating (nontiling) for special apps
+for_window [class="zoom" instance="zoom"] floating enable
 for_window [class="Xsane" instance="xsane"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
