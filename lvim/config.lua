@@ -13,7 +13,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
 -- general
-lvim.log.level = "info"
+lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
 lvim.colorscheme = "rose-pine"
 
@@ -216,10 +216,15 @@ lvim.plugins = {
 	{ "rose-pine/neovim", name = "rose-pine" },
 }
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "zsh",
-	callback = function()
-		-- let treesitter use bash highlight for zsh files as well
-		require("nvim-treesitter.highlight").attach(0, "bash")
-	end,
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "zsh",
+-- 	callback = function()
+-- 		-- let treesitter use bash highlight for zsh files as well
+-- 		require("nvim-treesitter.highlight").attach(0, "bash")
+-- 	end,
+-- })
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = { "*.sh", "*.zsh" },
+	command = "silent! set filetype=sh",
 })
