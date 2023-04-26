@@ -13,7 +13,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
 -- general
-lvim.log.level = "warn"
+lvim.log.level = "info"
 lvim.format_on_save.enabled = true
 lvim.colorscheme = "rose-pine"
 
