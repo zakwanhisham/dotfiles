@@ -76,7 +76,7 @@ alias asdf='setxkbmap -option caps:swapescape &'
 alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 alias laptop='~/.screenlayout/laptop.sh'
 alias monitor='~/.screenlayout/monitor.sh'
-alias clear='clear;nerdfetch'
+alias calendar='cal --monday -3'
 
 # Changing program name
 alias v='lvim'
@@ -102,14 +102,13 @@ alias config='cd ~/.config'
 alias dotfile='cd ~/.dotfiles'
 alias tmp='cd ~/Temp'
 
-# pnpm
-export PNPM_HOME="/home/zakwan/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 # Starship
 eval "$(starship init zsh)"
 
-nerdfetch
+# pnpm
+export PNPM_HOME="/home/zakwan/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
