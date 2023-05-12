@@ -102,9 +102,6 @@ alias config='cd ~/.config'
 alias dotfile='cd ~/.dotfiles'
 alias tmp='cd ~/Temp'
 
-# Starship
-eval "$(starship init zsh)"
-
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
 case ":$PATH:" in
@@ -112,3 +109,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Starship
+eval "$(starship init zsh)"
+
