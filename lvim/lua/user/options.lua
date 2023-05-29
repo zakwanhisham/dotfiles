@@ -19,6 +19,9 @@ vim.opt.scrolloff = 999
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
+vim.opt.signcolumn = "yes"
+
 -- general
 lvim.log.level = "info"
 lvim.format_on_save.enabled = true
+-- lvim.transparent_window = true
