@@ -1,54 +1,8 @@
--- vim options
-vim.opt.guicursor = ""
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.autoindent = true
-vim.opt.relativenumber = true
-vim.opt.colorcolumn = "80"
-vim.opt.cmdheight = 1
-vim.opt.spell = true
-vim.opt.scrolloff = 999
-vim.opt.incsearch = true
-vim.opt.hlsearch = false
+reload("user.config")
 
--- general
-lvim.log.level = "info"
-lvim.format_on_save.enabled = true
 lvim.colorscheme = "rose-pine"
 
--- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
-lvim.leader = "space"
-lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
-lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
-lvim.keys.normal_mode["<A-1>"] = false
-lvim.keys.normal_mode["<A-2>"] = false
-lvim.keys.normal_mode["<A-3>"] = false
-
-local _, actions = pcall(require, "telescope.actions")
-lvim.builtin.telescope.defaults.mappings = {
-	-- for input mode
-	i = {
-		["<C-j>"] = actions.move_selection_next,
-		["<C-k>"] = actions.move_selection_previous,
-		["<C-n>"] = actions.cycle_history_next,
-		["<C-p>"] = actions.cycle_history_prev,
-	},
-	-- for normal mode
-	n = {
-		["<C-j>"] = actions.move_selection_next,
-		["<C-k>"] = actions.move_selection_previous,
-	},
-}
-lvim.builtin.telescope.theme = "center"
-
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["l"]["f"] = {
-	function()
-		require("lvim.lsp.utils").format({ timeout_ms = 2000 })
-	end,
-	"Format",
-}
+-- lvim.builtin.telescope.theme = "center"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -213,10 +167,6 @@ lvim.plugins = {
 				css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
 			})
 		end,
-	},
-	{
-		"folke/lsp-colors.nvim",
-		event = "BufRead",
 	},
 	{ "mrjones2014/nvim-ts-rainbow" },
 	{ "rose-pine/neovim", name = "rose-pine" },
