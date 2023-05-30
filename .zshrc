@@ -76,7 +76,6 @@ alias asdf='setxkbmap -option caps:swapescape &'
 alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 alias laptop='~/.screenlayout/laptop.sh'
 alias monitor='~/.screenlayout/monitor.sh'
-alias calendar='cal --monday -3'
 
 # Changing program name
 alias v='lvim'
@@ -84,6 +83,7 @@ alias z='zellij'
 alias cat='bat'
 alias weather='curl wttr.in'
 alias lg='lazygit'
+alias calendar='cal --monday -3'
 
 # Configuration
 alias i3='lvim ~/.config/i3/'
@@ -100,7 +100,6 @@ alias down='cd ~/Downloads'
 alias doc='cd ~/Documents'
 alias config='cd ~/.config'
 alias dotfile='cd ~/.dotfiles'
-alias tmp='cd ~/Temp'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
