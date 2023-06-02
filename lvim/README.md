@@ -1,3 +1,27 @@
 # LUNARVIM CONFIG
 
-Use mostly default config for lunarvim but add a few plugin e.g: folke/trouble.nvim and change a few config to suit my own needs ^^
+- Use `pytholic/pytholic-lvim` on how he structured his lvim config.
+- Change some thing, the only things on `config.lua` is `reload("user.config")`.
+- The file tree is like this:
+
+```
+ .
+├──  lua
+│  └──  user
+│     ├──  autocommands.lua
+│     ├──  builtin.lua
+│     ├──  colorscheme.lua
+│     ├──  config.lua
+│     ├──  formatter.lua
+│     ├──  keymaps.lua
+│     ├──  linter.lua
+│     ├──  lualine.lua
+│     ├──  nvimtree.lua
+│     ├──  options.lua
+│     ├──  plugins.lua
+│     ├──  telescope.lua
+│     └──  treesitter.lua
+├──  config.lua
+├──  lazy-lock.json
+└──  README.md
+```
