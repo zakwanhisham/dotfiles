@@ -69,7 +69,7 @@ alias lt='exa -aT --color=always --group-directories-first --icons --git' # tree
 alias l.='exa -a | rg "^\."'                                              # list all dotfiles & dotfolder
 
 # For convenience
-alias reload='source ~/.zshrc && clear'
+alias reload='source ~/.zshrc'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias asdf='setxkbmap -option caps:swapescape &'
@@ -78,7 +78,7 @@ alias laptop='~/.screenlayout/laptop.sh'
 alias monitor='~/.screenlayout/monitor.sh'
 
 # Changing program name
-alias v='lvim'
+alias vim='lvim'
 alias z='zellij'
 alias cat='bat'
 alias weather='curl wttr.in'
