@@ -36,10 +36,6 @@ lvim.keys.normal_mode["<leader>fr"] = [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><L
 -- Make file executable
 lvim.keys.normal_mode["<leader>x"] = "<cmd>!chmod +x %<CR>"
 
--- Visual mode indent
-lvim.keys.visual_mode["<Tab>"] = ">gv"
-lvim.keys.visual_mode["<S-Tab>"] = "<gv"
-
 -- Swap splits
 lvim.keys.normal_mode["<C-w><S-Left>"] = "<C-w>H"
 lvim.keys.normal_mode["<C-w><S-Right>"] = "<C-w>L"

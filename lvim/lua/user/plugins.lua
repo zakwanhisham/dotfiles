@@ -52,4 +52,5 @@ lvim.plugins = {
 	},
 	{ "mrjones2014/nvim-ts-rainbow" },
 	{ "rose-pine/neovim", name = "rose-pine" },
+	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
 }
