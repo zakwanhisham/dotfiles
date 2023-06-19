@@ -84,6 +84,7 @@ alias cat='bat'
 alias weather='curl wttr.in'
 alias lg='lazygit'
 alias calendar='cal --monday -3'
+alias code='code-insiders'
 
 # Configuration
 alias i3='lvim ~/.config/i3/'
