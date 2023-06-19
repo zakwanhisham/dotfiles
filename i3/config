@@ -331,7 +331,7 @@ for_window [class=".*"] move position center
 
 # define colors for windows:
 # class                 border  backgr. text    indicator child_border
-client.focused          #333333 #285577 #ffffff #222222   #222222
+client.focused          #333333 #222222 #ffffff #222222   #222222
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -367,7 +367,7 @@ bar {
 				statusline #ffffff
 				separator #666666
 			#	class			       border  backgr  text
-				focused_workspace      #4c7899 #285577 #ffffff
+				focused_workspace      #333333 #666666 #ffffff
 				active_workspace       #333333 #5f676a #ffffff
 				inactive_workspace     #333333 #222222 #888888
 				urgent_workspace       #2f343a #900000 #ffffff
