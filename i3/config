@@ -22,7 +22,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango: Ubuntu Nerd Font Regular 10
+font pango: JetBrainsMono Nerd Font Regular 9
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -39,16 +39,16 @@ workspace_layout default
 ##############################
 
 # border indicator on windows:
-new_window pixel 1
+# new_window pixel 1
 
 # Set inner/outer gaps
 gaps inner 0
 gaps outer 0
 
 # show window title bars (not officially supported with i3gaps)
-default_border pixel 1
-default_floating_border pixel 1
-for_window [class="^.*"] border pixel 1
+# default_border pixel 1
+# default_floating_border pixel 1
+# for_window [class="^.*"] border pixel 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -344,9 +344,10 @@ client.background       #ffffff
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango: Ubuntu Nerd Font Regular 11
+		font pango: Ubuntu Nerd Font Regular 10
+		# font pango: JetBrainsMono Nerd Font Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        position top 
+        position bottom 
 # i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
