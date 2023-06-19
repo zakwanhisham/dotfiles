@@ -10,10 +10,12 @@ env:
   # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
 
-# shell:
-#   program: /bin/zsh
-#   args:
-#     - "zellij attach || zellij"
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - zellij attach --index 0 || zellij
 
 window:
   # Window dimensions (changes require restart)
