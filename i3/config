@@ -231,15 +231,15 @@ workspace $ws9 output DP1
 workspace $ws10 output DP1
 
 # bind program to workspace and focus to them on startup:
-# assign [class="Alacritty"] $ws1
-# assign [class="Brave"] $ws2
-# assign [class="Google-chrome"] $ws3
-# assign [class="thunderbird"] $ws4
+assign [class="Alacritty"] $ws1
+assign [class="Brave"] $ws2
+assign [class="Google-chrome"] $ws3
+assign [class="thunderbird"] $ws4
 
 # automatic set focus new window if it opens on another workspace then the current:
-# for_window [class=Alacritty] focus
-# for_window [class=Brave] focus
-# for_window [class=Google-chrome] focus
+for_window [class=Alacritty] focus
+for_window [class=Brave] focus
+for_window [class=Google-chrome] focus
 # for_window [class=thunderbird] focus
 
 ##############
@@ -284,7 +284,7 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 # autotiling script
 # https://github.com/nwg-piotr/autotiling
 # `yay -S autotiling ;) (it is in AUR)
-# exec_always --no-startup-id autotiling
+exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
 exec --no-startup-id alacritty 
