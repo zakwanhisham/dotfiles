@@ -23,6 +23,7 @@
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: JetBrainsMono Nerd Font Regular 9
+# font pango: Ubuntu Nerd Font Regular 9
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -40,6 +41,7 @@ workspace_layout default
 
 # border indicator on windows:
 # new_window pixel 1
+title_align center
 
 # Set inner/outer gaps
 gaps inner 0
@@ -329,7 +331,7 @@ for_window [class=".*"] move position center
 
 # define colors for windows:
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused          #333333 #285577 #ffffff #222222   #222222
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
