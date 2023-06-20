@@ -1,2 +1,1 @@
-lvim.colorscheme = "rose-pine"
--- lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "catppuccin-mocha"
