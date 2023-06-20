@@ -1,1 +1,1 @@
-lvim.colorscheme = "catppuccin-mocha"
+lvim.colorscheme = "carbonfox"
