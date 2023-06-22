@@ -159,6 +159,13 @@ simplified_ui true
 //
 auto_layout true
 
+// Toggle between having pane frames around the panes
+// Options:
+//   - true (default)
+//   - false
+//
+// pane_frames false
+
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
