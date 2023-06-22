@@ -353,7 +353,7 @@ bar {
 # i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
-        tray_output primary
+        tray_output DP1
         tray_padding 0
 
 # When strip_workspace_numbers is set to yes,
@@ -381,8 +381,8 @@ bar {
 
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
-# bindsym $mod+d exec rofi -modi drun -show drun \
-# 		-config ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+Shift+d exec rofi -modi drun -show drun \
+		-config ~/.config/rofi/rofidmenu.rasi
 bindsym $mod+d exec i3-dmenu-desktop
 
 bindsym $mod+t exec rofi -show window \
