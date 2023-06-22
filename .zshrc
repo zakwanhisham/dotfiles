@@ -12,6 +12,8 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # man 2 select
 
+ZSH_DISABLE_COMPFIX="true"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
