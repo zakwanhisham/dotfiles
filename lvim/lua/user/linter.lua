@@ -16,6 +16,9 @@ linters.setup({
 	},
 	{
 		command = "clang-check",
-		filetypes = { "cpp" },
+		filetypes = {
+			"cpp",
+			"c",
+		},
 	},
 })

@@ -31,7 +31,10 @@ formatters.setup({
 	},
 	{
 		command = "clang-format",
-		filetypes = { "cpp" },
+		filetypes = {
+			"cpp",
+			"c",
+		},
 	},
 	{
 		command = "rustfmt",
