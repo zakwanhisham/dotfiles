@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -xe
+
 # Destination folder
 dotfile="/home/zakwan/.dotfiles"
 
