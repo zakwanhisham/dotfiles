@@ -197,8 +197,9 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/brave
-bindsym $mod+m exec /usr/bin/thunderbird
 bindsym $mod+g exec /usr/bin/google-chrome-stable
+bindsym $mod+m exec /usr/bin/thunderbird
+bindsym $mod+c exec /usr/bin/code
 bindsym Print exec flameshot gui
 
 ##########################################
