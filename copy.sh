@@ -13,6 +13,7 @@ source_folders=(
 	"/home/zakwan/.config/starship.toml"
 	"/home/zakwan/.config/i3"
 	"/home/zakwan/.config/zellij"
+	"/home/zakwan/.config/dunst"
 )
 
 # Variable to track errors
