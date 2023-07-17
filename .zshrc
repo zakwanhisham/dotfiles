@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/zakwan/.local/bin:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 # GO PATH AND RUST PATH
 export GOROOT=/usr/local/go
