@@ -3,6 +3,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 vim.opt.guicursor = ""
+vim.opt.termguicolors = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -25,4 +26,3 @@ vim.opt.fillchars = { eob = " " }
 -- general
 lvim.log.level = "info"
 lvim.format_on_save.enabled = true
--- lvim.transparent_window = true

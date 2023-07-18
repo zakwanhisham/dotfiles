@@ -13,28 +13,8 @@ lvim.keys.normal_mode["n"] = "nzzzv"
 lvim.keys.normal_mode["N"] = "Nzzzv"
 
 lvim.keys.normal_mode["<leader>\\"] = ":vsplit<CR>"
-lvim.keys.visual_mode["<leader>p"] = [["_dP]] -- paste and keep
-lvim.keys.normal_mode["<leader>y"] = [["+y]]
-lvim.keys.visual_mode["<leader>y"] = [["+y]]
-lvim.keys.normal_mode["<leader>Y"] = [["+Y]]
-lvim.keys.normal_mode["<leader>d"] = [["_d]]
 lvim.keys.insert_mode["<C-c>"] = "<Esc>"
 lvim.keys.normal_mode["Q"] = "<nop>"
-
--- grep remap
-lvim.keys.normal_mode["<leader>vg"] = [[:vimgrep // %:p<Left><Left><Left><Left><Left>]]
-
--- Quickfix navigation
-lvim.keys.normal_mode["."] = "<cmd>cnext<CR>zz"
-lvim.keys.normal_mode[","] = "<cmd>cprev<CR>zz"
-lvim.keys.normal_mode["<leader>k"] = "<cmd>lnext<CR>zz"
-lvim.keys.normal_mode["<leader>j"] = "<cmd>lprev<CR>zz"
-
--- Find and replace
-lvim.keys.normal_mode["<leader>fr"] = [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
-
--- Make file executable
-lvim.keys.normal_mode["<leader>x"] = "<cmd>!chmod +x %<CR>"
 
 -- Swap splits
 lvim.keys.normal_mode["<C-w><S-Left>"] = "<C-w>H"

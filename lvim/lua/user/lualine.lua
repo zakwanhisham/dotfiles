@@ -4,16 +4,19 @@ lvim.builtin.lualine.options.theme = "auto"
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_b = { "branch" }
 lvim.builtin.lualine.sections.lualine_c = {
-	components.filename,
+	-- components.filename,
 	components.diff,
+	components.diagnostics,
 }
 lvim.builtin.lualine.sections.lualine_x = {
-	components.diagnostics,
 	components.lsp,
-	components.spaces,
-	components.location,
 }
 lvim.builtin.lualine.sections.lualine_y = {
-	components.filetype,
+	components.spaces,
 	components.treesitter,
+	components.filetype,
+}
+lvim.builtin.lualine.sections.lualine_z = {
+	components.location,
+	components.scrollbar,
 }
