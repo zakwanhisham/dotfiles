@@ -22,7 +22,3 @@ vim.opt.hlsearch = false
 
 vim.opt.signcolumn = "yes"
 vim.opt.fillchars = { eob = " " }
-
--- general
-lvim.log.level = "info"
-lvim.format_on_save.enabled = true
