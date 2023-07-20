@@ -4,10 +4,11 @@ lvim.builtin.lualine.options.theme = "auto"
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_b = { "branch" }
 lvim.builtin.lualine.sections.lualine_c = {
+	components.diff,
 	components.diagnostics,
 }
 lvim.builtin.lualine.sections.lualine_x = {
-	components.diff,
+	components.lsp,
 	components.spaces,
 	"encoding",
 }
