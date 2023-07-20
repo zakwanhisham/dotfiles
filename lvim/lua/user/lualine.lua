@@ -10,12 +10,11 @@ lvim.builtin.lualine.sections.lualine_x = {
 	components.diff,
 	components.spaces,
 	"encoding",
+}
+lvim.builtin.lualine.sections.lualine_y = {
 	components.filetype,
 	components.treesitter,
 }
-lvim.builtin.lualine.sections.lualine_y = {
-	components.location,
-}
 lvim.builtin.lualine.sections.lualine_z = {
-	components.progress,
+	components.location,
 }
