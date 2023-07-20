@@ -32,7 +32,7 @@ function M.config()
 
 	local filetype = {
 		"filetype",
-		icons_enabled = false,
+		icons_enabled = true,
 	}
 
 	local location = {
