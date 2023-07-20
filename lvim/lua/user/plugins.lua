@@ -53,4 +53,8 @@ lvim.plugins = {
 	{ "mrjones2014/nvim-ts-rainbow" },
 	{ "EdenEast/nightfox.nvim" },
 	{ "mbbill/undotree" },
+	{
+		"ThePrimeagen/harpoon",
+		lazy = false,
+	},
 }
