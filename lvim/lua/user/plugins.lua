@@ -1,6 +1,9 @@
 -- Additional Plugins
 lvim.plugins = {
 	{ "kdheepak/lazygit.nvim" },
+	{ "mrjones2014/nvim-ts-rainbow" },
+	{ "EdenEast/nightfox.nvim" },
+	{ "mbbill/undotree" },
 	{
 		"folke/todo-comments.nvim",
 		event = "BufRead",
@@ -50,9 +53,6 @@ lvim.plugins = {
 			})
 		end,
 	},
-	{ "mrjones2014/nvim-ts-rainbow" },
-	{ "EdenEast/nightfox.nvim" },
-	{ "mbbill/undotree" },
 	{
 		"ThePrimeagen/harpoon",
 		lazy = false,
