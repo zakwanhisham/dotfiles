@@ -3,7 +3,9 @@ lvim.plugins = {
 	{ "kdheepak/lazygit.nvim" },
 	{ "mrjones2014/nvim-ts-rainbow" },
 	{ "EdenEast/nightfox.nvim" },
-	{ "mbbill/undotree" },
+	{ "mbbill/undotree", lazy = false },
+	{ "ThePrimeagen/harpoon", lazy = false },
+	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 	{
 		"folke/todo-comments.nvim",
 		event = "BufRead",
@@ -54,7 +56,10 @@ lvim.plugins = {
 		end,
 	},
 	{
-		"ThePrimeagen/harpoon",
-		lazy = false,
+		"ray-x/lsp_signature.nvim",
+		event = "BufRead",
+		config = function()
+			require("lsp_signature").on_attach()
+		end,
 	},
 }

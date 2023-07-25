@@ -24,11 +24,11 @@ lvim.builtin.lualine.sections.lualine_c = {
 lvim.builtin.lualine.sections.lualine_x = {
 	components.lsp,
 	components.spaces,
-	components.filetype,
+	location,
 }
 lvim.builtin.lualine.sections.lualine_y = {
+	components.filetype,
 	components.treesitter,
-	location,
 }
 lvim.builtin.lualine.sections.lualine_z = {
 	"progress",
