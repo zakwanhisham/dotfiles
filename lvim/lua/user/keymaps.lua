@@ -33,7 +33,7 @@ lvim.builtin.which_key.mappings["s"] = {}
 lvim.builtin.which_key.mappings["h"] = {}
 
 lvim.builtin.which_key.mappings["f"] = {
-	name = "Telescope",
+	name = "Find",
 	f = { "<cmd>Telescope find_files<CR>", "Find Files" },
 	g = { "<cmd>Telescope git_files<CR>", "Git Files" },
 	t = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
