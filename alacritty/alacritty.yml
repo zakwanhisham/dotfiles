@@ -57,7 +57,7 @@ window:
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 10000
+  history: 100000
 
   # Scrolling distance multiplier.
   multiplier: 3
@@ -85,7 +85,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 11.0
+  size: 11.5
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
