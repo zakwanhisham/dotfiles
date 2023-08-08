@@ -9,6 +9,7 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export CARGO=$HOME/.cargo/bin
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO
+export PATH=/home/zakwan/local/llvm16-release/bin:$PATH
 
 # replace "cat" with "bat" when using "man" 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -115,6 +116,11 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/zakwan/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/home/zakwan/.local/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/zakwan/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/zakwan/.local/share/google-cloud-sdk/completion.zsh.inc'; fi
+
 # Starship
 eval "$(starship init zsh)"
-

@@ -52,4 +52,8 @@ formatters.setup({
 		command = "taplo",
 		filetypes = { "toml" },
 	},
+	{
+		command = "nimpretty",
+		filetypes = { "nim" },
+	},
 })
