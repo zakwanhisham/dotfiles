@@ -1,4 +1,3 @@
--- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
 lvim.keys.normal_mode["<S-l>"] = false
 lvim.keys.normal_mode["<S-h>"] = false
@@ -34,14 +33,18 @@ lvim.builtin.which_key.mappings["h"] = {}
 
 lvim.builtin.which_key.mappings["f"] = {
 	name = "Find",
-	f = { "<cmd>Telescope find_files<CR>", "Find Files" },
-	g = { "<cmd>Telescope git_files<CR>", "Git Files" },
-	t = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
+	r = { "<cmd>Telescope oldfiles<CR>", "Recent Files" },
 	p = { "<cmd>Telescope projects<CR>", "Projects" },
 	b = { "<cmd>Telescope buffers<CR>", "Buffer" },
-	h = { "<cmd>Telescope help_tags<CR>", "Help" },
-	r = { "<cmd>Telescope oldfiles<CR>", "Recent Files" },
 	R = { "<cmd>Telescope registers<CR>", "Registers" },
+	s = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Search in current buffer" },
+}
+lvim.builtin.which_key.mappings["s"] = {
+	name = "Search",
+	f = { "<cmd>Telescope find_files<CR>", "Find Files" },
+	h = { "<cmd>Telescope help_tags<CR>", "Help" },
+	w = { "<cmd>Telescope grep_string<CR>", "Current Word" },
+	g = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
 	M = { "<cmd>Telescope man_pages<CR>", "Man Pages" },
 	C = { "<cmd>Telescope commands<CR>", "Commands" },
 }
