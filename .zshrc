@@ -11,10 +11,6 @@ export CARGO=$HOME/.cargo/bin
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO
 export PATH=/home/zakwan/local/llvm16-release/bin:$PATH
 
-# replace "cat" with "bat" when using "man" 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-# man 2 select
-
 ZSH_DISABLE_COMPFIX="true"
 
 # Path to your oh-my-zsh installation.
@@ -67,9 +63,9 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # Changing "ls" to "exa"
-alias ls='exa -al --color=always --group-directories-first --icons --git' # my preferred listing
+alias ls='exa -l --color=always --group-directories-first --icons --git'  # long format
 alias la='exa -a --color=always --group-directories-first --icons --git'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons --git'  # long format
+alias ll='exa -al --color=always --group-directories-first --icons --git' # my preferred listing
 alias lt='exa -aT --color=always --group-directories-first --icons --git' # tree listing
 alias l.='exa -a | rg "^\."'                                              # list all dotfiles & dotfolder
 
@@ -84,29 +80,17 @@ alias monitor='~/.screenlayout/monitor.sh'
 
 # Changing program name
 alias vim='lvim'
-alias z='zellij'
 alias cat='bat'
 alias weather='curl wttr.in'
-alias lg='lazygit'
 alias calendar='cal --monday -3'
-alias code='code-insiders'
 
 # Configuration
-alias i3='lvim ~/.config/i3/'
+alias i3='lvim ~/.config/i3/config'
 alias zshrc='lvim ~/.zshrc'
 alias ala='lvim ~/.config/alacritty/alacritty.yml'
 alias lunar='lvim ~/.config/lvim/config.lua'
 alias neovim='nvim ~/.config/nvim/init.lua'
-alias star='lvim ~/.config/starship.toml'
 alias zel='lvim ~/.config/zellij/config.kdl'
-
-# Navigating folder
-alias personal='cd ~/Documents/Personal'
-alias work='cd ~/Documents/Work'
-alias down='cd ~/Downloads'
-alias doc='cd ~/Documents'
-alias config='cd ~/.config'
-alias dotfile='cd ~/.dotfiles'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
