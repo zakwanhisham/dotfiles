@@ -92,6 +92,10 @@ alias lunar='lvim ~/.config/lvim/config.lua'
 alias neovim='nvim ~/.config/nvim/init.lua'
 alias zel='lvim ~/.config/zellij/config.kdl'
 
+# Set fzf and open in lvim
+alias fzf='fzf --preview="bat --style numbers,changes --color=always {} | head -500"'
+bindkey -s '^f' 'lvim $(fzf)\n'
+
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
 case ":$PATH:" in
