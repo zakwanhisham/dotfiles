@@ -12,7 +12,7 @@ local filetype = {
 	"filetype",
 	padding = {
 		right = 0,
-		left = 0,
+		left = 1,
 	},
 }
 
@@ -37,12 +37,13 @@ lvim.builtin.lualine.sections.lualine_c = {
 }
 lvim.builtin.lualine.sections.lualine_x = {
 	components.diagnostics,
+	components.lsp,
+	components.spaces,
+}
+lvim.builtin.lualine.sections.lualine_y = {
 	filetype,
 	components.treesitter,
 }
-lvim.builtin.lualine.sections.lualine_y = {
-	location,
-}
 lvim.builtin.lualine.sections.lualine_z = {
-	"progress",
+	location,
 }

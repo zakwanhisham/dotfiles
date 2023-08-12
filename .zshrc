@@ -4,14 +4,18 @@ export PATH=/home/zakwan/.local/bin:$PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
-# GO PATH AND RUST PATH
+# CUSTOM PATH
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export CARGO=$HOME/.cargo/bin
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO
-export PATH=/home/zakwan/local/llvm16-release/bin:$PATH
+export CARGO=$HOME/.cargo
+export RUSTUP=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
+export LLVM=$HOME/local/llvm16-release
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$LLVM/bin
 
 ZSH_DISABLE_COMPFIX="true"
+
+## "less" as manpager
+export MANPAGER="less"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -81,6 +85,8 @@ alias monitor='~/.screenlayout/monitor.sh'
 # Changing program name
 alias vim='lvim'
 alias cat='bat'
+alias less='less --use-color -N'
+alias grep='grep -rni --color=always'
 alias weather='curl wttr.in'
 alias calendar='cal --monday -3'
 
