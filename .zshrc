@@ -67,7 +67,7 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # Changing "ls" to "exa"
-alias ls='exa -l --color=always --group-directories-first --icons --git'  # long format
+alias ls='exa --color=always --group-directories-first --icons --git'  # long format
 alias la='exa -a --color=always --group-directories-first --icons --git'  # all files and dirs
 alias ll='exa -al --color=always --group-directories-first --icons --git' # my preferred listing
 alias lt='exa -aT --color=always --group-directories-first --icons --git' # tree listing
