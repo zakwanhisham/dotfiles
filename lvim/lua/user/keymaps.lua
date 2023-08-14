@@ -28,7 +28,7 @@ lvim.keys.normal_mode["<C-w><S-Down>"] = "<C-w>J"
 
 lvim.builtin.which_key.mappings["l"]["f"] = {
 	function()
-		require("lvim.lsp.utils").format({ timeout_ms = 300 })
+		require("lvim.lsp.utils").format({ timeout_ms = 2000 })
 	end,
 	"Format",
 }

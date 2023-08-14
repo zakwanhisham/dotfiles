@@ -86,7 +86,6 @@ alias monitor='~/.screenlayout/monitor.sh'
 alias vim='lvim'
 alias cat='bat'
 alias less='less --use-color -N'
-alias grep='grep -rni --color=always'
 alias weather='curl wttr.in'
 alias calendar='cal --monday -3'
 
