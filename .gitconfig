@@ -1,0 +1,9 @@
+[user]
+	email = hishamzakwan@gmail.com
+	name = zakwan hisham
+[core]
+	editor = lvim
+[merge]
+	tool = meld
+[color]
+	ui = true
