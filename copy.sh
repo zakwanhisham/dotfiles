@@ -10,7 +10,6 @@ source_folders=(
 	"/home/zakwan/.zshrc"
 	"/home/zakwan/.gitconfig"
 	"/home/zakwan/.config/lvim"
-	"/home/zakwan/.config/nvim"
 	"/home/zakwan/.config/alacritty"
 	"/home/zakwan/.config/starship.toml"
 	"/home/zakwan/.config/i3"
