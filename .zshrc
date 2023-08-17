@@ -67,11 +67,11 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # Changing "ls" to "exa"
-alias ls='exa --color=always --group-directories-first --icons --git'  # long format
-alias la='exa -a --color=always --group-directories-first --icons --git'  # all files and dirs
-alias ll='exa -al --color=always --group-directories-first --icons --git' # my preferred listing
-alias lt='exa -aT --color=always --group-directories-first --icons --git' # tree listing
-alias l.='exa -a | rg "^\."'                                              # list all dotfiles & dotfolder
+alias ls='exa --color=always --group-directories-first --icons --git'    # long format
+alias la='ls -a --color=always --group-directories-first --icons --git'  # all files and dirs
+alias ll='ls -al --color=always --group-directories-first --icons --git' # my preferred listing
+alias lt='ls -aT --color=always --group-directories-first --icons --git' # tree listing
+alias l.='ls -a | grep "^\.*"'                                           # list all dotfiles & dotfolder
 
 # For convenience
 alias reload='source ~/.zshrc'
