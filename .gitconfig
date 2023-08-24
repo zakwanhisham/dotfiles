@@ -4,6 +4,10 @@
 [core]
 	editor = lvim
 [merge]
-	tool = meld
+	tool = lvim
 [color]
-	ui = true
+	ui = auto
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
