@@ -5,12 +5,11 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 # CUSTOM PATH
-export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export CARGO=$HOME/.cargo
 export RUSTUP=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
 export LLVM=$HOME/local/llvm16-release
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$LLVM/bin
+export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$LLVM/bin
 
 ZSH_DISABLE_COMPFIX="true"
 
