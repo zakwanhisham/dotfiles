@@ -20,6 +20,11 @@ lvim.plugins = {
 		end,
 	},
 	{
+		"turbio/bracey.vim",
+		cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+		build = "pnpm install --prefix server",
+	},
+	{
 		"romgrk/nvim-treesitter-context",
 		config = function()
 			require("treesitter-context").setup({
