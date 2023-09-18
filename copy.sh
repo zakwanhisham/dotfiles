@@ -15,6 +15,7 @@ source_folders=(
 	"/home/zakwan/.config/i3"
 	"/home/zakwan/.config/zellij"
 	"/home/zakwan/.config/dunst"
+	"/home/zakwan/.config/helix"
 )
 
 # Variable to track errors

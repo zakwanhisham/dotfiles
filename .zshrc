@@ -11,6 +11,7 @@ export RUSTUP=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
 export LLVM=$HOME/local/llvm16-release
 export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$LLVM/bin
 
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 ZSH_DISABLE_COMPFIX="true"
 
 # "less" as manpager
@@ -38,7 +39,7 @@ ENABLE_CORRECTION="true"
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
-COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -46,7 +47,6 @@ COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
     zsh-syntax-highlighting
     zsh-autosuggestions
     )
@@ -66,7 +66,7 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # Changing "ls" to "exa"
-alias ls='exa --color=always --group-directories-first --icons --git' # long format
+alias ls='eza --color=always --group-directories-first --icons --git' # long format
 alias la='ls -a'  # all files and dirs
 alias ll='ls -al' # my preferred listing
 alias lt='ls -aT' # tree listing
@@ -83,6 +83,7 @@ alias monitor='~/.screenlayout/monitor.sh'
 
 # Changing program name
 alias vim='lvim'
+alias hx='helix'
 alias cat='bat'
 alias less='less --use-color -N'
 alias weather='curl wttr.in'
@@ -93,7 +94,7 @@ alias i3='lvim ~/.config/i3/config'
 alias zshrc='lvim ~/.zshrc'
 alias ala='lvim ~/.config/alacritty/alacritty.yml'
 alias lunar='lvim ~/.config/lvim/config.lua'
-alias neovim='nvim ~/.config/nvim/init.lua'
+alias hel='hx ~/.config/helix/config.toml'
 alias zel='lvim ~/.config/zellij/config.kdl'
 
 # Set fzf and open in lvim
@@ -108,9 +109,11 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# nvm end
 
 # Starship
 eval "$(starship init zsh)"

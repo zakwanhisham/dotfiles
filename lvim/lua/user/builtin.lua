@@ -1,6 +1,6 @@
 -- general
 lvim.log.level = "info"
-lvim.format_on_save.enabled = true
+lvim.format_on_save.enabled = false
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
