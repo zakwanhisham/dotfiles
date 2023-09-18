@@ -199,7 +199,7 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 bindsym $mod+w exec /usr/bin/brave
 bindsym $mod+g exec /usr/bin/google-chrome-stable
 bindsym $mod+m exec /usr/bin/thunderbird
-bindsym $mod+c exec /usr/bin/code
+bindsym $mod+c exec /usr/bin/vscodium
 bindsym Print exec flameshot gui
 
 ##########################################
@@ -238,7 +238,7 @@ assign [class="Alacritty"] $ws1
 assign [class="Brave"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="thunderbird"] $ws4
-assign [class="Code"] $ws5
+assign [class="VSCodium"] $ws5
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Alacritty] focus

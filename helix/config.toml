@@ -16,10 +16,11 @@ auto-save = false
 idle-timeout = 400
 completion-trigger-len = 2
 auto-info = true
-rulers = []
+rulers = [80]
 bufferline = "never"
 color-modes = false
 auto-pairs = true
+true-color = true
 
 [editor.statusline]
 left = ["mode", "spinner"]
@@ -31,7 +32,7 @@ mode.insert = "INSERT"
 mode.select = "SELECT"
 
 [editor.lsp]
-display-messages = false
+display-messages = true
 auto-signature-help = true
 display-signature-help-docs = true
 
