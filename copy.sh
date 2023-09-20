@@ -7,8 +7,9 @@ dotfile="/home/zakwan/.dotfiles"
 
 # Array of the source folders
 source_folders=(
+    "/home/zakwan/.gitconfig"
+    "/home/zakwan/.remove.sh"
 	"/home/zakwan/.zshrc"
-	"/home/zakwan/.gitconfig"
 	"/home/zakwan/.config/lvim"
 	"/home/zakwan/.config/alacritty"
 	"/home/zakwan/.config/starship.toml"

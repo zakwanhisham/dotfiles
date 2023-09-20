@@ -18,7 +18,7 @@ completion-trigger-len = 2
 auto-info = true
 rulers = [80]
 bufferline = "never"
-color-modes = false
+color-modes = true
 auto-pairs = true
 true-color = true
 
