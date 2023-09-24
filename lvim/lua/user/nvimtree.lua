@@ -1,4 +1,4 @@
-lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 -- vim.api.nvim_create_autocmd({ "VimEnter" }, {

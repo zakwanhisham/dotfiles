@@ -8,7 +8,6 @@ dotfile="/home/zakwan/.dotfiles"
 # Array of the source folders
 source_folders=(
     "/home/zakwan/.gitconfig"
-    "/home/zakwan/.remove.sh"
 	"/home/zakwan/.zshrc"
 	"/home/zakwan/.config/lvim"
 	"/home/zakwan/.config/alacritty"
@@ -16,7 +15,6 @@ source_folders=(
 	"/home/zakwan/.config/i3"
 	"/home/zakwan/.config/zellij"
 	"/home/zakwan/.config/dunst"
-	"/home/zakwan/.config/helix"
 )
 
 # Variable to track errors

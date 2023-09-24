@@ -83,7 +83,6 @@ alias monitor='~/.screenlayout/monitor.sh'
 
 # Changing program name
 alias vim='lvim'
-alias hx='helix'
 alias cat='bat'
 alias less='less --use-color -N'
 alias weather='curl wttr.in'
@@ -94,7 +93,6 @@ alias i3='lvim ~/.config/i3/config'
 alias zshrc='lvim ~/.zshrc'
 alias ala='lvim ~/.config/alacritty/alacritty.yml'
 alias lunar='lvim ~/.config/lvim/config.lua'
-alias hel='hx ~/.config/helix/config.toml'
 alias zel='lvim ~/.config/zellij/config.kdl'
 
 # Set fzf and open in lvim
