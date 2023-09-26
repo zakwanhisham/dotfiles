@@ -26,13 +26,6 @@ lvim.keys.normal_mode["<C-w><S-Right>"] = "<C-w>L"
 lvim.keys.normal_mode["<C-w><S-Up>"] = "<C-w>K"
 lvim.keys.normal_mode["<C-w><S-Down>"] = "<C-w>J"
 
-lvim.builtin.which_key.mappings["l"]["f"] = {
-	function()
-		require("lvim.lsp.utils").format({ timeout_ms = 2000 })
-	end,
-	"Format",
-}
-
 lvim.builtin.which_key.mappings["e"] = { "<cmd>Ex<CR>", "Explore" }
 
 lvim.builtin.which_key.mappings["b"] = {

@@ -4,7 +4,6 @@ lvim.plugins = {
 	{ "mrjones2014/nvim-ts-rainbow" },
 	{ "EdenEast/nightfox.nvim" },
 	{ "mbbill/undotree", lazy = false },
-	{ "ThePrimeagen/harpoon", lazy = false },
 	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 	{
 		"folke/todo-comments.nvim",
