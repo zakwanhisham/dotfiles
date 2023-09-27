@@ -1,4 +1,3 @@
-reload("user.alpha")
 reload("user.autocommands")
 reload("user.builtin")
 reload("user.colorscheme")

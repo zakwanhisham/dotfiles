@@ -37,20 +37,11 @@ lvim.builtin.which_key.mappings["b"] = {
 
 lvim.builtin.which_key.mappings["f"] = {
 	name = "Find",
+	f = { "<cmd>Telescope find_files<CR>", "Find Files" },
 	r = { "<cmd>Telescope oldfiles<CR>", "Recent Files" },
 	p = { "<cmd>Telescope projects<CR>", "Projects" },
 	b = { "<cmd>Telescope buffers<CR>", "Buffer" },
-	R = { "<cmd>Telescope registers<CR>", "Registers" },
 	s = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Search in current buffer" },
-}
-
-lvim.builtin.which_key.mappings["s"] = {
-	name = "Search",
-	f = { "<cmd>Telescope find_files<CR>", "Find Files" },
-	d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
 	h = { "<cmd>Telescope help_tags<CR>", "Help" },
-	w = { "<cmd>Telescope grep_string<CR>", "Current Word" },
-	g = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
-	M = { "<cmd>Telescope man_pages<CR>", "Man Pages" },
-	C = { "<cmd>Telescope commands<CR>", "Commands" },
+	m = { "<cmd>Telescope man_pages<CR>", "Man Pages" },
 }
