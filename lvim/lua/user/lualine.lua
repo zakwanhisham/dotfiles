@@ -37,8 +37,8 @@ lvim.builtin.lualine.sections.lualine_c = {
 }
 lvim.builtin.lualine.sections.lualine_x = {
 	components.diagnostics,
-	components.lsp,
 	components.spaces,
+	components.lsp,
 }
 lvim.builtin.lualine.sections.lualine_y = {
 	filetype,

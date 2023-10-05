@@ -32,7 +32,7 @@ lvim.builtin.which_key.mappings["b"] = {
 	name = "Buffer",
 	n = { "<cmd>bn<CR>", "Buffer Next" },
 	p = { "<cmd>bp<CR>", "Buffer Previous" },
-	c = { "<cmd>confirm bd<CR>", "Buffer Close" },
+	d = { "<cmd>confirm bd<CR>", "Buffer Delete" },
 }
 
 lvim.builtin.which_key.mappings["f"] = {
@@ -40,8 +40,9 @@ lvim.builtin.which_key.mappings["f"] = {
 	f = { "<cmd>Telescope find_files<CR>", "Find Files" },
 	r = { "<cmd>Telescope oldfiles<CR>", "Recent Files" },
 	p = { "<cmd>Telescope projects<CR>", "Projects" },
-	b = { "<cmd>Telescope buffers<CR>", "Buffer" },
 	s = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Search in current buffer" },
 	h = { "<cmd>Telescope help_tags<CR>", "Help" },
 	m = { "<cmd>Telescope man_pages<CR>", "Man Pages" },
 }
+
+lvim.keys.normal_mode["<leader><leader>"] = "<cmd>Telescope buffers<CR>"

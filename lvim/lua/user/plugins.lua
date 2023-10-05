@@ -2,7 +2,7 @@
 lvim.plugins = {
 	{ "kdheepak/lazygit.nvim" },
 	{ "mrjones2014/nvim-ts-rainbow" },
-	{ "EdenEast/nightfox.nvim" },
+	{ "EdenEast/nightfox.nvim", priority = 1000 },
 	{ "mbbill/undotree", lazy = false },
 	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 	{
