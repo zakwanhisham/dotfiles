@@ -23,7 +23,7 @@ nls.setup {
     sources = {
         -- formatting
         formatting.prettierd.with {
-            extra_filetypes = { "html", "css", "json", "markdown" },
+            extra_filetypes = { "html", "css", "json", "markdown", "yaml" },
         },
         formatting.eslint_d.with {
             condition = function(utils)
@@ -32,7 +32,9 @@ nls.setup {
         },
         formatting.stylua,
         formatting.shfmt,
-        formatting.clang_format,
+        formatting.clang_format.with {
+            extra_filetypes = { "h", "hpp", "cpp" },
+        },
         -- linting
         linter.eslint_d.with {
             condition = function(utils)
@@ -40,6 +42,8 @@ nls.setup {
             end,
         },
         linter.golangci_lint,
-        linter.clang_check,
+        linter.clang_check.with {
+            extra_filetypes = { "h", "hpp", "cpp" },
+        },
     },
 }

@@ -1,5 +1,3 @@
--- TODO: Need to make the ideal keymapping and not using this one except for the lsp one
--- What I meant was the lsp keymap
 require "core.options"
 require "core.keymaps"
 require "core.autocommand"
@@ -20,14 +18,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
---    require("lazy").setup("plugins")
 require("lazy").setup({
-    -- NOTE: First, some plugins that don't require any configuration
 
     -- Git related plugins
     "tpope/vim-fugitive",
@@ -149,11 +140,6 @@ require("lazy").setup({
         opts = {},
     },
 
-    --[[
-  TODO: need to add formatter and linter plugins
-  Need to use the "nvimtools/none-ls.nvim".
-  It is the same as "null-ls" but maintain by the community
-  ]]
     {
         "nvimtools/none-ls.nvim",
         lazy = true,
@@ -177,8 +163,8 @@ require("lazy").setup({
     -- "gc" to comment visual regions/lines
     { "numToStr/Comment.nvim", opts = {} },
 
-    -- Fuzzy Finder (files, lsp, etc)
     {
+        -- Fuzzy Finder (files, lsp, etc)
         "nvim-telescope/telescope.nvim",
         -- branch = "0.1.x",
         tag = "0.1.3",
