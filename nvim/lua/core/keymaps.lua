@@ -20,3 +20,6 @@ vim.keymap.set("n", "<leader>bn", "<CMD>bn<CR>", { desc = "Buffer Next" })
 vim.keymap.set("n", "<leader>bd", "<CMD>bd<CR>", { desc = "Buffer Delete" })
 
 vim.keymap.set("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Undotree" })
+
+vim.keymap.set("n", "<leader>w", "<CMD>w<CR>", { desc = "Save" })
+vim.keymap.set("n", "<leader>q", "<CMD>q<CR>", { desc = "Quit" })

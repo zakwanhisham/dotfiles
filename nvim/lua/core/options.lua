@@ -58,7 +58,7 @@ vim.o.ignorecase = true
 -- temp files
 vim.o.swapfile = false
 vim.o.backup = false
-vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undodir = os.getenv "HOME" .. "/.vim/undodir"
 vim.o.undofile = true
 vim.o.writebackup = false
 
@@ -111,9 +111,9 @@ vim.o.ruler = true
 vim.o.linebreak = true
 
 -- hightlight yanked text for 200ms using the "Visual" hightlighting group
-vim.cmd([[
+vim.cmd [[
     augroup hightlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", time=200})
     augroup END
-]])
+]]

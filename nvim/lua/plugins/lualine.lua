@@ -1,53 +1,57 @@
 local lsp = {
-  function()
-    local msg = "No Active LSP"
-    local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then
-      return msg
-    end
+    function()
+        local msg = "No Active LSP"
+        local buf_clients = vim.lsp.get_active_clients { bufnr = 0 }
+        if #buf_clients == 0 then
+            return msg
+        end
 
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return string.format("[%s]",client.name)
-      end
-    end
-    return msg
-  end
+        -- local buf_ft = vim.bo.filetype
+        local buf_client_names = {}
+
+        for _, client in pairs(buf_clients) do
+            if client.name ~= "null-ls" then
+                table.insert(buf_client_names, client.name)
+            end
+        end
+
+        local unique_client_names = table.concat(buf_client_names, ", ")
+        local language_servers = string.format("[%s]", unique_client_names)
+
+        return language_servers
+    end,
 }
 
 local location = {
-  "location",
-  padding = {
-    right = 1,
-    left = 0,
-  },
+    "location",
+    padding = {
+        right = 1,
+        left = 0,
+    },
 }
 
 local branch = {
-  "branch",
-  icons_enabled = false,
-  padding = {
-    right = 1,
-    left = 1,
-  },
-
+    "branch",
+    icons_enabled = false,
+    padding = {
+        right = 1,
+        left = 1,
+    },
 }
 
 require("lualine").setup {
-  options = {
-    icons_enabled = true,
-    theme = "auto",
-    component_separators = "",
-    section_separators = "",
-  },
-  sections = {
-    lualine_a = { "mode" },
-    lualine_b = { branch },
-    lualine_c = { "diff", "%=", { "filename" } },
-    lualine_x = { "diagnostics", lsp },
-    lualine_y = { "filetype" },
-    lualine_z = { location }
-  },
+    options = {
+        icons_enabled = true,
+        theme = "auto",
+        component_separators = "",
+        section_separators = "",
+    },
+    sections = {
+        lualine_a = { "mode" },
+        lualine_b = { branch },
+        lualine_c = { "diff", "%=", { "filename" } },
+        lualine_x = { "diagnostics", lsp },
+        lualine_y = { "filetype" },
+        lualine_z = { location },
+    },
 }
