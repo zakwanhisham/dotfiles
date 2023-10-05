@@ -9,7 +9,8 @@ export GOPATH=$HOME/go
 export CARGO=$HOME/.cargo
 export RUSTUP=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
 export LLVM=$HOME/local/llvm16-release
-export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$LLVM/bin
+export BOB=$HOME/.local/share/bob/nvim-bin
+export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$LLVM/bin:$BOB
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 ZSH_DISABLE_COMPFIX="true"
@@ -91,13 +92,12 @@ alias cal='cal --monday -3'
 alias i3='nvim ~/.config/i3/config'
 alias zshrc='nvim ~/.zshrc'
 alias ala='nvim ~/.config/alacritty/alacritty.yml'
-alias lunar='lvim ~/.config/lvim/config.lua'
 alias neo='nvim ~/.config/nvim/init.lua'
 alias zel='nvim ~/.config/zellij/config.kdl'
 
 # Set fzf and open in lvim
 alias fzf='fzf --preview="bat --style numbers,changes --color=always {} | head -500"'
-bindkey -s '^f' 'lvim $(fzf)\n'
+bindkey -s '^f' 'nvim $(fzf)\n'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"

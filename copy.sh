@@ -9,7 +9,6 @@ dotfile="/home/zakwan/.dotfiles"
 source_folders=(
 	"/home/zakwan/.gitconfig"
 	"/home/zakwan/.zshrc"
-	"/home/zakwan/.config/lvim"
 	"/home/zakwan/.config/nvim"
 	"/home/zakwan/.config/alacritty"
 	"/home/zakwan/.config/starship.toml"
