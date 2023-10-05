@@ -1,13 +1,12 @@
 local lsp = {
     function()
-        local msg = "No Active LSP"
         local buf_clients = vim.lsp.get_active_clients { bufnr = 0 }
+        local msg = "No Active LSP"
+        local buf_client_names = {}
+
         if #buf_clients == 0 then
             return msg
         end
-
-        -- local buf_ft = vim.bo.filetype
-        local buf_client_names = {}
 
         for _, client in pairs(buf_clients) do
             if client.name ~= "null-ls" then
@@ -20,6 +19,23 @@ local lsp = {
 
         return language_servers
     end,
+    padding = {
+        right = 1,
+        left = 0,
+    },
+}
+
+local treesitter = {
+    function()
+        if next(vim.treesitter.highlighter.active) ~= nil then
+            return " "
+        end
+        return " "
+    end,
+    padding = {
+        right = 0,
+        left = 0,
+    },
 }
 
 local location = {
@@ -51,7 +67,7 @@ require("lualine").setup {
         lualine_b = { branch },
         lualine_c = { "diff", "%=", { "filename" } },
         lualine_x = { "diagnostics", lsp },
-        lualine_y = { "filetype" },
+        lualine_y = { "filetype", treesitter },
         lualine_z = { location },
     },
 }

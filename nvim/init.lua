@@ -68,8 +68,16 @@ require("lazy").setup({
         end,
     },
 
-    -- Useful plugin to show you pending keybinds.
-    { "folke/which-key.nvim", opts = {} },
+    {
+        -- Useful plugin to show you pending keybinds.
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {},
+    },
 
     {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -91,7 +99,7 @@ require("lazy").setup({
     {
         -- Set lualine as statusline
         "nvim-lualine/lualine.nvim",
-        -- See `:help lualine.txt`
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require "plugins.lualine"
         end,
@@ -123,6 +131,20 @@ require("lazy").setup({
         config = function()
             require "plugins.context"
         end,
+    },
+
+    {
+        -- autoclose and autorename html tag
+        "windwp/nvim-ts-autotag",
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end,
+    },
+
+    {
+        -- commentstring option based on the cursor location
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        event = "BufRead",
     },
 
     {

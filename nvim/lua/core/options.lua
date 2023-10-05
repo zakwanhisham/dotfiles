@@ -93,17 +93,11 @@ vim.o.showmode = false
 vim.o.showcmd = true
 
 -- sign
--- vim.o.fillchars.eob = " "
 vim.o.signcolumn = "yes"
 vim.o.showtabline = 0
 vim.o.cursorline = true
 
--- don't pass message to |ins-completion-menu|
--- vim.o.shortmess:append("c")
--- vim.o.whichwrap:append("<,>,[,],h,l")
--- vim.o.iskeyword:append("-")
--- vim.o.formatoptions:remove({"c", "r", "o"})
-
+-- misc
 vim.o.conceallevel = 0
 vim.o.pumheight = 10
 vim.o.laststatus = 3

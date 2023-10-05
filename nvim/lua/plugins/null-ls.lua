@@ -36,12 +36,12 @@ nls.setup {
             extra_filetypes = { "h", "hpp", "cpp" },
         },
         -- linting
+        linter.golangci_lint,
         linter.eslint_d.with {
             condition = function(utils)
                 return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs" }
             end,
         },
-        linter.golangci_lint,
         linter.clang_check.with {
             extra_filetypes = { "h", "hpp", "cpp" },
         },
