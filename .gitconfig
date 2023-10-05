@@ -2,9 +2,9 @@
 	email = hishamzakwan@gmail.com
 	name = zakwan hisham
 [core]
-	editor = lvim
+	editor = nvim
 [merge]
-	tool = lvim
+	tool = nvim
 [color]
 	ui = auto
 [init]
