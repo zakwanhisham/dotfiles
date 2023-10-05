@@ -15,3 +15,4 @@ Can use `ansible` or make a shell script, but to lazy to do it right now, maybe 
 - Need to configure back `arch-linux` using the `arch-wiki`. Maybe can do after finishing the job?
 - Next time just use `bash` instead of `zsh`
   - Use the simplest thing to make the system faster and to avoid things from breaking
+- After finishing the nvim config use bob as the neovim source, easier to update and source

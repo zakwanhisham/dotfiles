@@ -57,9 +57,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='lvim'
+  export EDITOR='nvim'
 else
-  export EDITOR='lvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -82,18 +82,18 @@ alias laptop='~/.screenlayout/laptop.sh'
 alias monitor='~/.screenlayout/monitor.sh'
 
 # Changing program name
-alias vim='lvim'
 alias cat='bat'
 alias less='less --use-color -N'
 alias weather='curl wttr.in'
-alias calendar='cal --monday -3'
+alias cal='cal --monday -3'
 
 # Configuration
-alias i3='lvim ~/.config/i3/config'
-alias zshrc='lvim ~/.zshrc'
-alias ala='lvim ~/.config/alacritty/alacritty.yml'
+alias i3='nvim ~/.config/i3/config'
+alias zshrc='nvim ~/.zshrc'
+alias ala='nvim ~/.config/alacritty/alacritty.yml'
 alias lunar='lvim ~/.config/lvim/config.lua'
-alias zel='lvim ~/.config/zellij/config.kdl'
+alias neo='nvim ~/.config/nvim/init.lua'
+alias zel='nvim ~/.config/zellij/config.kdl'
 
 # Set fzf and open in lvim
 alias fzf='fzf --preview="bat --style numbers,changes --color=always {} | head -500"'
