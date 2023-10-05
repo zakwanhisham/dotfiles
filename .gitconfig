@@ -3,6 +3,7 @@
 	name = zakwan hisham
 [core]
 	editor = nvim
+	pager = less
 [merge]
 	tool = nvim
 [color]
