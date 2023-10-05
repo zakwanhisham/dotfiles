@@ -95,9 +95,9 @@ alias ala='nvim ~/.config/alacritty/alacritty.yml'
 alias neo='nvim ~/.config/nvim/init.lua'
 alias zel='nvim ~/.config/zellij/config.kdl'
 
-# Set fzf and open in lvim
-alias fzf='fzf --preview="bat --style numbers,changes --color=always {} | head -500"'
-bindkey -s '^f' 'nvim $(fzf)\n'
+# Quickly change to directory
+alias sd='cd ~ && cd $(find * -type d | fzf --reverse --multi --height 50%)'
+bindkey -s '^f' 'sd \n'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
