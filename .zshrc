@@ -96,7 +96,7 @@ alias neo='nvim ~/.config/nvim/init.lua'
 alias zel='nvim ~/.config/zellij/config.kdl'
 
 # Quickly change to directory
-alias search='cd $(find ~ -name "*" -type d | fzf --color=dark --height 10%)'
+alias search='cd $(find ~ -name "*" -type d | fzf --reverse --height 10%)'
 bindkey -s '^f' 'search \n'
 
 # pnpm
