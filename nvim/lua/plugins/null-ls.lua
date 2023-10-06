@@ -22,16 +22,19 @@ nls.setup {
     root_dir = nls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
     sources = {
         -- formatting
+        formatting.stylua,
+        formatting.shfmt,
         formatting.prettierd.with {
             extra_filetypes = { "html", "css", "json", "markdown", "yaml" },
+            condition = function(utils)
+                return not utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs" }
+            end,
         },
         formatting.eslint_d.with {
             condition = function(utils)
                 return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs" }
             end,
         },
-        formatting.stylua,
-        formatting.shfmt,
         formatting.clang_format.with {
             extra_filetypes = { "h", "hpp", "cpp" },
         },
@@ -40,6 +43,9 @@ nls.setup {
         linter.eslint_d.with {
             condition = function(utils)
                 return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs" }
+            end,
+            filter = function(diagnostics)
+                return diagnostics.code ~= "prettierd/prettierd"
             end,
         },
         linter.clang_check.with {
