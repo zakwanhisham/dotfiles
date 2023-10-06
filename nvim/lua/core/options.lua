@@ -58,8 +58,7 @@ vim.o.ignorecase = true
 -- temp files
 vim.o.swapfile = false
 vim.o.backup = false
-vim.o.undodir = os.getenv "HOME" .. "/.vim/undodir"
-vim.o.undofile = true
+vim.o.undofile = false
 vim.o.writebackup = false
 
 -- set highlight on search
@@ -103,4 +102,3 @@ vim.o.pumheight = 10
 vim.o.laststatus = 3
 vim.o.ruler = true
 vim.o.linebreak = true
-
