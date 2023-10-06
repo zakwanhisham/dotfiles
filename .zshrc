@@ -96,8 +96,8 @@ alias neo='nvim ~/.config/nvim/init.lua'
 alias zel='nvim ~/.config/zellij/config.kdl'
 
 # Quickly change to directory
-alias sd='cd ~ && cd $(find * -type d | fzf --reverse --multi --height 50%)'
-bindkey -s '^f' 'sd \n'
+alias search='cd $(find ~ -name "*" -type d | fzf --color=dark --height 10%)'
+bindkey -s '^f' 'search \n'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"

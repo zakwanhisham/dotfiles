@@ -34,7 +34,7 @@ local treesitter = {
     end,
     padding = {
         right = 0,
-        left = 0,
+        left = 1,
     },
 }
 
@@ -55,6 +55,15 @@ local branch = {
     },
 }
 
+local filetype = {
+    "filetype",
+    icons_enabled = true,
+    padding = {
+        right = 0,
+        left = 1,
+    },
+}
+
 require("lualine").setup {
     options = {
         icons_enabled = true,
@@ -67,7 +76,7 @@ require("lualine").setup {
         lualine_b = { branch },
         lualine_c = { "diff", "%=", { "filename" } },
         lualine_x = { "diagnostics", lsp },
-        lualine_y = { "filetype", treesitter },
+        lualine_y = { filetype, treesitter },
         lualine_z = { location },
     },
 }
