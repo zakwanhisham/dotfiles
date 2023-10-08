@@ -15,7 +15,7 @@ shell:
   args:
     - -l
     - -c
-    - zellij attach --index 0 || zellij
+    - tmux attach || tmux
 
 window:
   # Window dimensions (changes require restart)
