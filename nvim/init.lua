@@ -119,12 +119,6 @@ require("lazy").setup({
     { "mbbill/undotree", lazy = false },
 
     {
-        -- vim tmux navigator
-        "christoomey/vim-tmux-navigator",
-        lazy = false,
-    },
-
-    {
         -- Live serve
         "turbio/bracey.vim",
         cmd = { "Bracey", "BraceyStop", "BraceyReload", "BraceyEval" },
