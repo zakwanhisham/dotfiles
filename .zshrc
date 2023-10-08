@@ -93,7 +93,7 @@ alias i3='nvim ~/.config/i3/config'
 alias zshrc='nvim ~/.zshrc'
 alias ala='nvim ~/.config/alacritty/alacritty.yml'
 alias neo='nvim ~/.config/nvim/init.lua'
-alias zel='nvim ~/.config/zellij/config.kdl'
+alias tconf='nvim ~/.config/tmux/tmux.conf'
 
 # Quickly change to directory
 alias search='cd && cd $(fd --hidden --type d --base-directory ~ | fzf --reverse --height 20%)'
