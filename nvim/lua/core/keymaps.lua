@@ -8,9 +8,11 @@ vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = tr
 -- File Explorer
 vim.keymap.set("n", "<leader>e", "<CMD>Ex<CR>", { desc = "File Explorer" })
 
--- Move to right/left window
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to the right window" })
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to the left window" })
+-- Move to right/left/up/down window
+vim.keymap.set("n", "<C-h>", "<CMD> TmuxNavigateLeft<CR>", { desc = "window left" })
+vim.keymap.set("n", "<C-l>", "<CMD> TmuxNavigateRight<CR>", { desc = "window right" })
+vim.keymap.set("n", "<C-j>", "<CMD> TmuxNavigateDown<CR>", { desc = "window down" })
+vim.keymap.set("n", "<C-h>", "<CMD> TmuxNavigateUp<CR>", { desc = "window up" })
 
 -- Move current line up/down
 vim.keymap.set("n", "<A-j>", "<CMD>m .+1<CR>==", { desc = "Move current line up" })
