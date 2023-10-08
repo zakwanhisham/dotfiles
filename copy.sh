@@ -9,11 +9,11 @@ dotfile="/home/zakwan/.dotfiles"
 source_folders=(
 	"/home/zakwan/.gitconfig"
 	"/home/zakwan/.zshrc"
+	"/home/zakwan/.config/i3"
 	"/home/zakwan/.config/nvim"
 	"/home/zakwan/.config/alacritty"
+	"/home/zakwan/.config/tmux"
 	"/home/zakwan/.config/starship.toml"
-	"/home/zakwan/.config/i3"
-	"/home/zakwan/.config/zellij"
 	"/home/zakwan/.config/dunst"
 )
 
