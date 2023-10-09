@@ -8,10 +8,14 @@ mason_nls.setup {
         "prettierd",
         "stylua",
         "eslint_d",
+        "gofumpt",
+        "goimports",
+        "golines",
         "golangci-lint",
         "shfmt",
         "clang-format",
         "clang-check",
+        "taplo",
     },
 }
 
@@ -24,6 +28,10 @@ nls.setup {
         -- formatting
         formatting.stylua,
         formatting.shfmt,
+        formatting.taplo,
+        formatting.gofumpt,
+        formatting.goimports,
+        formatting.golines,
         formatting.prettierd.with {
             extra_filetypes = { "html", "css", "json", "markdown", "yaml" },
             condition = function(utils)

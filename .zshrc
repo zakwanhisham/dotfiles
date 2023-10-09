@@ -15,6 +15,9 @@ export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$LLVM/bin:$BOB
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 ZSH_DISABLE_COMPFIX="true"
 
+# Customize fzf theme
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#78a9ff --color=fg+:#dfdfe0,bg+:#282828,hl+:#33b1ff --color=info:#3ddbd9,prompt:#ee5396,pointer:#be95ff --color=marker:#25be6a,spinner:#be95ff,header:#ff7eb6'
+
 # "less" as manpager
 export MANPAGER="less"
 
@@ -96,7 +99,7 @@ alias neo='nvim ~/.config/nvim/init.lua'
 alias tconf='nvim ~/.config/tmux/tmux.conf'
 
 # Quickly change to directory
-alias search='cd && cd $(fd --hidden --type d --base-directory ~ | fzf --reverse --height 20%)'
+alias search='cd && cd $(fd --hidden --type d --base-directory ~ | fzf --height 20%)'
 bindkey -s '^f' 'search \n'
 
 # pnpm
