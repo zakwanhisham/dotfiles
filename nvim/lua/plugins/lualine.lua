@@ -64,6 +64,30 @@ local filetype = {
     },
 }
 
+local diagnostics = {
+    "diagnostics",
+    symbols = {
+        error = " ",
+        warn = " ",
+        info = " ",
+        hint = "󰌶 ",
+    },
+}
+
+local filename = {
+    "filename",
+    path = 3,
+}
+
+local diff = {
+    "diff",
+    symbols = {
+        added = " ",
+        modified = " ",
+        removed = " ",
+    },
+}
+
 require("lualine").setup {
     options = {
         icons_enabled = true,
@@ -74,9 +98,17 @@ require("lualine").setup {
     sections = {
         lualine_a = { "mode" },
         lualine_b = { branch },
-        lualine_c = { "diff", "%=", { "filename" } },
-        lualine_x = { "diagnostics", lsp },
+        lualine_c = { diff, "%=", filename },
+        lualine_x = { diagnostics, lsp },
         lualine_y = { filetype, treesitter },
         lualine_z = { location },
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_v = {},
+        lualine_y = {},
+        lualine_z = {},
+        lualine_c = {},
+        lualine_x = {},
     },
 }
