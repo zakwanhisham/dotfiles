@@ -12,9 +12,9 @@ source_folders=(
 	"/home/zakwan/.config/i3"
 	"/home/zakwan/.config/nvim"
 	"/home/zakwan/.config/alacritty"
-	"/home/zakwan/.config/tmux"
 	"/home/zakwan/.config/starship.toml"
 	"/home/zakwan/.config/dunst"
+	"/home/zakwan/.config/tmux"
 )
 
 # Variable to track errors
