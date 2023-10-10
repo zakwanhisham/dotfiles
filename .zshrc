@@ -90,6 +90,7 @@ alias cat='bat'
 alias less='less --use-color -N'
 alias weather='curl wttr.in'
 alias cal='cal --monday -3'
+alias news='hackernews_tui'
 
 # Configuration
 alias i3='nvim ~/.config/i3/config'
@@ -99,7 +100,7 @@ alias neo='nvim ~/.config/nvim/init.lua'
 alias tconf='nvim ~/.config/tmux/tmux.conf'
 
 # Quickly change to directory
-alias search='cd && cd $(fd --hidden --type d --base-directory ~ | fzf --height 20%)'
+alias search='cd && cd $(fd --hidden --type d --base-directory ~ | fzf --reverse --height 20%)'
 bindkey -s '^f' 'search \n'
 
 # pnpm

@@ -76,7 +76,7 @@ local diagnostics = {
 
 local filename = {
     "filename",
-    path = 3,
+    path = 1,
 }
 
 local diff = {
@@ -90,8 +90,7 @@ local diff = {
 
 require("lualine").setup {
     options = {
-        icons_enabled = true,
-        theme = "auto",
+        theme = "carbonfox",
         component_separators = "",
         section_separators = "",
     },
