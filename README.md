@@ -16,3 +16,7 @@ Can use `ansible` or make a shell script, but to lazy to do it right now, maybe 
 - Next time just use `bash` instead of `zsh`
   - Use the simplest thing to make the system faster and to avoid things from breaking
 - After finishing the nvim config use bob as the neovim source, easier to update and source
+
+## TODO
+
+- [ ] Need to make the session to be able to restore even when have multiple session
