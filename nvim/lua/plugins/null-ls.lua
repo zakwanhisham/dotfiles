@@ -35,12 +35,12 @@ nls.setup {
         formatting.prettierd.with {
             extra_filetypes = { "html", "css", "json", "markdown", "yaml" },
             condition = function(utils)
-                return not utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs" }
+                return not utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
             end,
         },
         formatting.eslint_d.with {
             condition = function(utils)
-                return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs" }
+                return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
             end,
         },
         formatting.clang_format.with {
@@ -50,7 +50,7 @@ nls.setup {
         linter.golangci_lint,
         linter.eslint_d.with {
             condition = function(utils)
-                return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs" }
+                return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
             end,
             filter = function(diagnostics)
                 return diagnostics.code ~= "prettierd/prettierd"
