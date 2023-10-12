@@ -20,6 +20,12 @@ workspace_layout default
 # extra options for windows: #
 ##############################
 
+# default maximize border
+default_border normal
+
+# default floating border
+default_floating_border normal
+
 # border indicator on windows:
 title_align center
 
