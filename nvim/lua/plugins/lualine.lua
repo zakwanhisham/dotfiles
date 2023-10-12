@@ -67,10 +67,10 @@ local filetype = {
 local diagnostics = {
     "diagnostics",
     symbols = {
-        error = " ",
-        warn = " ",
-        info = " ",
-        hint = "󰌶 ",
+        error = " ",
+        warn = " ",
+        info = "󰋼 ",
+        hint = "󰌵 ",
     },
 }
 
@@ -82,9 +82,9 @@ local filename = {
 local diff = {
     "diff",
     symbols = {
-        added = " ",
-        modified = " ",
-        removed = " ",
+        added = "󰐖 ",
+        modified = "󱗜 ",
+        removed = "󰍵 ",
     },
 }
 
@@ -104,10 +104,10 @@ require("lualine").setup {
     },
     inactive_sections = {
         lualine_a = {},
-        lualine_v = {},
+        lualine_b = {},
+        lualine_c = { "filename" },
+        lualine_x = { "filetype" },
         lualine_y = {},
         lualine_z = {},
-        lualine_c = {},
-        lualine_x = {},
     },
 }
