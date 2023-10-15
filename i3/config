@@ -151,6 +151,8 @@ bindsym $mod+g exec /usr/bin/google-chrome-stable
 bindsym $mod+m exec /usr/bin/thunderbird
 bindsym Print exec flameshot gui
 
+bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
+
 ##########################################
 # configuration for workspace behaviour: #
 ##########################################

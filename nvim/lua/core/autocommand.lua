@@ -15,12 +15,12 @@ vim.cmd [[
 ]]
 
 -- open netrw when there's no file
-vim.cmd [[
-    augroup ProjectDrawer
-        autocmd!
-        au VimEnter * if argc() == 0 | Explore! | endif
-    augroup END
-]]
+-- vim.cmd [[
+--     augroup ProjectDrawer
+--         autocmd!
+--         au VimEnter * if argc() == 0 | Explore! | endif
+--     augroup END
+-- ]]
 
 --[[ vim.api.nvim_create_autocmd("BufWinEnter", {
     pattern = { "*.sh", "*.zsh" },
