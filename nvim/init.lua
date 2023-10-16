@@ -68,16 +68,16 @@ require("lazy").setup({
         end,
     },
 
-    {
-        -- Useful plugin to show you pending keybinds.
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-        opts = {},
-    },
+    -- {
+    --     -- Useful plugin to show you pending keybinds.
+    --     "folke/which-key.nvim",
+    --     event = "VeryLazy",
+    --     init = function()
+    --         vim.o.timeout = true
+    --         vim.o.timeoutlen = 300
+    --     end,
+    --     opts = {},
+    -- },
 
     {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -117,13 +117,6 @@ require("lazy").setup({
 
     -- Undotree
     { "mbbill/undotree", lazy = false },
-
-    {
-        -- Live serve
-        "turbio/bracey.vim",
-        cmd = { "Bracey", "BraceyStop", "BraceyReload", "BraceyEval" },
-        build = "pnpm install --prefix server",
-    },
 
     {
         -- treesitter context
