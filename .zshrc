@@ -71,10 +71,6 @@ fi
 
 # Changing "ls" to "exa"
 alias ls='eza --color=always --group-directories-first --icons --git' # long format
-alias la='ls -a'  # all files and dirs
-alias ll='ls -al' # my preferred listing
-alias lt='ls -aT' # tree listing
-alias l.='ls -a | grep "^\.*"' # list all dotfiles & dotfolder
 
 # For convenience
 alias reload='source ~/.zshrc'
