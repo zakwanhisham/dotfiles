@@ -28,3 +28,7 @@ vim.keymap.set("n", "<leader>bd", "<CMD>bd<CR>", { desc = "Buffer Delete" })
 
 -- Undotree
 vim.keymap.set("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Undotree" })
+
+-- Comment
+vim.keymap.set("n", "<leader>/", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", { desc = "Toggle Comment" })
+vim.keymap.set("v", "<leader>/", "<esc><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = "Toggle Comment" })

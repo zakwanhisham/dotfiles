@@ -181,23 +181,12 @@ workspace $ws8 output DP1
 workspace $ws9 output DP1
 workspace $ws10 output DP1
 
-# bind program to workspace and focus to them on startup:
-assign [class="Alacritty"] $ws1
-assign [class="Brave"] $ws2
-assign [class="Google-chrome"] $ws3
-assign [class="thunderbird"] $ws4
-
-# automatic set focus new window if it opens on another workspace then the current:
-for_window [class=Alacritty] focus
-for_window [class=Brave] focus
-for_window [class=Google-chrome] focus
-
 ##############
 # compositor # 
 ##############
 
 # transparency
-exec_always --no-startup-id picom -b
+# exec_always --no-startup-id picom -b
 
 #############################################
 # autostart applications/services on login: #
