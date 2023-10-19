@@ -186,7 +186,7 @@ workspace $ws10 output DP1
 ##############
 
 # transparency
-# exec_always --no-startup-id picom -b
+exec_always --no-startup-id picom -b
 
 #############################################
 # autostart applications/services on login: #

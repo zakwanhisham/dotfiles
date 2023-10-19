@@ -12,14 +12,30 @@ require("telescope").setup {
             },
         },
     },
+    extensions = {
+        file_browser = {
+            -- theme = "auto",
+            initial_mode = "normal",
+            hijack_netrw = true,
+            mappings = {
+                i = {
+                    ["<C-j>"] = actions.move_selection_next,
+                    ["<C-k>"] = actions.move_selection_previous,
+                },
+            },
+        },
+    },
 }
 
 -- Enable telescope fzf native, if installed
 pcall(require("telescope").load_extension, "fzf")
 
+-- Enable telescope file browser
+pcall(require("telescope").load_extension, "file_browser")
+
 -- See `:help telescope.builtin`
-vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, { desc = "Oldfiles" })
 vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "Buffer" })
+vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, { desc = "Oldfiles" })
 vim.keymap.set("n", "<leader>fg", require("telescope.builtin").git_files, { desc = "Git Files" })
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Help" })

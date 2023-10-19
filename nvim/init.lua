@@ -68,16 +68,17 @@ require("lazy").setup({
         end,
     },
 
-    -- {
-    --     -- Useful plugin to show you pending keybinds.
-    --     "folke/which-key.nvim",
-    --     event = "VeryLazy",
-    --     init = function()
-    --         vim.o.timeout = true
-    --         vim.o.timeoutlen = 300
-    --     end,
-    --     opts = {},
-    -- },
+    --[[ {
+      NOTE: Don't know yet if want to use this plugins
+        -- Useful plugin to show you pending keybinds.
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {},
+    }, ]]
 
     {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -127,20 +128,6 @@ require("lazy").setup({
     },
 
     {
-        -- autoclose and autorename html tag
-        "windwp/nvim-ts-autotag",
-        config = function()
-            require("nvim-ts-autotag").setup()
-        end,
-    },
-
-    {
-        -- commentstring option based on the cursor location
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        event = "BufRead",
-    },
-
-    {
         -- nvim colorizer
         "norcalli/nvim-colorizer.lua",
         config = function()
@@ -176,13 +163,19 @@ require("lazy").setup({
     },
 
     -- "gc" to comment visual regions/lines
-    { "numToStr/Comment.nvim", opts = {} },
+    {
+        "numToStr/Comment.nvim",
+        config = function()
+            require "plugins.comment"
+        end,
+        opts = {},
+    },
 
     {
         -- Fuzzy Finder (files, lsp, etc)
         "nvim-telescope/telescope.nvim",
-        -- branch = "0.1.x",
-        tag = "0.1.3",
+        branch = "0.1.x",
+        -- tag = "0.1.4",
         dependencies = {
             "nvim-lua/plenary.nvim",
             -- Fuzzy Finder Algorithm which requires local dependencies to be built.
@@ -197,6 +190,9 @@ require("lazy").setup({
                     return vim.fn.executable "make" == 1
                 end,
             },
+            {
+                "nvim-telescope/telescope-file-browser.nvim",
+            },
         },
         config = function()
             require "plugins.telescope"
@@ -208,6 +204,8 @@ require("lazy").setup({
         "nvim-treesitter/nvim-treesitter",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
+            "JoosepAlviste/nvim-ts-context-commentstring",
+            "windwp/nvim-ts-autotag",
         },
         build = ":TSUpdate",
         config = function()
