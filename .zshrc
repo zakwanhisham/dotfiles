@@ -8,9 +8,8 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 export GOPATH=$HOME/go
 export CARGO=$HOME/.cargo
 export RUSTUP=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
-export LLVM=$HOME/local/llvm16-release
 export BOB=$HOME/.local/share/bob/nvim-bin
-export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$LLVM/bin:$BOB
+export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$BOB
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 ZSH_DISABLE_COMPFIX="true"
@@ -87,6 +86,7 @@ alias less='less --use-color -N'
 alias weather='curl wttr.in'
 alias cal='cal --monday -3'
 alias news='hackernews_tui'
+alias diff='nvim -d'
 
 # Configuration
 alias i3='nvim ~/.config/i3/config'
@@ -97,7 +97,7 @@ alias tconf='nvim ~/.config/tmux/tmux.conf'
 
 # Quickly change to directory
 alias search='cd && cd $(fd --hidden --type d --base-directory ~ | fzf --reverse --height 20%)'
-bindkey -s '^f' 'search \n'
+bindkey -s '^d' 'search \n'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"

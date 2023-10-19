@@ -6,8 +6,7 @@ vim.keymap.set("c", "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = tr
 vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true })
 
 -- File Explorer
--- vim.keymap.set("n", "<leader>e", "<CMD>Ex<CR>", { desc = "File Explorer" })
-vim.keymap.set("n", "<leader>e", "<CMD>Telescope file_browser<CR>", { desc = "File Browser" })
+vim.keymap.set("n", "<leader>e", "<CMD>Ex<CR>", { desc = "File Explorer" })
 
 -- Move current line up/down
 vim.keymap.set("n", "<A-j>", "<CMD>m .+1<CR>==", { desc = "Move current line up" })

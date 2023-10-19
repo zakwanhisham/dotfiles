@@ -190,9 +190,6 @@ require("lazy").setup({
                     return vim.fn.executable "make" == 1
                 end,
             },
-            {
-                "nvim-telescope/telescope-file-browser.nvim",
-            },
         },
         config = function()
             require "plugins.telescope"
