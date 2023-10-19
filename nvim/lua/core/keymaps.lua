@@ -8,11 +8,23 @@ vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = tr
 -- File Explorer
 vim.keymap.set("n", "<leader>e", "<CMD>Ex<CR>", { desc = "File Explorer" })
 
+-- Move to window using the <ctrl> hjkl keys
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to up" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to left" })
+
+-- Resize window using <ctrl> arrow keys
+vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
 -- Move current line up/down
 vim.keymap.set("n", "<A-j>", "<CMD>m .+1<CR>==", { desc = "Move current line up" })
 vim.keymap.set("n", "<A-k>", "<CMD>m .-2<CR>==", { desc = "Move current line down" })
-vim.keymap.set("v", "<A-j>", "<CMD>m '>+1<CR>gv=gv", { desc = "Move current line up" })
-vim.keymap.set("v", "<A-k>", "<CMD>m '<-2<CR>gv=gv", { desc = "Move current line down" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move current line up" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move current line down" })
 
 -- Format
 vim.keymap.set("n", "<leader>lf", "<CMD>Format<CR>", { desc = "Format files" })

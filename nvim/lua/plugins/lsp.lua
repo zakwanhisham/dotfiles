@@ -1,5 +1,3 @@
--- [[ Configure LSP ]]
---  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
     local nmap = function(keys, func, desc)
         if desc then
@@ -10,14 +8,11 @@ local on_attach = function(_, bufnr)
     end
 
     -- nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-    -- nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
     nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-    -- nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
 
     -- See `:help K` for why this keymap
     nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-    -- nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
     -- Lesser used LSP functionality
     nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -34,9 +29,12 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
-    clangd = {},
+    clangd = {
+        function(_, opts)
+            opts.capabilities.offsetEncoding = { "utf-16" }
+        end,
+    },
     gopls = {},
-    -- pyright = {},
     rust_analyzer = {},
     tsserver = {},
     html = { filetypes = { "html", "twig", "hbs" } },
