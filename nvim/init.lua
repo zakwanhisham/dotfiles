@@ -2,9 +2,6 @@ require "core.options"
 require "core.keymaps"
 require "core.autocommand"
 
--- Install package manager
---    https://github.com/folke/lazy.nvim
---    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system {
@@ -27,21 +24,17 @@ require("lazy").setup({
     -- Detect tabstop and shiftwidth automatically
     "tpope/vim-sleuth",
 
-    -- NOTE: This is where your plugins related to LSP can be installed.
-    --  The configuration is done below. Search for lspconfig to find it below.
+    -- Vim Surround
+    "tpope/vim-surround",
+
     {
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
         dependencies = {
-            -- Automatically install LSPs to stdpath for neovim
             { "williamboman/mason.nvim", config = true },
             "williamboman/mason-lspconfig.nvim",
 
-            -- Useful status updates for LSP
-            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
             { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
-
-            -- Additional lua configuration, makes nvim stuff amazing!
             "folke/neodev.nvim",
         },
         config = function()
@@ -52,33 +45,17 @@ require("lazy").setup({
     {
         -- Autocompletion
         "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
         dependencies = {
-            -- Snippet Engine & its associated nvim-cmp source
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
-
-            -- Adds LSP completion capabilities
             "hrsh7th/cmp-nvim-lsp",
-
-            -- Adds a number of user-friendly snippets
             "rafamadriz/friendly-snippets",
         },
         config = function()
             require "plugins.cmp"
         end,
     },
-
-    --[[ {
-      NOTE: Don't know yet if want to use this plugins
-        -- Useful plugin to show you pending keybinds.
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-        opts = {},
-    }, ]]
 
     {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -89,7 +66,7 @@ require("lazy").setup({
     },
 
     {
-        -- carbonfox colorscheme
+        -- Carbonfox Colorscheme
         "EdenEast/nightfox.nvim",
         priority = 1000,
         config = function()
@@ -100,16 +77,26 @@ require("lazy").setup({
     {
         -- Set lualine as statusline
         "nvim-lualine/lualine.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        event = "VeryLazy",
+        dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
         config = function()
             require "plugins.lualine"
         end,
     },
 
     {
+        -- Breadcrumbs
+        "Bekaboo/dropbar.nvim",
+        event = "BufReadPre",
+        dependencies = {
+            "nvim-telescope/telescope-fzf-native.nvim",
+        },
+    },
+
+    {
         -- Autopairs
         "windwp/nvim-autopairs",
-        -- Optional dependency
+        event = "VeryLazy",
         dependencies = { "hrsh7th/nvim-cmp" },
         config = function()
             require "plugins.autopairs"
@@ -117,32 +104,36 @@ require("lazy").setup({
     },
 
     -- Undotree
-    { "mbbill/undotree", lazy = false },
+    { "mbbill/undotree", event = "VeryLazy" },
 
     {
-        -- treesitter context
+        -- Treesitter Context
         "romgrk/nvim-treesitter-context",
+        event = "BufReadPre",
         config = function()
             require "plugins.context"
         end,
     },
 
     {
-        -- nvim colorizer
+        -- Nvim Colorizer
         "norcalli/nvim-colorizer.lua",
+        event = "VeryLazy",
         config = function()
             require "plugins.colorizer"
         end,
     },
 
     {
-        -- todo comment
+        -- Todo Comment
         "folke/todo-comments.nvim",
+        event = "VeryLazy",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {},
     },
 
     {
+        -- Formatter and Linter
         "nvimtools/none-ls.nvim",
         lazy = true,
         event = { "BufReadPre", "BufNewFile" },
@@ -157,13 +148,12 @@ require("lazy").setup({
     {
         -- Add indentation guides even on blank lines
         "lukas-reineke/indent-blankline.nvim",
-        -- Enable `lukas-reineke/indent-blankline.nvim`
         main = "ibl",
         opts = {},
     },
 
-    -- "gc" to comment visual regions/lines
     {
+        -- "gc" to comment visual regions/lines
         "numToStr/Comment.nvim",
         config = function()
             require "plugins.comment"
@@ -178,13 +168,8 @@ require("lazy").setup({
         -- tag = "0.1.4",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-            -- Only load if `make` is available. Make sure you have the system
-            -- requirements installed.
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
-                -- NOTE: If you are having trouble with this installation,
-                --       refer to the README for telescope-fzf-native for more instructions.
                 build = "make",
                 cond = function()
                     return vim.fn.executable "make" == 1
@@ -199,17 +184,15 @@ require("lazy").setup({
     {
         -- Highlight, edit, and navigate code
         "nvim-treesitter/nvim-treesitter",
+        event = "VeryLazy",
+        build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            "JoosepAlviste/nvim-ts-context-commentstring",
-            "windwp/nvim-ts-autotag",
+            { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+            { "windwp/nvim-ts-autotag", event = "InsertEnter" },
         },
-        build = ":TSUpdate",
         config = function()
             require "plugins.treesitter"
         end,
     },
 }, {})
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et

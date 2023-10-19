@@ -3,9 +3,10 @@ require("gitsigns").setup {
     signs = {
         add = { text = "▎" },
         change = { text = "▎" },
-        delete = { text = "▎" },
-        topdelete = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
         changedelete = { text = "▎" },
+        untracked = { text = "▎" },
     },
     on_attach = function(bufnr)
         -- vim.keymap.set("n", "<leader>hp", require("gitsigns").preview_hunk, { buffer = bufnr, desc = "Preview git hunk" })
