@@ -19,6 +19,9 @@ vim.g.loaded_marchparen = 1
 vim.g.loaded_logiPat = 1
 vim.g.loaded_rrhelper = 1
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- mouse mode enable
 vim.o.mouse = "a"
 

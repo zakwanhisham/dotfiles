@@ -5,8 +5,8 @@ vim.keymap.set("n", "<leader>q", "<CMD>q<CR>", { desc = "Quit" })
 vim.keymap.set("c", "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true })
 vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true })
 
--- File Explorer
-vim.keymap.set("n", "<leader>e", "<CMD>Ex<CR>", { desc = "File Explorer" })
+-- File Explorer(Neotree)
+vim.keymap.set("n", "<leader>e", "<CMD>Neotree toggle<CR>", { desc = "File Explorer" })
 
 -- Move to window using the <ctrl> hjkl keys
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left" })
@@ -42,5 +42,15 @@ vim.keymap.set("n", "<leader>bd", "<CMD>bd<CR>", { desc = "Buffer Delete" })
 vim.keymap.set("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Undotree" })
 
 -- Comment
-vim.keymap.set("n", "<leader>/", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", { desc = "Toggle Comment" })
-vim.keymap.set("v", "<leader>/", "<esc><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = "Toggle Comment" })
+vim.keymap.set(
+    "n",
+    "<leader>/",
+    "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>",
+    { desc = "Toggle Comment" }
+)
+vim.keymap.set(
+    "v",
+    "<leader>/",
+    "<esc><CMD>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>",
+    { desc = "Toggle Comment" }
+)

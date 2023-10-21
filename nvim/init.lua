@@ -33,7 +33,6 @@ require("lazy").setup({
         dependencies = {
             { "williamboman/mason.nvim", config = true },
             "williamboman/mason-lspconfig.nvim",
-
             { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
             "folke/neodev.nvim",
         },
@@ -125,14 +124,6 @@ require("lazy").setup({
     },
 
     {
-        -- Todo Comment
-        "folke/todo-comments.nvim",
-        event = "VeryLazy",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        opts = {},
-    },
-
-    {
         -- Formatter and Linter
         "nvimtools/none-ls.nvim",
         lazy = true,
@@ -150,6 +141,21 @@ require("lazy").setup({
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {},
+    },
+
+    {
+        -- Neotree as File Explorer
+        "nvim-neo-tree/neo-tree.nvim",
+        event = "VeryLazy",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+        },
+        config = function()
+            require "plugins.neotree"
+        end,
     },
 
     {

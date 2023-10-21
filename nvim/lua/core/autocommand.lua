@@ -1,18 +1,19 @@
-vim.api.nvim_create_autocmd("FileType", {
+-- hightlight yanked text for 200ms using the "Visual" hightlighting group
+vim.cmd [[
+    augroup hightlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", time=200})
+    augroup END
+]]
+
+-- I don't know why, but sometimes, this things breaks
+--[[ vim.api.nvim_create_autocmd("FileType", {
     pattern = "zsh",
     callback = function()
         -- let treesitter use bash highlight for zsh files as well
         require("nvim-treesitter.highlight").attach(0, "bash")
     end,
-})
-
--- hightlight yanked text for 200ms using the "Visual" hightlighting group
-vim.cmd [[
-    augroup hightlight_yank
-        autocmd!
-        au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", time=200})
-    augroup END
-]]
+}) ]]
 
 -- open netrw when there's no file
 -- vim.cmd [[

@@ -12,7 +12,7 @@ require("telescope").setup {
     },
 }
 
--- Enable telescope fzf native, if installed
+-- Call extensions
 pcall(require("telescope").load_extension, "fzf")
 
 -- See `:help telescope.builtin`
