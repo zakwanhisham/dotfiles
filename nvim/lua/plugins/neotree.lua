@@ -104,14 +104,10 @@ require("neo-tree").setup {
             ["<2-LeftMouse>"] = "open",
             ["<cr>"] = "open",
             ["<esc>"] = "cancel", -- close preview or floating neo-tree window
-            ["P"] = { "toggle_preview", config = { use_float = true } },
-            ["l"] = "focus_preview",
+            ["l"] = "open",
             ["S"] = "open_split",
             ["s"] = "open_vsplit",
             ["t"] = "open_tabnew",
-            ["w"] = "open_with_window_picker",
-            ["C"] = "close_node",
-            ["z"] = "close_all_nodes",
             ["a"] = {
                 "add",
                 -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details

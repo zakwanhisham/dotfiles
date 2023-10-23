@@ -6,6 +6,9 @@ vim.cmd [[
     augroup END
 ]]
 
+-- Remove deprecated command from v1.x
+vim.cmd [[ let g:neo_tree_remove_legacy_commands = 1 ]]
+
 -- I don't know why, but sometimes, this things breaks
 --[[ vim.api.nvim_create_autocmd("FileType", {
     pattern = "zsh",
