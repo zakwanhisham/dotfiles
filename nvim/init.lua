@@ -95,7 +95,6 @@ require("lazy").setup({
     {
         -- Autopairs
         "windwp/nvim-autopairs",
-        event = "VeryLazy",
         dependencies = { "hrsh7th/nvim-cmp" },
         config = function()
             require "plugins.autopairs"
@@ -126,7 +125,6 @@ require("lazy").setup({
     {
         -- Formatter and Linter
         "nvimtools/none-ls.nvim",
-        lazy = true,
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "jay-babu/mason-null-ls.nvim",

@@ -86,9 +86,10 @@ vim.o.colorcolumn = "80"
 vim.o.scrolloff = 12
 vim.o.sidescrolloff = 12
 vim.o.sidescroll = 1
+vim.o.smoothscroll = true
 
 -- split
-vim.o.splitbelow = true
+vim.o.splitbelow = false
 vim.o.splitright = true
 
 -- mode
@@ -101,7 +102,7 @@ vim.o.showtabline = 0
 vim.o.cursorline = true
 
 -- misc
-vim.o.conceallevel = 0
+vim.o.conceallevel = 3
 vim.o.pumheight = 10
 vim.o.laststatus = 3
 vim.o.ruler = true

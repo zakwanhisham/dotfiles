@@ -76,7 +76,9 @@ local diagnostics = {
 
 local filename = {
     "filename",
-    path = 1,
+    file_status = true,
+    newfile_status = true,
+    path = 3,
 }
 
 local diff = {
@@ -97,7 +99,7 @@ require("lualine").setup {
     sections = {
         lualine_a = { "mode" },
         lualine_b = { branch },
-        lualine_c = { diff, "%=", filename },
+        lualine_c = { diff, filename },
         lualine_x = { diagnostics, lsp },
         lualine_y = { filetype, treesitter },
         lualine_z = { location },

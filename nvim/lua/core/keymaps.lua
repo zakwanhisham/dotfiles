@@ -4,9 +4,17 @@ vim.keymap.set("n", "<leader>w", "<CMD>w<CR>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<CMD>q<CR>", { desc = "Quit" })
 vim.keymap.set("c", "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true })
 vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true })
+vim.keymap.set({ "n", "x" }, "<esc>", "<CMD>noh<CR><esc>", { desc = "Escape and clear hlsearch" })
+
+-- Better Up/Down
+vim.keymap.set({ "n", "x" }, "j", "v:count==0 ? 'gj' : 'j'", { expr = true, noremap = true })
+vim.keymap.set({ "n", "x" }, "k", "v:count==0 ? 'gk' : 'k'", { expr = true, noremap = true })
 
 -- File Explorer(Neotree)
 vim.keymap.set("n", "<leader>e", "<CMD>Neotree toggle<CR>", { desc = "File Explorer" })
+
+-- Split window vertically
+vim.keymap.set("n", "<leader>\\", "<CMD>vsplit<CR>", { desc = "Split Vertical" })
 
 -- Move to window using the <ctrl> hjkl keys
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left" })
