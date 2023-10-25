@@ -49,9 +49,6 @@ vim.keymap.set("n", "<leader>bd", "<CMD>bd<CR>", { desc = "Buffer Delete" })
 -- Undotree
 vim.keymap.set("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Undotree" })
 
--- Neogit
-vim.keymap.set("n", "<leader>gg", "<CMD>Neogit<CR>", { desc = "Neogit" })
-
 -- Comment
 vim.keymap.set(
     "n",
