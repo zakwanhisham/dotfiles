@@ -157,6 +157,16 @@ require("lazy").setup({
     },
 
     {
+        -- Neogit
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        config = true,
+    },
+
+    {
         -- "gc" to comment visual regions/lines
         "numToStr/Comment.nvim",
         config = function()
