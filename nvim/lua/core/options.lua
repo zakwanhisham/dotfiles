@@ -102,7 +102,7 @@ vim.o.showtabline = 0
 vim.o.cursorline = true
 
 -- misc
-vim.o.conceallevel = 3
+vim.o.conceallevel = 0
 vim.o.pumheight = 10
 vim.o.laststatus = 3
 vim.o.ruler = true

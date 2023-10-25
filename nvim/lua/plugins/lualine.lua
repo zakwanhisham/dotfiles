@@ -99,7 +99,7 @@ require("lualine").setup {
     sections = {
         lualine_a = { "mode" },
         lualine_b = { branch },
-        lualine_c = { diff, filename },
+        lualine_c = { diff, "%=", filename },
         lualine_x = { diagnostics, lsp },
         lualine_y = { filetype, treesitter },
         lualine_z = { location },

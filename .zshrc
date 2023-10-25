@@ -55,7 +55,6 @@ alias ls='eza --color=always --group-directories-first --icons --git' # long for
 alias reload='source ~/.zshrc'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
-alias asdf='setxkbmap -option caps:swapescape &'
 alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 alias laptop='~/.screenlayout/laptop.sh'
 alias monitor='~/.screenlayout/monitor.sh'
