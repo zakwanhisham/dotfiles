@@ -27,6 +27,9 @@ require("lazy").setup({
     -- Vim Surround
     "tpope/vim-surround",
 
+    -- Undotree
+    "mbbill/undotree",
+
     {
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
@@ -101,8 +104,12 @@ require("lazy").setup({
         end,
     },
 
-    -- Undotree
-    { "mbbill/undotree", event = "VeryLazy" },
+    {
+        -- Todo comment
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {},
+    },
 
     {
         -- Treesitter Context

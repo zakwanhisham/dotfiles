@@ -21,6 +21,7 @@ mason_nls.setup {
 
 local formatting = nls.builtins.formatting
 local linter = nls.builtins.diagnostics
+local actions = nls.builtins.code_actions
 
 nls.setup {
     root_dir = nls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
@@ -59,5 +60,7 @@ nls.setup {
         linter.clang_check.with {
             extra_filetypes = { "h", "hpp", "cpp" },
         },
+        -- code actions
+        actions.eslint_d,
     },
 }

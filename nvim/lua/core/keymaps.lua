@@ -37,6 +37,9 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move current line dow
 -- Format
 vim.keymap.set("n", "<leader>lf", "<CMD>Format<CR>", { desc = "Format files" })
 
+-- Code Action
+vim.keymap.set("n", "<leader>ca", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Action" })
+
 -- Better indenting
 vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
 vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })
