@@ -40,6 +40,9 @@ vim.keymap.set("n", "<leader>lf", "<CMD>Format<CR>", { desc = "Format files" })
 -- Code Action
 vim.keymap.set("n", "<leader>ca", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Action" })
 
+-- Neogit
+vim.keymap.set("n", "<leader>gg", "<CMD>Neogit<CR>", { desc = "Neogit" })
+
 -- Better indenting
 vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
 vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })

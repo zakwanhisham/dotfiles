@@ -87,15 +87,6 @@ require("lazy").setup({
     },
 
     {
-        -- Breadcrumbs
-        "Bekaboo/dropbar.nvim",
-        event = "BufReadPre",
-        dependencies = {
-            "nvim-telescope/telescope-fzf-native.nvim",
-        },
-    },
-
-    {
         -- Autopairs
         "windwp/nvim-autopairs",
         dependencies = { "hrsh7th/nvim-cmp" },
