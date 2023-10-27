@@ -58,6 +58,7 @@ alias ssr='shutdown -r now'
 alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 alias laptop='~/.screenlayout/laptop.sh'
 alias monitor='~/.screenlayout/monitor.sh'
+alias asdf='setxkbmap -option caps:swapescape &'
 
 # Changing program name
 alias cat='bat'
