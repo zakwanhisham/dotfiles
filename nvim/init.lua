@@ -142,6 +142,20 @@ require("lazy").setup({
     },
 
     {
+        -- Neogit
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim", -- required
+            "nvim-telescope/telescope.nvim", -- optional
+            "sindrets/diffview.nvim", -- optional
+            "ibhagwan/fzf-lua", -- optional
+        },
+        config = function()
+            require "plugins.neogit"
+        end,
+    },
+
+    {
         -- Add indentation guides even on blank lines
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
