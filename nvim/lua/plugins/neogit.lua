@@ -180,7 +180,7 @@ require("neogit").setup {
             ["2"] = "Depth2",
             ["3"] = "Depth3",
             ["4"] = "Depth4",
-            ["<tab>"] = "Toggle",
+            ["<space>"] = "Toggle",
             ["x"] = "Discard",
             ["s"] = "Stage",
             ["S"] = "StageUnstaged",
