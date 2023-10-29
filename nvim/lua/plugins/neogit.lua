@@ -60,7 +60,7 @@ require("neogit").setup {
         recent_commit_count = 10,
     },
     commit_editor = {
-        kind = "tab",
+        kind = "split",
     },
     commit_select_view = {
         kind = "tab",
@@ -180,6 +180,7 @@ require("neogit").setup {
             ["2"] = "Depth2",
             ["3"] = "Depth3",
             ["4"] = "Depth4",
+            ["<tab>"] = false,
             ["<space>"] = "Toggle",
             ["x"] = "Discard",
             ["s"] = "Stage",

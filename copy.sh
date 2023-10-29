@@ -11,6 +11,7 @@ source_folders=(
 	"/home/zakwan/.zshrc"
 	"/home/zakwan/.config/tmux/tmux.conf"
 	"/home/zakwan/.config/starship.toml"
+	"/home/zakwan/.config/picom.conf"
 	"/home/zakwan/.config/i3"
 	"/home/zakwan/.config/nvim"
 	"/home/zakwan/.config/alacritty"

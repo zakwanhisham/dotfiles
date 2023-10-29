@@ -13,8 +13,9 @@ vim.keymap.set({ "n", "x" }, "k", "v:count==0 ? 'gk' : 'k'", { expr = true, nore
 -- File Explorer(Neotree)
 vim.keymap.set("n", "<leader>e", "<CMD>Neotree toggle<CR>", { desc = "File Explorer" })
 
--- Split window vertically
+-- Split window
 vim.keymap.set("n", "<leader>\\", "<CMD>vsplit<CR>", { desc = "Split Vertical" })
+vim.keymap.set("n", "<leader>-", "<CMD>split<CR>", { desc = "Split Horizontal" })
 
 -- Move to window using the <ctrl> hjkl keys
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left" })
