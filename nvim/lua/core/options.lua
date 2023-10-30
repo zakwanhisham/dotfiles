@@ -25,11 +25,6 @@ vim.g.loaded_netrwPlugin = 1
 -- mouse mode enable
 vim.o.mouse = "a"
 
--- file browser settings
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
-
 -- autocomplete list
 vim.o.pumheight = 10
 
@@ -73,7 +68,7 @@ vim.o.incsearch = true
 vim.o.termguicolors = true
 
 -- command height
-vim.o.cmdheight = 1
+vim.o.cmdheight = 0
 
 -- decrease update time
 vim.o.updatetime = 250
@@ -85,16 +80,16 @@ vim.o.colorcolumn = "80"
 -- code gutter
 vim.o.scrolloff = 12
 vim.o.sidescrolloff = 12
-vim.o.sidescroll = 1
+vim.o.sidescroll = 0
 vim.o.smoothscroll = true
 
 -- split
-vim.o.splitbelow = false
+vim.o.splitbelow = true
 vim.o.splitright = true
 
 -- mode
 vim.o.showmode = false
-vim.o.showcmd = true
+vim.o.showcmd = false
 
 -- sign
 vim.o.signcolumn = "yes"
@@ -104,6 +99,6 @@ vim.o.cursorline = true
 -- misc
 vim.o.conceallevel = 0
 vim.o.pumheight = 10
-vim.o.laststatus = 3
+vim.o.laststatus = 2
 vim.o.ruler = true
 vim.o.linebreak = true

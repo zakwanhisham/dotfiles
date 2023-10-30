@@ -66,6 +66,6 @@ vim.keymap.set(
 vim.keymap.set(
     "v",
     "<leader>/",
-    "<esc><CMD>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>",
+    "<esc><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
     { desc = "Toggle Comment" }
 )
