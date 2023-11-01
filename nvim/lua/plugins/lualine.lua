@@ -1,7 +1,7 @@
 local lsp = {
     function()
         local buf_clients = vim.lsp.get_active_clients { bufnr = 0 }
-        local msg = "No Active LSP"
+        local msg = "[No Active LSP]"
         local buf_client_names = {}
 
         if #buf_clients == 0 then
@@ -20,7 +20,7 @@ local lsp = {
         return language_servers
     end,
     padding = {
-        right = 1,
+        right = 0,
         left = 0,
     },
 }
@@ -93,7 +93,7 @@ local location = {
 local progress = {
     "progress",
     padding = {
-        right = 0,
+        right = 1,
         left = 0,
     },
 }
@@ -102,7 +102,7 @@ local mode = {
     "mode",
     fmt = function(str)
         return str:sub(1, 1)
-    end
+    end,
 }
 
 require("lualine").setup {
