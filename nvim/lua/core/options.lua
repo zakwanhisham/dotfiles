@@ -94,7 +94,7 @@ vim.o.showcmd = false
 -- sign
 vim.o.signcolumn = "yes"
 vim.o.showtabline = 0
-vim.o.cursorline = true
+vim.o.cursorline = false
 
 -- misc
 vim.o.conceallevel = 0

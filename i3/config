@@ -241,7 +241,7 @@ for_window [class="flameshot" instance="flameshot"] floating enable
 for_window [window_role="About"] floating enable
 
 # set border of floating window
-for_window [class="urxvt"] border pixel 1
+# for_window [class="urxvt"] border pixel 1
 
 # set size of floating window
 for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
@@ -291,7 +291,7 @@ bar {
 }
 
 bar {
-	font pango: Ubuntu Nerd Font Regular 10
+	font pango: Ubuntu Nerd Font Regular 9
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
         position bottom 
 	output DP-1
