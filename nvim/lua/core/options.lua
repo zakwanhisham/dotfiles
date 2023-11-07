@@ -50,7 +50,7 @@ vim.o.autoindent = true
 vim.o.smartcase = true
 vim.o.smartindent = true
 vim.o.wrap = false
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = "menuone,noselect,preview"
 vim.o.ignorecase = true
 
 -- temp files
@@ -68,7 +68,7 @@ vim.o.incsearch = true
 vim.o.termguicolors = true
 
 -- command height
-vim.o.cmdheight = 0
+vim.o.cmdheight = 1
 
 -- decrease update time
 vim.o.updatetime = 250
@@ -93,11 +93,11 @@ vim.o.showcmd = false
 
 -- sign
 vim.o.signcolumn = "yes"
-vim.o.showtabline = 0
-vim.o.cursorline = false
+vim.o.showtabline = 1
+vim.o.cursorline = true
 
 -- misc
-vim.o.conceallevel = 0
+vim.o.conceallevel = 3
 vim.o.pumheight = 10
 vim.o.laststatus = 2
 vim.o.ruler = true

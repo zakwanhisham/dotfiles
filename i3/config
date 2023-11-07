@@ -22,10 +22,10 @@ workspace_layout default
 ##############################
 
 # default maximize border
-default_border normal
+default_border pixel 1
 
 # default floating border
-default_floating_border normal
+default_floating_border pixel 1
 
 # border indicator on windows:
 title_align center
@@ -79,7 +79,7 @@ bindsym $mod+r mode "resize"
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -291,7 +291,7 @@ bar {
 }
 
 bar {
-	font pango: Ubuntu Nerd Font Regular 9
+	font pango: Ubuntu Nerd Font Regular 10
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
         position bottom 
 	output DP-1
