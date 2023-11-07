@@ -93,7 +93,7 @@ vim.o.showcmd = false
 
 -- sign
 vim.o.signcolumn = "yes"
-vim.o.showtabline = 1
+vim.o.showtabline = 0
 vim.o.cursorline = true
 
 -- misc
