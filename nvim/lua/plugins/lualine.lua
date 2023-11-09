@@ -34,11 +34,11 @@ local buffers = {
     "buffers",
     icons_enabled = false,
     show_filename_only = true,
-    hide_filename_extension = false,
-    show_modifies_status = true,
-    mode = 0,
+    hide_filename_extension = true,
+    show_modified_status = false,
+    mode = 1,
     padding = {
-        right = 1,
+        right = 0,
         left = 1,
     },
 }
@@ -90,13 +90,14 @@ require("lualine").setup {
             right = "",
         },
         section_separators = "",
+        globalstatus = false,
     },
     sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { mode, branch, buffers, diff },
+        lualine_c = { mode, branch, filename, diff },
         lualine_x = { diagnostics, filetype, location, progress },
-        lualine_y = {},
+        lualine_y = { buffers },
         lualine_z = {},
     },
     inactive_sections = {
