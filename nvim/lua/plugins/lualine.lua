@@ -36,9 +36,9 @@ local buffers = {
     show_filename_only = true,
     hide_filename_extension = false,
     show_modifies_status = true,
-    mode = 2,
+    mode = 0,
     padding = {
-        right = 0,
+        right = 1,
         left = 1,
     },
 }
@@ -47,7 +47,7 @@ local filename = {
     "filename",
     file_status = true,
     newfile_status = true,
-    path = 1,
+    path = 0,
 }
 
 local diff = {
@@ -85,7 +85,10 @@ local mode = {
 require("lualine").setup {
     options = {
         theme = "auto",
-        component_separators = "",
+        component_separators = {
+            left = "|",
+            right = "",
+        },
         section_separators = "",
     },
     sections = {
