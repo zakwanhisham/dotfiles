@@ -72,7 +72,8 @@ vim.o.cmdheight = 1
 
 -- decrease update time
 vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.o.timeout = true
+vim.o.timeoutlen = 500
 
 -- colorcolumn
 vim.o.colorcolumn = "80"

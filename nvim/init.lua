@@ -211,8 +211,4 @@ require("lazy").setup({
             require "plugins.treesitter"
         end,
     },
-}, {
-    install = {
-        colorscheme = { "carbonfox" },
-    },
-})
+}, {})
