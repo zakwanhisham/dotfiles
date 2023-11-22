@@ -30,6 +30,9 @@ require("lazy").setup({
     -- Undotree
     "mbbill/undotree",
 
+    -- vim-tmux-navigator
+    "christoomey/vim-tmux-navigator",
+
     {
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
@@ -47,7 +50,7 @@ require("lazy").setup({
     {
         -- Autocompletion
         "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
+        event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
@@ -133,6 +136,17 @@ require("lazy").setup({
     },
 
     {
+        -- Trouble
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+    },
+
+    {
         -- Neogit
         "NeogitOrg/neogit",
         dependencies = {
@@ -211,4 +225,8 @@ require("lazy").setup({
             require "plugins.treesitter"
         end,
     },
-}, {})
+}, {
+    install = {
+        colorscheme = { "carbonfox" },
+    },
+})

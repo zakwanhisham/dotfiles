@@ -1,6 +1,9 @@
+--[[ Globals ]]
 -- set leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+vim.g.skip_ts_context_commentstring_module = true
 
 -- disable builtins plugins
 vim.g.loaded_gzip = 1
@@ -22,6 +25,7 @@ vim.g.loaded_rrhelper = 1
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- [[ Options ]]
 -- mouse mode enable
 vim.o.mouse = "a"
 
@@ -89,16 +93,16 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 -- mode
-vim.o.showmode = false
-vim.o.showcmd = false
+vim.o.showmode = true
+vim.o.showcmd = true
 
 -- sign
 vim.o.signcolumn = "yes"
-vim.o.showtabline = 0
+vim.o.showtabline = 1
 vim.o.cursorline = true
 
 -- misc
-vim.o.conceallevel = 3
+vim.o.conceallevel = 0
 vim.o.pumheight = 10
 vim.o.laststatus = 2
 vim.o.ruler = true

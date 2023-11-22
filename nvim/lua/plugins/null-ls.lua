@@ -33,8 +33,9 @@ nls.setup {
         formatting.gofumpt,
         formatting.goimports,
         formatting.golines,
+        formatting.tidy,
         formatting.prettierd.with {
-            extra_filetypes = { "html", "css", "json", "markdown", "yaml" },
+            -- extra_filetypes = { "css", "json", "markdown", "yaml" },
             condition = function(utils)
                 return not utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
             end,
@@ -49,6 +50,7 @@ nls.setup {
         },
         -- linting
         linter.golangci_lint,
+        linter.tidy,
         linter.eslint_d.with {
             condition = function(utils)
                 return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }

@@ -36,9 +36,10 @@ local buffers = {
     show_filename_only = true,
     hide_filename_extension = true,
     show_modified_status = false,
-    mode = 1,
+    mode = 0,
+    max_length = vim.o.columns * 2 / 3,
     padding = {
-        right = 0,
+        right = 1,
         left = 1,
     },
 }
@@ -47,7 +48,7 @@ local filename = {
     "filename",
     file_status = true,
     newfile_status = true,
-    path = 0,
+    path = 1,
 }
 
 local diff = {
@@ -75,13 +76,6 @@ local progress = {
     },
 }
 
-local mode = {
-    "mode",
-    fmt = function(str)
-        return str:sub(1, 3)
-    end,
-}
-
 require("lualine").setup {
     options = {
         theme = "auto",
@@ -89,13 +83,16 @@ require("lualine").setup {
             left = "|",
             right = "",
         },
-        section_separators = "",
+        section_separators = {
+            left = "",
+            right = "",
+        },
         globalstatus = false,
     },
     sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { mode, branch, filename, diff },
+        lualine_c = { filename, branch, diff },
         lualine_x = { diagnostics, filetype, location, progress },
         lualine_y = { buffers },
         lualine_z = {},
