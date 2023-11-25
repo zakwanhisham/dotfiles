@@ -37,7 +37,7 @@ local buffers = {
     hide_filename_extension = true,
     show_modified_status = false,
     mode = 0,
-    max_length = vim.o.columns * 2 / 3,
+    max_length = vim.o.columns * 1 / 4,
     padding = {
         right = 1,
         left = 1,
@@ -87,7 +87,7 @@ require("lualine").setup {
             left = "",
             right = "",
         },
-        globalstatus = false,
+        globalstatus = true,
     },
     sections = {
         lualine_a = {},
