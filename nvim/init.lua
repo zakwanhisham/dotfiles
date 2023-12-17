@@ -107,7 +107,7 @@ require("lazy").setup({
 
     {
         -- Treesitter Context
-        "romgrk/nvim-treesitter-context",
+        "nvim-treesitter/nvim-treesitter-context",
         event = "BufReadPre",
         config = function()
             require "plugins.context"
