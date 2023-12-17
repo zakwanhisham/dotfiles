@@ -57,6 +57,10 @@ vim.o.wrap = false
 vim.o.completeopt = "menuone,noselect,preview"
 vim.o.ignorecase = true
 
+-- spell check
+vim.o.spelllang = "en_us"
+vim.o.spell = true
+
 -- temp files
 vim.o.swapfile = false
 vim.o.backup = false
@@ -93,8 +97,8 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 -- mode
-vim.o.showmode = true
-vim.o.showcmd = true
+vim.o.showmode = false
+vim.o.showcmd = false
 
 -- sign
 vim.o.signcolumn = "yes"
