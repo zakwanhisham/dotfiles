@@ -33,6 +33,7 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 ENABLE_CORRECTION="true"
 
 plugins=(
+    vi-mode
     zsh-syntax-highlighting
     zsh-autosuggestions
     )
@@ -48,8 +49,12 @@ else
   export EDITOR='nvim'
 fi
 
+# source fzf keybinding
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # Changing "ls" to "exa"
-alias ls='eza --color=always --group-directories-first --icons --git' # long format
+alias ls='eza --color=always --group-directories-first --icons --git' 
 
 # For convenience
 alias reload='source ~/.zshrc'
@@ -67,6 +72,7 @@ alias weather='curl wttr.in'
 alias cal='cal --monday -3'
 alias news='hackernews_tui'
 alias diff='nvim -d'
+alias vim='nvim'
 
 # Configuration
 alias i3='nvim ~/.config/i3/config'
@@ -74,6 +80,11 @@ alias zshrc='nvim ~/.zshrc'
 alias ala='nvim ~/.config/alacritty/alacritty.yml'
 alias neo='nvim ~/.config/nvim/init.lua'
 alias tconf='nvim ~/.config/tmux/tmux.conf'
+
+# ssh to machine
+alias ubuntu-server='ssh robo@192.168.0.11'
+alias ubuntu-desktop='ssh robo@192.168.0.16'
+alias ras-server='ssh root@159.223.69.150'
 
 # Quickly change to directory
 alias search='cd && cd $(fd --hidden --type d --base-directory ~ | fzf --reverse --height 20%)'

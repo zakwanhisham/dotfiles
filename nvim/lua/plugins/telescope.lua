@@ -14,10 +14,16 @@ require("telescope").setup {
             },
         },
     },
+    extensions = {
+        ["ui-select"] = {
+            theme.get_dropdown {},
+        },
+    },
 }
 
 -- Call extensions
 pcall(require("telescope").load_extension, "fzf")
+pcall(require("telescope").load_extension, "ui-select")
 
 -- See `:help telescope.builtin`
 vim.keymap.set("n", "<leader><space>", builtin.buffers, { desc = "Buffer" })
