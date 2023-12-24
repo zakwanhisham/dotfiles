@@ -17,6 +17,9 @@ require("neogit").setup {
         interval = 1000,
         enabled = true,
     },
+    -- "ascii"   is the graph the git CLI generates
+    -- "unicode" is the graph like https://github.com/rbong/vim-flog
+    graph_style = "unicode",
     -- Used to generate URL's for branch popup action "pull request".
     git_services = {
         ["github.com"] = "https://github.com/${owner}/${repository}/compare/${branch_name}?expand=1",
@@ -40,6 +43,8 @@ require("neogit").setup {
         "NeogitCommitPopup--allow-empty",
         "NeogitRevertPopup--no-edit",
     },
+    -- Set to false if you want to be responsible for creating _ALL_ keymappings
+    use_default_keymaps = true,
     -- Neogit refreshes its internal state after specific events, which can be expensive depending on the repository size.
     -- Disabling `auto_refresh` will make it so you have to manually refresh the status after you open it.
     auto_refresh = true,
@@ -160,6 +165,27 @@ require("neogit").setup {
         },
     },
     mappings = {
+        commit_editor = {
+            ["q"] = "Close",
+            ["<c-c><c-c>"] = "Submit",
+            ["<c-c><c-k>"] = "Abort",
+        },
+        rebase_editor = {
+            ["p"] = "Pick",
+            ["r"] = "Reword",
+            ["e"] = "Edit",
+            ["s"] = "Squash",
+            ["f"] = "Fixup",
+            ["x"] = "Execute",
+            ["d"] = "Drop",
+            ["b"] = "Break",
+            ["q"] = "Close",
+            ["<cr>"] = "OpenCommit",
+            ["gk"] = "MoveUp",
+            ["gj"] = "MoveDown",
+            ["<c-c><c-c>"] = "Submit",
+            ["<c-c><c-k>"] = "Abort",
+        },
         finder = {
             ["<cr>"] = "Select",
             ["<c-c>"] = "Close",
@@ -197,17 +223,17 @@ require("neogit").setup {
             ["2"] = "Depth2",
             ["3"] = "Depth3",
             ["4"] = "Depth4",
-            ["<tab>"] = false,
-            ["<space>"] = "Toggle",
+            ["<tab>"] = "Toggle",
             ["x"] = "Discard",
             ["s"] = "Stage",
             ["S"] = "StageUnstaged",
             ["<c-s>"] = "StageAll",
             ["u"] = "Unstage",
             ["U"] = "UnstageStaged",
-            ["d"] = "DiffAtFile",
+            -- ["d"] = "DiffAtFile",
             ["$"] = "CommandHistory",
             ["#"] = "Console",
+            ["Y"] = "YankSelected",
             ["<c-r>"] = "RefreshBuffer",
             ["<enter>"] = "GoToFile",
             ["<c-v>"] = "VSplitOpen",

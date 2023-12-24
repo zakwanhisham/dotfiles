@@ -16,7 +16,10 @@ require("telescope").setup {
     },
     extensions = {
         ["ui-select"] = {
-            theme.get_dropdown {},
+            theme.get_dropdown {
+                winblend = 0,
+                previewer = false,
+            },
         },
     },
 }
