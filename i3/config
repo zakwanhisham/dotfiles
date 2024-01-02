@@ -273,29 +273,8 @@ bar {
 	font pango: Ubuntu Nerd Font Regular 10
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
         position bottom 
-	output eDP-1
-        tray_output eDP-1
-        tray_padding 0
-        strip_workspace_numbers no
-	colors {
-		background	       #000000
-		statusline	       #ffffff
-		separator	       #666666
-	#	class		       border  backgr  text
-		focused_workspace      #333333 #666666 #ffffff
-		active_workspace       #333333 #5f676a #ffffff
-		inactive_workspace     #333333 #222222 #888888
-		urgent_workspace       #2f343a #900000 #ffffff
-		binding_mode           #2f343a #900000 #ffffff
-	}
-}
-
-bar {
-	font pango: Ubuntu Nerd Font Regular 10
-	status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        position bottom 
-	output DP-1
-        tray_output DP-1
+	# output eDP-1
+        # tray_output eDP-1
         tray_padding 0
         strip_workspace_numbers no
 	colors {

@@ -29,15 +29,16 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
+    gopls = {},
+    rust_analyzer = {},
+    tsserver = {},
+    html = { filetypes = { "html", "twig", "hbs" } },
+    tailwindcss = {},
     clangd = {
         function(_, opts)
             opts.capabilities.offsetEncoding = { "utf-16" }
         end,
     },
-    gopls = {},
-    rust_analyzer = {},
-    tsserver = {},
-    html = { filetypes = { "html", "twig", "hbs" } },
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
