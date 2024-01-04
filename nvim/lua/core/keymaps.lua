@@ -7,11 +7,14 @@ vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = tr
 vim.keymap.set({ "n", "x" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 -- Macro
-vim.keymap.set("n", "Q", "@q")
+vim.keymap.set("n", "Q", "@qj")
+vim.keymap.set("x", "Q", ":norm @q<cr>")
 
 -- Better Up/Down
 vim.keymap.set({ "n", "x" }, "j", "v:count==0 ? 'gj' : 'j'", { expr = true, noremap = true })
 vim.keymap.set({ "n", "x" }, "k", "v:count==0 ? 'gk' : 'k'", { expr = true, noremap = true })
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- File Explorer(Neotree)
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "File Explorer" })

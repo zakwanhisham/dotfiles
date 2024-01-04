@@ -228,6 +228,6 @@ require("lazy").setup({
     },
 }, {
     install = {
-        colorscheme = { "carbonfox" },
+        colorscheme = { "default" },
     },
 })

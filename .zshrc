@@ -70,9 +70,7 @@ alias cat='bat'
 alias less='less --use-color -N'
 alias weather='curl wttr.in'
 alias cal='cal --monday -3'
-alias news='hackernews_tui'
 alias diff='nvim -d'
-alias vim='nvim'
 
 # Configuration
 alias i3='nvim ~/.config/i3/config'
