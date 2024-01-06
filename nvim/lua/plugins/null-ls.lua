@@ -26,7 +26,7 @@ local actions = nls.builtins.code_actions
 nls.setup {
     root_dir = nls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
     sources = {
-        -- formatting
+        --[[ formatting ]]
         formatting.stylua,
         formatting.shfmt,
         formatting.taplo,
@@ -34,7 +34,6 @@ nls.setup {
         formatting.goimports,
         formatting.golines,
         formatting.prettierd.with {
-            -- extra_filetypes = { "css", "json", "markdown", "yaml" },
             condition = function(utils)
                 return not utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
             end,
@@ -47,8 +46,9 @@ nls.setup {
         formatting.clang_format.with {
             extra_filetypes = { "h", "hpp", "cpp" },
         },
-        -- linting
+        --[[ linting ]]
         linter.golangci_lint,
+        linter.codespell,
         linter.eslint_d.with {
             condition = function(utils)
                 return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
@@ -60,7 +60,7 @@ nls.setup {
         linter.clang_check.with {
             extra_filetypes = { "h", "hpp", "cpp" },
         },
-        -- code actions
+        --[[ code actions ]]
         actions.eslint_d,
     },
 }

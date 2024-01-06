@@ -75,7 +75,7 @@ alias diff='nvim -d'
 # Configuration
 alias i3='nvim ~/.config/i3/config'
 alias zshrc='nvim ~/.zshrc'
-alias ala='nvim ~/.config/alacritty/alacritty.yml'
+alias ala='nvim ~/.config/alacritty/alacritty.toml'
 alias neo='nvim ~/.config/nvim/init.lua'
 alias tconf='nvim ~/.config/tmux/tmux.conf'
 

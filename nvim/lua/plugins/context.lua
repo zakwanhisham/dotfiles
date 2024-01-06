@@ -1,7 +1,6 @@
 require("treesitter-context").setup {
     enable = true,
     max_lines = 3,
-    -- throttle = true,
     line_numbers = true,
     multiline_threshold = 20,
     trim_scope = "outer",

@@ -139,11 +139,7 @@ require("lazy").setup({
         -- Trouble
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        },
+        opts = {},
     },
 
     {
@@ -157,6 +153,14 @@ require("lazy").setup({
         },
         config = function()
             require "plugins.neogit"
+        end,
+    },
+
+    {
+        -- Doc snippet
+        "danymat/neogen",
+        config = function()
+            require "plugins.neogen"
         end,
     },
 
@@ -195,7 +199,6 @@ require("lazy").setup({
         -- Fuzzy Finder (files, lsp, etc)
         "nvim-telescope/telescope.nvim",
         branch = "0.1.x",
-        -- tag = "0.1.4",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-ui-select.nvim",
