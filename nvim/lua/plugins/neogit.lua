@@ -1,6 +1,6 @@
 require("neogit").setup {
     -- Hides the hints at the top of the status buffer
-    disable_hint = false,
+    disable_hint = true,
     -- Disables changing the buffer highlights based on where the cursor is.
     disable_context_highlighting = false,
     -- Disables signs for sections/items/hunks
@@ -223,7 +223,8 @@ require("neogit").setup {
             ["2"] = "Depth2",
             ["3"] = "Depth3",
             ["4"] = "Depth4",
-            ["<tab>"] = "Toggle",
+            -- ["<tab>"] = "Toggle",
+            ["<space>"] = "Toggle",
             ["x"] = "Discard",
             ["s"] = "Stage",
             ["S"] = "StageUnstaged",
