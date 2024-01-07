@@ -16,12 +16,14 @@ mason_nls.setup {
         "clang-format",
         "clang-check",
         "taplo",
+        "codespell",
     },
 }
 
 local formatting = nls.builtins.formatting
-local linter = nls.builtins.diagnostics
+local diagnostics = nls.builtins.diagnostics
 local actions = nls.builtins.code_actions
+local completion = nls.builtins.completion
 
 nls.setup {
     root_dir = nls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
@@ -47,19 +49,23 @@ nls.setup {
             extra_filetypes = { "h", "hpp", "cpp" },
         },
         --[[ linting ]]
-        linter.golangci_lint,
-        linter.codespell,
-        linter.eslint_d.with {
+        diagnostics.golangci_lint,
+        diagnostics.codespell,
+        diagnostics.eslint_d.with {
             condition = function(utils)
                 return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
             end,
-            filter = function(diagnostics)
-                return diagnostics.code ~= "prettierd/prettierd"
+            filter = function(diagnostic)
+                return diagnostic.code ~= "prettierd/prettierd"
             end,
         },
-        linter.clang_check.with {
+        diagnostics.clang_check.with {
             extra_filetypes = { "h", "hpp", "cpp" },
         },
+        --[[ completion ]]
+        completion.luasnip,
+        completion.spell,
+        completion.tags,
         --[[ code actions ]]
         actions.eslint_d,
     },
