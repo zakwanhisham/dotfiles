@@ -27,9 +27,6 @@ require("lazy").setup({
     -- Vim Surround
     "tpope/vim-surround",
 
-    -- Undotree
-    "mbbill/undotree",
-
     -- vim-tmux-navigator
     "christoomey/vim-tmux-navigator",
 
@@ -38,8 +35,8 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         dependencies = {
             { "williamboman/mason.nvim", config = true },
-            "williamboman/mason-lspconfig.nvim",
             { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+            "williamboman/mason-lspconfig.nvim",
             "folke/neodev.nvim",
         },
         config = function()
@@ -90,15 +87,6 @@ require("lazy").setup({
     },
 
     {
-        -- Autopairs
-        "windwp/nvim-autopairs",
-        dependencies = { "hrsh7th/nvim-cmp" },
-        config = function()
-            require "plugins.autopairs"
-        end,
-    },
-
-    {
         -- Todo comment
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -106,30 +94,10 @@ require("lazy").setup({
     },
 
     {
-        -- Treesitter Context
-        "nvim-treesitter/nvim-treesitter-context",
-        event = "BufReadPre",
-        config = function()
-            require "plugins.context"
-        end,
-    },
-
-    {
-        -- Nvim Colorizer
-        "norcalli/nvim-colorizer.lua",
-        event = "VeryLazy",
-        config = function()
-            require "plugins.colorizer"
-        end,
-    },
-
-    {
         -- Formatter and Linter
         "nvimtools/none-ls.nvim",
         event = { "BufReadPre", "BufNewFile" },
-        dependencies = {
-            "jay-babu/mason-null-ls.nvim",
-        },
+        dependencies = { "jay-babu/mason-null-ls.nvim" },
         config = function()
             require "plugins.null-ls"
         end,
@@ -138,7 +106,7 @@ require("lazy").setup({
     {
         -- Trouble
         "folke/trouble.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
         opts = {},
     },
 
@@ -147,9 +115,7 @@ require("lazy").setup({
         "NeogitOrg/neogit",
         dependencies = {
             "nvim-lua/plenary.nvim", -- required
-            "nvim-telescope/telescope.nvim", -- optional
             "sindrets/diffview.nvim", -- optional
-            "ibhagwan/fzf-lua", -- optional
         },
         config = function()
             require "plugins.neogit"
@@ -178,8 +144,8 @@ require("lazy").setup({
         branch = "v3.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
+            { "nvim-tree/nvim-web-devicons", lazy = true },
         },
         config = function()
             require "plugins.neotree"
@@ -212,6 +178,15 @@ require("lazy").setup({
         },
         config = function()
             require "plugins.telescope"
+        end,
+    },
+
+    {
+        -- Treesitter Context
+        "nvim-treesitter/nvim-treesitter-context",
+        event = "BufReadPre",
+        config = function()
+            require "plugins.context"
         end,
     },
 

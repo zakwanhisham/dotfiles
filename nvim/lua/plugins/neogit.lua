@@ -115,7 +115,7 @@ require("neogit").setup {
         -- If enabled, uses fzf-lua for menu selection. If the telescope integration
         -- is also selected then telescope is used instead
         -- Requires you to have `ibhagwan/fzf-lua` installed.
-        fzf_lua = true,
+        fzf_lua = false,
     },
     sections = {
         -- Reverting/Cherry Picking

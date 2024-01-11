@@ -59,9 +59,6 @@ vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { de
 --[[ Neogit ]]
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
 
---[[ Undotree ]]
-vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
-
 -- [[ Neogen ]]
 vim.keymap.set("n", "nt", "<cmd>Neogen type<cr>", { desc = "Neogen generate type" })
 vim.keymap.set("n", "nf", "<cmd>Neogen func<cr>", { desc = "Neogen generate func" })
