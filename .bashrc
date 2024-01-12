@@ -9,7 +9,9 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#78a
 [[ $- != *i* ]] && return
 
 # VIM mode
-set -o vi
+if [[ $- == *i* ]]; then
+	set -o vi
+fi
 
 # PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -94,9 +96,38 @@ alias tconf='nvim ~/.config/tmux/tmux.conf'
 alias ubuntu-server='ssh robo@192.168.0.11'
 alias ubuntu-desktop='ssh robo@192.168.0.16'
 alias ras-server='ssh root@159.223.69.150'
+alias wazuh-server='ssh root@167.71.223.8'
+alias wazuh-agent='ssh root@143.198.207.71'
 
 # Quickly change to directory
-alias ff='cd ~ && cd "$(fd --hidden --type d --base-directory ~ | fzf --reverse --height 20%)"'
+ff() {
+	cd ~ && cd "$(fd --hidden --type d --base-directory ~ | fzf --reverse --height 20%)"
+}
+
+# kill process
+fkill() {
+	local pid
+	if [ "$UID" != "0" ]; then
+		pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+	else
+		pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+	fi
+
+	if [ "x$pid" != "x" ]; then
+		echo $pid | xargs kill -${1:-9}
+	fi
+}
+
+# Tmux
+tm() {
+	[[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+	if [ $1 ]; then
+		tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1")
+		return
+	fi
+	session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&
+		tmux $change -t "$session" || echo "No sessions found."
+}
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
