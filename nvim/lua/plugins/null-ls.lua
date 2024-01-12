@@ -23,7 +23,6 @@ mason_nls.setup {
 local formatting = nls.builtins.formatting
 local diagnostics = nls.builtins.diagnostics
 local actions = nls.builtins.code_actions
-local completion = nls.builtins.completion
 
 nls.setup {
     root_dir = nls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
@@ -62,10 +61,6 @@ nls.setup {
         diagnostics.clang_check.with {
             extra_filetypes = { "h", "hpp", "cpp" },
         },
-        --[[ completion ]]
-        completion.luasnip,
-        completion.spell,
-        completion.tags,
         --[[ code actions ]]
         actions.eslint_d,
     },

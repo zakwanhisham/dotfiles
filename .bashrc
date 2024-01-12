@@ -2,7 +2,7 @@
 export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
 export EDITOR="nvim"
-export MANPAGER="nvim +Man"
+export MANPAGER="nvim +Man!"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#78a9ff --color=fg+:#dfdfe0,bg+:#282828,hl+:#33b1ff --color=info:#3ddbd9,prompt:#ee5396,pointer:#be95ff --color=marker:#25be6a,spinner:#be95ff,header:#ff7eb6'
 
 # If not running interactively, don't do anything
@@ -10,8 +10,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#78a
 
 # VIM mode
 set -o vi
-bind -m vi-command 'Control-l: clear-screen'
-bind -m vi-insert 'Control-l: clear-screen'
 
 # PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -39,6 +37,8 @@ shopt -s dotglob
 shopt -s histappend
 shopt -s expand_aliases
 shopt -s checkwinsize
+shopt -s direxpand
+shopt -s dirspell
 
 # ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
@@ -46,6 +46,11 @@ bind "set completion-ignore-case on"
 # better command history search
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
+
+# TAB menu complete
+bind 'set show-all-if-ambiguous on'
+bind 'set show-all-if-unmodified on'
+bind 'TAB:menu-complete'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -80,7 +85,6 @@ alias diff='nvim -d'
 
 # Configuration
 alias i3='nvim ~/.config/i3/config'
-alias zshrc='nvim ~/.zshrc'
 alias bashrc='nvim ~/.bashrc'
 alias ala='nvim ~/.config/alacritty/alacritty.toml'
 alias neo='nvim ~/.config/nvim/init.lua'
@@ -91,13 +95,8 @@ alias ubuntu-server='ssh robo@192.168.0.11'
 alias ubuntu-desktop='ssh robo@192.168.0.16'
 alias ras-server='ssh root@159.223.69.150'
 
-# switch between shells
-alias tobash="sudo chsh $USER -s /usr/bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /usr/bin/zsh && echo 'Now log out.'"
-
 # Quickly change to directory
-# alias search='cd && cd $(fd --hidden --type d --base-directory ~ | fzf --reverse --height 20%)'
-# bind -x '"\C-d": search \n'
+alias ff='cd ~ && cd "$(fd --hidden --type d --base-directory ~ | fzf --reverse --height 20%)"'
 
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
@@ -113,5 +112,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 # nvm end
 
-# Starship
+# PROMPT
+# PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"

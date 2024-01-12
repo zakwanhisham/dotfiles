@@ -87,6 +87,15 @@ require("lazy").setup({
     },
 
     {
+        -- Autopairs
+        "windwp/nvim-autopairs",
+        dependencies = { "hrsh7th/nvim-cmp" },
+        config = function()
+            require "plugins.autopairs"
+        end,
+    },
+
+    {
         -- Todo comment
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },

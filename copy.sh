@@ -8,7 +8,6 @@ dotfile="/home/zakwan/.dotfiles"
 # Array of the source folders
 source_folders=(
 	"/home/zakwan/.gitconfig"
-	"/home/zakwan/.zshrc"
 	"/home/zakwan/.bashrc"
 	"/home/zakwan/.config/tmux/tmux.conf"
 	"/home/zakwan/.config/starship.toml"
