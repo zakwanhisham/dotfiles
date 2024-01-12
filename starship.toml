@@ -1,5 +1,4 @@
 format = "$all"
-add_newline = false
 continuation_prompt = '▶▶ '
 
 [c]
