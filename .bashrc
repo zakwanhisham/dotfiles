@@ -2,6 +2,7 @@
 export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
 export EDITOR="nvim"
+export VISUAL="nvim"
 export MANPAGER="nvim +Man!"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#78a9ff --color=fg+:#dfdfe0,bg+:#282828,hl+:#33b1ff --color=info:#3ddbd9,prompt:#ee5396,pointer:#be95ff --color=marker:#25be6a,spinner:#be95ff,header:#ff7eb6'
 
@@ -43,7 +44,7 @@ shopt -s direxpand
 shopt -s dirspell
 
 # ignore upper and lowercase when TAB completion
-bind "set completion-ignore-case on"
+bind 'set completion-ignore-case on'
 
 # better command history search
 bind '"\e[A":history-search-backward'
@@ -53,6 +54,19 @@ bind '"\e[B":history-search-forward'
 bind 'set show-all-if-ambiguous on'
 bind 'set show-all-if-unmodified on'
 bind 'TAB:menu-complete'
+
+# Colorize completion
+bind 'set colored-stats on'
+bind 'set visible-stats on'
+bind 'set mark-symlinked-directories on'
+bind 'set colored-completion-prefix on'
+bind 'set menu-complete-display-prefix on'
+
+# Show vim mode
+bind 'set show-mode-in-prompt on'
+
+# Disable control echo
+bind 'set echo-control-characters off'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -65,6 +79,9 @@ fi
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
 
+# source bash completion
+source /usr/share/bash-completion/bash_completion
+
 ### ALIASES
 # Changing "ls" to "exa"
 alias ls='eza --color=always --group-directories-first --icons --git'
@@ -76,6 +93,7 @@ alias ssr='shutdown -r now'
 alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 alias laptop='~/.screenlayout/laptop.sh'
 alias monitor='~/.screenlayout/monitor.sh'
+alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 alias asdf='setxkbmap -option caps:swapescape &'
 
 # Changing program name
@@ -93,11 +111,12 @@ alias neo='nvim ~/.config/nvim/init.lua'
 alias tconf='nvim ~/.config/tmux/tmux.conf'
 
 # ssh to machine
+alias ras-server='ssh root@159.223.69.150'
 alias ubuntu-server='ssh robo@192.168.0.11'
 alias ubuntu-desktop='ssh robo@192.168.0.16'
-alias ras-server='ssh root@159.223.69.150'
 alias wazuh-server='ssh root@167.71.223.8'
 alias wazuh-agent='ssh root@143.198.207.71'
+alias wazuh-attacker='ssh root@128.199.175.28'
 
 # Quickly change to directory
 ff() {
@@ -144,5 +163,4 @@ export NVM_DIR="$HOME/.nvm"
 # nvm end
 
 # PROMPT
-# PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
