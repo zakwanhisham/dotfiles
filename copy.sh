@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/bash
 
-set -xe
+set -xe 
 
 # Destination folder
 dotfile="/home/zakwan/.dotfiles"
@@ -11,6 +11,7 @@ source_folders=(
 	"/home/zakwan/.bashrc"
 	"/home/zakwan/.config/tmux/tmux.conf"
 	"/home/zakwan/.config/starship.toml"
+	"/home/zakwan/.config/topgrade.toml"
 	"/home/zakwan/.config/example.picom.conf"
 	"/home/zakwan/.config/i3"
 	"/home/zakwan/.config/nvim"

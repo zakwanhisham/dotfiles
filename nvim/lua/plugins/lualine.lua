@@ -37,7 +37,7 @@ local buffers = {
     hide_filename_extension = true,
     show_modified_status = false,
     mode = 0,
-    max_length = vim.o.columns * 1 / 3,
+    max_length = vim.o.columns * 1 / 5,
     padding = {
         right = 1,
         left = 1,
@@ -53,11 +53,11 @@ local filename = {
 
 local diff = {
     "diff",
-    symbols = {
-        added = "󰐖 ",
-        modified = "󱗜 ",
-        removed = "󰍵 ",
-    },
+    -- symbols = {
+    --     added = "󰐖 ",
+    --     modified = "󱗜 ",
+    --     removed = "󰍵 ",
+    -- },
 }
 
 local location = {

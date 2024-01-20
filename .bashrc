@@ -111,12 +111,8 @@ alias neo='nvim ~/.config/nvim/init.lua'
 alias tconf='nvim ~/.config/tmux/tmux.conf'
 
 # ssh to machine
-alias ras-server='ssh root@159.223.69.150'
-alias ubuntu-server='ssh robo@192.168.0.11'
-alias ubuntu-desktop='ssh robo@192.168.0.16'
-alias wazuh-server='ssh root@167.71.223.8'
-alias wazuh-agent='ssh root@143.198.207.71'
-alias wazuh-attacker='ssh root@128.199.175.28'
+alias ras-server='sshpass -f ~/.pass/ras-server.txt ssh -o StrictHostKeyChecking=no root@159.223.69.150'
+alias ubuntu-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=no robo@192.168.0.16'
 
 # Quickly change to directory
 ff() {
