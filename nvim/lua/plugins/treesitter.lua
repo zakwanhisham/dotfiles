@@ -11,6 +11,7 @@ require("nvim-treesitter.configs").setup {
         "javascript",
         "jsdoc",
         "typescript",
+        "markdown",
         "vimdoc",
         "vim",
     },
