@@ -112,7 +112,7 @@ alias tconf='nvim ~/.config/tmux/tmux.conf'
 
 # ssh to machine
 alias ras-server='sshpass -f ~/.pass/ras-server.txt ssh -o StrictHostKeyChecking=no root@159.223.69.150'
-alias ubuntu-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=no robo@192.168.0.16'
+alias robomy-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=no robomy-server@192.168.0.16'
 
 # Quickly change to directory
 ff() {
