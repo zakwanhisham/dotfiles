@@ -53,11 +53,11 @@ local filename = {
 
 local diff = {
     "diff",
-    -- symbols = {
-    --     added = "󰐖 ",
-    --     modified = "󱗜 ",
-    --     removed = "󰍵 ",
-    -- },
+    symbols = {
+        added = "󰐖 ",
+        modified = "󱗜 ",
+        removed = "󰍵 ",
+    },
 }
 
 local location = {

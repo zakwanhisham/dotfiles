@@ -9,6 +9,7 @@ dotfile="/home/zakwan/.dotfiles"
 source_folders=(
 	"/home/zakwan/.gitconfig"
 	"/home/zakwan/.bashrc"
+	"/home/zakwan/.fehbg"
 	"/home/zakwan/.config/tmux/tmux.conf"
 	"/home/zakwan/.config/starship.toml"
 	"/home/zakwan/.config/topgrade.toml"
