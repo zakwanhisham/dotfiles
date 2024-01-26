@@ -5,8 +5,10 @@ export HISTSIZE=10000
 export HISTFILESIZE=20000
 export EDITOR="nvim"
 export VISUAL="nvim"
+export SUDO_EDITOR="nvim"
 export MANPAGER="nvim +Man!"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#78a9ff --color=fg+:#dfdfe0,bg+:#282828,hl+:#33b1ff --color=info:#3ddbd9,prompt:#ee5396,pointer:#be95ff --color=marker:#25be6a,spinner:#be95ff,header:#ff7eb6'
+export IGNOREEOF=100
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -84,6 +86,9 @@ source /usr/share/fzf/completion.bash
 # source bash completion
 source /usr/share/bash-completion/bash_completion
 
+# source command-not-found
+source /usr/share/doc/pkgfile/command-not-found.bash
+
 ### ALIASES
 # Changing "ls" to "exa"
 alias ls='eza --color=always --group-directories-first --icons --git'
@@ -116,6 +121,10 @@ alias tconf='nvim ~/.config/tmux/tmux.conf'
 alias ras-server='sshpass -f ~/.pass/ras-server.txt ssh -o StrictHostKeyChecking=no root@159.223.69.150'
 alias robomy-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=no robomy-server@192.168.0.16'
 alias door-pi='sshpass -f ~/.pass/pi.txt ssh -o StrictHostKeyChecking=no pi@192.168.0.6'
+
+# run-help ability
+run-help() { help "$READLINE_LINE" 2>/dev/null || man "$READLINE_LINE"; }
+bind -m vi-insert -x '"\eh": run-help'
 
 # Quickly change to directory
 ff() {
