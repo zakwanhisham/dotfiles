@@ -1,6 +1,8 @@
 # EXPORT
 export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=10000
+export HISTFILESIZE=20000
 export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER="nvim +Man!"
@@ -113,6 +115,7 @@ alias tconf='nvim ~/.config/tmux/tmux.conf'
 # ssh to machine
 alias ras-server='sshpass -f ~/.pass/ras-server.txt ssh -o StrictHostKeyChecking=no root@159.223.69.150'
 alias robomy-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=no robomy-server@192.168.0.16'
+alias door-pi='sshpass -f ~/.pass/pi.txt ssh -o StrictHostKeyChecking=no pi@192.168.0.6'
 
 # Quickly change to directory
 ff() {

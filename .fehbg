@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-center '/home/zakwan/Pictures/anime/driving.jpg'
+feh --no-fehbg --bg-fill '/home/zakwan/Pictures/anime/driving.jpg'
