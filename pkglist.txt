@@ -204,6 +204,7 @@ thunderbird
 tidy
 tldr
 tmux
+tree
 ttf-bitstream-vera
 ttf-dejavu
 ttf-font-awesome
