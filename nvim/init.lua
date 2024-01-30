@@ -191,15 +191,6 @@ require("lazy").setup({
     },
 
     {
-        -- Treesitter Context
-        "nvim-treesitter/nvim-treesitter-context",
-        event = "BufReadPre",
-        config = function()
-            require "plugins.context"
-        end,
-    },
-
-    {
         -- Highlight, edit, and navigate code
         "nvim-treesitter/nvim-treesitter",
         event = "VeryLazy",
