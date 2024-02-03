@@ -171,6 +171,15 @@ require("lazy").setup({
     },
 
     {
+        -- rest client for neovim
+        "rest-nvim/rest.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require "plugins.rest"
+        end,
+    },
+
+    {
         -- Fuzzy Finder (files, lsp, etc)
         "nvim-telescope/telescope.nvim",
         branch = "0.1.x",
