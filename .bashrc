@@ -122,6 +122,7 @@ alias ras-server='sshpass -f ~/.pass/ras-server.txt ssh -o StrictHostKeyChecking
 alias robomy-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=no robomy-server@192.168.0.16'
 alias door-pi='sshpass -f ~/.pass/pi.txt ssh -o StrictHostKeyChecking=no pi@192.168.0.6'
 
+### BASH FUNCTION
 # run-help ability
 run-help() { help "$READLINE_LINE" 2>/dev/null || man "$READLINE_LINE"; }
 bind -m vi-insert -x '"\eh": run-help'
@@ -156,6 +157,7 @@ tm() {
 		tmux $change -t "$session" || echo "No sessions found."
 }
 
+### SOME EXPORTS
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
 case ":$PATH:" in
