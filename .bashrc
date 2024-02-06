@@ -67,7 +67,7 @@ bind 'set colored-completion-prefix on'
 bind 'set menu-complete-display-prefix on'
 
 # Show vim mode
-bind 'set show-mode-in-prompt on'
+# bind 'set show-mode-in-prompt on'
 
 # Disable control echo
 bind 'set echo-control-characters off'

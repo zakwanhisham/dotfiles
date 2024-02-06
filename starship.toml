@@ -1,35 +1,27 @@
 format = """
-$username\
-$hostname\
 $directory\
 $git_branch\
-$git_state\
 $git_status\
 $cmd_duration\
 $line_break\
 $character"""
 
 [directory]
-truncation_length = 5
 truncate_to_repo = false
 style = "blue"
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
 
 [git_branch]
 format = "([$branch]($style))"
-style = "bright-grey"
-
-[git_status]
-format = '([\[$all_status$ahead_behind\]]($style))'
-style = "cyan"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style)) '
+style = "purple"
+
 [cmd_duration]
-format = " [$duration]($style)"
-style = "yellow"
+format = "took [$duration]($style) "
+style = "cyan"
