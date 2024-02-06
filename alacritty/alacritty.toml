@@ -3,37 +3,81 @@ live_config_reload = true
 [colors]
 draw_bold_text_with_bright_colors = true
 
-[[colors.indexed_colors]]
-color = "0x3ddbd9"
-index = 16
+[colors.primary]
+background = "#161616"
+foreground = "#f2f4f8"
+dim_foreground = "#b6b8bb"
+bright_foreground = "#f9fbff"
 
-[[colors.indexed_colors]]
-color = "0xff7eb6"
-index = 17
+[colors.cursor]
+text = "#f2f4f8"
+cursor = "#b6b8bb"
 
-[colors.bright]
-black = "0x484848"
-blue = "0x8cb6ff"
-cyan = "0x52bdff"
-green = "0x46c880"
-magenta = "0xc8a5ff"
-red = "0xf16da6"
-white = "0xe4e4e5"
-yellow = "0x2dc7c4"
+[colors.vi_mode_cursor]
+text = "#f2f4f8"
+cursor = "#33b1ff"
+
+[colors.search.matches]
+foreground = "#f2f4f8"
+background = "#525253"
+
+[colors.search.focused_match]
+foreground = "#f2f4f8"
+background = "#3ddbd9"
+
+[colors.footer_bar]
+foreground = "#f2f4f8"
+background = "#353535"
+
+[colors.hints.start]
+foreground = "#f2f4f8"
+background = "#3ddbd9"
+
+[colors.hints.end]
+foreground = "#f2f4f8"
+background = "#353535"
+
+[colors.selection]
+text = "#f2f4f8"
+background = "#2a2a2a"
 
 [colors.normal]
-black = "0x282828"
-blue = "0x78a9ff"
-cyan = "0x33b1ff"
-green = "0x25be6a"
-magenta = "0xbe95ff"
-red = "0xee5396"
-white = "0xdfdfe0"
-yellow = "0x08bdba"
+black = "#282828"
+red = "#ee5396"
+green = "#25be6a"
+yellow = "#08bdba"
+blue = "#78a9ff"
+magenta = "#be95ff"
+cyan = "#33b1ff"
+white = "#dfdfe0"
 
-[colors.primary]
-background = "0x161616"
-foreground = "0xf2f4f8"
+[colors.bright]
+black = "#484848"
+red = "#f16da6"
+green = "#46c880"
+yellow = "#2dc7c4"
+blue = "#8cb6ff"
+magenta = "#c8a5ff"
+cyan = "#52bdff"
+white = "#e4e4e5"
+
+[colors.dim]
+black = "#222222"
+red = "#ca4780"
+green = "#1fa25a"
+yellow = "#07a19e"
+blue = "#6690d9"
+magenta = "#a27fd9"
+cyan = "#2b96d9"
+white = "#bebebe"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#3ddbd9"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#ff7eb6"
 
 [cursor.style]
 blinking = "Never"
@@ -72,11 +116,6 @@ key = "C"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-action = "PasteSelection"
-key = "Insert"
-mods = "Shift"
-
-[[keyboard.bindings]]
 action = "ResetFontSize"
 key = "Key0"
 mods = "Control"
@@ -90,55 +129,6 @@ mods = "Control"
 action = "DecreaseFontSize"
 key = "Minus"
 mods = "Control"
-
-[[keyboard.bindings]]
-action = "ToggleFullscreen"
-key = "F11"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "Paste"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "Copy"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "ClearLogNotice"
-key = "L"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\f"
-key = "L"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "ScrollPageUp"
-key = "PageUp"
-mode = "~Alt"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "ScrollPageDown"
-key = "PageDown"
-mode = "~Alt"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "ScrollToTop"
-key = "Home"
-mode = "~Alt"
-mods = "Shift"
-
-[[keyboard.bindings]]
-action = "ScrollToBottom"
-key = "End"
-mode = "~Alt"
-mods = "Shift"
 
 [mouse]
 hide_when_typing = true

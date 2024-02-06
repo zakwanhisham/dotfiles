@@ -1,8 +1,9 @@
 # EXPORT
 export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
-export HISTSIZE=10000
-export HISTFILESIZE=20000
+export HISTSIZE=500000
+export HISTFILESIZE=100000
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
@@ -104,8 +105,6 @@ alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 alias asdf='setxkbmap -option caps:swapescape &'
 
 # Changing program name
-alias cat='bat'
-alias less='less --use-color -N'
 alias weather='curl wttr.in'
 alias cal='cal --monday -3'
 alias diff='nvim -d'

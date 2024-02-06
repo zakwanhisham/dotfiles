@@ -10,10 +10,6 @@ $character"""
 truncate_to_repo = false
 style = "blue"
 
-[character]
-success_symbol = "[>](bold green)"
-error_symbol = "[x](bold red)"
-
 [git_branch]
 format = "([$branch]($style))"
 style = "bright-black"
@@ -25,3 +21,7 @@ style = "purple"
 [cmd_duration]
 format = "took [$duration]($style) "
 style = "cyan"
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"

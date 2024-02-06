@@ -96,13 +96,6 @@ require("lazy").setup({
     },
 
     {
-        -- Todo comment
-        "folke/todo-comments.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        opts = {},
-    },
-
-    {
         -- Formatter and Linter
         "nvimtools/none-ls.nvim",
         event = { "BufReadPre", "BufNewFile" },
