@@ -68,7 +68,7 @@ bind 'set colored-completion-prefix on'
 bind 'set menu-complete-display-prefix on'
 
 # Show vim mode
-# bind 'set show-mode-in-prompt on'
+bind 'set show-mode-in-prompt on'
 
 # Disable control echo
 bind 'set echo-control-characters off'
@@ -105,6 +105,7 @@ alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 alias asdf='setxkbmap -option caps:swapescape &'
 
 # Changing program name
+alias less='less --use-color -N'
 alias weather='curl wttr.in'
 alias cal='cal --monday -3'
 alias diff='nvim -d'
