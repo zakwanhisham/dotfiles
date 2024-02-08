@@ -27,9 +27,6 @@ require("lazy").setup({
     -- Vim Surround
     "tpope/vim-surround",
 
-    -- vim-tmux-navigator
-    "christoomey/vim-tmux-navigator",
-
     {
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
