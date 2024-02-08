@@ -26,8 +26,8 @@ vim.keymap.set("n", "<leader>-", "<cmd>split<cr>", { desc = "Split Horizontal" }
 --[[ Move to window using the <ctrl> hjkl keys ]]
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right" })
--- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom" })
--- vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to up" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to up" })
 
 --[[ Resize window using <ctrl> arrow keys ]]
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
@@ -36,10 +36,10 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window he
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 --[[ Move current line up/down ]]
-vim.keymap.set("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "Move current line up" })
-vim.keymap.set("n", "<C-k>", "<cmd>m .-2<cr>==", { desc = "Move current line down" })
-vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
-vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
+vim.keymap.set("v", "<S-j>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
+vim.keymap.set("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
+-- vim.keymap.set("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "Move current line up" })
+-- vim.keymap.set("n", "<C-k>", "<cmd>m .-2<cr>==", { desc = "Move current line down" })
 
 --[[ Better indenting ]]
 vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })

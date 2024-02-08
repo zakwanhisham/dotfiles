@@ -105,7 +105,7 @@ alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 alias asdf='setxkbmap -option caps:swapescape &'
 
 # Changing program name
-alias rm='rm -i'
+alias rm='rm -iv'
 alias less='less --use-color -N'
 alias weather='curl wttr.in'
 alias cal='cal --monday -3'
