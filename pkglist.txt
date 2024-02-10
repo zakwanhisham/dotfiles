@@ -72,8 +72,6 @@ flameshot
 fsarchiver
 galculator
 gdb
-gimp
-gimp-help-en
 git
 glances
 glow
@@ -164,8 +162,8 @@ pipewire-pulse
 pkgfile
 playerctl
 polkit-gnome
+poppler-data
 poppler-glib
-postman-bin
 power-profiles-daemon
 pv
 python
