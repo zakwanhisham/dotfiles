@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Buffer Next" })
 vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Buffer Delete" })
 
 --[[ Format ]]
-vim.keymap.set("n", "<leader>lf", "<cmd>Format<cr>", { desc = "Format files" })
+vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format files" })
 
 --[[ Code Action ]]
 vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })

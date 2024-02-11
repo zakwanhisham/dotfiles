@@ -208,7 +208,6 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
-# exec --no-startup-id feh --no-fehbg --bg-max ~/Pictures/anime/driving.jpg 
 exec --no-startup-id ~/.fehbg
 
 # Desktop notifications
@@ -219,6 +218,9 @@ exec --no-startup-id setxkbmap -option caps:swapescape
 
 # Autostart apps as you like
 exec --no-startup-id alacritty 
+
+#Autotiling
+exec_always --no-startup-id autotiling
 
 ##################
 # floating rules #
