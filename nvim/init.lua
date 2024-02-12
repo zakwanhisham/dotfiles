@@ -59,6 +59,7 @@ require("lazy").setup({
     {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
         "lewis6991/gitsigns.nvim",
+        event = { "BufReadPre", "BufNewFile" },
         config = function()
             require "plugins.gitsigns"
         end,
@@ -74,18 +75,9 @@ require("lazy").setup({
     },
 
     {
-        -- Set lualine as statusline
-        "nvim-lualine/lualine.nvim",
-        event = "VeryLazy",
-        dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
-        config = function()
-            require "plugins.lualine"
-        end,
-    },
-
-    {
         -- Autopairs
         "windwp/nvim-autopairs",
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = { "hrsh7th/nvim-cmp" },
         config = function()
             require "plugins.autopairs"
@@ -95,7 +87,6 @@ require("lazy").setup({
     {
         -- Formatter and Linter
         "nvimtools/none-ls.nvim",
-        event = { "BufReadPre", "BufNewFile" },
         dependencies = { "jay-babu/mason-null-ls.nvim" },
         config = function()
             require "plugins.null-ls"
@@ -105,6 +96,7 @@ require("lazy").setup({
     {
         -- Trouble
         "folke/trouble.nvim",
+        event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
         opts = {},
     },
@@ -112,6 +104,7 @@ require("lazy").setup({
     {
         -- Neogit
         "NeogitOrg/neogit",
+        event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim", -- required
             "sindrets/diffview.nvim", -- optional
@@ -124,6 +117,7 @@ require("lazy").setup({
     {
         -- Doc snippet
         "danymat/neogen",
+        event = "VeryLazy",
         config = function()
             require "plugins.neogen"
         end,
@@ -132,6 +126,7 @@ require("lazy").setup({
     {
         -- Add indentation guides even on blank lines
         "lukas-reineke/indent-blankline.nvim",
+        event = "VeryLazy",
         main = "ibl",
         opts = {},
     },
@@ -163,6 +158,7 @@ require("lazy").setup({
     {
         -- rest client for neovim
         "rest-nvim/rest.nvim",
+        event = "VeryLazy",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             require "plugins.rest"
@@ -172,6 +168,7 @@ require("lazy").setup({
     {
         -- Fuzzy Finder (files, lsp, etc)
         "nvim-telescope/telescope.nvim",
+        event = "VeryLazy",
         branch = "0.1.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
