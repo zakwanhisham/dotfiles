@@ -165,4 +165,5 @@ export NVM_DIR="$HOME/.nvm"
 # nvm end
 
 # PROMPT
+# PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"

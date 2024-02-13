@@ -75,6 +75,16 @@ require("lazy").setup({
     },
 
     {
+        -- Set lualine as statusline
+        "nvim-lualine/lualine.nvim",
+        event = "VeryLazy",
+        dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
+        config = function()
+            require "plugins.lualine"
+        end,
+    },
+
+    {
         -- Autopairs
         "windwp/nvim-autopairs",
         event = { "InsertEnter", "CmdlineEnter" },

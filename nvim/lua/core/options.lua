@@ -98,7 +98,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 -- mode
-vim.o.showmode = true
+vim.o.showmode = false
 vim.o.showcmd = false
 
 -- sign
