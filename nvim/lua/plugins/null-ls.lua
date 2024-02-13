@@ -5,18 +5,17 @@ local nls_utils = require "null-ls.utils"
 mason_nls.setup {
     automatic_installation = true,
     ensure_installed = {
-        "prettierd",
-        "stylua",
+        "clang-check",
+        "clang-format",
         "eslint_d",
         "gofumpt",
         "goimports",
-        "golines",
         "golangci-lint",
+        "golines",
+        "prettierd",
         "shfmt",
-        "clang-format",
-        "clang-check",
+        "stylua",
         "taplo",
-        "codespell",
     },
 }
 
@@ -49,7 +48,6 @@ nls.setup {
         },
         --[[ linting ]]
         diagnostics.golangci_lint,
-        diagnostics.codespell,
         diagnostics.eslint_d.with {
             condition = function(utils)
                 return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }

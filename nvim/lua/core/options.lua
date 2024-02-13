@@ -74,6 +74,7 @@ vim.o.incsearch = true
 
 -- colors
 vim.o.termguicolors = true
+vim.o.background = "dark"
 
 -- command height
 vim.o.cmdheight = 1
@@ -107,7 +108,6 @@ vim.o.cursorline = true
 
 -- misc
 vim.o.conceallevel = 0
-vim.o.pumheight = 10
 vim.o.laststatus = 2
 vim.o.ruler = true
 vim.o.linebreak = true

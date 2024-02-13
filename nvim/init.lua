@@ -77,7 +77,7 @@ require("lazy").setup({
     {
         -- Autopairs
         "windwp/nvim-autopairs",
-        event = { "BufReadPre", "BufNewFile" },
+        event = { "InsertEnter", "CmdlineEnter" },
         dependencies = { "hrsh7th/nvim-cmp" },
         config = function()
             require "plugins.autopairs"
@@ -149,20 +149,11 @@ require("lazy").setup({
     {
         -- "gc" to comment visual regions/lines
         "numToStr/Comment.nvim",
+        event = "VeryLazy",
         config = function()
             require "plugins.comment"
         end,
         opts = {},
-    },
-
-    {
-        -- rest client for neovim
-        "rest-nvim/rest.nvim",
-        event = "VeryLazy",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require "plugins.rest"
-        end,
     },
 
     {
