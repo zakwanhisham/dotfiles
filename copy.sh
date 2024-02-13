@@ -18,6 +18,7 @@ source_folders=(
 	"/home/zakwan/.config/nvim"
 	"/home/zakwan/.config/alacritty"
 	"/home/zakwan/.config/dunst"
+	"/home/zakwan/.config/bat"
 )
 
 # Variable to track errors

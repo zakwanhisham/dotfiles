@@ -64,7 +64,7 @@ local location = {
     "location",
     padding = {
         right = 1,
-        left = 0,
+        left = 1,
     },
 }
 
