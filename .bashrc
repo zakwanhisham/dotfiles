@@ -130,7 +130,20 @@ bind -m vi-insert -x '"\eh": run-help'
 
 # Quickly change to directory
 ff() {
-	cd ~ && cd "$(fd --hidden --type d --base-directory ~ | fzf --header "Select Directory" --reverse --height 20%)"
+	local selected_dir
+	selected_dir=$(find "$HOME" -mindepth 1 -type d | fzf --header "Select Directory" --reverse --height 20%)
+	if [ -n "$selected_dir" ]; then
+		selected_dir=$(realpath "$selected_dir")
+		if [ -d "$selected_dir" ]; then
+			printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
+			cd "$selected_dir" || return 1
+		else
+			echo "Selected directory does not exist: $selected_dir"
+			return 1
+		fi
+	else
+		echo "No directory selected."
+	fi
 }
 
 # Tmux
