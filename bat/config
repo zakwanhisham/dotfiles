@@ -6,6 +6,9 @@
 # for a list of all available themes
 --theme="base16"
 
+# Show line numbers, Git modifications and file header (but no grid)
+--style="numbers,changes,header"
+
 # Enable this to use italic text on the terminal. This is not supported on all
 # terminal emulators (like tmux, by default):
 #--italic-text=always
