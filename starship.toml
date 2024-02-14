@@ -7,7 +7,7 @@ $line_break\
 $character"""
 
 [directory]
-truncate_to_repo = false
+truncate_to_repo = true
 style = "blue"
 
 [git_branch]

@@ -11,8 +11,8 @@ local filetype = {
     "filetype",
     icons_enabled = true,
     padding = {
-        right = 0,
-        left = 1,
+        right = 1,
+        left = 0,
     },
 }
 
@@ -87,13 +87,13 @@ require("lualine").setup {
             left = "",
             right = "",
         },
-        globalstatus = true,
+        globalstatus = false,
     },
     sections = {
         lualine_a = {},
         lualine_b = {},
         lualine_c = { "mode", filename, branch, diff },
-        lualine_x = { diagnostics, filetype, location, progress },
+        lualine_x = { diagnostics, location, progress },
         lualine_y = {},
         lualine_z = { buffers },
     },

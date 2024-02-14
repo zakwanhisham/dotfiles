@@ -1,15 +1,17 @@
 # EXPORT
-export TERM="xterm-256color"
+export EDITOR="nvim"
 export HISTCONTROL=ignoredups:erasedups
-export HISTSIZE=500000
 export HISTFILESIZE=100000
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
-export EDITOR="nvim"
-export VISUAL="nvim"
-export SUDO_EDITOR="nvim"
-export MANPAGER="nvim +Man!"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#78a9ff --color=fg+:#dfdfe0,bg+:#282828,hl+:#33b1ff --color=info:#3ddbd9,prompt:#ee5396,pointer:#be95ff --color=marker:#25be6a,spinner:#be95ff,header:#ff7eb6'
+export HISTSIZE=500000
 export IGNOREEOF=100
+export MANPAGER="nvim +Man!"
+export SUDO_EDITOR="nvim"
+export TERM="xterm-256color"
+export VISUAL="nvim"
+
+# FZF default opts
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#78a9ff --color=fg+:#dfdfe0,bg+:#282828,hl+:#33b1ff --color=info:#3ddbd9,prompt:#ee5396,pointer:#be95ff --color=marker:#25be6a,spinner:#be95ff,header:#ff7eb6'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -133,7 +135,6 @@ ff() {
 	local selected_dir
 	selected_dir=$(find "$HOME" -mindepth 1 -type d | fzf --header "Select Directory" --reverse --height 20%)
 	if [ -n "$selected_dir" ]; then
-		selected_dir=$(realpath "$selected_dir")
 		if [ -d "$selected_dir" ]; then
 			printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
 			cd "$selected_dir" || return 1
@@ -155,6 +156,20 @@ tm() {
 	fi
 	session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&
 		tmux $change -t "$session" || echo "No sessions found."
+}
+
+# fkill - kill processes - list only the ones you can kill. Modified the earlier script.
+fkill() {
+	local pid
+	if [ "$UID" != "0" ]; then
+		pid=$(ps -f -u $UID | sed 1d | fzf -m --reverse --height 20% | awk '{print $2}')
+	else
+		pid=$(ps -ef | sed 1d | fzf -m --reverse --height 20% | awk '{print $2}')
+	fi
+
+	if [ "x$pid" != "x" ]; then
+		echo $pid | xargs kill -${1:-9}
+	fi
 }
 
 # Man
