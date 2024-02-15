@@ -13,6 +13,7 @@ mason_nls.setup {
         "golangci-lint",
         "golines",
         "prettierd",
+        "pylsp",
         "shfmt",
         "stylua",
         "taplo",
