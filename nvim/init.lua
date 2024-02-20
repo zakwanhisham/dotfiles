@@ -27,6 +27,9 @@ require("lazy").setup({
     -- Vim Surround
     "tpope/vim-surround",
 
+    -- diffview
+    "sindrets/diffview.nvim", -- optional
+
     {
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
@@ -109,19 +112,6 @@ require("lazy").setup({
         event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
         opts = {},
-    },
-
-    {
-        -- Neogit
-        "NeogitOrg/neogit",
-        event = "VeryLazy",
-        dependencies = {
-            "nvim-lua/plenary.nvim", -- required
-            "sindrets/diffview.nvim", -- optional
-        },
-        config = function()
-            require "plugins.neogit"
-        end,
     },
 
     {

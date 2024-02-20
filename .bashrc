@@ -10,6 +10,9 @@ export SUDO_EDITOR="nvim"
 export TERM="xterm-256color"
 export VISUAL="nvim"
 
+# Standard ISO 8601 timestamp
+HISTTIMEFORMAT='%F %T'
+
 # FZF default opts
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#78a9ff --color=fg+:#dfdfe0,bg+:#282828,hl+:#33b1ff --color=info:#3ddbd9,prompt:#ee5396,pointer:#be95ff --color=marker:#25be6a,spinner:#be95ff,header:#ff7eb6'
 
@@ -40,18 +43,26 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # SHOPT
-shopt -s autocd
-shopt -s cdspell
+shopt -s autocd 2>/dev/null
+shopt -s cdspell 2>/dev/null
 shopt -s checkwinsize
 shopt -s cmdhist
-shopt -s direxpand
+shopt -s direxpand 2>/dev/null
 shopt -s dirspell
 shopt -s dotglob
 shopt -s expand_aliases
+shopt -s globstar 2>/dev/null
 shopt -s histappend
+shopt -s nocaseglob
 
 # ignore upper and lowercase when TAB completion
 bind 'set completion-ignore-case on'
+
+# Treat hypens and underscores as equivalent
+bind 'set completion-map-case on'
+
+# Display matches for ambiguous patterns at first tab press
+bind 'set show-all-if-ambiguous on'
 
 # better command history search
 bind '"\e[A":history-search-backward'
@@ -191,21 +202,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 # nvm end
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/zakwan/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
-	eval "$__conda_setup"
-else
-	if [ -f "/home/zakwan/miniconda3/etc/profile.d/conda.sh" ]; then
-		. "/home/zakwan/miniconda3/etc/profile.d/conda.sh"
-	else
-		export PATH="/home/zakwan/miniconda3/bin:$PATH"
-	fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # PROMPT
 # PS1='[\u@\h \W]\$ '
