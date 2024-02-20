@@ -27,15 +27,12 @@ require("lazy").setup({
     -- Vim Surround
     "tpope/vim-surround",
 
-    -- diffview
-    "sindrets/diffview.nvim", -- optional
-
     {
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
         dependencies = {
             { "williamboman/mason.nvim", config = true },
-            { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+            { "j-hui/fidget.nvim",       tag = "legacy", opts = {} },
             "williamboman/mason-lspconfig.nvim",
             "folke/neodev.nvim",
         },
@@ -115,20 +112,35 @@ require("lazy").setup({
     },
 
     {
+        -- Add indentation guides even on blank lines
+        "lukas-reineke/indent-blankline.nvim",
+        event = "VeryLazy",
+        main = "ibl",
+        opts = {},
+    },
+
+    {
+        -- Neogit
+        "NeogitOrg/neogit",
+        event = "VeryLazy",
+        branch = "nightly",
+        dependencies = {
+            "nvim-lua/plenary.nvim",         -- required
+            "sindrets/diffview.nvim",        -- optional - Diff integration
+            "nvim-telescope/telescope.nvim", -- optional
+        },
+        config = function()
+            require "plugins.neogit"
+        end,
+    },
+
+    {
         -- Doc snippet
         "danymat/neogen",
         event = "VeryLazy",
         config = function()
             require "plugins.neogen"
         end,
-    },
-
-    {
-        -- Add indentation guides even on blank lines
-        "lukas-reineke/indent-blankline.nvim",
-        event = "VeryLazy",
-        main = "ibl",
-        opts = {},
     },
 
     {
@@ -185,7 +197,7 @@ require("lazy").setup({
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
             { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-            { "windwp/nvim-ts-autotag", event = "InsertEnter" },
+            { "windwp/nvim-ts-autotag",                      event = "InsertEnter" },
         },
         config = function()
             require "plugins.treesitter"
