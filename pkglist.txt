@@ -10,6 +10,7 @@ alsa-utils
 arandr
 arc-gtk-theme-eos
 archlinux-xdg-menu
+autotiling
 awesome-terminal-fonts
 b43-fwcutter
 base
@@ -105,6 +106,7 @@ iwd
 jfsutils
 jq
 kernel-install-for-dracut
+keyd
 lazygit
 less
 libdvdcss
@@ -179,6 +181,7 @@ rebuild-detector
 reflector
 reflector-simple
 reiserfsprogs
+rng-tools
 rofi
 rsync
 rtkit
@@ -209,6 +212,7 @@ ttf-font-awesome
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-ms-fonts
+ttf-nerd-fonts-symbols
 ttf-opensans
 ttf-ubuntu-nerd
 tumbler
@@ -243,5 +247,6 @@ xorg-xkill
 xorg-xrandr
 xsel
 xterm
+youtube-dl
 zathura
 zathura-pdf-mupdf
