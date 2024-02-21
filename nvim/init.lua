@@ -32,7 +32,7 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         dependencies = {
             { "williamboman/mason.nvim", config = true },
-            { "j-hui/fidget.nvim",       tag = "legacy", opts = {} },
+            { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
             "williamboman/mason-lspconfig.nvim",
             "folke/neodev.nvim",
         },
@@ -125,8 +125,8 @@ require("lazy").setup({
         event = "VeryLazy",
         branch = "nightly",
         dependencies = {
-            "nvim-lua/plenary.nvim",         -- required
-            "sindrets/diffview.nvim",        -- optional - Diff integration
+            "nvim-lua/plenary.nvim", -- required
+            "sindrets/diffview.nvim", -- optional - Diff integration
             "nvim-telescope/telescope.nvim", -- optional
         },
         config = function()
@@ -197,7 +197,7 @@ require("lazy").setup({
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
             { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-            { "windwp/nvim-ts-autotag",                      event = "InsertEnter" },
+            { "windwp/nvim-ts-autotag", event = "InsertEnter" },
         },
         config = function()
             require "plugins.treesitter"

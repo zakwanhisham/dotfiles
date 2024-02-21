@@ -119,9 +119,9 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # change container layout
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
-# bindsym $mod+e layout default
+# bindsym $mod+Shift+s layout stacking
+# bindsym $mod+Shift+w layout tabbed
+# bindsym $mod+Shift+e layout default
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -214,7 +214,9 @@ exec --no-startup-id ~/.fehbg
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
 # Swap caps-lock with esc
-exec --no-startup-id setxkbmap -option caps:swapescape 
+# This is already covered by using keyd (https://github.com/rvaiya/keyd)
+# run `paru keyd`
+# exec --no-startup-id setxkbmap -option caps:swapescape 
 
 # Autostart apps as you like
 exec --no-startup-id alacritty 
