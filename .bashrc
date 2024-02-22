@@ -121,6 +121,7 @@ alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 alias cal='cal --monday -3'
 alias diff='nvim -d'
 alias less='less --use-color -N'
+alias lg='lazygit'
 alias rm='rm -iv'
 alias weather='curl wttr.in'
 
@@ -144,7 +145,7 @@ bind -m vi-insert -x '"\eh": run-help'
 # Quickly change to directory
 ff() {
 	local selected_dir
-	selected_dir=$(find "$HOME" -mindepth 1 -type d | fzf --header "Select Directory" --reverse --height 20%)
+	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf --header "Select Directory" --reverse --height 20%)
 	if [ -n "$selected_dir" ]; then
 		if [ -d "$selected_dir" ]; then
 			printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
@@ -205,6 +206,21 @@ export NVM_DIR="$HOME/.nvm"
 
 # gopass autocomplete
 source <(gopass completion bash)
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/zakwan/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+if [ $? -eq 0 ]; then
+	eval "$__conda_setup"
+else
+	if [ -f "/home/zakwan/miniconda3/etc/profile.d/conda.sh" ]; then
+		. "/home/zakwan/miniconda3/etc/profile.d/conda.sh"
+	else
+		export PATH="/home/zakwan/miniconda3/bin:$PATH"
+	fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 # PROMPT
 # PS1='[\u@\h \W]\$ '
