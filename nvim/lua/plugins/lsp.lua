@@ -24,22 +24,27 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
-    gopls = {},
-    rust_analyzer = {},
-    tsserver = {},
-    html = { filetypes = { "html", "twig", "hbs" } },
-    tailwindcss = {},
+    bashls = {},
     clangd = {
         function(_, opts)
             opts.capabilities.offsetEncoding = { "utf-16" }
         end,
     },
+    eslint = {},
+    gopls = {},
+    html = { filetypes = { "html", "twig", "hbs" } },
+    jsonls = {},
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
         },
     },
+    pylsp = {},
+    rust_analyzer = {},
+    tailwindcss = {},
+    tsserver = {},
+    yamlls = {},
 }
 
 -- Setup neovim lua configuration

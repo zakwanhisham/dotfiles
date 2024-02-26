@@ -97,7 +97,10 @@ require("lazy").setup({
     {
         -- Formatter and Linter
         "nvimtools/none-ls.nvim",
-        dependencies = { "jay-babu/mason-null-ls.nvim" },
+        dependencies = {
+            "nvimtools/none-ls-extras.nvim",
+            "jay-babu/mason-null-ls.nvim",
+        },
         config = function()
             require "plugins.null-ls"
         end,

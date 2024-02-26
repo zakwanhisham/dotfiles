@@ -139,8 +139,8 @@ alias robomy-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=
 
 ### BASH FUNCTION
 # run-help ability
-run-help() { help "$READLINE_LINE" 2>/dev/null || man "$READLINE_LINE"; }
-bind -m vi-insert -x '"\eh": run-help'
+# run-help() { help "$READLINE_LINE" 2>/dev/null || man "$READLINE_LINE"; }
+# bind -m vi-insert -x '"\eh": run-help'
 
 # Quickly change to directory
 ff() {
@@ -189,6 +189,33 @@ fman() {
 	compgen -c | fzf --header "Select Man pages" --height 20% --reverse | xargs man
 }
 
+# conda env
+con () {
+    choice=(
+        $(
+            conda env list |
+            sed 's/\*/ /;1,2d' |
+            xargs -I {} bash -c '
+                name_path=( {} );
+                py_version=( $(${name_path[1]}/bin/python --version) );
+                echo ${name_path[0]} ${py_version[1]} ${name_path[1]}
+            ' |
+            column -t |
+            fzf --layout=reverse \
+                --info=inline \
+                --border=rounded \
+                --height=40 \
+                --preview-window="right:30%" \
+                --preview-label=" conda tree leaves " \
+                --preview=$'
+                    conda tree -p {3} leaves |
+                    perl -F\'[^\\w-_]\' -lae \'print for grep /./, @F;\' |
+                    sort
+                '
+        )
+    )
+    [[ -n "$choice" ]] && conda activate "$choice"
+}
 ### SOME EXPORTS
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"

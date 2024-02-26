@@ -5,24 +5,20 @@ local nls_utils = require "null-ls.utils"
 mason_nls.setup {
     automatic_installation = true,
     ensure_installed = {
-        "clang-check",
         "clang-format",
-        "eslint_d",
         "gofumpt",
         "goimports",
         "golangci-lint",
         "golines",
-        "prettierd",
-        "pylsp",
+        "prettier",
         "shfmt",
         "stylua",
-        "taplo",
     },
 }
 
 local formatting = nls.builtins.formatting
 local diagnostics = nls.builtins.diagnostics
-local actions = nls.builtins.code_actions
+-- local actions = nls.builtins.code_actions
 
 nls.setup {
     root_dir = nls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
@@ -30,16 +26,15 @@ nls.setup {
         --[[ formatting ]]
         formatting.stylua,
         formatting.shfmt,
-        formatting.taplo,
         formatting.gofumpt,
         formatting.goimports,
         formatting.golines,
-        formatting.prettierd.with {
+        formatting.prettier.with {
             condition = function(utils)
                 return not utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
             end,
         },
-        formatting.eslint_d.with {
+        require("none-ls.formatting.eslint_d").with {
             condition = function(utils)
                 return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
             end,
@@ -49,7 +44,7 @@ nls.setup {
         },
         --[[ linting ]]
         diagnostics.golangci_lint,
-        diagnostics.eslint_d.with {
+        require("none-ls.diagnostics.eslint_d").with {
             condition = function(utils)
                 return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
             end,
@@ -57,10 +52,12 @@ nls.setup {
                 return diagnostic.code ~= "prettierd/prettierd"
             end,
         },
-        diagnostics.clang_check.with {
-            extra_filetypes = { "h", "hpp", "cpp" },
-        },
+        -- diagnostics.clang_check.with {
+        --     extra_filetypes = { "h", "hpp", "cpp" },
+        -- },
         --[[ code actions ]]
-        actions.eslint_d,
+        -- actions.eslint,
+        require("none-ls.code_actions.eslint_d")
     },
+
 }
