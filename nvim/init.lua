@@ -24,9 +24,6 @@ require("lazy").setup({
     -- Detect tabstop and shiftwidth automatically
     "tpope/vim-sleuth",
 
-    -- Vim Surround
-    "tpope/vim-surround",
-
     {
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
@@ -92,6 +89,13 @@ require("lazy").setup({
         config = function()
             require "plugins.autopairs"
         end,
+    },
+
+    {
+        -- Vim Surround
+        "echasnovski/mini.surround",
+        version = "*",
+        opts = {},
     },
 
     {
