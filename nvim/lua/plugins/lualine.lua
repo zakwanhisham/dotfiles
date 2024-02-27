@@ -76,6 +76,13 @@ local progress = {
     },
 }
 
+local mode = {
+    "mode",
+    fmt = function(str)
+        return str:sub(1, 3)
+    end,
+}
+
 require("lualine").setup {
     options = {
         theme = "auto",
@@ -92,7 +99,7 @@ require("lualine").setup {
     sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { "mode", filename, branch, diff },
+        lualine_c = { mode, filename, branch, diff },
         lualine_x = { diagnostics, location, progress },
         lualine_y = {},
         lualine_z = { buffers },
