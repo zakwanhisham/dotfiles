@@ -16,7 +16,7 @@ vim.keymap.set({ "n", "x" }, "k", "v:count==0 ? 'gk' : 'k'", { expr = true, nore
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
---[[ File Explorer(Neotree) ]]
+--[[ File Explorer (Neotree) ]]
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "File Explorer" })
 
 --[[ Split window ]]

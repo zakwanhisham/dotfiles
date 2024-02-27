@@ -190,31 +190,31 @@ fman() {
 }
 
 # conda env
-con () {
-    choice=(
-        $(
-            conda env list |
-            sed 's/\*/ /;1,2d' |
-            xargs -I {} bash -c '
+con() {
+	choice=(
+		$(
+			conda env list |
+				sed 's/\*/ /;1,2d' |
+				xargs -I {} bash -c '
                 name_path=( {} );
                 py_version=( $(${name_path[1]}/bin/python --version) );
                 echo ${name_path[0]} ${py_version[1]} ${name_path[1]}
             ' |
-            column -t |
-            fzf --layout=reverse \
-                --info=inline \
-                --border=rounded \
-                --height=40 \
-                --preview-window="right:30%" \
-                --preview-label=" conda tree leaves " \
-                --preview=$'
+				column -t |
+				fzf --layout=reverse \
+					--info=inline \
+					--border=rounded \
+					--height=40 \
+					--preview-window="right:30%" \
+					--preview-label=" conda tree leaves " \
+					--preview=$'
                     conda tree -p {3} leaves |
                     perl -F\'[^\\w-_]\' -lae \'print for grep /./, @F;\' |
                     sort
                 '
-        )
-    )
-    [[ -n "$choice" ]] && conda activate "$choice"
+		)
+	)
+	[[ -n "$choice" ]] && conda activate "$choice"
 }
 ### SOME EXPORTS
 # pnpm
@@ -230,9 +230,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 # nvm end
-
-# gopass autocomplete
-source <(gopass completion bash)
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

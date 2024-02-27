@@ -125,7 +125,6 @@ require("lazy").setup({
     {
         -- Neogit
         "NeogitOrg/neogit",
-        event = "VeryLazy",
         branch = "nightly",
         dependencies = {
             "nvim-lua/plenary.nvim", -- required
