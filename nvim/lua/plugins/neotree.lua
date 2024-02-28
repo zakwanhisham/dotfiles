@@ -78,11 +78,11 @@ require("neo-tree").setup {
             required_width = 88, -- min width of window required to show this column
         },
         created = {
-            enabled = false,
+            enabled = true,
             required_width = 110, -- min width of window required to show this column
         },
         symlink_target = {
-            enabled = false,
+            enabled = true,
         },
     },
     -- A list of functions, each representing a global custom command
