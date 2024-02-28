@@ -48,7 +48,20 @@ vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })
 --[[ Buffer ]]
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>", { desc = "Buffer Previous" })
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Buffer Next" })
-vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Buffer Delete" })
+-- vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Buffer Delete" })
+vim.keymap.set("n", "<leader>bd", function()
+    if vim.bo.modified then
+        local choice = vim.fn.confirm(("Save changes to %q"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
+        if choice == 1 then
+            vim.cmd.write()
+            vim.api.nvim_buf_delete(0, { force = false })
+        elseif choice == 2 then
+            vim.api.nvim_buf_delete(0, { force = true })
+        end
+    else
+        vim.api.nvim_buf_delete(0, { force = true })
+    end
+end, { desc = "Delete Buffer" })
 
 --[[ Format ]]
 vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format files" })

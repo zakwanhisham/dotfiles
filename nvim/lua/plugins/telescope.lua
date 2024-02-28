@@ -13,6 +13,16 @@ require("telescope").setup {
                 ["<esc>"] = actions.close,
             },
         },
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--trim", -- add this value
+        },
     },
     extensions = {
         ["ui-select"] = {
