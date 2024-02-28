@@ -79,7 +79,7 @@ local progress = {
 local mode = {
     "mode",
     fmt = function(str)
-        return str:sub(1, 3)
+        return ("--%s--"):format(str)
     end,
 }
 

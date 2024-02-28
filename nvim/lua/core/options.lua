@@ -69,7 +69,7 @@ vim.o.undofile = true
 vim.o.writebackup = false
 
 -- set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.o.incsearch = true
 
 -- colors

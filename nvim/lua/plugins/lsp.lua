@@ -25,11 +25,7 @@ end
 
 local servers = {
     bashls = {},
-    clangd = {
-        function(_, opts)
-            opts.capabilities.offsetEncoding = { "utf-16" }
-        end,
-    },
+    clangd = {},
     eslint = {},
     gopls = {},
     html = { filetypes = { "html", "twig", "hbs" } },
@@ -43,6 +39,7 @@ local servers = {
     pylsp = {},
     rust_analyzer = {},
     tailwindcss = {},
+    taplo = {},
     tsserver = {},
     yamlls = {},
 }
