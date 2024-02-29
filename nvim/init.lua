@@ -29,7 +29,7 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         dependencies = {
             { "williamboman/mason.nvim", config = true },
-            { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+            { "j-hui/fidget.nvim",       tag = "legacy", opts = {} },
             "williamboman/mason-lspconfig.nvim",
             "folke/neodev.nvim",
         },
@@ -63,15 +63,20 @@ require("lazy").setup({
     },
 
     {
-        "Exafunction/codeium.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        config = function()
-            require("codeium").setup {}
-        end,
+        'Exafunction/codeium.vim',
+        event = 'BufEnter'
     },
+
+    -- {
+    --     "Exafunction/codeium.nvim",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "hrsh7th/nvim-cmp",
+    --     },
+    --     config = function()
+    --         require("codeium").setup {}
+    --     end,
+    -- },
 
     {
         -- Carbonfox Colorscheme
@@ -142,8 +147,8 @@ require("lazy").setup({
         "NeogitOrg/neogit",
         branch = "nightly",
         dependencies = {
-            "nvim-lua/plenary.nvim", -- required
-            "sindrets/diffview.nvim", -- optional - Diff integration
+            "nvim-lua/plenary.nvim",         -- required
+            "sindrets/diffview.nvim",        -- optional - Diff integration
             "nvim-telescope/telescope.nvim", -- optional
         },
         config = function()
@@ -214,7 +219,7 @@ require("lazy").setup({
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
             { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-            { "windwp/nvim-ts-autotag", event = "InsertEnter" },
+            { "windwp/nvim-ts-autotag",                      event = "InsertEnter" },
         },
         config = function()
             require "plugins.treesitter"

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-set -xe 
+# set -xe 
 
 # Destination folder
 dotfile="/home/zakwan/.dotfiles"
@@ -26,7 +26,7 @@ errors=false
 
 # Copy files form each source folder
 for folder in "${source_folders[@]}"; do
-	cp -r "$folder" "$dotfile"
+	cp -vr "$folder" "$dotfile"
 
 	# Check if an error occurred during copy
 	if [ $? -ne 0 ]; then
