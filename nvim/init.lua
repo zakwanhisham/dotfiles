@@ -29,7 +29,7 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         dependencies = {
             { "williamboman/mason.nvim", config = true },
-            { "j-hui/fidget.nvim",       tag = "legacy", opts = {} },
+            { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
             "williamboman/mason-lspconfig.nvim",
             "folke/neodev.nvim",
         },
@@ -44,9 +44,19 @@ require("lazy").setup({
         event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
-            "L3MON4D3/LuaSnip",
+            {
+                "L3MON4D3/LuaSnip",
+                build = (function()
+                    if vim.fn.executable "make" == 1 then
+                        return "make install_jsregexp"
+                    else
+                        return "echo 'make not found'"
+                    end
+                end)(),
+            },
             "saadparwaiz1/cmp_luasnip",
-            "rafamadriz/friendly-snippets",
+            "hrsh7th/cmp-path",
+            -- "rafamadriz/friendly-snippets",
         },
         config = function()
             require "plugins.cmp"
@@ -63,8 +73,8 @@ require("lazy").setup({
     },
 
     {
-        'Exafunction/codeium.vim',
-        event = 'BufEnter'
+        "Exafunction/codeium.vim",
+        event = "BufEnter",
     },
 
     {
@@ -136,8 +146,8 @@ require("lazy").setup({
         "NeogitOrg/neogit",
         branch = "nightly",
         dependencies = {
-            "nvim-lua/plenary.nvim",         -- required
-            "sindrets/diffview.nvim",        -- optional - Diff integration
+            "nvim-lua/plenary.nvim", -- required
+            "sindrets/diffview.nvim", -- optional - Diff integration
             "nvim-telescope/telescope.nvim", -- optional
         },
         config = function()
@@ -208,7 +218,7 @@ require("lazy").setup({
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
             { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-            { "windwp/nvim-ts-autotag",                      event = "InsertEnter" },
+            { "windwp/nvim-ts-autotag", event = "InsertEnter" },
         },
         config = function()
             require "plugins.treesitter"
