@@ -31,6 +31,7 @@ vim.o.mouse = "a"
 
 -- autocomplete list
 vim.o.pumheight = 10
+vim.o.inccommand = "split"
 
 -- set cursor
 vim.o.guicursor = ""
@@ -43,12 +44,17 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.numberwidth = 4
 
+-- case insensitive searching
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
 -- tabs
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.autoindent = true
+vim.o.breakindent = true
 
 -- general editor settings
 vim.o.smartcase = true
@@ -82,7 +88,7 @@ vim.o.cmdheight = 1
 -- decrease update time
 vim.o.updatetime = 250
 vim.o.timeout = true
-vim.o.timeoutlen = 500
+vim.o.timeoutlen = 300
 
 -- colorcolumn
 vim.o.colorcolumn = "80"
@@ -105,6 +111,10 @@ vim.o.showcmd = false
 vim.o.signcolumn = "yes"
 vim.o.showtabline = 1
 vim.o.cursorline = true
+
+-- list
+vim.o.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- misc
 vim.o.conceallevel = 0

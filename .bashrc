@@ -108,7 +108,6 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 alias ls='eza --color=always --group-directories-first --icons --git'
 
 # For convenience
-alias asdf='setxkbmap -option caps:swapescape &'
 alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
 alias laptop='~/.screenlayout/laptop.sh'
 alias monitor='~/.screenlayout/monitor.sh'

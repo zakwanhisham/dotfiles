@@ -1,2 +1,3 @@
-#!/bin/sh
-feh --no-fehbg --bg-fill '/home/zakwan/Pictures/anime/driving.jpg'
+#!/usr/bin/bash
+
+feh --no-fehbg --bg-max '/home/zakwan/Pictures/anime/driving.jpg'
