@@ -203,7 +203,7 @@ con() {
 				fzf --layout=reverse \
 					--info=inline \
 					--border=rounded \
-					--height=40 \
+					--height=20 \
 					--preview-window="right:30%" \
 					--preview-label=" conda tree leaves " \
 					--preview=$'

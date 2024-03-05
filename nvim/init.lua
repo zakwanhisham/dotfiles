@@ -56,7 +56,7 @@ require("lazy").setup({
             },
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-path",
-            -- "rafamadriz/friendly-snippets",
+            "rafamadriz/friendly-snippets",
         },
         config = function()
             require "plugins.cmp"
