@@ -1,8 +1,8 @@
 format = """
-$conda\
 $directory\
 $git_branch\
 $git_status\
+$conda\
 $cmd_duration\
 $line_break\
 $character"""
@@ -23,10 +23,10 @@ style = "purple"
 format = "took [$duration]($style) "
 style = "cyan"
 
+[conda]
+format = '([\[$symbol$environment\]](bright-black)) '
+
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
 vimcmd_symbol = "[<](bold green)"
-
-[conda]
-format = '([\[$environment\]](bright-black)) '
