@@ -16,6 +16,7 @@ b43-fwcutter
 base
 base-devel
 bash-completion
+bat
 bc
 bind
 blueman
@@ -223,6 +224,7 @@ usb_modeswitch
 usbutils
 vi
 vim
+visual-studio-code-bin
 welcome
 wget
 which

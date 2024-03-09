@@ -104,7 +104,7 @@ vim.keymap.set("n", "gR", function()
 end)
 
 --[[ Comment ]]
---[[ vim.keymap.set(
+vim.keymap.set(
     "n",
     "<leader>/",
     "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>",
@@ -115,4 +115,4 @@ vim.keymap.set(
     "<leader>/",
     "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
     { desc = "Toggle Comment" }
-) ]]
+)
