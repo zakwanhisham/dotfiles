@@ -73,11 +73,6 @@ require("lazy").setup({
     },
 
     {
-        "Exafunction/codeium.vim",
-        event = "BufEnter",
-    },
-
-    {
         -- Carbonfox Colorscheme
         "EdenEast/nightfox.nvim",
         priority = 1000,
