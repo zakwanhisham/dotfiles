@@ -1,4 +1,5 @@
 # EXPORT
+export BROWSER="/usr/bin/firefox-developer-edition"
 export EDITOR="nvim"
 export HISTCONTROL=ignoredups:erasedups
 export HISTFILESIZE=100000
@@ -121,6 +122,7 @@ alias cal='cal --monday -3'
 alias diff='nvim -d'
 alias less='less --use-color -N'
 alias lg='lazygit'
+alias open='xdg-open'
 alias rm='rm -iv'
 alias weather='curl wttr.in'
 
