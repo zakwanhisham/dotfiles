@@ -139,10 +139,6 @@ alias ras-server='sshpass -f ~/.pass/ras-server.txt ssh -o StrictHostKeyChecking
 alias robomy-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=no robomy-server@192.168.0.16'
 
 ### BASH FUNCTION
-# run-help ability
-# run-help() { help "$READLINE_LINE" 2>/dev/null || man "$READLINE_LINE"; }
-# bind -m vi-insert -x '"\eh": run-help'
-
 # Quickly change to directory
 ff() {
 	local selected_dir
@@ -192,8 +188,15 @@ fman() {
 
 # conda env
 con() {
-	choice=(
-		$(
+	if [ -n "$1" ]; then
+		if [ -n "$2" ]; then
+			conda create -n "$1" python="$2"
+		else
+			conda create -n "$1" python
+		fi
+		conda activate "$1"
+	else
+		choice=$(
 			conda env list |
 				sed 's/\*/ /;1,2d' |
 				xargs -I {} bash -c '
@@ -214,9 +217,10 @@ con() {
                     sort
                 '
 		)
-	)
-	[[ -n "$choice" ]] && conda activate "$choice"
+		[[ -n "$choice" ]] && conda activate "$choice"
+	fi
 }
+
 ### SOME EXPORTS
 # pnpm
 export PNPM_HOME="/home/zakwan/.local/share/pnpm"
