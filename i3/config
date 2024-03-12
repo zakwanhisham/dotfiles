@@ -153,7 +153,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox-developer-edition
-bindsym $mod+g exec /usr/bin/google-chrome-stable
 bindsym $mod+m exec /usr/bin/thunderbird
 bindsym Print exec flameshot gui
 
