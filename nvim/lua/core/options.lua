@@ -22,8 +22,11 @@ vim.g.loaded_marchparen = 1
 vim.g.loaded_logiPat = 1
 vim.g.loaded_rrhelper = 1
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- Netrw customization
+vim.g.netrw_liststyle = 1
+vim.g.netrw_banner = 1
+vim.g.netrw_sizestyle = "H"
+vim.g.netrw_sort_by = "exten"
 
 -- [[ Options ]]
 -- mouse mode enable
@@ -105,7 +108,7 @@ vim.o.splitright = true
 
 -- mode
 vim.o.showmode = false
-vim.o.showcmd = false
+vim.o.showcmd = true
 
 -- sign
 vim.o.signcolumn = "yes"
