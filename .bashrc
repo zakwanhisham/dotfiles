@@ -196,26 +196,28 @@ con() {
 		fi
 		conda activate "$1"
 	else
-		choice=$(
-			conda env list |
-				sed 's/\*/ /;1,2d' |
-				xargs -I {} bash -c '
-                name_path=( {} );
-                py_version=( $(${name_path[1]}/bin/python --version) );
-                echo ${name_path[0]} ${py_version[1]} ${name_path[1]}
-            ' |
-				column -t |
-				fzf --layout=reverse \
-					--info=inline \
-					--border=rounded \
-					--height=20 \
-					--preview-window="right:30%" \
-					--preview-label=" conda tree leaves " \
-					--preview=$'
-                    conda tree -p {3} leaves |
-                    perl -F\'[^\\w-_]\' -lae \'print for grep /./, @F;\' |
-                    sort
-                '
+		choice=(
+			$(
+				conda env list |
+					sed 's/\*/ /;1,2d' |
+					xargs -I {} bash -c '
+						name_path=( {} );
+						py_version=( $(${name_path[1]}/bin/python --version) );
+						echo ${name_path[0]} ${py_version[1]} ${name_path[1]}
+						' |
+					column -t |
+					fzf --layout=reverse \
+						--info=inline \
+						--border=rounded \
+						--height=20 \
+						--preview-window="right:30%" \
+						--preview-label=" conda tree leaves " \
+						--preview=$'
+						    conda tree -p {3} leaves |
+						    perl -F\'[^\\w-_]\' -lae \'print for grep /./, @F;\' |
+						    sort
+						'
+			)
 		)
 		[[ -n "$choice" ]] && conda activate "$choice"
 	fi
