@@ -248,6 +248,5 @@ xorg-xkill
 xorg-xrandr
 xsel
 xterm
-youtube-dl
 zathura
 zathura-pdf-mupdf
