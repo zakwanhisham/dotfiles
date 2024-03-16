@@ -22,7 +22,6 @@ bind
 blueman
 bluez
 bluez-utils
-brave-bin
 btop
 btrfs-progs
 cantarell-fonts
@@ -69,6 +68,7 @@ f2fs-tools
 feh
 ffmpegthumbnailer
 file-roller
+firefox-developer-edition
 firewalld
 flameshot
 fsarchiver
@@ -192,6 +192,7 @@ sg3_utils
 shfmt
 smartmontools
 sof-firmware
+speech-dispatcher
 sshpass
 sudo
 sysfsutils

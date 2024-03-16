@@ -37,8 +37,8 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window he
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 --[[ Move current line up/down ]]
-vim.keymap.set("v", "<S-j>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
-vim.keymap.set("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
+vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
+vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
 -- vim.keymap.set("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "Move current line up" })
 -- vim.keymap.set("n", "<C-k>", "<cmd>m .-2<cr>==", { desc = "Move current line down" })
 

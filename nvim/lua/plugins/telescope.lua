@@ -48,7 +48,7 @@ end, { desc = "Buffer" })
 vim.keymap.set("n", "<leader>ff", function()
     builtin.find_files(theme.get_dropdown {
         winblend = 0,
-        previewer = true,
+        previewer = false,
     })
 end, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fw", function()
