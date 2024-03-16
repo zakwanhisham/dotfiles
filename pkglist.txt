@@ -8,7 +8,6 @@ alsa-firmware
 alsa-plugins
 alsa-utils
 arandr
-arc-gtk-theme-eos
 archlinux-xdg-menu
 autotiling
 awesome-terminal-fonts
@@ -155,6 +154,7 @@ ntp
 numlockx
 openssh
 pacman-contrib
+papirus-icon-theme
 paru
 pavucontrol
 perl
@@ -225,7 +225,6 @@ usb_modeswitch
 usbutils
 vi
 vim
-visual-studio-code-bin
 welcome
 wget
 which
