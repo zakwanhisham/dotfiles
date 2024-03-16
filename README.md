@@ -20,3 +20,7 @@ Can use `ansible` or make a shell script, but to lazy to do it right now, maybe 
 ## TODO
 
 - [ ] Need to make the session to be able to restore even when have multiple session
+
+## Install from pkglist.txt
+
+paru --pacman pacman -S - < pkglist.txt
