@@ -233,7 +233,6 @@ for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="flameshot" instance="flameshot"] floating enable
 for_window [class="zoom" instance="zoom"] floating enable
-for_window [title="fzf-menu"] floating enable
 
 # set floating (nontiling) for special apps
 for_window [class="zoom" instance="zoom"] floating enable
@@ -302,8 +301,7 @@ bar {
 # bindsym $mod+Shift+d exec rofi -modi drun -show drun \
 # 		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+Shift+d exec dmenu_run
-bindsym $mod+d exec --no-startup-id xfce4-terminal -T 'fzf-menu' -e 'i3-dmenu-desktop --dmenu=fzf'
+bindsym $mod+d exec dmenu_run
 
 # bindsym $mod+t exec rofi -show window \
 # 		-config ~/.config/rofi/rofidmenu.rasi
