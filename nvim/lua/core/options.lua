@@ -116,8 +116,9 @@ vim.o.showtabline = 1
 vim.o.cursorline = true
 
 -- list
-vim.o.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.list = true
+vim.opt.listchars = { tab = " ", lead = "·", eol = "" }
+vim.opt.fillchars = { eob = " " }
 
 -- misc
 vim.o.conceallevel = 0

@@ -66,11 +66,11 @@ require("lazy").setup({
     },
 
     {
-        -- Carbonfox Colorscheme
-        "EdenEast/nightfox.nvim",
+        -- Kanagawa Colorscheme
+        "rebelot/kanagawa.nvim",
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme "carbonfox"
+            vim.cmd.colorscheme "kanagawa-dragon"
         end,
     },
 
@@ -118,14 +118,6 @@ require("lazy").setup({
         "folke/trouble.nvim",
         event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
-        opts = {},
-    },
-
-    {
-        -- Add indentation guides even on blank lines
-        "lukas-reineke/indent-blankline.nvim",
-        event = "VeryLazy",
-        main = "ibl",
         opts = {},
     },
 
@@ -199,6 +191,6 @@ require("lazy").setup({
     },
 }, {
     install = {
-        colorscheme = { "default", "carbonfox" },
+        colorscheme = { "kanagawa-dragon" },
     },
 })

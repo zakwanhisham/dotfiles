@@ -90,9 +90,9 @@ require("lualine").setup {
         globalstatus = false,
     },
     sections = {
-        lualine_a = {},
+        lualine_a = { "mode" },
         lualine_b = {},
-        lualine_c = { "mode", filename, branch, diff },
+        lualine_c = { filename, branch, diff },
         lualine_x = { diagnostics, location, progress },
         lualine_y = {},
         lualine_z = { buffers },
