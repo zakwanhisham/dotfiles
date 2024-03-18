@@ -15,7 +15,7 @@ export VISUAL="nvim"
 HISTTIMEFORMAT='%F %T'
 
 # FZF default opts
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#f2f4f8,bg:#161616,hl:#33b1ff --color=fg+:#dfdfe0,bg+:#282828,hl+:#c8a5ff --color=info:#be95ff,prompt:#ee5396,pointer:#08bdba --color=marker:#f16da6,spinner:#25be6a,header:#8cb6ff'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#c5c9c5,bg:#181616,hl:#8ba4b0 --color=fg+:#c8c093,bg+:#0d0c0c,hl+:#7fb4ca --color=info:#8ea4a2,prompt:#8a9a7b,pointer:#a292a3 --color=marker:#7aa89f,spinner:#87a987,header:#938aa9'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -142,7 +142,11 @@ alias rasp-robo='sshpass -f ~/.pass/pi5.txt ssh -o StrictHostKeyChecking=no rasp
 # Quickly change to directory
 ff() {
 	local selected_dir
-	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf --header "Select Directory" --reverse --height 20%)
+	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf \
+		--header "Select Directory" \
+		--reverse \
+		--border=rounded \
+		--height 20%)
 	if [ -n "$selected_dir" ]; then
 		if [ -d "$selected_dir" ]; then
 			printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
