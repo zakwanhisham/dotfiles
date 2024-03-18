@@ -200,7 +200,7 @@ fkill() {
 
 # Man
 fman() {
-	man -k . | fzf \
+	apropos . | fzf \
 		--header "Select Man Page" \
 		--reverse \
 		--border=rounded \
