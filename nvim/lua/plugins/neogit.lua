@@ -2,7 +2,7 @@ local neogit = require "neogit"
 
 neogit.setup {
     -- Hides the hints at the top of the status buffer
-    disable_hint = true,
+    disable_hint = false,
     -- Disables changing the buffer highlights based on where the cursor is.
     disable_context_highlighting = false,
     -- Disables signs for sections/items/hunks

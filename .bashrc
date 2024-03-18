@@ -15,7 +15,7 @@ export VISUAL="nvim"
 HISTTIMEFORMAT='%F %T'
 
 # FZF default opts
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#c5c9c5,bg:#181616,hl:#8ba4b0 --color=fg+:#c8c093,bg+:#0d0c0c,hl+:#7fb4ca --color=info:#8ea4a2,prompt:#8a9a7b,pointer:#a292a3 --color=marker:#7aa89f,spinner:#87a987,header:#938aa9'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#c8c093,bg:#181616,hl:#8ba4b0 --color=fg+:#c5c9c5,bg+:#0d0c0c,hl+:#7fb4ca --color=info:#8ea4a2,prompt:#8a9a7b,pointer:#a292a3 --color=marker:#7aa89f,spinner:#87a987,header:#938aa9'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
