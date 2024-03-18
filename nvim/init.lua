@@ -17,13 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-    -- Git related plugins
-    "tpope/vim-fugitive",
-    "tpope/vim-rhubarb",
-
-    -- Detect tabstop and shiftwidth automatically
-    "tpope/vim-sleuth",
-
     {
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
