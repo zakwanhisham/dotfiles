@@ -146,7 +146,7 @@ ff() {
 		--header "Select Directory" \
 		--reverse \
 		--border=rounded \
-		--height 20%)
+		--height 40%)
 	if [ -n "$selected_dir" ]; then
 		if [ -d "$selected_dir" ]; then
 			printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
@@ -167,7 +167,12 @@ tm() {
 		tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1")
 		return
 	fi
-	session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&
+	session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf \
+		--header "Select Session" \
+		--reverse \
+		--border=rounded \
+		--height 40% \
+		--exit-0) &&
 		tmux $change -t "$session" || echo "No sessions found."
 }
 
@@ -175,9 +180,17 @@ tm() {
 fkill() {
 	local pid
 	if [ "$UID" != "0" ]; then
-		pid=$(ps -f -u $UID | sed 1d | fzf -m --reverse --height 20% | awk '{print $2}')
+		pid=$(ps -f -u $UID | sed 1d | fzf \
+			-m \
+			--reverse \
+			--height 40% \
+			--border=rounded | awk '{print $2}')
 	else
-		pid=$(ps -ef | sed 1d | fzf -m --reverse --height 20% | awk '{print $2}')
+		pid=$(ps -ef | sed 1d | fzf \
+			-m \
+			--reverse \
+			--height 40% \
+			--border=rounded | awk '{print $2}')
 	fi
 
 	if [ "x$pid" != "x" ]; then
@@ -187,7 +200,11 @@ fkill() {
 
 # Man
 fman() {
-	compgen -c | fzf --header "Select Man pages" --height 20% --reverse | xargs man
+	man -k . | fzf \
+		--header "Select Man Page" \
+		--reverse \
+		--border=rounded \
+		--height 40% | xargs man
 }
 
 # conda env
@@ -210,10 +227,12 @@ con() {
 						echo ${name_path[0]} ${py_version[1]} ${name_path[1]}
 						' |
 					column -t |
-					fzf --layout=reverse \
+					fzf \
+						--header "Conda Environment" \
+						--layout=reverse \
 						--info=inline \
 						--border=rounded \
-						--height=20 \
+						--height 40% \
 						--preview-window="right:30%" \
 						--preview-label=" conda tree leaves " \
 						--preview=$'
