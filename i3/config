@@ -244,9 +244,6 @@ for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="flameshot" instance="flameshot"] floating enable
 for_window [window_role="About"] floating enable
 
-# set border of floating window
-# for_window [title="fzf-menu"] border pixel 1
-
 # set size of floating window
 for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
 for_window [class=".*"] resize set 640 480 #to change size of all floating windows 
@@ -276,16 +273,16 @@ client.background       #ffffff
 bar {
 	font pango: Ubuntu Nerd Font Regular 10
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        position bottom 
+    position bottom 
 	# output eDP-1
-        # tray_output eDP-1
-        tray_padding 0
-        strip_workspace_numbers no
+    # tray_output eDP-1
+    tray_padding 0
+    strip_workspace_numbers no
 	colors {
-		background	       #000000
-		statusline	       #ffffff
-		separator	       #666666
-	#	class		       border  backgr  text
+		background	           #000000
+		statusline	           #ffffff
+		separator	           #666666
+	#	class		           border  backgr  text
 		focused_workspace      #333333 #666666 #ffffff
 		active_workspace       #333333 #5f676a #ffffff
 		inactive_workspace     #333333 #222222 #888888
