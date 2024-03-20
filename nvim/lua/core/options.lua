@@ -80,6 +80,7 @@ vim.o.writebackup = false
 -- set highlight on search
 vim.o.hlsearch = true
 vim.o.incsearch = true
+vim.o.inccommand = "split"
 
 -- colors
 vim.o.termguicolors = true
@@ -117,7 +118,7 @@ vim.o.cursorline = true
 
 -- list
 vim.opt.list = true
-vim.opt.listchars = { tab = " ", lead = "·", eol = "" }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", eol = "" }
 vim.opt.fillchars = { eob = " " }
 
 -- misc
