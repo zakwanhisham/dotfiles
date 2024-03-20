@@ -103,6 +103,14 @@ require("lazy").setup({
     },
 
     {
+        -- Indentscope
+        "echasnovski/mini.indentscope",
+        event = { "BufEnter" },
+        version = "*",
+        opts = {},
+    },
+
+    {
         -- Formatter and Linter
         "nvimtools/none-ls.nvim",
         event = { "BufEnter" },
