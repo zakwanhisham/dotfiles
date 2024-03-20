@@ -68,6 +68,7 @@ require("lazy").setup({
     {
         -- Kanagawa Colorscheme
         "rebelot/kanagawa.nvim",
+        lazy = false,
         priority = 1000,
         config = function()
             vim.cmd.colorscheme "kanagawa-dragon"
@@ -98,16 +99,20 @@ require("lazy").setup({
         -- Vim Surround
         "echasnovski/mini.surround",
         event = { "BufEnter" },
-        version = "*",
-        opts = {},
+        version = false,
+        config = function()
+            require("mini.surround").setup()
+        end,
     },
 
     {
         -- Indentscope
         "echasnovski/mini.indentscope",
         event = { "BufEnter" },
-        version = "*",
-        opts = {},
+        version = false,
+        config = function()
+            require("mini.indentscope").setup()
+        end,
     },
 
     {
