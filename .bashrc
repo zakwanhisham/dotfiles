@@ -119,6 +119,7 @@ alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 
 # Changing program name
 alias cal='cal --monday -3'
+alias cat='bat'
 alias diff='nvim -d'
 alias less='less --use-color -N'
 alias lg='lazygit'

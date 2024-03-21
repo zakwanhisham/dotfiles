@@ -16,7 +16,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-
     {
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
@@ -30,7 +29,6 @@ require("lazy").setup({
             require "plugins.lsp"
         end,
     },
-
     {
         -- Autocompletion
         "hrsh7th/nvim-cmp",
@@ -55,7 +53,6 @@ require("lazy").setup({
             require "plugins.cmp"
         end,
     },
-
     {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
         "lewis6991/gitsigns.nvim",
@@ -64,7 +61,6 @@ require("lazy").setup({
             require "plugins.gitsigns"
         end,
     },
-
     {
         -- Kanagawa Colorscheme
         "rebelot/kanagawa.nvim",
@@ -74,7 +70,6 @@ require("lazy").setup({
             vim.cmd.colorscheme "kanagawa-dragon"
         end,
     },
-
     {
         -- Set lualine as statusline
         "nvim-lualine/lualine.nvim",
@@ -84,7 +79,6 @@ require("lazy").setup({
             require "plugins.lualine"
         end,
     },
-
     {
         -- Autopairs
         "windwp/nvim-autopairs",
@@ -94,27 +88,22 @@ require("lazy").setup({
             require "plugins.autopairs"
         end,
     },
-
     {
         -- Vim Surround
         "echasnovski/mini.surround",
         event = { "BufEnter" },
-        version = false,
         config = function()
             require("mini.surround").setup()
         end,
     },
-
     {
         -- Indentscope
         "echasnovski/mini.indentscope",
         event = { "BufEnter" },
-        version = false,
         config = function()
             require("mini.indentscope").setup()
         end,
     },
-
     {
         -- Formatter and Linter
         "nvimtools/none-ls.nvim",
@@ -127,7 +116,6 @@ require("lazy").setup({
             require "plugins.null-ls"
         end,
     },
-
     {
         -- Trouble
         "folke/trouble.nvim",
@@ -135,7 +123,6 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
         opts = {},
     },
-
     {
         -- Neogit
         "NeogitOrg/neogit",
@@ -150,7 +137,6 @@ require("lazy").setup({
             require "plugins.neogit"
         end,
     },
-
     {
         -- Doc snippet
         "danymat/neogen",
@@ -159,7 +145,6 @@ require("lazy").setup({
             require "plugins.neogen"
         end,
     },
-
     {
         -- "gc" to comment visual regions/lines
         "numToStr/Comment.nvim",
@@ -169,7 +154,6 @@ require("lazy").setup({
         end,
         opts = {},
     },
-
     {
         -- Fuzzy Finder (files, lsp, etc)
         "nvim-telescope/telescope.nvim",
@@ -190,7 +174,6 @@ require("lazy").setup({
             require "plugins.telescope"
         end,
     },
-
     {
         -- Highlight, edit, and navigate code
         "nvim-treesitter/nvim-treesitter",
@@ -198,6 +181,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
+            { "nvim-treesitter/nvim-treesitter-context", opts = {} },
             { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
             { "windwp/nvim-ts-autotag", event = "InsertEnter" },
         },
