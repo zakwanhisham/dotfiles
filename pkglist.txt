@@ -69,7 +69,6 @@ fsarchiver
 galculator
 gdb
 git
-glances
 glow
 go
 google-chrome
@@ -117,6 +116,7 @@ lld
 llvm
 logrotate
 lsb-release
+lsof
 lsscsi
 lvm2
 lxappearance-gtk3
@@ -165,6 +165,7 @@ poppler-glib
 power-profiles-daemon
 pv
 python
+python-bottle
 python-capng
 python-defusedxml
 python-libtmux
