@@ -80,7 +80,6 @@ vim.o.writebackup = false
 -- set highlight on search
 vim.o.hlsearch = true
 vim.o.incsearch = true
-vim.o.inccommand = "split"
 
 -- colors
 vim.o.termguicolors = true
