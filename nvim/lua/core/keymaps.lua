@@ -73,10 +73,6 @@ vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { de
 --[[ Neogit ]]
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
 
--- [[ Neogen ]]
-vim.keymap.set("n", "nt", "<cmd>Neogen type<cr>", { desc = "Neogen generate type" })
-vim.keymap.set("n", "nf", "<cmd>Neogen func<cr>", { desc = "Neogen generate func" })
-
 --[[ Diagnostic keymaps ]]
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })

@@ -32,7 +32,7 @@ require("lazy").setup({
     {
         -- Autocompletion
         "hrsh7th/nvim-cmp",
-        event = { "InsertEnter", "CmdlineEnter" },
+        event = "InsertEnter",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             {
@@ -56,8 +56,8 @@ require("lazy").setup({
     {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
         "lewis6991/gitsigns.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
+        event = "VeryLazy",
+        confiy = function()
             require "plugins.gitsigns"
         end,
     },
@@ -82,7 +82,7 @@ require("lazy").setup({
     {
         -- Autopairs
         "windwp/nvim-autopairs",
-        event = { "InsertEnter", "CmdlineEnter" },
+        event = "InsertEnter",
         dependencies = { "hrsh7th/nvim-cmp" },
         config = function()
             require "plugins.autopairs"
@@ -91,7 +91,8 @@ require("lazy").setup({
     {
         -- Vim Surround
         "echasnovski/mini.surround",
-        event = { "BufEnter" },
+        event = "BufEnter",
+        version = false,
         config = function()
             require("mini.surround").setup()
         end,
@@ -99,7 +100,8 @@ require("lazy").setup({
     {
         -- Indentscope
         "echasnovski/mini.indentscope",
-        event = { "BufEnter" },
+        event = "BufEnter",
+        version = false,
         config = function()
             require("mini.indentscope").setup()
         end,
@@ -107,7 +109,7 @@ require("lazy").setup({
     {
         -- Formatter and Linter
         "nvimtools/none-ls.nvim",
-        event = { "BufEnter" },
+        event = "LspAttach",
         dependencies = {
             "nvimtools/none-ls-extras.nvim",
             "jay-babu/mason-null-ls.nvim",
@@ -126,23 +128,14 @@ require("lazy").setup({
     {
         -- Neogit
         "NeogitOrg/neogit",
-        event = { "BufEnter" },
+        event = "BufEnter",
         branch = "nightly",
         dependencies = {
             "nvim-lua/plenary.nvim", -- required
             "sindrets/diffview.nvim", -- optional - Diff integration
-            "nvim-telescope/telescope.nvim", -- optional
         },
         config = function()
             require "plugins.neogit"
-        end,
-    },
-    {
-        -- Doc snippet
-        "danymat/neogen",
-        event = "VeryLazy",
-        config = function()
-            require "plugins.neogen"
         end,
     },
     {
@@ -157,7 +150,7 @@ require("lazy").setup({
     {
         -- Fuzzy Finder (files, lsp, etc)
         "nvim-telescope/telescope.nvim",
-        event = "VeryLazy",
+        event = "BufEnter",
         branch = "0.1.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
