@@ -201,11 +201,16 @@ fkill() {
 
 # Man
 fman() {
-	apropos . | fzf \
-		--header "Select Man Page" \
-		--reverse \
-		--border=rounded \
-		--height 40% | awk '{print $1}' | xargs -r man
+	MAN="/usr/bin/man"
+	if [ -n "$1" ]; then
+		$MAN "$1"
+	else
+		$MAN -k . | fzf \
+			--header "Select Man Page" \
+			--reverse \
+			--border=rounded \
+			--height 40% | awk '{print $1}' | xargs -r man
+	fi
 }
 
 # conda env
