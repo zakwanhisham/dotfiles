@@ -161,44 +161,6 @@ ff() {
 	fi
 }
 
-# Tmux
-tm() {
-	[[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
-	if [ $1 ]; then
-		tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1")
-		return
-	fi
-	session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf \
-		--header "Select Session" \
-		--reverse \
-		--border=rounded \
-		--height 40% \
-		--exit-0) &&
-		tmux $change -t "$session" || echo "No sessions found."
-}
-
-# fkill - kill processes - list only the ones you can kill. Modified the earlier script.
-fkill() {
-	local pid
-	if [ "$UID" != "0" ]; then
-		pid=$(ps -f -u $UID | sed 1d | fzf \
-			-m \
-			--reverse \
-			--height 40% \
-			--border=rounded | awk '{print $2}')
-	else
-		pid=$(ps -ef | sed 1d | fzf \
-			-m \
-			--reverse \
-			--height 40% \
-			--border=rounded | awk '{print $2}')
-	fi
-
-	if [ "x$pid" != "x" ]; then
-		echo $pid | xargs kill -${1:-9}
-	fi
-}
-
 # Man
 fman() {
 	MAN="/usr/bin/man"
