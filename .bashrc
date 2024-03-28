@@ -137,7 +137,7 @@ alias tconf='nvim ~/.config/tmux/tmux.conf'
 # ssh to machine
 alias door-pi='sshpass -f ~/.pass/pi.txt ssh -o StrictHostKeyChecking=no pi@192.168.0.6'
 alias robomy-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=no robomy-server@192.168.0.16'
-alias rasp-robo='sshpass -f ~/.pass/pi5.txt ssh -o StrictHostKeyChecking=no rasp-robo@192.168.0.19'
+alias rasp-robo='sshpass -f ~/.pass/pi5.txt ssh -o StrictHostKeyChecking=no rasp@192.168.0.19'
 
 ### BASH FUNCTION
 # Quickly change to directory
