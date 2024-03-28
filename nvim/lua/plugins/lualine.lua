@@ -80,7 +80,7 @@ require("lualine").setup {
     options = {
         theme = "auto",
         component_separators = {
-            left = "|",
+            left = "",
             right = "",
         },
         section_separators = {
@@ -92,9 +92,9 @@ require("lualine").setup {
     sections = {
         lualine_a = { "mode" },
         lualine_b = {},
-        lualine_c = { filename, branch, diff },
-        lualine_x = { diagnostics, location, progress },
-        lualine_y = {},
+        lualine_c = { filename, diagnostics },
+        lualine_x = { location, progress },
+        lualine_y = { diff, branch },
         lualine_z = { buffers },
     },
     inactive_sections = {

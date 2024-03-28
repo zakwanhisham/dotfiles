@@ -19,6 +19,16 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end,
     pattern = { "*" },
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "help",
+    callback = function()
+        vim.bo.bufhidden = "unload"
+        vim.cmd.wincmd "L"
+        vim.cmd "vertical resize 81"
+    end,
+})
+
 -- Create a command `:Format` local to the LSP buffer
 -- vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
 --     vim.lsp.buf.format()
