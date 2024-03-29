@@ -35,6 +35,9 @@ require("lazy").setup({
         event = "InsertEnter",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
+            "saadparwaiz1/cmp_luasnip",
+            "hrsh7th/cmp-path",
+            "rafamadriz/friendly-snippets",
             {
                 "L3MON4D3/LuaSnip",
                 build = (function()
@@ -45,9 +48,12 @@ require("lazy").setup({
                     end
                 end)(),
             },
-            "saadparwaiz1/cmp_luasnip",
-            "hrsh7th/cmp-path",
-            "rafamadriz/friendly-snippets",
+            {
+                "Exafunction/codeium.nvim",
+                cmd = "Codeium",
+                build = ":Codeium Auth",
+                opts = {},
+            },
         },
         config = function()
             require "plugins.cmp"

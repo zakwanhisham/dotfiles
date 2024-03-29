@@ -117,7 +117,7 @@ vim.o.cursorline = true
 
 -- list
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", eol = "" }
+vim.opt.listchars = { eol = "↲", nbsp = "␣", tab = "» ", trail = "·" }
 vim.opt.fillchars = { eob = " " }
 
 -- misc

@@ -25,8 +25,8 @@ local diagnostics = {
         hint = "󰌵 ",
     },
     padding = {
-        right = 1,
-        left = 0,
+        right = 0,
+        left = 1,
     },
 }
 
