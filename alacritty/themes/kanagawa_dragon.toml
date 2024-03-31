@@ -17,13 +17,13 @@ yellow = '#c4b28a'
 
 [colors.bright]
 black = '#a6a69c'
-blue = '#7FB4CA'
-cyan = '#7AA89F'
+blue = '#7fb4ca'
+cyan = '#7aa89f'
 green = '#87a987'
-magenta = '#938AA9'
-red = '#E46876'
+magenta = '#938aa9'
+red = '#e46876'
 white = '#c5c9c5'
-yellow = '#E6C384'
+yellow = '#e6c384'
 
 [colors.selection]
 background = '#2d4f67'
