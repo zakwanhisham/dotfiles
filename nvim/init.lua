@@ -20,10 +20,10 @@ require("lazy").setup({
         -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
         dependencies = {
-            { "williamboman/mason.nvim", config = true },
-            { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
             "williamboman/mason-lspconfig.nvim",
             "folke/neodev.nvim",
+            { "williamboman/mason.nvim", config = true },
+            { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
         },
         config = function()
             require "plugins.lsp"
@@ -87,29 +87,30 @@ require("lazy").setup({
     },
     {
         -- Autopairs
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        dependencies = { "hrsh7th/nvim-cmp" },
-        config = function()
-            require "plugins.autopairs"
-        end,
+        "echasnovski/mini.pairs",
+        event = "VeryLazy",
+        opts = {},
     },
     {
         -- Vim Surround
         "echasnovski/mini.surround",
         event = "BufEnter",
         version = false,
-        config = function()
-            require("mini.surround").setup()
-        end,
+        opts = {},
     },
     {
         -- Indentscope
         "echasnovski/mini.indentscope",
         event = "BufEnter",
         version = false,
+        opts = {},
+    },
+    {
+        -- "gc" to comment visual regions/lines
+        "echasnovski/mini.comment",
+        event = "VeryLazy",
         config = function()
-            require("mini.indentscope").setup()
+            require "plugins.comment"
         end,
     },
     {
@@ -127,6 +128,7 @@ require("lazy").setup({
     {
         -- Trouble
         "folke/trouble.nvim",
+        branch = "dev",
         event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
         opts = {},
@@ -143,15 +145,6 @@ require("lazy").setup({
         config = function()
             require "plugins.neogit"
         end,
-    },
-    {
-        -- "gc" to comment visual regions/lines
-        "numToStr/Comment.nvim",
-        event = "VeryLazy",
-        config = function()
-            require "plugins.comment"
-        end,
-        opts = {},
     },
     {
         -- Fuzzy Finder (files, lsp, etc)
@@ -180,9 +173,13 @@ require("lazy").setup({
         build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            { "nvim-treesitter/nvim-treesitter-context", opts = {} },
-            { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-            { "windwp/nvim-ts-autotag", event = "InsertEnter" },
+            { "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 3 } },
+            { "windwp/nvim-ts-autotag", opts = {} },
+            {
+                "JoosepAlviste/nvim-ts-context-commentstring",
+                lazy = true,
+                opts = { enable_autocmd = false },
+            },
         },
         config = function()
             require "plugins.treesitter"

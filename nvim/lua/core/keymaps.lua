@@ -101,17 +101,3 @@ end)
 vim.keymap.set("n", "gR", function()
     require("trouble").toggle "lsp_references"
 end)
-
---[[ Comment ]]
-vim.keymap.set(
-    "n",
-    "<leader>/",
-    "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>",
-    { desc = "Toggle Comment" }
-)
-vim.keymap.set(
-    "v",
-    "<leader>/",
-    "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
-    { desc = "Toggle Comment" }
-)

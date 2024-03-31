@@ -28,6 +28,9 @@ vim.g.netrw_banner = 1
 vim.g.netrw_sizestyle = "H"
 vim.g.netrw_sort_by = "name"
 
+-- Markdown
+vim.g.markdown_recommended_style = 0
+
 -- [[ Options ]]
 -- mouse mode enable
 vim.o.mouse = "a"
@@ -87,6 +90,9 @@ vim.o.background = "dark"
 
 -- command height
 vim.o.cmdheight = 1
+
+-- command line
+vim.o.wildmode = "longest:full,full"
 
 -- decrease update time
 vim.o.updatetime = 250

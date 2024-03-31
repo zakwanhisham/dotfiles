@@ -25,22 +25,104 @@ end
 
 local servers = {
     bashls = {},
-    clangd = {},
-    eslint = {},
-    gopls = {},
+    clangd = {
+        capabilities = {
+            offsetEncoding = { "utf-16" },
+        },
+        cmd = {
+            "clangd",
+            "--background-index",
+            "--clang-tidy",
+            "--header-insertion=iwyu",
+            "--completion-style=detailed",
+            "--function-arg-placeholders",
+            "--fallback-style=llvm",
+        },
+        init_options = {
+            usePlaceholders = true,
+            completeUnimported = true,
+            clangdFileStatus = true,
+        },
+    },
+    eslint = {
+        settings = {
+            -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
+            workingDirectories = { mode = "auto" },
+        },
+    },
+    gopls = {
+        settings = {
+            gopls = {
+                gofumpt = true,
+                codelenses = {
+                    gc_details = false,
+                    generate = true,
+                    regenerate_cgo = true,
+                    run_govulncheck = true,
+                    test = true,
+                    tidy = true,
+                    upgrade_dependency = true,
+                    vendor = true,
+                },
+                hints = {
+                    assignVariableTypes = true,
+                    compositeLiteralFields = true,
+                    compositeLiteralTypes = true,
+                    constantValues = true,
+                    functionTypeParameters = true,
+                    parameterNames = true,
+                    rangeVariableTypes = true,
+                },
+                analyses = {
+                    fieldalignment = true,
+                    nilness = true,
+                    unusedparams = true,
+                    unusedwrite = true,
+                    useany = true,
+                },
+                usePlaceholders = true,
+                completeUnimported = true,
+                staticcheck = true,
+                directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+                semanticTokens = true,
+            },
+        },
+    },
     html = { filetypes = { "html", "twig", "hbs" } },
-    jsonls = {},
+    jsonls = {
+        settings = {
+            json = {
+                format = {
+                    enable = true,
+                },
+                validate = { enable = true },
+            },
+        },
+    },
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
         },
     },
+    marksman = {},
     pylsp = {},
     rust_analyzer = {},
-    tailwindcss = {},
+    tailwindcss = {
+        -- exclude a filetype from the default_config
+        filetypes_exclude = { "markdown" },
+        -- add additional filetypes to the default_config
+        filetypes_include = {},
+        -- to fully override the default_config, change the below
+    },
     taplo = {},
-    tsserver = {},
+    tsserver = {
+        settings = {
+            completions = {
+                completeFunctionCalls = true,
+            },
+        },
+    },
     yamlls = {},
 }
 
