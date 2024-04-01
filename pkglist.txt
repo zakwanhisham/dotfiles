@@ -143,6 +143,7 @@ nilfs-utils
 ninja
 noto-color-emoji-fontconfig
 noto-fonts
+noto-fonts-extra
 nss-mdns
 ntfs-3g
 ntp

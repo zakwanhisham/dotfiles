@@ -3,7 +3,7 @@ local branch = {
     icons_enabled = true,
     padding = {
         right = 1,
-        left = 1,
+        left = 0,
     },
 }
 
