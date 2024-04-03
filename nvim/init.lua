@@ -91,6 +91,7 @@ require("lazy").setup({
         -- Autopairs
         "echasnovski/mini.pairs",
         event = "VeryLazy",
+        version = false,
         opts = {},
     },
     {
@@ -111,6 +112,7 @@ require("lazy").setup({
         -- "gc" to comment visual regions/lines
         "echasnovski/mini.comment",
         event = "VeryLazy",
+        version = false,
         config = function()
             require "plugins.comment"
         end,

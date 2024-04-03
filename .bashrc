@@ -118,7 +118,6 @@ alias ssr='shutdown -r now'
 alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 
 # Changing program name
-alias vim='/home/zakwan/.local/share/bob/nvim-bin/nvim'
 alias cal='cal --monday -3'
 alias cat='bat'
 alias diff='nvim -d'
@@ -147,7 +146,7 @@ ff() {
 	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf \
 		--header "Select Directory" \
 		--reverse \
-		--border=rounded \
+		--border=sharp \
 		--height 40%)
 	if [ -n "$selected_dir" ]; then
 		if [ -d "$selected_dir" ]; then
@@ -171,7 +170,7 @@ fman() {
 		$MAN -k . | fzf \
 			--header "Select Man Page" \
 			--reverse \
-			--border=rounded \
+			--border=sharp\
 			--height 40% | awk '{print $1}' | xargs -r man
 	fi
 }
@@ -200,7 +199,7 @@ con() {
 						--header "Conda Environment" \
 						--layout=reverse \
 						--info=inline \
-						--border=rounded \
+						--border=sharp \
 						--height 40% \
 						--preview-window="right:30%" \
 						--preview-label=" conda tree leaves " \
