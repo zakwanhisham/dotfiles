@@ -7,18 +7,18 @@ dotfile="/home/zakwan/.dotfiles"
 
 # Array of the source folders
 source_folders=(
-	"/home/zakwan/.gitconfig"
 	"/home/zakwan/.bashrc"
-	"/home/zakwan/.fehbg"
-	"/home/zakwan/.config/tmux/tmux.conf"
-	"/home/zakwan/.config/starship.toml"
-	"/home/zakwan/.config/topgrade.toml"
+	"/home/zakwan/.config/alacritty"
+	"/home/zakwan/.config/bat"
+	"/home/zakwan/.config/dunst"
 	"/home/zakwan/.config/example.picom.conf"
 	"/home/zakwan/.config/i3"
 	"/home/zakwan/.config/nvim"
-	"/home/zakwan/.config/alacritty"
-	"/home/zakwan/.config/dunst"
-	"/home/zakwan/.config/bat"
+	"/home/zakwan/.config/starship.toml"
+	"/home/zakwan/.config/tmux/tmux.conf"
+	"/home/zakwan/.config/topgrade.toml"
+	"/home/zakwan/.fehbg"
+	"/home/zakwan/.gitconfig"
 )
 
 # Variable to track errors
@@ -32,6 +32,7 @@ for folder in "${source_folders[@]}"; do
 	if [ $? -ne 0 ]; then
 		errors=true
 		echo "Error: Failed to copy $folder"
+		break
 	fi
 done
 
