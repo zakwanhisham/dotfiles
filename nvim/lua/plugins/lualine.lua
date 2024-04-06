@@ -1,32 +1,20 @@
+local mode = {
+    "mode",
+    fmt = function(str)
+        return str:lower(str)
+    end,
+    cond = function()
+        return vim.bo.modifiable
+    end,
+}
+
 local branch = {
     "branch",
     icons_enabled = true,
-    padding = {
-        right = 1,
-        left = 0,
-    },
-}
-
-local filetype = {
-    "filetype",
-    icons_enabled = true,
-    padding = {
-        right = 1,
-        left = 0,
-    },
-}
-
-local diagnostics = {
-    "diagnostics",
-    symbols = {
-        error = " ",
-        warn = " ",
-        info = "󰋼 ",
-        hint = "󰌵 ",
-    },
+    icon = " ",
     padding = {
         right = 0,
-        left = 1,
+        left = 0,
     },
 }
 
@@ -36,19 +24,29 @@ local buffers = {
     show_filename_only = true,
     hide_filename_extension = true,
     show_modified_status = false,
-    mode = 0,
+    mode = 1,
     max_length = vim.o.columns * 1 / 4,
+    cond = function()
+        return vim.bo.modifiable
+    end,
     padding = {
-        right = 1,
+        right = 0,
         left = 1,
     },
 }
 
-local filename = {
-    "filename",
-    file_status = true,
-    newfile_status = true,
-    path = 1,
+local diagnostics = {
+    "diagnostics",
+    symbols = {
+        error = " ",
+        warn = "  ",
+        info = "󰋼 ",
+        hint = "󰌵 ",
+    },
+    padding = {
+        right = 0,
+        left = 1,
+    },
 }
 
 local diff = {
@@ -57,6 +55,22 @@ local diff = {
         added = "󰐖 ",
         modified = "󱗜 ",
         removed = "󰍵 ",
+    },
+}
+
+local filename = {
+    "filename",
+    file_status = true,
+    newfile_status = true,
+    path = 3,
+}
+
+local filetype = {
+    "filetype",
+    icons_enabled = false,
+    padding = {
+        right = 1,
+        left = 0,
     },
 }
 
@@ -79,6 +93,7 @@ local progress = {
 require("lualine").setup {
     options = {
         theme = "auto",
+        always_divide_middle = true,
         component_separators = {
             left = "",
             right = "",
@@ -90,11 +105,11 @@ require("lualine").setup {
         globalstatus = false,
     },
     sections = {
-        lualine_a = { "mode" },
+        lualine_a = { mode },
         lualine_b = {},
         lualine_c = { filename, diagnostics },
-        lualine_x = { location, progress },
-        lualine_y = { diff, branch },
+        lualine_x = { diff, branch, location, progress },
+        lualine_y = {},
         lualine_z = { buffers },
     },
     inactive_sections = {
