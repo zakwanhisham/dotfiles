@@ -170,7 +170,7 @@ fman() {
 		$MAN -k . | fzf \
 			--header "Select Man Page" \
 			--reverse \
-			--border=sharp\
+			--border=sharp \
 			--height 40% | awk '{print $1}' | xargs -r man
 	fi
 }

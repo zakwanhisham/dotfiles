@@ -132,10 +132,9 @@ require("lazy").setup({
     {
         -- Trouble
         "folke/trouble.nvim",
-        branch = "dev",
         event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
-        opts = {},
+        opts = { use_diagnostic_signs = true },
     },
     {
         -- Neogit

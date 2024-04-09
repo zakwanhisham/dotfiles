@@ -24,7 +24,8 @@ format = "took [$duration]($style) "
 style = "cyan"
 
 [conda]
-format = '([\[$symbol$environment\]](bright-black)) '
+format = '([\[$symbol$environment\]]($style)) '
+style = "bright-black"
 
 [character]
 success_symbol = "[>](bold green)"
