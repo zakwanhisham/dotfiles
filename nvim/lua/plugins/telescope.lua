@@ -38,7 +38,7 @@ require("telescope").setup {
 pcall(require("telescope").load_extension, "fzf")
 pcall(require("telescope").load_extension, "ui-select")
 
--- See `:help telescope.builtin`
+-- Telescope
 vim.keymap.set("n", "<leader><space>", function()
     builtin.buffers(theme.get_dropdown {
         winblend = 0,
