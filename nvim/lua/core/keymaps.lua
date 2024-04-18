@@ -98,6 +98,6 @@ end)
 vim.keymap.set("n", "<leader>xl", function()
     require("trouble").toggle "loclist"
 end)
-vim.keymap.set("n", "gR", function()
+vim.keymap.set("n", "gr", function()
     require("trouble").toggle "lsp_references"
 end)

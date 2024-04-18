@@ -7,7 +7,7 @@ comment.setup {
         end,
     },
     mappings = {
-        comment_line = "<leader>/",
-        comment_visual = "<leader>/",
+        comment_line = "gcc",
+        comment_visual = "gcc",
     },
 }

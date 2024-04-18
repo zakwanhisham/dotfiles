@@ -57,7 +57,7 @@ vim.keymap.set("n", "<leader>fw", function()
         previewer = true,
     })
 end, { desc = "Live Grep" })
-vim.keymap.set("n", "<leader>fs", function()
+vim.keymap.set("n", "<leader>/", function()
     builtin.current_buffer_fuzzy_find(theme.get_dropdown {
         winblend = 0,
         previewer = false,
