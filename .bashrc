@@ -242,6 +242,9 @@ else
 fi
 unset __conda_setup
 
+# FZF KEYBINDS
+eval "$(fzf --bash)"
+
 # PROMPT
 # PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
