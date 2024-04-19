@@ -8,6 +8,8 @@ $line_break\
 $character"""
 
 [directory]
+read_only = " 󰌾"
+read_only_style = "red"
 truncate_to_repo = true
 style = "blue"
 
