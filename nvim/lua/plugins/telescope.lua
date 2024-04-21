@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader>ff", function()
         previewer = false,
     })
 end, { desc = "Find Files" })
-vim.keymap.set("n", "<leader>fw", function()
+vim.keymap.set("n", "<leader>fs", function()
     builtin.live_grep(theme.get_dropdown {
         winblend = 0,
         previewer = true,
