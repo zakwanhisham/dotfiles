@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        -- LSP Configuration & Plugins
+        -- LSP Configuration
         "neovim/nvim-lspconfig",
         dependencies = {
             "williamboman/mason-lspconfig.nvim",
@@ -62,7 +62,7 @@ require("lazy").setup({
         end,
     },
     {
-        -- Adds git related signs to the gutter, as well as utilities for managing changes
+        -- Gitsigns
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
         config = function()
@@ -79,7 +79,7 @@ require("lazy").setup({
         end,
     },
     {
-        -- Set lualine as statusline
+        -- Lualine
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
@@ -109,7 +109,7 @@ require("lazy").setup({
         opts = {},
     },
     {
-        -- "gc" to comment visual regions/lines
+        -- Comment
         "echasnovski/mini.comment",
         event = "VeryLazy",
         version = false,
@@ -150,7 +150,7 @@ require("lazy").setup({
         end,
     },
     {
-        -- Fuzzy Finder (files, lsp, etc)
+        -- Telescope
         "nvim-telescope/telescope.nvim",
         event = "BufEnter",
         branch = "0.1.x",
@@ -170,7 +170,7 @@ require("lazy").setup({
         end,
     },
     {
-        -- Highlight, edit, and navigate code
+        -- Treesitter
         "nvim-treesitter/nvim-treesitter",
         event = "VeryLazy",
         build = ":TSUpdate",
