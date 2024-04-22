@@ -1,7 +1,5 @@
 --[[ Useful keymap ]]
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
--- vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
--- vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 vim.keymap.set("c", "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true })
 vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true })
 vim.keymap.set({ "n", "x" }, "<esc>", "<cmd>nohlsearch<cr><esc>", { desc = "Escape and clear hlsearch" })
@@ -17,8 +15,11 @@ vim.keymap.set({ "n", "x" }, "k", "v:count==0 ? 'gk' : 'k'", { expr = true, nore
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
---[[ File Explorer ]]
--- vim.keymap.set("n", "<leader>e", "<cmd>Explore<cr>", { desc = "File Explorer" })
+--[[ Move current line up/down ]]
+vim.keymap.set("n", "<C-J>", "<cmd>m .+1<cr>==", { desc = "Move current line up" })
+vim.keymap.set("n", "<C-K>", "<cmd>m .-2<cr>==", { desc = "Move current line down" })
+vim.keymap.set("v", "<C-J>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
+vim.keymap.set("v", "<C-K>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
 
 --[[ Split window ]]
 vim.keymap.set("n", "<leader>\\", "<cmd>vsplit<cr>", { desc = "Split Vertical" })
@@ -35,12 +36,6 @@ vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decreas
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
-
---[[ Move current line up/down ]]
-vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
-vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
--- vim.keymap.set("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "Move current line up" })
--- vim.keymap.set("n", "<C-k>", "<cmd>m .-2<cr>==", { desc = "Move current line down" })
 
 --[[ Better indenting ]]
 vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
@@ -67,12 +62,6 @@ end, { desc = "Delete Buffer" })
 vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "Tab Previous" })
 vim.keymap.set("n", "<leader>tn", "<cmd>tabNext<cr>", { desc = "Tab Next" })
 
---[[ Format ]]
-vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format files" })
-
---[[ Code Action ]]
-vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
-
 --[[ Neogit ]]
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
 
@@ -98,6 +87,6 @@ end)
 vim.keymap.set("n", "<leader>xl", function()
     require("trouble").toggle "loclist"
 end)
-vim.keymap.set("n", "gr", function()
-    require("trouble").toggle "lsp_references"
-end)
+-- vim.keymap.set("n", "gr", function()
+--     require("trouble").toggle "lsp_references"
+-- end)
