@@ -16,10 +16,10 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 --[[ Move current line up/down ]]
-vim.keymap.set("n", "<C-J>", "<cmd>m .+1<cr>==", { desc = "Move current line up" })
-vim.keymap.set("n", "<C-K>", "<cmd>m .-2<cr>==", { desc = "Move current line down" })
-vim.keymap.set("v", "<C-J>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
-vim.keymap.set("v", "<C-K>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
+-- vim.keymap.set("n", "<C-J>", ":m .+1<cr>==", { desc = "Move current line up" })
+-- vim.keymap.set("n", "<C-K>", ":m .-2<cr>==", { desc = "Move current line down" })
+vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
+vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
 
 --[[ Split window ]]
 vim.keymap.set("n", "<leader>\\", "<cmd>vsplit<cr>", { desc = "Split Vertical" })
@@ -42,8 +42,8 @@ vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
 vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })
 
 --[[ Buffer ]]
-vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>", { desc = "Buffer Previous" })
-vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Buffer Next" })
+vim.keymap.set("n", "<leader>bp", ":bp<cr>", { desc = "Buffer Previous" })
+vim.keymap.set("n", "<leader>bn", ":bn<cr>", { desc = "Buffer Next" })
 vim.keymap.set("n", "<leader>bd", function()
     if vim.bo.modified then
         local choice = vim.fn.confirm(("Save changes to %q"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
@@ -56,7 +56,7 @@ vim.keymap.set("n", "<leader>bd", function()
     else
         vim.api.nvim_buf_delete(0, { force = true })
     end
-end, { desc = "Delete Buffer" })
+end, { desc = "Buffer Delete" })
 
 -- [[ Tab ]]
 vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "Tab Previous" })
@@ -69,7 +69,7 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
--- vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 --[[ Trouble ]]
 vim.keymap.set("n", "<leader>xx", function()
@@ -87,6 +87,3 @@ end)
 vim.keymap.set("n", "<leader>xl", function()
     require("trouble").toggle "loclist"
 end)
--- vim.keymap.set("n", "gr", function()
---     require("trouble").toggle "lsp_references"
--- end)

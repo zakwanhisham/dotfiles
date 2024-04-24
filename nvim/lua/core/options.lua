@@ -37,7 +37,6 @@ vim.o.mouse = "a"
 
 -- autocomplete list
 vim.o.pumheight = 10
-vim.o.inccommand = "split"
 
 -- set cursor
 vim.o.guicursor = ""
@@ -93,6 +92,7 @@ vim.o.cmdheight = 1
 
 -- command line
 vim.o.wildmode = "longest:full,full"
+vim.o.inccommand = "split"
 
 -- decrease update time
 vim.o.updatetime = 250
@@ -101,6 +101,7 @@ vim.o.timeoutlen = 500
 
 -- colorcolumn
 vim.o.colorcolumn = "80"
+vim.o.cursorline = true
 
 -- code gutter
 vim.o.scrolloff = 12
@@ -119,7 +120,6 @@ vim.o.showcmd = true
 -- sign
 vim.o.signcolumn = "yes"
 vim.o.showtabline = 1
-vim.o.cursorline = true
 
 -- list
 vim.opt.list = true
