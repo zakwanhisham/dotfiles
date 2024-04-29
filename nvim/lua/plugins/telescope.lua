@@ -4,6 +4,7 @@ local theme = require "telescope.themes"
 
 require("telescope").setup {
     defaults = {
+        file_ignore_patterns = { ".git/", "node_modules", ".vim/", "target/", ".idea/", ".vscode-test/" },
         mappings = {
             i = {
                 ["<C-u>"] = false,
@@ -63,3 +64,9 @@ vim.keymap.set("n", "<leader>/", function()
         previewer = false,
     })
 end, { desc = "Fuzzy search in current buffer" })
+vim.keymap.set("n", "<leader>fh", function()
+    builtin.command_history(theme.get_dropdown {
+        winblend = 0,
+        previewer = false,
+    })
+end, { desc = "Command history" })

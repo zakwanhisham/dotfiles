@@ -249,3 +249,4 @@ xsel
 xterm
 zathura
 zathura-pdf-mupdf
+zoom

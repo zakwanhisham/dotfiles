@@ -69,21 +69,12 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+-- vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 --[[ Trouble ]]
-vim.keymap.set("n", "<leader>xx", function()
-    require("trouble").toggle()
-end)
-vim.keymap.set("n", "<leader>xw", function()
+vim.keymap.set("n", "<leader>w", function()
     require("trouble").toggle "workspace_diagnostics"
 end)
-vim.keymap.set("n", "<leader>xd", function()
+vim.keymap.set("n", "<leader>d", function()
     require("trouble").toggle "document_diagnostics"
-end)
-vim.keymap.set("n", "<leader>xq", function()
-    require("trouble").toggle "quickfix"
-end)
-vim.keymap.set("n", "<leader>xl", function()
-    require("trouble").toggle "loclist"
 end)
