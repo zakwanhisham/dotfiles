@@ -72,9 +72,9 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open float
 -- vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 --[[ Trouble ]]
-vim.keymap.set("n", "<leader>w", function()
+vim.keymap.set("n", "<leader>d", function()
     require("trouble").toggle "workspace_diagnostics"
 end)
-vim.keymap.set("n", "<leader>d", function()
-    require("trouble").toggle "document_diagnostics"
+vim.keymap.set("n", "<C-q>", function()
+    require("trouble").toggle "quickfix"
 end)
