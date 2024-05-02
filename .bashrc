@@ -107,6 +107,8 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 ### ALIASES
 # Changing "ls" to "exa"
 alias ls='eza --color=always --group-directories-first --icons --git'
+alias la='ls -a'
+alias ll='ls -la'
 
 # For convenience
 alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
