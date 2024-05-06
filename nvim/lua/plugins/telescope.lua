@@ -4,7 +4,7 @@ local theme = require "telescope.themes"
 
 require("telescope").setup {
     defaults = {
-        file_ignore_patterns = { ".git/", "node_modules", ".vim/", "target/", ".idea/", ".vscode-test/" },
+        file_ignore_patterns = { ".git/", "node_modules" },
         mappings = {
             i = {
                 ["<C-u>"] = false,
