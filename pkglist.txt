@@ -104,6 +104,7 @@ keyd
 lazygit
 less
 libdvdcss
+libgit2-glib
 libgsf
 libopenraw
 libwnck3
