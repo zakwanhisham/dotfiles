@@ -83,6 +83,8 @@ bind 'set menu-complete-display-prefix on'
 
 # Show vim mode
 bind 'set show-mode-in-prompt on'
+bind 'set vi-ins-mode-string "[+]"'
+bind 'set vi-cmd-mode-string "[:]"'
 
 # Disable control echo
 bind 'set echo-control-characters off'
