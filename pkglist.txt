@@ -164,6 +164,7 @@ playerctl
 polkit-gnome
 poppler-data
 poppler-glib
+postman-bin
 power-profiles-daemon
 pv
 python

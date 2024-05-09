@@ -42,8 +42,8 @@ vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
 vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })
 
 --[[ Buffer ]]
-vim.keymap.set("n", "<leader>bp", ":bp<cr>", { desc = "Buffer Previous" })
-vim.keymap.set("n", "<leader>bn", ":bn<cr>", { desc = "Buffer Next" })
+vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>", { desc = "Buffer Previous" })
+vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Buffer Next" })
 vim.keymap.set("n", "<leader>bd", function()
     if vim.bo.modified then
         local choice = vim.fn.confirm(("Save changes to %q"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")

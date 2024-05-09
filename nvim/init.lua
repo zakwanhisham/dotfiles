@@ -145,9 +145,7 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim", -- required
             "sindrets/diffview.nvim", -- optional - Diff integration
         },
-        config = function()
-            require "plugins.neogit"
-        end,
+        config = true,
     },
     {
         -- Telescope
