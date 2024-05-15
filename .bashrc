@@ -120,6 +120,7 @@ alias reload='source ~/.bashrc'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
+alias mirror='sudo reflector --verbose --protocol https --sort rate --latest 20 --download-timeout 5 --threads 5 --save /etc/pacman.d/mirrorlist'
 
 # Changing program name
 alias cal='cal --monday -3'
