@@ -39,6 +39,7 @@ require("lazy").setup({
             "hrsh7th/cmp-nvim-lsp",
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-path",
+            "hrsh7th/cmp-buffer",
             "rafamadriz/friendly-snippets",
             {
                 "L3MON4D3/LuaSnip",
@@ -140,7 +141,6 @@ require("lazy").setup({
         -- Neogit
         "NeogitOrg/neogit",
         event = "BufEnter",
-        branch = "nightly",
         dependencies = {
             "nvim-lua/plenary.nvim", -- required
             "sindrets/diffview.nvim", -- optional - Diff integration

@@ -5,6 +5,9 @@ local theme = require "telescope.themes"
 require("telescope").setup {
     defaults = {
         file_ignore_patterns = { ".git/", "node_modules" },
+        preview = {
+            filesize_limit = 0.1, -- MB
+        },
         mappings = {
             i = {
                 ["<C-u>"] = false,
@@ -47,10 +50,23 @@ vim.keymap.set("n", "<leader><space>", function()
     })
 end, { desc = "Buffer" })
 vim.keymap.set("n", "<leader>ff", function()
-    builtin.find_files(theme.get_dropdown {
+    local is_inside_work_tree = {}
+    local opts = theme.get_dropdown {
         winblend = 0,
         previewer = false,
-    })
+    }
+
+    local cwd = vim.fn.getcwd()
+    if is_inside_work_tree[cwd] == nil then
+        vim.fn.system "git rev-parse --is-inside-work-tree"
+        is_inside_work_tree[cwd] = vim.v.shell_error == 0
+    end
+
+    if is_inside_work_tree[cwd] then
+        builtin.git_files(opts)
+    else
+        builtin.find_files(opts)
+    end
 end, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fs", function()
     builtin.live_grep(theme.get_dropdown {
