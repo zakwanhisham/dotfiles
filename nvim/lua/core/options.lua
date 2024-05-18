@@ -11,14 +11,10 @@ vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
 vim.g.loaded_tar = 1
 vim.g.loaded_tarPlugin = 1
-
 vim.g.loaded_getscript = 1
 vim.g.loaded_getscriptPlugin = 1
 vim.g.loaded_vimball = 1
 vim.g.loaded_2html_plugin = 1
-
-vim.g.loaded_matchit = 1
-vim.g.loaded_marchparen = 1
 vim.g.loaded_logiPat = 1
 vim.g.loaded_rrhelper = 1
 
@@ -27,6 +23,7 @@ vim.g.netrw_liststyle = 0
 vim.g.netrw_banner = 1
 vim.g.netrw_sizestyle = "H"
 vim.g.netrw_sort_by = "name"
+vim.g.netrw_preview = 1
 
 -- Markdown
 vim.g.markdown_recommended_style = 0
@@ -65,7 +62,7 @@ vim.o.breakindent = true
 vim.o.smartcase = true
 vim.o.smartindent = true
 vim.o.wrap = false
-vim.o.completeopt = "menuone,noselect,preview"
+vim.o.completeopt = "menuone,noselect,preview,noinsert"
 vim.o.ignorecase = true
 
 -- spell check
