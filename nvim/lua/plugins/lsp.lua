@@ -1,41 +1,77 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
+        { "williamboman/mason.nvim", config = true }, -- Must be loaded before dependant
         "williamboman/mason-lspconfig.nvim",
-        "folke/neodev.nvim",
-        { "williamboman/mason.nvim", config = true },
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
         { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+        { "folke/neodev.nvim", opts = {} },
     },
     config = function()
-        local on_attach = function(_, bufnr)
-            local nmap = function(keys, func, desc)
-                if desc then
-                    desc = "LSP: " .. desc
+        vim.api.nvim_create_autocmd("LspAttach", {
+            callback = function(event)
+                local nmap = function(keys, func, desc)
+                    if desc then
+                        desc = "LSP: " .. desc
+                    end
+
+                    vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
                 end
 
-                vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
-            end
+                nmap("<leader>lr", vim.lsp.buf.rename, "[L]sp [R]ename")
+                nmap("<leader>lf", vim.lsp.buf.format, "[L]sp [F]ormat")
+                nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-            nmap("<leader>lr", vim.lsp.buf.rename, "[L]sp [R]ename")
-            nmap("<leader>lf", vim.lsp.buf.format, "[L]sp [F]ormat")
-            nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+                nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+                nmap("gr", function()
+                    require("trouble").toggle "lsp_references"
+                end, "[G]oto [R]eferences")
 
-            nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-            nmap("gr", function()
-                require("trouble").toggle "lsp_references"
-            end, "[G]oto [R]eferences")
+                -- See `:help K` for why this keymap
+                nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 
-            -- See `:help K` for why this keymap
-            nmap("K", vim.lsp.buf.hover, "Hover Documentation")
+                -- Lesser used LSP functionality
+                nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+                nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
+                nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+                nmap("<leader>wl", function()
+                    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+                end, "[W]orkspace [L]ist Folders")
 
-            -- Lesser used LSP functionality
-            nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-            nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-            nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
-            nmap("<leader>wl", function()
-                print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-            end, "[W]orkspace [L]ist Folders")
-        end
+                local client = vim.lsp.get_client_by_id(event.data.client_id)
+                if client and client.server_capabilities.documentHighlightProvider then
+                    local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = true })
+                    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+                        buffer = event.buf,
+                        group = highlight_augroup,
+                        callback = vim.lsp.buf.document_highlight,
+                    })
+
+                    vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+                        buffer = event.buf,
+                        group = highlight_augroup,
+                        callback = vim.lsp.buf.clear_references,
+                    })
+
+                    vim.api.nvim_create_autocmd("LspDetach", {
+                        group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
+                        callback = function(event2)
+                            vim.lsp.buf.clear_references()
+                            vim.api.nvim_clear_autocmds { group = "lsp-highlight", buffer = event2.buf }
+                        end,
+                    })
+                end
+                if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+                    nmap("<leader>th", function()
+                        ---@diagnostic disable-next-line: missing-parameter
+                        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+                    end, "[T]oggle Inlay [H]ints")
+                end
+            end,
+        })
+
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
         local servers = {
             bashls = {},
@@ -114,9 +150,12 @@ return {
                 },
             },
             lua_ls = {
-                Lua = {
-                    workspace = { checkThirdParty = false },
-                    telemetry = { enable = false },
+                settings = {
+                    Lua = {
+                        completion = { callSnippet = "Replace" },
+                        workspace = { checkThirdParty = false },
+                        telemetry = { enable = false },
+                    },
                 },
             },
             marksman = {},
@@ -157,30 +196,22 @@ return {
             yamlls = {},
         }
 
-        -- Setup neovim lua configuration
-        require("neodev").setup()
+        require("mason").setup()
 
-        -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+        local ensure_installed = vim.tbl_keys(servers) or {}
 
-        -- Ensure the servers above are installed
-        local mason_lspconfig = require "mason-lspconfig"
+        require("mason-tool-installer").setup { ensure_installed = ensure_installed, auto_update = true }
 
-        mason_lspconfig.setup {
-            ensure_installed = vim.tbl_keys(servers),
+        require("mason-lspconfig").setup {
+            ensure_installed = ensure_installed,
             automatic_installation = true,
-        }
-
-        mason_lspconfig.setup_handlers {
-            function(server_name)
-                require("lspconfig")[server_name].setup {
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                    settings = servers[server_name],
-                    filetypes = (servers[server_name] or {}).filetypes,
-                }
-            end,
+            handlers = {
+                function(server_name)
+                    local server = servers[server_name] or {}
+                    server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+                    require("lspconfig")[server_name].setup(server)
+                end,
+            },
         }
     end,
 }
