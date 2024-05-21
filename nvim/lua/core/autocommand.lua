@@ -1,22 +1,22 @@
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+local yank_highlight = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
+    group = yank_highlight,
+    pattern = "*",
     callback = function()
         vim.highlight.on_yank()
     end,
-    group = highlight_group,
-    pattern = "*",
 })
 
 -- [[ Terminal ]]
 -- Remove number and relative number when `:term` is open
 vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = { "*" },
     callback = function()
         vim.cmd.setlocal "nonumber"
         vim.cmd.setlocal "norelativenumber"
     end,
-    pattern = { "*" },
 })
 
 -- [[ Help File ]]
@@ -29,7 +29,8 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.cmd "vertical resize 81"
     end,
 })
---
+
+-- [[ Close File]]
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {
@@ -47,12 +48,12 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Disable mini.indentscope on some of the file
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {
-        "help",
         "Trouble",
-        "trouble",
+        "help",
         "lazy",
-        "mason",
         "man",
+        "mason",
+        "trouble",
     },
     callback = function()
         vim.b.miniindentscope_disable = true
@@ -80,8 +81,3 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
     end,
 })
-
--- Create a command `:Format` local to the LSP buffer
--- vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
---     vim.lsp.buf.format()
--- end, { desc = "Format current buffer with LSP" })

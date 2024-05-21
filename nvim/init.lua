@@ -18,8 +18,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
+    defaults = {
+        lazy = true,
+    },
     install = {
-        colorscheme = { "kanagawa-dragon" },
+        colorscheme = { "default" },
     },
     change_detection = {
         enabled = true,
@@ -28,25 +31,25 @@ require("lazy").setup("plugins", {
     performance = {
         rtp = {
             disabled_plugins = {
-                "gzip",
-                "zip",
-                "zipPlugin",
-                "tar",
-                "tarPlugin",
+                "2html_plugin",
+                "editorconfig",
                 "getscript",
                 "getscriptPlugin",
-                "vimball",
-                "2html_plugin",
+                "gzip",
                 "logiPat",
-                "rrhelper",
-                "editorconfig",
                 "man",
-                "tutor",
                 "osc52",
                 "rplugin",
+                "rrhelper",
                 "spellfile",
+                "tar",
+                "tarPlugin",
                 "tohtml",
                 "tutor",
+                "tutor",
+                "vimball",
+                "zip",
+                "zipPlugin",
             },
         },
     },

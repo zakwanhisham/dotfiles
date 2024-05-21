@@ -1,9 +1,9 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
     build = ":TSUpdate",
     dependencies = {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        { "windwp/nvim-ts-autotag", opts = {} },
+        { "nvim-treesitter/nvim-treesitter-textobjects", event = "VeryLazy" },
         { "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 3 } },
         {
             "JoosepAlviste/nvim-ts-context-commentstring",
@@ -50,11 +50,6 @@ return {
             context_commentstring = {
                 enable = true,
                 enable_autocmd = false,
-            },
-
-            -- Autotag
-            autotag = {
-                enable = true,
             },
 
             -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)

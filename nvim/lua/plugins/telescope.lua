@@ -1,7 +1,7 @@
 return {
     "nvim-telescope/telescope.nvim",
-    event = "BufEnter",
-    branch = "0.1.x",
+    event = "VimEnter",
+    version = false,
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-ui-select.nvim",

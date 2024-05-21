@@ -1,6 +1,6 @@
 return {
     "nvimtools/none-ls.nvim",
-    event = "LspAttach",
+    event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     dependencies = {
         "nvimtools/none-ls-extras.nvim",
         "jay-babu/mason-null-ls.nvim",
