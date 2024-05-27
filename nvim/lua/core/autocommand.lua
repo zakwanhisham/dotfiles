@@ -37,6 +37,7 @@ vim.api.nvim_create_autocmd("FileType", {
         "help",
         "lspinfo",
         "qf",
+        "term",
     },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
@@ -53,6 +54,7 @@ vim.api.nvim_create_autocmd("FileType", {
         "lazy",
         "man",
         "mason",
+        "term",
         "trouble",
     },
     callback = function()

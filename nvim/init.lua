@@ -32,12 +32,10 @@ require("lazy").setup("plugins", {
         rtp = {
             disabled_plugins = {
                 "2html_plugin",
-                "editorconfig",
                 "getscript",
                 "getscriptPlugin",
                 "gzip",
                 "logiPat",
-                "man",
                 "osc52",
                 "rplugin",
                 "rrhelper",
@@ -45,7 +43,6 @@ require("lazy").setup("plugins", {
                 "tar",
                 "tarPlugin",
                 "tohtml",
-                "tutor",
                 "tutor",
                 "vimball",
                 "zip",
