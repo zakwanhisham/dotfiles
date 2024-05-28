@@ -136,8 +136,6 @@ alias weather='curl wttr.in'
 alias ala='nvim ~/.config/alacritty/alacritty.toml'
 alias bashrc='nvim ~/.bashrc'
 alias i3='nvim ~/.config/i3/config'
-alias neo='nvim ~/.config/nvim/init.lua'
-alias tconf='nvim ~/.config/tmux/tmux.conf'
 
 # ssh to machine
 alias door-pi='sshpass -f ~/.pass/pi.txt ssh -o StrictHostKeyChecking=no pi@192.168.0.6'
