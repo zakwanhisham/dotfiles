@@ -2,7 +2,6 @@ return {
     "nvimtools/none-ls.nvim",
     event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     dependencies = {
-        "nvimtools/none-ls-extras.nvim",
         "jay-babu/mason-null-ls.nvim",
     },
     config = function()
@@ -53,26 +52,12 @@ return {
                 formatting.clang_format.with {
                     extra_filetypes = { "h", "hpp", "cpp" },
                 },
-                require("none-ls.formatting.eslint_d").with {
-                    condition = function(utils)
-                        return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
-                    end,
-                },
                 --[[ linting ]]
                 diagnostics.golangci_lint,
                 diagnostics.markdownlint,
-                require("none-ls.diagnostics.eslint_d").with {
-                    condition = function(utils)
-                        return utils.root_has_file { ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
-                    end,
-                    filter = function(diagnostic)
-                        return diagnostic.code ~= "prettierd/prettierd"
-                    end,
-                },
                 --[[ code actions ]]
                 actions.gomodifytags,
                 actions.impl,
-                require "none-ls.code_actions.eslint_d",
             },
         }
     end,

@@ -7,7 +7,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
-        { "folke/neodev.nvim", opts = {} },
+        { "folke/lazydev.nvim", ft = "lua", opts = {} },
     },
     config = function()
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -41,7 +41,7 @@ return {
                 end, "[W]orkspace [L]ist Folders")
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
-                if client and client.server_capabilities.documentHighlightProvider then
+                if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
                     local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = true })
                     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
                         buffer = event.buf,
@@ -62,12 +62,6 @@ return {
                             vim.api.nvim_clear_autocmds { group = "lsp-highlight", buffer = event2.buf }
                         end,
                     })
-                end
-                if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-                    nmap("<leader>th", function()
-                        ---@diagnostic disable-next-line: missing-parameter
-                        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-                    end, "[T]oggle Inlay [H]ints")
                 end
             end,
         })
@@ -179,13 +173,8 @@ return {
                     pyls_isort = { enabled = true },
                 },
             },
-            rust_analyzer = {},
             tailwindcss = {
-                -- exclude a filetype from the default_config
-                filetypes_exclude = { "markdown", "javascript", "typescript" },
-                -- add additional filetypes to the default_config
-                filetypes_include = {},
-                -- to fully override the default_config, change the below
+                filetypes = { "javascriptreact", "html" },
             },
             taplo = {},
             tsserver = {

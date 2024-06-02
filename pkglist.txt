@@ -148,6 +148,7 @@ nss-mdns
 ntfs-3g
 ntp
 numlockx
+obs-studio
 openssh
 pacman-contrib
 papirus-icon-theme
@@ -250,4 +251,3 @@ xsel
 xterm
 zathura
 zathura-pdf-mupdf
-zoom

@@ -17,12 +17,6 @@ return {
                 end
             end)(),
         },
-        {
-            "Exafunction/codeium.nvim",
-            cmd = "Codeium",
-            build = ":Codeium Auth",
-            opts = {},
-        },
     },
     config = function()
         local cmp = require "cmp"
@@ -65,10 +59,9 @@ return {
             },
             sources = {
                 { name = "nvim_lsp" },
-                { name = "codeium" },
+                { name = "buffer" },
                 { name = "luasnip" },
                 { name = "path" },
-                { name = "buffer" },
             },
             enabled = function()
                 -- disable completion in comments

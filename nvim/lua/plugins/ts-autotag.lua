@@ -1,5 +1,5 @@
 return {
     "windwp/nvim-ts-autotag",
-    ft = { "astro", "html", "javascript", "jsx", "markdown", "tsx", "typescript" },
+    ft = { "astro", "html", "jsx", "markdown", "tsx" },
     opts = {},
 }
