@@ -9,6 +9,7 @@ alsa-plugins
 alsa-utils
 arandr
 archlinux-xdg-menu
+aspell
 autotiling
 awesome-terminal-fonts
 b43-fwcutter
@@ -48,17 +49,18 @@ efibootmgr
 efitools
 endeavouros-keyring
 endeavouros-mirrorlist
-endeavouros-theming
 eos-hooks
 eos-log-tool
 eos-qogir-icons
 eos-quickstart
 eos-rankmirrors
+eos-settings-i3wm
 ethtool
 exfatprogs
 eza
 f2fs-tools
 fastfetch
+fd
 feh
 ffmpegthumbnailer
 file-roller
@@ -69,10 +71,12 @@ fsarchiver
 galculator
 gdb
 git
+glances
 glow
 go
 google-chrome
 gparted
+grub
 gst-libav
 gst-plugin-pipewire
 gst-plugins-bad
@@ -129,7 +133,6 @@ mesa-utils
 minizip
 mlocate
 modemmanager
-mongodb-bin
 mpv
 mtools
 ncdu
@@ -143,6 +146,8 @@ nilfs-utils
 ninja
 noto-color-emoji-fontconfig
 noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
 noto-fonts-extra
 nss-mdns
 ntfs-3g
@@ -150,6 +155,7 @@ ntp
 numlockx
 obs-studio
 openssh
+os-prober
 pacman-contrib
 papirus-icon-theme
 paru
@@ -181,6 +187,7 @@ rebuild-detector
 reflector
 reflector-simple
 reiserfsprogs
+ripgrep
 rng-tools
 rofi
 rsync
@@ -230,6 +237,7 @@ wget
 which
 wireplumber
 wpa_supplicant
+xarchiver
 xbindkeys
 xclip
 xdg-user-dirs
@@ -251,3 +259,4 @@ xsel
 xterm
 zathura
 zathura-pdf-mupdf
+zip

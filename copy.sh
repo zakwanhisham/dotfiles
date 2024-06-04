@@ -3,22 +3,22 @@
 set -xe
 
 # Destination folder
-dotfile="/home/zakwan/.dotfiles"
+dotfile="/home/ouraaa/.dotfiles"
 
 # Array of the source folders
 source_folders=(
-	"/home/zakwan/.bashrc"
-	"/home/zakwan/.config/alacritty"
-	"/home/zakwan/.config/bat"
-	"/home/zakwan/.config/dunst"
-	"/home/zakwan/.config/example.picom.conf"
-	"/home/zakwan/.config/i3"
-	"/home/zakwan/.config/nvim"
-	"/home/zakwan/.config/starship.toml"
-	"/home/zakwan/.config/tmux/tmux.conf"
-	"/home/zakwan/.config/topgrade.toml"
-	"/home/zakwan/.fehbg"
-	"/home/zakwan/.gitconfig"
+	"/home/ouraaa/.bashrc"
+	"/home/ouraaa/.config/alacritty"
+	"/home/ouraaa/.config/bat"
+	"/home/ouraaa/.config/dunst"
+	"/home/ouraaa/.config/example.picom.conf"
+	"/home/ouraaa/.config/i3"
+	"/home/ouraaa/.config/nvim"
+	"/home/ouraaa/.config/starship.toml"
+	"/home/ouraaa/.config/topgrade.toml"
+	"/home/ouraaa/.fehbg"
+	"/home/ouraaa/.gitconfig"
+	"/home/ouraaa/.tmux.conf"
 )
 
 # Variable to track errors

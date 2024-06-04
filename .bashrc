@@ -204,13 +204,6 @@ con() {
 						--info=inline \
 						--border=sharp \
 						--height 40% \
-						--preview-window="right:30%" \
-						--preview-label=" conda tree leaves " \
-						--preview=$'
-						    conda tree -p {3} leaves |
-						    perl -F\'[^\\w-_]\' -lae \'print for grep /./, @F;\' |
-						    sort
-						'
 			)
 		)
 		[[ -n "$choice" ]] && conda activate "$choice"
@@ -218,33 +211,27 @@ con() {
 }
 
 ### SOME EXPORTS
-# pnpm
-export PNPM_HOME="/home/zakwan/.local/share/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
+# Node Version Manager(NVM)
+export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-# nvm end
 
-# conda
-__conda_setup="$('/home/zakwan/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ouraaa/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
 	eval "$__conda_setup"
 else
-	if [ -f "/home/zakwan/miniconda3/etc/profile.d/conda.sh" ]; then
-		. "/home/zakwan/miniconda3/etc/profile.d/conda.sh"
+	if [ -f "/home/ouraaa/miniconda3/etc/profile.d/conda.sh" ]; then
+		. "/home/ouraaa/miniconda3/etc/profile.d/conda.sh"
 	else
-		export PATH="/home/zakwan/miniconda3/bin:$PATH"
+		export PATH="/home/ouraaa/miniconda3/bin:$PATH"
 	fi
 fi
 unset __conda_setup
-
+# <<< conda initialize <<<
+#
 # FZF KEYBINDS
 eval "$(fzf --bash)"
 
