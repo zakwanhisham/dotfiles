@@ -80,6 +80,7 @@ intel-media-driver
 intel-ucode
 inxi
 iwd
+jasper
 jfsutils
 keyd
 lazygit
@@ -87,6 +88,7 @@ less
 libdvdcss
 libgit2-glib
 libgsf
+libmad
 libopenraw
 libpulse
 libva-intel-driver
@@ -163,7 +165,6 @@ reflector
 reflector-simple
 reiserfsprogs
 ripgrep
-ristretto
 rng-tools
 rsync
 rtkit

@@ -137,11 +137,6 @@ alias ala='nvim ~/.config/alacritty/alacritty.toml'
 alias bashrc='nvim ~/.bashrc'
 alias i3='nvim ~/.config/i3/config'
 
-# ssh to machine
-alias door-pi='sshpass -f ~/.pass/pi.txt ssh -o StrictHostKeyChecking=no pi@192.168.0.6'
-alias robomy-server='sshpass -f ~/.pass/robomy.txt ssh -o StrictHostKeyChecking=no robomy-server@192.168.0.16'
-alias rasp-robo='sshpass -f ~/.pass/pi5.txt ssh -o StrictHostKeyChecking=no rasp@192.168.0.19'
-
 ### BASH FUNCTION
 # Quickly change to directory
 ff() {
