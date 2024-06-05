@@ -10,8 +10,6 @@ source_folders=(
 	"/home/ouraaa/.bashrc"
 	"/home/ouraaa/.config/alacritty"
 	"/home/ouraaa/.config/bat"
-	"/home/ouraaa/.config/dunst"
-	"/home/ouraaa/.config/example.picom.conf"
 	"/home/ouraaa/.config/i3"
 	"/home/ouraaa/.config/nvim"
 	"/home/ouraaa/.config/starship.toml"

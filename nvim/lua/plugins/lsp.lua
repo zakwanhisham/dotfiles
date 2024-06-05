@@ -173,6 +173,7 @@ return {
                     pyls_isort = { enabled = true },
                 },
             },
+            rust_analyzer = {},
             tailwindcss = {
                 filetypes = { "javascriptreact", "html" },
             },
