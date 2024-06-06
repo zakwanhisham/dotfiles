@@ -207,7 +207,6 @@ xdg-user-dirs
 xdg-user-dirs-gtk
 xdg-utils
 xf86-video-intel
-xf86-video-nouveau
 xfburn
 xfce4-appfinder
 xfce4-artwork

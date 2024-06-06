@@ -12,7 +12,7 @@ cyan = '#8ea4a2'
 green = '#8a9a7b'
 magenta = '#a292a3'
 red = '#c4746e'
-white = '#C8C093'
+white = '#c8c093'
 yellow = '#c4b28a'
 
 [colors.bright]

@@ -209,7 +209,8 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id ~/.fehbg
 
 # Desktop notifications
-exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
+# Use native xfce4 notification
+# exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
 # Swap caps-lock with esc
 # This is already covered by using keyd (https://github.com/rvaiya/keyd)
