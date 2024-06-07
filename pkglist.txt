@@ -74,6 +74,7 @@ hwdetect
 hwinfo
 i3-wm
 i3blocks
+i3lock
 i3status
 inetutils
 intel-media-driver
@@ -255,7 +256,5 @@ xorg-xinput
 xorg-xkill
 xsel
 xterm
-zathura
-zathura-pdf-mupdf
 zip
 zram-generator
