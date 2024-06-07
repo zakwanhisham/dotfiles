@@ -75,7 +75,7 @@ args = ["-l", "-c", "tmux attach || tmux"]
 program = "/usr/bin/bash"
 
 [window]
-dynamic_title = false
+dynamic_title = true
 opacity = 1.0
 startup_mode = "Fullscreen"
 

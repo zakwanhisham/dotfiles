@@ -17,7 +17,7 @@ XTerm*decTerminalID: 340
 XTerm*numColorRegisters: 256
 
 ! Matching terminfo for all that
-XTerm*termName: xterm-new
+XTerm*termName: xterm-256color
 
 ! Dont toggle the 8th bit
 XTerm.vt100.metaSendsEscape: true

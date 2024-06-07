@@ -8,7 +8,6 @@ export HISTSIZE=500000
 export IGNOREEOF=100
 export MANPAGER="nvim +Man!"
 export SUDO_EDITOR="nvim"
-export TERM="xterm-256color"
 export VISUAL="nvim"
 
 # Standard ISO 8601 timestamp
