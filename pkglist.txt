@@ -83,6 +83,7 @@ inxi
 iwd
 jasper
 jfsutils
+jq
 keyd
 lazygit
 less
