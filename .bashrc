@@ -1,6 +1,5 @@
 # EXPORT
 export BROWSER="/usr/bin/firefox-developer-edition"
-export EDITOR="nvim"
 export HISTCONTROL=ignoredups:erasedups
 export HISTFILESIZE=100000
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
@@ -22,6 +21,13 @@ export FZF_DEFAULT_OPTS=' --color=fg:#c8c093,bg:#181616,hl:#8ba4b0 --color=fg+:#
 # VIM mode
 if [[ $- == *i* ]]; then
 	set -o vi
+fi
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+	export EDITOR='vim'
+else
+	export EDITOR='nvim'
 fi
 
 # PATH
@@ -87,13 +93,6 @@ bind 'set vi-cmd-mode-string "><"'
 
 # Disable control echo
 bind 'set echo-control-characters off'
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='nvim'
-else
-	export EDITOR='nvim'
-fi
 
 # source fzf keybinding
 source /usr/share/fzf/key-bindings.bash
