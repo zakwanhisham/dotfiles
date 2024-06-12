@@ -123,7 +123,6 @@ alias mirror='sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort
 # Changing program name
 alias cal='cal --monday -3'
 alias cat='bat'
-alias diff='nvim -d'
 alias less='less --use-color -N'
 alias lg='lazygit'
 alias open='xdg-open'
@@ -133,7 +132,6 @@ alias weather='curl wttr.in'
 # Configuration
 alias ala='nvim ~/.config/alacritty/alacritty.toml'
 alias bashrc='nvim ~/.bashrc'
-alias i3='nvim ~/.config/i3/config'
 
 ### BASH FUNCTION
 # Quickly change to directory
@@ -224,7 +222,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-#
+
 # FZF KEYBINDS
 eval "$(fzf --bash)"
 

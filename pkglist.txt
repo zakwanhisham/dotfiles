@@ -176,6 +176,7 @@ sshpass
 starship
 sysfsutils
 sysstat
+tabiew
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
@@ -231,5 +232,6 @@ xorg-xinput
 xorg-xkill
 xsel
 xterm
+zenity
 zip
 zram-generator
