@@ -40,7 +40,7 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 export BOB=$HOME/.local/share/bob/nvim-bin
 export CARGO=$HOME/.cargo
 export GOPATH=$HOME/go
-export RUSTUP=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
+export RUSTUP=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu
 export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$BOB
 
 # ENV VARIABLES
