@@ -95,38 +95,38 @@ xterm*faceName: ZedMono Nerd Font
 xterm*faceSize: 16
 
 ! special
-xterm*foreground:   #c5c9c5
-xterm*background:   #181616
-xterm*cursorColor:  #dcd7ba
+*.foreground:   #c5c9c5
+*.background:   #181616
+*.cursorColor:  #dcd7ba
 
 ! black
-xterm*color0:       #0d0c0c
-xterm*color8:       #a6a69c
+*.color0:       #0d0c0c
+*.color8:       #a6a69c
 
 ! red
-xterm*color1:       #c4746e
-xterm*color9:       #e46876
+*.color1:       #c4746e
+*.color9:       #e46876
 
 ! green
-xterm*color2:       #8a9a7b
-xterm*color10:      #87a987
+*.color2:       #8a9a7b
+*.color10:      #87a987
 
 ! yellow
-xterm*color3:       #c4b28a
-xterm*color11:      #e6c384
+*.color3:       #c4b28a
+*.color11:      #e6c384
 
 ! blue
-xterm*color4:       #8ba4b0
-xterm*color12:      #7fb4ca
+*.color4:       #8ba4b0
+*.color12:      #7fb4ca
 
 ! magenta
-xterm*color5:       #a292a3
-xterm*color13:      #938aa9
+*.color5:       #a292a3
+*.color13:      #938aa9
 
 ! cyan
-xterm*color6:       #8ea4a2
-xterm*color14:      #7aa89f
+*.color6:       #8ea4a2
+*.color14:      #7aa89f
 
 ! white
-xterm*color7:       #c8c093
-xterm*color15:      #c5c9c5
+*.color7:       #c8c093
+*.color15:      #c5c9c5
