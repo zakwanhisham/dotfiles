@@ -24,6 +24,7 @@ ccache
 clang
 cmake
 codespell
+curlie
 dex
 dhclient
 dialog
@@ -70,6 +71,7 @@ gvfs-nfs
 gvfs-smb
 haveged
 hdparm
+httpie-desktop-bin
 hwdetect
 hwinfo
 i3-wm
@@ -147,7 +149,6 @@ pipewire-jack
 pipewire-pulse
 pkgfile
 playerctl
-postman-bin
 power-profiles-daemon
 pv
 python-bottle
