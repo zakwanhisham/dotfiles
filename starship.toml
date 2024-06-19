@@ -10,24 +10,25 @@ $character"""
 [directory]
 read_only = " 󰌾"
 read_only_style = "red"
-truncate_to_repo = true
+truncate_to_repo = false
 style = "blue"
 
 [git_branch]
-format = "([$branch]($style))"
 style = "bright-black"
+format = "([$branch]($style))"
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style)) '
 style = "purple"
+format = '([\[$all_status$ahead_behind\]]($style)) '
 
 [cmd_duration]
-format = "took [$duration]($style) "
 style = "cyan"
+format = "took [$duration]($style) "
 
 [conda]
-format = '([\[$symbol$environment\]]($style)) '
+symbol = "󰯲 "
 style = "bright-black"
+format = '([\[$symbol$environment\]]($style)) '
 
 [character]
 success_symbol = "[>](bold green)"
