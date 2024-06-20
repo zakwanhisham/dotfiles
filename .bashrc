@@ -100,6 +100,7 @@ source /usr/share/fzf/completion.bash
 
 # source bash completion
 source /usr/share/bash-completion/bash_completion
+source /home/ouraaa/.local/share/bash-completion/completions/bob
 
 # source command-not-found
 source /usr/share/doc/pkgfile/command-not-found.bash
@@ -132,6 +133,7 @@ alias weather='curl wttr.in'
 # Configuration
 alias ala='nvim ~/.config/alacritty/alacritty.toml'
 alias bashrc='nvim ~/.bashrc'
+alias vimrc='vim ~/.vimrc'
 
 ### BASH FUNCTION
 # Quickly change to directory
