@@ -74,7 +74,11 @@ vim.keymap.set("n", "<leader>tn", "<cmd>tabNext<cr>", { desc = "Tab Next" })
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
 
 --[[ Diagnostic keymaps ]]
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+vim.keymap.set("n", "[d", function()
+    vim.diagnostic.jump { count = -1 }
+end, { desc = "Go to previous diagnostic message" })
+vim.keymap.set("n", "]d", function()
+    vim.diagnostic.jump { count = 1 }
+end, { desc = "Go to next diagnostic message" })

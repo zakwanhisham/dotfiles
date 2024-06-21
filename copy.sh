@@ -18,6 +18,7 @@ source_folders=(
 	"/home/ouraaa/.fehbg"
 	"/home/ouraaa/.gitconfig"
 	"/home/ouraaa/.tmux.conf"
+	"/home/ouraaa/.vimrc"
 	"/home/ouraaa/.Xresources"
 )
 
