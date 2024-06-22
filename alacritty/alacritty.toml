@@ -70,9 +70,9 @@ hide_when_typing = true
 history = 100000
 multiplier = 3
 
-# [shell]
-# args = ["-l", "-c", "tmux attach || tmux"]
-# program = "/usr/bin/bash"
+[shell]
+args = ["-l", "-c", "tmux attach || tmux"]
+program = "/usr/bin/bash"
 
 [window]
 dynamic_title = true
