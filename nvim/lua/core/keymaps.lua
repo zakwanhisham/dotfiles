@@ -21,10 +21,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
 vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
 
---[[ Split window ]]
-vim.keymap.set("n", "<leader>\\", "<cmd>vsplit<cr>", { desc = "Split Vertical" })
-vim.keymap.set("n", "<leader>-", "<cmd>split<cr>", { desc = "Split Horizontal" })
-
 --[[ Move to window using the <ctrl> hjkl keys ]]
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right" })

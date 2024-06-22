@@ -9,6 +9,7 @@ export MANPAGER="nvim +Man!"
 export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 
+
 # Standard ISO 8601 timestamp
 HISTTIMEFORMAT='%F %T'
 

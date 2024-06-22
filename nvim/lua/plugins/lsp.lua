@@ -20,14 +20,15 @@ return {
                     vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
                 end
 
-                nmap("<leader>lr", vim.lsp.buf.rename, "[L]sp [R]ename")
+                --[[
+                -- To rename, use `grn`
+                -- To find reference, use `grr`
+                -- To do code action, use `gca`
+                --]]
+
                 nmap("<leader>lf", vim.lsp.buf.format, "[L]sp [F]ormat")
-                nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
                 nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-                nmap("gr", function()
-                    require("trouble").toggle "lsp_references"
-                end, "[G]oto [R]eferences")
 
                 -- See `:help K` for why this keymap
                 nmap("K", vim.lsp.buf.hover, "Hover Documentation")
