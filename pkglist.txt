@@ -186,13 +186,13 @@ thunar-volman
 tldr
 tmux
 tree
-ttf-ibmplex-mono-nerd
 ttf-liberation
 ttf-ms-fonts
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
 ttf-opensans
 ttf-ubuntu-nerd
+ttf-zed-mono-nerd
 tumbler
 unrar
 unzip
