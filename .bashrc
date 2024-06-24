@@ -9,7 +9,6 @@ export MANPAGER="nvim +Man!"
 export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 
-
 # Standard ISO 8601 timestamp
 HISTTIMEFORMAT='%F %T'
 
@@ -95,17 +94,6 @@ bind 'set vi-cmd-mode-string "><"'
 # Disable control echo
 bind 'set echo-control-characters off'
 
-# source fzf keybinding
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
-
-# source bash completion
-source /usr/share/bash-completion/bash_completion
-source /home/ouraaa/.local/share/bash-completion/completions/bob
-
-# source command-not-found
-source /usr/share/doc/pkgfile/command-not-found.bash
-
 ### ALIASES
 # Changing "ls" to "exa"
 alias ls='eza --color=always --group-directories-first --icons --git'
@@ -137,6 +125,7 @@ alias bashrc='nvim ~/.bashrc'
 alias vimrc='vim ~/.vimrc'
 
 ### BASH FUNCTION
+
 # Quickly change to directory
 ff() {
 	local selected_dir
@@ -259,6 +248,17 @@ function extract {
 IFS=$SAVEIFS
 
 ### SOME EXPORTS
+
+# source fzf keybinding
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
+# source bash completion
+source /usr/share/bash-completion/bash_completion
+source /home/ouraaa/.local/share/bash-completion/completions/bob
+
+# source command-not-found
+source /usr/share/doc/pkgfile/command-not-found.bash
 
 # Node Version Manager(NVM)
 export NVM_DIR="$HOME/.config/nvm"
