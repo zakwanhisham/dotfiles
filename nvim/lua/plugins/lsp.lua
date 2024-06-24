@@ -23,7 +23,7 @@ return {
                 --[[
                 -- To rename, use `grn`
                 -- To find reference, use `grr`
-                -- To do code action, use `gca`
+                -- To do code action, use `gra`
                 --]]
 
                 nmap("<leader>lf", vim.lsp.buf.format, "[L]sp [F]ormat")
