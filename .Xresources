@@ -91,7 +91,7 @@ XTerm*VT100*translations:    #override \n\
    Ctrl <Key> -:       smaller-vt-font() \n\
 
 ! Font
-xterm*faceName: ZedMono Nerd Font
+xterm*faceName: BlexMono Nerd Font
 xterm*faceSize: 16
 
 ! special

@@ -95,6 +95,7 @@ bind 'set vi-cmd-mode-string "><"'
 bind 'set echo-control-characters off'
 
 ### ALIASES
+
 # Changing "ls" to "exa"
 alias ls='eza --color=always --group-directories-first --icons --git'
 alias la='ls -a'
