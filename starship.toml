@@ -23,7 +23,7 @@ format = "[$branch]($style)"
 style = "bright-black"
 
 [git_status]
-format = '([* $conflicted$untracked$modified$staged$renamed$deleted$ahead_behind]($style))'
+format = '([* $ahead_behind$conflicted$untracked$modified$staged$renamed$deleted]($style))'
 deleted = ""
 stashed = "≡"
 style = "218"
