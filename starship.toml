@@ -1,7 +1,6 @@
 format = """
 $directory\
 $git_branch\
-$git_state\
 $git_status\
 $conda\
 $cmd_duration\
@@ -24,13 +23,15 @@ style = "bright-black"
 
 [git_status]
 format = '([* $ahead_behind$conflicted$untracked$modified$staged$renamed$deleted]($style))'
-deleted = ""
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+# deleted = ""
 stashed = "≡"
 style = "218"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
 
 [cmd_duration]
 format = " [took $duration]($style)"
