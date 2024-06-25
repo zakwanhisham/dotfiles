@@ -24,11 +24,17 @@ require("lazy").setup("plugins", {
         lazy = true,
     },
     install = {
-        colorscheme = { "default" },
+        colorscheme = { "kanagawa-dragon" },
     },
     change_detection = {
         enabled = true,
         notify = true,
+    },
+    pkg = {
+        enabled = false,
+    },
+    rocks = {
+        enabled = false,
     },
     performance = {
         rtp = {
