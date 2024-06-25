@@ -18,25 +18,8 @@ return {
             icons_enabled = true,
             icon = " ",
             padding = {
-                right = 0,
+                right = 1,
                 left = 0,
-            },
-        }
-
-        local buffers = {
-            "buffers",
-            icons_enabled = false,
-            show_filename_only = true,
-            hide_filename_extension = true,
-            show_modified_status = false,
-            mode = 1,
-            max_length = vim.o.columns * 1 / 4,
-            cond = function()
-                return vim.bo.modifiable
-            end,
-            padding = {
-                right = 0,
-                left = 1,
             },
         }
 
@@ -113,9 +96,9 @@ return {
                 lualine_a = { mode },
                 lualine_b = {},
                 lualine_c = { filename, diagnostics },
-                lualine_x = { diff, branch, location, progress },
+                lualine_x = { diff, branch },
                 lualine_y = {},
-                lualine_z = { buffers },
+                lualine_z = { location, progress },
             },
             inactive_sections = {
                 lualine_a = {},
