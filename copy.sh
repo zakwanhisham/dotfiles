@@ -8,6 +8,7 @@ dotfile="/home/ouraaa/.dotfiles"
 # Array of the source folders
 source_folders=(
 	"/home/ouraaa/.bashrc"
+    "/home/ouraaa/.condarc"
 	"/home/ouraaa/.config/alacritty"
 	"/home/ouraaa/.config/bat"
 	"/home/ouraaa/.config/fastfetch"
