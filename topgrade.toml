@@ -49,7 +49,7 @@
 display_time = true
 
 # Cleanup temporary or old files
-cleanup = true
+# cleanup = true
 
 # Skip sending a notification at the end of a run
 #skip_notify = true
@@ -148,7 +148,7 @@ arch_package_manager = "autodetect"
 
 [firmware]
 # Offer to update firmware; if false just check for and display available updates
-#upgrade = true
+upgrade = true
 
 [vagrant]
 # Vagrant directories
