@@ -44,6 +44,10 @@ return {
                 modified = "󱗜 ",
                 removed = "󰍵 ",
             },
+            padding = {
+                right = 2,
+                left = 1,
+            },
         }
 
         local filename = {

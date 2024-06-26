@@ -33,6 +33,7 @@ dmidecode
 dmraid
 dnsmasq
 dosfstools
+downgrade
 dracut
 duf
 efibootmgr
