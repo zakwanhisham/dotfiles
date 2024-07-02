@@ -132,7 +132,8 @@ alias vimrc='vim ~/.vimrc'
 # Quickly change to directory
 ff() {
 	local selected_dir
-	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf \
+	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf-tmux \
+		-p \
 		--header "Select Directory" \
 		--reverse \
 		--border=sharp \
@@ -170,7 +171,8 @@ con() {
 						echo ${name_path[0]} ${py_version[1]} ${name_path[1]}
 						' |
 					column -t |
-					fzf \
+					fzf-tmux \
+						-p \
 						--header "Conda Environment" \
 						--layout=reverse \
 						--info=inline \
@@ -243,16 +245,17 @@ gi() {
 
 ### SOME EXPORTS
 
-# source fzf keybinding
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
-
 # source bash completion
 source /usr/share/bash-completion/bash_completion
-source /home/ouraaa/.local/share/bash-completion/completions/bob
 
 # source command-not-found
 source /usr/share/doc/pkgfile/command-not-found.bash
+
+# source bob completion
+eval "$(bob complete bash)"
+
+# fzf completion and keybinds
+eval "$(fzf --bash)"
 
 # Node Version Manager(NVM)
 export NVM_DIR="$HOME/.config/nvm"
@@ -273,9 +276,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# FZF KEYBINDS
-eval "$(fzf --bash)"
 
 # PROMPT
 # PS1='[\u@\h \W]\$ '
