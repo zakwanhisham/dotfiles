@@ -135,9 +135,10 @@ ff() {
 	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf-tmux \
 		-p \
 		--header "Select Directory" \
-		--reverse \
+		--layout=reverse \
 		--border=sharp \
-		--height 40%)
+		--cycle \
+		-h 40%)
 	if [ -n "$selected_dir" ]; then
 		if [ -d "$selected_dir" ]; then
 			printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
@@ -159,7 +160,6 @@ con() {
 		else
 			conda create -n "$1" python
 		fi
-		conda activate "$1"
 	else
 		choice=(
 			$(
@@ -175,9 +175,10 @@ con() {
 						-p \
 						--header "Conda Environment" \
 						--layout=reverse \
-						--info=inline \
+						--cycle \
 						--border=sharp \
-						--height 40%
+						-w 35% \
+						-h 40%
 			)
 		)
 		[[ -n "$choice" ]] && conda activate "$choice"
