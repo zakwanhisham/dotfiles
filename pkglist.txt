@@ -186,6 +186,7 @@ thunar-media-tags-plugin
 thunar-volman
 tldr
 tmux
+topgrade-bin
 tree
 ttf-liberation
 ttf-ms-fonts

@@ -39,10 +39,10 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 # CUSTOM PATH
 export BIN=$HOME/.local/bin
 export BOB=$HOME/.local/share/bob/nvim-bin
-export CARGO=$HOME/.cargo/bin
+export CARGO=$HOME/.cargo
 export GOPATH=$HOME/go
-export RUSTUP=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
-export PATH=$PATH:$GOPATH/bin:$CARGO:$RUSTUP:$BOB:$BIN
+export RUSTUP=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
+export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$BOB:$BIN
 
 # ENV VARIABLES
 export XDG_CACHE_HOME="$HOME/.cache"
