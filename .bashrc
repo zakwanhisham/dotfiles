@@ -37,11 +37,12 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 # CUSTOM PATH
+export BIN=$HOME/.local/bin
 export BOB=$HOME/.local/share/bob/nvim-bin
-export CARGO=$HOME/.cargo
+export CARGO=$HOME/.cargo/bin
 export GOPATH=$HOME/go
-export RUSTUP=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu
-export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$BOB
+export RUSTUP=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
+export PATH=$PATH:$GOPATH/bin:$CARGO:$RUSTUP:$BOB:$BIN
 
 # ENV VARIABLES
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -149,20 +150,6 @@ ff() {
 	fi
 }
 
-# Man
-fman() {
-	MAN="/usr/bin/man"
-	if [ -n "$1" ]; then
-		$MAN "$1"
-	else
-		$MAN -k . | fzf \
-			--header "Select Man Page" \
-			--reverse \
-			--border=sharp \
-			--height 40% | awk '{print $1}' | xargs -r man
-	fi
-}
-
 # conda env
 con() {
 	if [ -n "$1" ]; then
@@ -248,6 +235,11 @@ function extract {
 }
 
 IFS=$SAVEIFS
+
+# Gitignore
+gi() {
+	curl -sL https://www.toptal.com/developers/gitignore/api/$@
+}
 
 ### SOME EXPORTS
 
