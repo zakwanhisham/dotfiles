@@ -41,7 +41,7 @@ export BIN=$HOME/.local/bin
 export BOB=$HOME/.local/share/bob/nvim-bin
 export CARGO=$HOME/.cargo
 export GOPATH=$HOME/go
-export RUSTUP=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
+export RUSTUP=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu
 export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$BOB:$BIN
 
 # ENV VARIABLES
@@ -115,6 +115,7 @@ alias mirror='sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort
 # Changing program name
 alias cal='cal --monday -3'
 alias cat='bat'
+alias cp='cp -iv'
 alias less='less --use-color -N'
 alias lg='lazygit'
 alias mv='mv -iv'
