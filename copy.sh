@@ -41,5 +41,5 @@ done
 # Display success message if no errors occurred
 if [ "$errors" = false ]; then
 	echo "Files copied successfully!"
-	paru --pacman pacman -Qqe >~/.dotfiles/pkglist.txt
+	paru --pacman pacman -Qqe > ~/.dotfiles/pkglist.txt
 fi

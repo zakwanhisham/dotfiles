@@ -1,7 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
     config = function()
         local mode = {
             "mode",
@@ -15,8 +14,7 @@ return {
 
         local branch = {
             "branch",
-            icons_enabled = true,
-            icon = " ",
+            icons_enabled = false,
             padding = {
                 right = 1,
                 left = 0,
