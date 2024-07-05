@@ -286,14 +286,14 @@ bar {
     tray_padding 0
     strip_workspace_numbers no
 	colors {
-		background	           #000000
+		background	           #0d0c0c
 		statusline	           #ffffff
-		separator	           #666666
+		separator	           #c8c093
 	#	class		           border  backgr  text
-		focused_workspace      #333333 #666666 #ffffff
-		active_workspace       #333333 #5f676a #ffffff
-		inactive_workspace     #333333 #222222 #888888
-		urgent_workspace       #2f343a #900000 #ffffff
-		binding_mode           #2f343a #900000 #ffffff
+		focused_workspace      #a6a69c #a6a69c #0d0c0c
+		active_workspace       #a6a69c #a6a69c #0d0c0c
+		inactive_workspace     #0d0c0c #0d0c0c #ffffff
+		urgent_workspace       #c47c6e #c4746e #ffffff
+		binding_mode           #c47c6e #c4746e #ffffff
 	}
 }
