@@ -31,6 +31,6 @@ alias weather='curl wttr.in'
 # Configuration
 alias ala='nvim ~/.config/alacritty/alacritty.toml'
 alias bashrc='nvim ~/.bashrc'
-alias input='nvim ~/.inputrc'
-alias profile='nvim ~/.bash_profile'
+alias inputrc='nvim ~/.inputrc'
+alias profilerc='nvim ~/.bash_profile'
 alias vimrc='vim ~/.vimrc'

@@ -82,7 +82,7 @@ return {
 
         require("lualine").setup {
             options = {
-                theme = "auto",
+                theme = "kanagawa",
                 always_divide_middle = true,
                 component_separators = {
                     left = "",

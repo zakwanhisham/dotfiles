@@ -1,11 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# VIM mode
-if [[ $- == *i* ]]; then
-	set -o vi
-fi
-
 # SHOPT
 shopt -s autocd 2>/dev/null
 shopt -s cdspell 2>/dev/null
@@ -22,10 +17,10 @@ shopt -s nocaseglob
 ### SOURCE AND EVAL
 
 # source bash functions
-source $HOME/scripts/bash_functions.sh
+source $HOME/scripts/bash_functions
 
 # source bash aliases
-source $HOME/scripts/bash_alias.sh
+source $HOME/scripts/bash_alias
 
 # source bash completion
 source /usr/share/bash-completion/bash_completion
