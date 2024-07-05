@@ -159,6 +159,7 @@ python-libtmux
 python-packaging
 python-pip
 python-pipx
+python-pylint
 python-pynvim
 python-pyqt5
 rebuild-detector

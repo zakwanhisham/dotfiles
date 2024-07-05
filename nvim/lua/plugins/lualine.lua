@@ -25,7 +25,7 @@ return {
             "diagnostics",
             symbols = {
                 error = " ",
-                warn = "  ",
+                warn = " ",
                 info = "󰋼 ",
                 hint = "󰌵 ",
             },
@@ -82,7 +82,7 @@ return {
 
         require("lualine").setup {
             options = {
-                theme = "kanagawa",
+                theme = "auto",
                 always_divide_middle = true,
                 component_separators = {
                     left = "",
