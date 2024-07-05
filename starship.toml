@@ -22,7 +22,7 @@ format = "[$branch]($style)"
 style = "bright-black"
 
 [git_status]
-format = '([*$stashed$conflicted$untracked$modified$staged$renamed$deleted$ahead_behind]($style))'
+format = '([*$stashed$conflicted$untracked$modified$staged$renamed$deleted$ahead_behind]($style)) '
 conflicted = "​"
 untracked = "​"
 modified = "​"
@@ -34,10 +34,10 @@ stashed = "≡"
 style = "218"
 
 [cmd_duration]
-format = " [took $duration]($style)"
+format = "[took $duration]($style)"
 style = "white"
 
 [conda]
 symbol = "󰯲 "
-format = ' ([$symbol$environment]($style))'
+format = '([$symbol$environment]($style)) '
 style = "bright-black"
