@@ -239,6 +239,7 @@ xorg-xinput
 xorg-xkill
 xsel
 xterm
+zed
 zenity
 zip
 zram-generator
