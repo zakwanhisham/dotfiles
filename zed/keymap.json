@@ -3,6 +3,7 @@
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
       "space f f": "file_finder::Toggle",
+      "space f r": "projects::OpenRecent",
       "space l f": "editor::Format",
       "space space": "tab_switcher::Toggle",
       "ctrl-shift-c": "editor::Copy",
@@ -10,7 +11,11 @@
       "ctrl-o": "workspace::Open",
       "g r a": "editor::ToggleCodeActions",
       "g r n": "editor::Rename",
-      "g r r ": "editor::FindAllReferences"
+      "g r r ": "editor::FindAllReferences",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
     }
   },
   {
