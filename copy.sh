@@ -8,7 +8,6 @@ dotfile="/home/ouraaa/.dotfiles"
 # Array of the source folders
 source_folders=(
 	"/home/ouraaa/.Xresources"
-	"/home/ouraaa/.bash_profile"
 	"/home/ouraaa/.bashrc"
 	"/home/ouraaa/.condarc"
 	"/home/ouraaa/.config/alacritty"
@@ -20,10 +19,7 @@ source_folders=(
 	"/home/ouraaa/.config/topgrade.toml"
 	"/home/ouraaa/.fehbg"
 	"/home/ouraaa/.gitconfig"
-	"/home/ouraaa/.inputrc"
 	"/home/ouraaa/.tmux.conf"
-	"/home/ouraaa/.vimrc"
-	"/home/ouraaa/scripts"
 )
 
 # Variable to track errors

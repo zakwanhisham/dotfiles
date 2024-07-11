@@ -117,6 +117,8 @@ minizip
 mkinitcpio
 mlocate
 modemmanager
+mongodb-bin
+mongosh-bin
 mpv
 mtools
 ncdu
