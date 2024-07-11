@@ -7,6 +7,12 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "notification_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
   "vim_mode": true,
   "autosave": "off",
   "cursor_blink": false,
@@ -14,23 +20,27 @@
   "scrollbar": { "show": "never" },
   "vertical_scroll_margin": 0,
   "format_on_save": "off",
+  "base_keymap": "VSCode",
   "features": {
     "inline_completion_provider": "none"
   },
   "ui_font_size": 14,
   "buffer_font_size": 14,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Gruvbox Dark Hard",
-    "dark": "One Dark"
+    "dark": "Gruvbox Dark Hard"
   },
   "centered_layout": {
-    "left_padding": 0.2,
-    "right_padding": 0.2
+    "left_padding": 0.5,
+    "right_padding": 0.5
   },
   "vim": {
     "use_system_clipboard": "always",
     "use_multiline_find": true,
     "use_smartcase_find": true
+  },
+  "terminal": {
+    "font_size": 15
   }
 }
