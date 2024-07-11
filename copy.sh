@@ -20,6 +20,7 @@ source_folders=(
 	"/home/ouraaa/.fehbg"
 	"/home/ouraaa/.gitconfig"
 	"/home/ouraaa/.tmux.conf"
+	"/home/ouraaa/.xsession"
 )
 
 # Variable to track errors
