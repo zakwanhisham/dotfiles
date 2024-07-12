@@ -18,24 +18,20 @@
   "ui_font_size": 14,
   "buffer_font_size": 14,
   "restore_on_startup": "none",
+  "soft_wrap": "none",
+  "features": { "inline_completion_provider": "none" },
+  "inlay_hints": { "enabled": true },
+  "notification_panel": { "button": false },
+  "tab_bar": { "show": false },
+  "chat_panel": { "button": false },
+  "collaboration_panel": { "button": false },
   "assistant": {
     "version": "1",
     "enabled": false
   },
-  "notification_panel": {
-    "button": false
-  },
-  "tab_bar": {
-    "show": false
-  },
-  "chat_panel": {
-    "button": false
-  },
-  "collaboration_panel": {
-    "button": false
-  },
-  "features": {
-    "inline_completion_provider": "none"
+  "project_panel": {
+    "dock": "right",
+    "default_width": 300
   },
   "theme": {
     "mode": "dark",
@@ -43,8 +39,8 @@
     "dark": "Gruvbox Dark Hard"
   },
   "centered_layout": {
-    "left_padding": 0.5,
-    "right_padding": 0.5
+    "left_padding": 1.0,
+    "right_padding": 1.0
   },
   "vim": {
     "use_system_clipboard": "always",

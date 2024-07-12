@@ -161,6 +161,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox-developer-edition
+bindsym $mod+z exec /usr/bin/zeditor
 bindsym Print exec flameshot gui
 
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles

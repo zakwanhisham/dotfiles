@@ -2,13 +2,14 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
+      "space e": "workspace::ToggleRightDock",
       "space f f": "file_finder::Toggle",
       "space f r": "projects::OpenRecent",
       "space l f": "editor::Format",
       "space space": "tab_switcher::Toggle",
-      "ctrl-shift-c": "editor::Copy",
-      "ctrl-shift-v": "editor::Paste",
-      "ctrl-o": "workspace::Open",
+      "space b n": "pane::ActivateNextItem",
+      "space b p": "pane::ActivatePrevItem",
+      "space b d": "pane::CloseActiveItem",
       "g r a": "editor::ToggleCodeActions",
       "g r n": "editor::Rename",
       "g r r ": "editor::FindAllReferences",
@@ -16,6 +17,8 @@
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-shift-c": "editor::Copy",
+      "ctrl-shift-v": "editor::Paste"
     }
   },
   {
