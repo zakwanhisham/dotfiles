@@ -22,7 +22,7 @@
   "features": { "inline_completion_provider": "none" },
   "inlay_hints": { "enabled": true },
   "notification_panel": { "button": false },
-  "tab_bar": { "show": false },
+  "tab_bar": { "show": true },
   "chat_panel": { "button": false },
   "collaboration_panel": { "button": false },
   "assistant": {
@@ -39,8 +39,8 @@
     "dark": "Gruvbox Dark Hard"
   },
   "centered_layout": {
-    "left_padding": 1.0,
-    "right_padding": 1.0
+    "left_padding": 0.1,
+    "right_padding": 0.1
   },
   "vim": {
     "use_system_clipboard": "always",
