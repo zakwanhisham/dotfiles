@@ -36,8 +36,8 @@ return {
             completion = { completeopt = "menu,menuone,noinsert" },
 
             mapping = cmp.mapping.preset.insert {
-                ["<C-j>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-                ["<C-k>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+                ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+                ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
                 ["<C-d>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete(),
@@ -45,14 +45,14 @@ return {
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
                 },
-                ["<C-l>"] = cmp.mapping(function(fallback)
+                ["<TAB>"] = cmp.mapping(function(fallback)
                     if luasnip.expand_or_locally_jumpable() then
                         luasnip.expand_or_jump()
                     else
                         fallback()
                     end
                 end, { "i", "s" }),
-                ["<C-h>"] = cmp.mapping(function(fallback)
+                ["<S-TAB>"] = cmp.mapping(function(fallback)
                     if luasnip.locally_jumpable(-1) then
                         luasnip.jump(-1)
                     else

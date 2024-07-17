@@ -22,7 +22,7 @@
   "features": { "inline_completion_provider": "none" },
   "inlay_hints": { "enabled": true },
   "notification_panel": { "button": false },
-  "tab_bar": { "show": true },
+  "tab_bar": { "show": false },
   "chat_panel": { "button": false },
   "collaboration_panel": { "button": false },
   "assistant": {
@@ -35,8 +35,8 @@
   },
   "theme": {
     "mode": "dark",
-    "light": "Gruvbox Dark Hard",
-    "dark": "Gruvbox Dark Hard"
+    "light": "Atelier Plateau Dark",
+    "dark": "Catppuccin Mocha"
   },
   "centered_layout": {
     "left_padding": 0.1,

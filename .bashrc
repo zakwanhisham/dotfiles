@@ -140,6 +140,7 @@ alias mv='mv -iv'
 alias open='xdg-open'
 alias rm='rm -iv'
 alias weather='curl wttr.in'
+alias zed='zeditor'
 
 # Configuration
 alias ala='nvim ~/.config/alacritty/alacritty.toml'

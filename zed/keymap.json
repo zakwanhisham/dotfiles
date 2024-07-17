@@ -3,6 +3,7 @@
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
       "space e": "workspace::ToggleRightDock",
+      "space o": "workspace::Open",
       "space z": "workspace::ToggleCenteredLayout",
       "space f f": "file_finder::Toggle",
       "space f r": "projects::OpenRecent",
@@ -18,7 +19,6 @@
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-shift-c": "editor::Copy",
       "ctrl-shift-v": "editor::Paste"
     }
   },
@@ -26,7 +26,8 @@
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       "ctrl-k": "editor::MoveLineUp",
-      "ctrl-j": "editor::MoveLineDown"
+      "ctrl-j": "editor::MoveLineDown",
+      "ctrl-shift-c": "editor::Copy"
     }
   },
   {
@@ -36,6 +37,12 @@
       "b": "vim::PreviousSubwordStart",
       "e": "vim::NextSubwordEnd",
       "g e": "vim::PreviousSubwordEnd"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !VimWaiting && !menu",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion"
     }
   }
 ]
