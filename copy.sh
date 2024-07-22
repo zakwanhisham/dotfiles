@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -xe
+set -xeu
 
 # Destination folder
 dotfile="/home/ouraaa/.dotfiles"

@@ -40,7 +40,7 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert && !VimWaiting && !menu",
+    "context": "Editor && vim_mode == insert && !VimWaiting && menu",
     "bindings": {
       "ctrl-y": "editor::ConfirmCompletion"
     }

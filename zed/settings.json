@@ -7,24 +7,32 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "vim_mode": true,
   "autosave": "off",
-  "cursor_blink": false,
-  "relative_line_numbers": true,
-  "scrollbar": { "show": "never" },
-  "vertical_scroll_margin": 0,
-  "format_on_save": "off",
   "base_keymap": "VSCode",
-  "ui_font_size": 14,
+  "buffer_font_features": { "calt": false },
   "buffer_font_size": 14,
-  "restore_on_startup": "none",
-  "soft_wrap": "none",
-  "features": { "inline_completion_provider": "none" },
-  "inlay_hints": { "enabled": true },
-  "notification_panel": { "button": false },
-  "tab_bar": { "show": false },
+  "buffer_line_height": { "custom": 1.5 },
   "chat_panel": { "button": false },
   "collaboration_panel": { "button": false },
+  "cursor_blink": false,
+  "features": { "inline_completion_provider": "none" },
+  "format_on_save": "off",
+  "inlay_hints": { "enabled": false },
+  "notification_panel": { "button": false },
+  "relative_line_numbers": true,
+  "restore_on_startup": "none",
+  "scrollbar": { "show": "never" },
+  "soft_wrap": "none",
+  "preview_tabs": { "enabled": false },
+  "ui_font_size": 14,
+  "vertical_scroll_margin": 0,
+  "vim_mode": true,
+  "when_closing_with_no_tabs": "close_window",
+  "wrap_guides": [80],
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false
+  },
   "assistant": {
     "version": "1",
     "enabled": false
@@ -36,7 +44,7 @@
   "theme": {
     "mode": "dark",
     "light": "Atelier Plateau Dark",
-    "dark": "Catppuccin Mocha"
+    "dark": "JetBrains New Dark"
   },
   "centered_layout": {
     "left_padding": 0.1,
@@ -49,6 +57,8 @@
   },
   "terminal": {
     "dock": "bottom",
-    "font_size": 15
+    "font_size": 15,
+    "line_height": { "custom": 1.5 },
+    "working_directory": "current_project_directory"
   }
 }

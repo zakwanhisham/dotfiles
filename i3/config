@@ -87,7 +87,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # dmenu
-bindsym $mod+d exec "dmenu_run -b"
+bindsym $mod+d exec "dmenu_run -b -i"
 
 # exit-menu
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'Exit i3' -b 'Yes, exit i3' 'i3-msg exit'"
