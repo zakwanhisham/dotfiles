@@ -41,6 +41,7 @@ vim.o.smartcase = true
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
+vim.o.shiftround = true
 vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.breakindent = true
@@ -96,6 +97,7 @@ vim.o.smoothscroll = true
 -- split
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.splitkeep = "screen"
 
 -- mode
 vim.o.showmode = false

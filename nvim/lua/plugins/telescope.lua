@@ -28,8 +28,9 @@ return {
                     i = {
                         ["<C-u>"] = false,
                         ["<C-d>"] = false,
-                        ["<C-j>"] = actions.move_selection_next,
-                        ["<C-k>"] = actions.move_selection_previous,
+                        ["<C-n>"] = actions.move_selection_next,
+                        ["<C-p>"] = actions.move_selection_previous,
+                        ["<C-y>"] = actions.select_default,
                         ["<esc>"] = actions.close,
                     },
                 },
