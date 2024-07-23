@@ -156,6 +156,7 @@ ff() {
 		--layout=reverse \
 		--border=sharp \
 		--cycle \
+		--bind 'ctrl-y:accept' \
 		-h 40%)
 	if [ -n "$selected_dir" ]; then
 		if [ -d "$selected_dir" ]; then
@@ -195,6 +196,7 @@ con() {
 						--layout=reverse \
 						--cycle \
 						--border=sharp \
+						--bind 'ctrl-y:accept' \
 						-w 35% \
 						-h 40%
 			)
@@ -272,6 +274,9 @@ eval "$(bob complete bash)"
 
 # fzf completion and keybinds
 eval "$(fzf --bash)"
+
+# rg completion
+eval "$(rg --generate=complete-bash)"
 
 # PROMPT
 # PS1='[\u@\h \W]\$ '
