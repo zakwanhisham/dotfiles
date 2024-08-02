@@ -132,6 +132,7 @@ nilfs-utils
 ninja
 noto-color-emoji-fontconfig
 noto-fonts
+noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 nss-mdns

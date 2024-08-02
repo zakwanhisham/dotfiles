@@ -22,7 +22,7 @@ export FZF_DEFAULT_OPTS=' --color=fg:#c8c093,bg:#181616,hl:#8ba4b0 --color=fg+:#
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
+	export EDITOR='nvim'
 else
 	export EDITOR='nvim'
 fi
@@ -225,5 +225,4 @@ eval "$(fzf --bash)"
 eval "$(rg --generate=complete-bash)"
 
 # PROMPT
-# PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
