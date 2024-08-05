@@ -10,7 +10,8 @@ font pango: Ubuntu Nerd Font Regular 10
 set $mod Mod4
 
 # set term
-set $term alacritty
+set $term /usr/bin/alacritty
+set $browser /usr/bin/firefox-developer-edition
 
 #####################
 # workspace layout: #
@@ -160,8 +161,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec /usr/bin/firefox-developer-edition
-bindsym $mod+z exec /usr/bin/zeditor
+bindsym $mod+w exec $browser
 bindsym Print exec flameshot gui
 
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -226,9 +226,6 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 # This is already covered by using keyd (https://github.com/rvaiya/keyd)
 # run `paru -S keyd`
 # exec --no-startup-id setxkbmap -option caps:swapescape 
-
-# Autostart apps as you like
-exec --no-startup-id alacritty 
 
 #Autotiling
 exec_always --no-startup-id autotiling
