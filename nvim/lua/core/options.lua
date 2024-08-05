@@ -82,7 +82,7 @@ vim.o.inccommand = "split"
 -- decrease update time
 vim.o.updatetime = 250
 vim.o.timeout = true
-vim.o.timeoutlen = 500
+vim.o.timeoutlen = 400
 
 -- colorcolumn
 vim.o.colorcolumn = "80"
