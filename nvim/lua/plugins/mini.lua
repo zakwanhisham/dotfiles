@@ -3,6 +3,36 @@ return {
     event = "VeryLazy",
     version = false,
     config = function()
+        require("mini.clue").setup {
+            triggers = {
+                -- Leader triggers
+                { mode = "n", keys = "<Leader>" },
+                { mode = "x", keys = "<Leader>" },
+
+                -- Built-in completion
+                { mode = "i", keys = "<C-x>" },
+
+                -- `g` key
+                { mode = "n", keys = "g" },
+                { mode = "x", keys = "g" },
+
+                -- Window commands
+                { mode = "n", keys = "<C-w>" },
+
+                -- `z` key
+                { mode = "n", keys = "z" },
+                { mode = "x", keys = "z" },
+            },
+
+            clues = {
+                -- Enhance this by adding descriptions for <Leader> mapping groups
+                require("mini.clue").gen_clues.builtin_completion(),
+                require("mini.clue").gen_clues.g(),
+                require("mini.clue").gen_clues.windows(),
+                require("mini.clue").gen_clues.z(),
+            },
+        }
+
         require("mini.comment").setup {
             options = {
                 custom_commentstring = function()

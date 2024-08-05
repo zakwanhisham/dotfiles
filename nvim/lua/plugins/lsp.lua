@@ -6,8 +6,7 @@ return {
         { "williamboman/mason.nvim", config = true }, -- Must be loaded before dependant
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
-        { "folke/lazydev.nvim", ft = "lua", opts = {} },
+        { "j-hui/fidget.nvim", opts = {} },
     },
     config = function()
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -26,20 +25,20 @@ return {
                 -- To do code action, use `gra`
                 --]]
 
-                nmap("<leader>lf", vim.lsp.buf.format, "[L]sp [F]ormat")
+                nmap("<leader>lf", vim.lsp.buf.format, "Lsp Format")
 
-                nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+                nmap("gd", vim.lsp.buf.definition, "Goto Definition")
 
                 -- See `:help K` for why this keymap
                 nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 
                 -- Lesser used LSP functionality
-                nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-                nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-                nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+                nmap("gD", vim.lsp.buf.declaration, "Goto Declaration")
+                nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "Workspace Add Folder")
+                nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "Workspace Remove Folder")
                 nmap("<leader>wl", function()
                     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-                end, "[W]orkspace [L]ist Folders")
+                end, "Workspace List Folders")
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
@@ -182,7 +181,7 @@ return {
             tsserver = {
                 settings = {
                     completions = {
-                        completeFunctionCalls = true,
+                        complete_function_calls = true,
                     },
                 },
             },
