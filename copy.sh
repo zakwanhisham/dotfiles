@@ -3,7 +3,7 @@
 set -xeu
 
 # Destination folder
-dotfile="/home/ouraaa/.dotfiles"
+dotfile="/home/ouraaa/dotfiles"
 
 # Array of the source folders
 source_folders=(
@@ -41,5 +41,5 @@ done
 # Display success message if no errors occurred
 if [ "$errors" = false ]; then
 	echo "Files copied successfully!"
-	paru --pacman pacman -Qqe >~/.dotfiles/pkglist.txt
+	paru --pacman pacman -Qqe >/home/ouraaa/dotfiles/pkglist.txt
 fi
