@@ -17,7 +17,7 @@ return {
             icons_enabled = false,
             padding = {
                 right = 1,
-                left = 0,
+                left = 1,
             },
         }
 
@@ -43,7 +43,7 @@ return {
                 removed = "󰍵 ",
             },
             padding = {
-                right = 2,
+                right = 1,
                 left = 1,
             },
         }
