@@ -13,12 +13,12 @@ source_folders=(
 	"/home/ouraaa/.config/alacritty"
 	"/home/ouraaa/.config/bat"
 	"/home/ouraaa/.config/fastfetch"
+	"/home/ouraaa/.config/git"
 	"/home/ouraaa/.config/i3"
 	"/home/ouraaa/.config/nvim"
 	"/home/ouraaa/.config/starship.toml"
 	"/home/ouraaa/.config/topgrade.toml"
 	"/home/ouraaa/.fehbg"
-	"/home/ouraaa/.gitconfig"
 	"/home/ouraaa/.tmux.conf"
 	"/home/ouraaa/.xsession"
 )
