@@ -94,7 +94,7 @@ bindsym $mod+d exec "dmenu_run -b -i"
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'Exit i3' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # lock screen
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/i3lock_wrapper.sh ~/Pictures/anime/
+bindsym $mod+Shift+e exec ~/.config/i3/scripts/i3lock_wrapper.sh ~/dotfiles/anime/
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
