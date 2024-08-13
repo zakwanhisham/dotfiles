@@ -12,6 +12,7 @@ set $mod Mod4
 # set term
 set $term /usr/bin/alacritty
 set $browser /usr/bin/firefox-developer-edition
+set $menu /usr/bin/dmenu_run -b -i
 
 #####################
 # workspace layout: #
@@ -88,7 +89,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # dmenu
-bindsym $mod+d exec "dmenu_run -b -i"
+bindsym $mod+d exec $menu
 
 # exit-menu
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'Exit i3' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -101,6 +102,9 @@ bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
 bindsym $mod+Shift+r restart
+
+# toggle bar on/off
+bindsym $mod+Shift+m bar mode toggle
 
 # Backlight control
 bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
