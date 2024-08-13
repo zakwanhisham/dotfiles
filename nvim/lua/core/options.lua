@@ -61,7 +61,7 @@ vim.o.spell = true
 -- temp files
 vim.o.swapfile = false
 vim.o.backup = false
-vim.o.undodir = os.getenv "HOME" .. "/.vim/undodir"
+vim.o.undodir = os.getenv "HOME" .. "/.cache/nvim/undodir"
 vim.o.undofile = true
 vim.o.writebackup = false
 
