@@ -3,24 +3,24 @@
 set -xeu
 
 # Destination folder
-dotfile="/home/ouraaa/dotfiles"
+dotfile="$HOME/dotfiles"
 
 # Array of the source folders
 source_folders=(
-	"/home/ouraaa/.Xresources"
-	"/home/ouraaa/.bashrc"
-	"/home/ouraaa/.condarc"
-	"/home/ouraaa/.config/alacritty"
-	"/home/ouraaa/.config/bat"
-	"/home/ouraaa/.config/fastfetch"
-	"/home/ouraaa/.config/git"
-	"/home/ouraaa/.config/i3"
-	"/home/ouraaa/.config/nvim"
-	"/home/ouraaa/.config/starship.toml"
-	"/home/ouraaa/.config/topgrade.toml"
-	"/home/ouraaa/.fehbg"
-	"/home/ouraaa/.tmux.conf"
-	"/home/ouraaa/.xsession"
+	"$HOME/.Xresources"
+	"$HOME/.bashrc"
+	"$HOME/.condarc"
+	"$HOME/.config/alacritty"
+	"$HOME/.config/bat"
+	"$HOME/.config/fastfetch"
+	"$HOME/.config/git"
+	"$HOME/.config/i3"
+	"$HOME/.config/nvim"
+	"$HOME/.config/starship.toml"
+	"$HOME/.config/topgrade.toml"
+	"$HOME/.fehbg"
+	"$HOME/.tmux.conf"
+	"$HOME/.xsession"
 )
 
 # Variable to track errors
@@ -41,5 +41,5 @@ done
 # Display success message if no errors occurred
 if [ "$errors" = false ]; then
 	echo "Files copied successfully!"
-	paru --pacman pacman -Qqe >/home/ouraaa/dotfiles/pkglist.txt
+	paru --pacman pacman -Qqe >$HOME/dotfiles/pkglist.txt
 fi
