@@ -13,7 +13,7 @@ shape = "Block"
 TERM = "xterm-256color"
 
 [font]
-size = 11.5
+size = 11.25
 
 [font.bold]
 family = "ZedMono Nerd Font"
