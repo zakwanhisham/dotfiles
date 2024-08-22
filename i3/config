@@ -235,7 +235,7 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 # exec --no-startup-id setxkbmap -option caps:swapescape 
 
 #Autotiling
-exec_always --no-startup-id autotiling
+exec_always --no-startup-id autotiling -sw 0.9
 
 ##################
 # floating rules #
