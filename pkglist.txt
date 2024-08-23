@@ -18,7 +18,6 @@ bind
 blueman
 bluez
 bluez-utils
-bob
 btop
 ccache
 clang
@@ -122,6 +121,7 @@ mongosh-bin
 mpv
 mtools
 ncdu
+neovim
 netctl
 network-manager-applet
 networkmanager
