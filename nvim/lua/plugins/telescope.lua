@@ -97,6 +97,6 @@ return {
                 winblend = 0,
                 previewer = false,
             })
-        end, { desc = "Fuzzy search in current buffer" })
+        end, { desc = "Fuzzy search" })
     end,
 }

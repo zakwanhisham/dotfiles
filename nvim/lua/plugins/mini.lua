@@ -4,6 +4,14 @@ return {
     version = false,
     config = function()
         require("mini.clue").setup {
+            window = {
+                config = {
+                    anchor = "NE",
+                    row = "auto",
+                    col = "auto",
+                },
+            },
+
             triggers = {
                 -- Leader triggers
                 { mode = "n", keys = "<Leader>" },
@@ -26,6 +34,12 @@ return {
 
             clues = {
                 -- Enhance this by adding descriptions for <Leader> mapping groups
+                { mode = "n", keys = "<Leader>b", desc = "Buffers" },
+                { mode = "n", keys = "<Leader>f", desc = "Telescope" },
+                { mode = "n", keys = "<Leader>g", desc = "Git" },
+                { mode = "n", keys = "<Leader>l", desc = "Lsp" },
+                { mode = "n", keys = "<Leader>t", desc = "Tab" },
+                { mode = "n", keys = "<Leader>w", desc = "Workspace" },
                 require("mini.clue").gen_clues.builtin_completion(),
                 require("mini.clue").gen_clues.g(),
                 require("mini.clue").gen_clues.windows(),
@@ -61,7 +75,7 @@ return {
         }
 
         require("mini.ai").setup { n_lines = 500 }
-        require("mini.indentscope").setup { options = { try_as_border = true } }
+        require("mini.indentscope").setup { options = { try_as_border = false } }
         require("mini.surround").setup {}
     end,
 }
