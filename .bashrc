@@ -152,9 +152,9 @@ ff() {
 	local selected_dir
 	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf-tmux \
 		-p \
-		--header "Select Directory" \
+		--header "Directory Selection" \
 		--layout=reverse \
-		--border=sharp \
+		--border=rounded \
 		--cycle \
 		--bind 'ctrl-y:accept' \
 		-h 40%)
@@ -184,10 +184,10 @@ con() {
 				column -t |
 				fzf-tmux \
 					-p \
-					--header "Conda" \
+					--header "Conda Env" \
 					--layout=reverse \
 					--cycle \
-					--border=sharp \
+					--border=rounded \
 					--bind 'ctrl-y:accept' \
 					-w 35% \
 					-h 40%
