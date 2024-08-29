@@ -50,21 +50,6 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/ouraaa/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
-	eval "$__conda_setup"
-else
-	if [ -f "/home/ouraaa/miniconda3/etc/profile.d/conda.sh" ]; then
-		. "/home/ouraaa/miniconda3/etc/profile.d/conda.sh"
-	else
-		export PATH="/home/ouraaa/miniconda3/bin:$PATH"
-	fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # SHOPT
 shopt -s autocd 2>/dev/null
 shopt -s cdspell 2>/dev/null
@@ -171,39 +156,6 @@ ff() {
 	fi
 }
 
-# conda env
-con() {
-	if [ -n "$1" ]; then
-		if [ -n "$2" ]; then
-			conda create -n "$1" python="$2"
-		else
-			conda create -n "$1" python
-		fi
-	else
-		choice=(
-			$(
-				conda env list |
-					sed 's/\*/ /;1,2d' |
-					xargs -I {} bash -c '
-						name_path=( {} );
-						py_version=( $(${name_path[1]}/bin/python --version) );
-						echo ${name_path[0]} ${py_version[1]} ${name_path[1]}
-						' |
-					column -t |
-					fzf-tmux \
-						-p \
-						--header "Conda Environment" \
-						--layout=reverse \
-						--cycle \
-						--border=sharp \
-						--bind 'ctrl-y:accept' \
-						-w 35% \
-						-h 40%
-			)
-		)
-		[[ -n "$choice" ]] && conda activate "$choice"
-	fi
-}
 
 ### SOURCE AND EVAL
 # source bash completion

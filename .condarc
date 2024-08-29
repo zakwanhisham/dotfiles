@@ -1,8 +1,0 @@
-changeps1: false
-channels:
-  - defaults
-  - conda-forge
-auto_update_conda: true
-show_channel_urls: true
-always_yes: true
-channel_priority: true

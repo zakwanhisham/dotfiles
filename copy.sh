@@ -9,7 +9,6 @@ dotfile="$HOME/dotfiles"
 source_folders=(
 	"$HOME/.Xresources"
 	"$HOME/.bashrc"
-	"$HOME/.condarc"
 	"$HOME/.config/alacritty"
 	"$HOME/.config/bat"
 	"$HOME/.config/fastfetch"
