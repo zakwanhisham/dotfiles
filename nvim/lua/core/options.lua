@@ -8,7 +8,7 @@ vim.g.skip_ts_context_commentstring_module = true
 
 -- Netrw customization
 vim.g.netrw_liststyle = 0
-vim.g.netrw_banner = 1
+vim.g.netrw_banner = 0
 vim.g.netrw_sizestyle = "H"
 vim.g.netrw_sort_by = "name"
 vim.g.netrw_preview = 1
@@ -111,7 +111,7 @@ vim.o.showtabline = 1
 -- list
 vim.opt.list = true
 vim.opt.listchars = { eol = "↲", nbsp = "␣", tab = "» ", trail = "·" }
-vim.opt.fillchars = { eob = " " }
+vim.opt.fillchars = { eob = "~" }
 
 -- misc
 vim.o.conceallevel = 0
