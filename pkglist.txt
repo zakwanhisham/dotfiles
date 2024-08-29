@@ -165,7 +165,6 @@ python-pipx
 python-pylint
 python-pynvim
 python-pyqt5
-python-virtualenv
 rebuild-detector
 reflector
 reflector-simple
