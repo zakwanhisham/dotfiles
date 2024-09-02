@@ -36,11 +36,9 @@ return {
                 -- Enhance this by adding descriptions for <Leader> mapping groups
                 { mode = "n", keys = "<Leader>b", desc = "Buffers" },
                 { mode = "n", keys = "<Leader>f", desc = "Telescope" },
-                { mode = "n", keys = "<Leader>g", desc = "Git" },
                 { mode = "n", keys = "<Leader>l", desc = "Lsp" },
                 { mode = "n", keys = "<Leader>t", desc = "Tab" },
                 { mode = "n", keys = "<Leader>w", desc = "Workspace" },
-                { mode = "n", keys = "<Leader>h", desc = "Highlight" },
                 require("mini.clue").gen_clues.builtin_completion(),
                 require("mini.clue").gen_clues.g(),
                 require("mini.clue").gen_clues.windows(),

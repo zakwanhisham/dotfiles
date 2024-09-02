@@ -1,7 +1,7 @@
 return {
     "brenoprata10/nvim-highlight-colors",
     keys = {
-        { "<leader>hl", "<cmd>HighlightColors toggle<cr>", desc = "Highlight Colors" },
+        { "<leader>h", "<cmd>HighlightColors toggle<cr>", desc = "Highlight Colors" },
     },
     config = function()
         require("nvim-highlight-colors").setup {
