@@ -6,13 +6,6 @@ vim.g.maplocalleader = ";"
 -- TS context comment string
 vim.g.skip_ts_context_commentstring_module = true
 
--- Netrw customization
-vim.g.netrw_liststyle = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_sizestyle = "H"
-vim.g.netrw_sort_by = "name"
-vim.g.netrw_preview = 1
-
 -- Markdown
 vim.g.markdown_recommended_style = 0
 
