@@ -5,8 +5,8 @@ return {
         { "<leader>g", "<cmd>Neogit<cr>", desc = "Neogit" },
     },
     dependencies = {
-        "nvim-lua/plenary.nvim", -- required
-        "sindrets/diffview.nvim", -- optional - Diff integration
+        "nvim-lua/plenary.nvim",
+        "sindrets/diffview.nvim",
     },
     config = true,
 }

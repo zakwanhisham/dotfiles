@@ -9,10 +9,10 @@ return {
         default_file_explorer = true,
         watch_for_changes = true,
         columns = {
-            "icon",
             "permissions",
             "size",
             "birthtime",
+            "icon",
         },
         view_options = {
             show_hidden = true,

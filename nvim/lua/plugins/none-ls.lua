@@ -42,11 +42,11 @@ return {
                 formatting.prettier.with {
                     condition = function(utils)
                         return not utils.root_has_file {
-                                ".eslintrc.js",
-                                ".eslintrc.cjs",
-                                ".eslintrc.json",
-                                ".eslintrc",
-                            }
+                            ".eslintrc.js",
+                            ".eslintrc.cjs",
+                            ".eslintrc.json",
+                            ".eslintrc",
+                        }
                     end,
                 },
                 formatting.clang_format.with {
