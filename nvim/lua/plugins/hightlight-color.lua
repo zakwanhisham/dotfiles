@@ -1,6 +1,8 @@
 return {
     "brenoprata10/nvim-highlight-colors",
-    event = "VeryLazy",
+    keys = {
+        { "<leader>hl", "<cmd>HighlightColors toggle<cr>", desc = "Highlight Colors" },
+    },
     config = function()
         require("nvim-highlight-colors").setup {
             render = "background",
