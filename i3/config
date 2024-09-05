@@ -9,9 +9,10 @@ font pango: Ubuntu Nerd Font Regular 10
 # set the mod key to the winkey:
 set $mod Mod4
 
-# set term
+# set app
 set $term /usr/bin/alacritty
 set $browser /usr/bin/firefox-developer-edition
+set $browser2 /usr/bin/chromium
 set $menu /usr/bin/dmenu_run -b -i
 
 #####################
@@ -169,6 +170,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 ## App shortcuts
 bindsym $mod+w exec $browser
+bindsym $mod+c exec $browser2
 bindsym Print exec flameshot gui
 
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
