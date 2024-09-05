@@ -35,6 +35,7 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 # CUSTOM PATH
 export BIN=$HOME/.local/bin
+export BOB=$HOME/.local/share/bob/nvim-bin
 export CARGO=$HOME/.cargo
 export GOPATH=$HOME/go
 export RUSTUP=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu
@@ -203,11 +204,14 @@ source /usr/share/bash-completion/bash_completion
 # source command-not-found
 source /usr/share/doc/pkgfile/command-not-found.bash
 
-# source go-blueprint completion
-eval "$(go-blueprint completion bash)"
+# bob completion
+eval "$(bob complete bash)"
 
 # fzf completion and keybinds
 eval "$(fzf --bash)"
+
+# source go-blueprint completion
+eval "$(go-blueprint completion bash)"
 
 # rg completion
 eval "$(rg --generate=complete-bash)"

@@ -69,15 +69,9 @@ vim.keymap.set("n", "<leader>tn", "<cmd>tabNext<cr>", { desc = "Tab Next" })
 --[[ Diagnostic keymaps ]]
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Floating Diagnostic" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-
--- [[
--- Enable this when v0.11 came out
--- vim.keymap.set("n", "[d", function()
---     vim.diagnostic.jump { count = -1 }
--- end, { desc = "Go to previous diagnostic message" })
--- vim.keymap.set("n", "]d", function()
---     vim.diagnostic.jump { count = 1 }
--- end, { desc = "Go to next diagnostic message" })
--- ]]
+vim.keymap.set("n", "[d", function()
+    vim.diagnostic.jump { count = -1 }
+end, { desc = "Go to previous diagnostic message" })
+vim.keymap.set("n", "]d", function()
+    vim.diagnostic.jump { count = 1 }
+end, { desc = "Go to next diagnostic message" })
