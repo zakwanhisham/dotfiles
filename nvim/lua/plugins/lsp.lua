@@ -178,7 +178,7 @@ return {
                 filetypes = { "javascriptreact", "html" },
             },
             taplo = {},
-            tsserver = {
+            ts_ls = {
                 settings = {
                     completions = {
                         complete_function_calls = true,
