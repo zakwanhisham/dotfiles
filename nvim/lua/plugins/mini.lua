@@ -75,6 +75,7 @@ return {
 
         require("mini.ai").setup { n_lines = 500 }
         require("mini.indentscope").setup { options = { try_as_border = false } }
+        require("mini.move").setup {}
         require("mini.surround").setup {}
     end,
 }

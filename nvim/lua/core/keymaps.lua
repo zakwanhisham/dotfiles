@@ -1,7 +1,5 @@
 --[[ Useful keymap ]]
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-vim.keymap.set("c", "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true })
-vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true })
 vim.keymap.set({ "n", "x" }, "<esc>", "<cmd>nohlsearch<cr><esc>", { desc = "Escape and clear hlsearch" })
 vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 
@@ -14,18 +12,6 @@ vim.keymap.set({ "n", "x" }, "j", "v:count==0 ? 'gj' : 'j'", { expr = true, nore
 vim.keymap.set({ "n", "x" }, "k", "v:count==0 ? 'gk' : 'k'", { expr = true, noremap = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
---[[ Move current line up/down ]]
--- vim.keymap.set("n", "<C-J>", ":m .+1<cr>==", { desc = "Move current line up" })
--- vim.keymap.set("n", "<C-K>", ":m .-2<cr>==", { desc = "Move current line down" })
-vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move current line up" })
-vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move current line down" })
-
---[[ Move to window using the <ctrl> hjkl keys ]]
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left" })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to up" })
 
 --[[ Resize window using <ctrl> arrow keys ]]
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
