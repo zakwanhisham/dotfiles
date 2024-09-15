@@ -115,7 +115,6 @@ man-pages
 mesa-utils
 minizip
 mkinitcpio
-mlocate
 modemmanager
 mongodb-bin
 mongosh-bin
@@ -143,8 +142,8 @@ obs-studio
 os-prober
 pacman-contrib
 papirus-icon-theme
-paru
-paru-debug
+paru-git
+paru-git-debug
 pavucontrol
 picom
 pipewire
@@ -153,6 +152,7 @@ pipewire-jack
 pipewire-pulse
 pkgfile
 playerctl
+plocate
 power-profiles-daemon
 pv
 python-bottle
