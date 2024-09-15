@@ -173,6 +173,7 @@ ff() {
 	fi
 }
 
+# Conda activate environment
 con() {
 	choice=(
 		$(
