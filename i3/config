@@ -1,7 +1,3 @@
-#######################
-# config starts here: #
-#######################
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango: Ubuntu Nerd Font Regular 10
@@ -11,20 +7,12 @@ set $mod Mod4
 
 # set app
 set $term /usr/bin/alacritty
-set $browser /usr/bin/firefox-developer-edition
-set $browser2 /usr/bin/chromium
+set $firefox /usr/bin/firefox-developer-edition
+set $chromium /usr/bin/chromium
 set $menu /usr/bin/dmenu_run -b -i
-
-#####################
-# workspace layout: #
-#####################
 
 # default i3 tiling mode:
 workspace_layout default
-
-##############################
-# extra options for windows: #
-##############################
 
 # default maximize border
 default_border pixel 1
@@ -78,10 +66,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-######################################
-# keybindings for different actions: #
-######################################
 
 # start a terminal
 bindsym $mod+Return exec $term
@@ -169,15 +153,11 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec $browser
-bindsym $mod+c exec $browser2
+bindsym $mod+w exec $firefox
+bindsym $mod+c exec $chromium
 bindsym Print exec flameshot gui
 
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
-
-##########################################
-# configuration for workspace behaviour: #
-##########################################
 
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1"
@@ -203,16 +183,8 @@ workspace $ws8 output DP1
 workspace $ws9 output DP1
 workspace $ws10 output DP1
 
-##############
-# compositor # 
-##############
-
 # transparency
 exec_always --no-startup-id picom -b
-
-#############################################
-# autostart applications/services on login: #
-#############################################
 
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -234,28 +206,18 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 # Swap caps-lock with esc
 # This is already covered by using keyd (https://github.com/rvaiya/keyd)
 # run `paru -S keyd`
-# exec --no-startup-id setxkbmap -option caps:swapescape 
 
 #Autotiling
 exec_always --no-startup-id autotiling -sw 0.9
-
-##################
-# floating rules #
-##################
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="flameshot" instance="flameshot"] floating enable
-for_window [class="zoom" instance="zoom"] floating enable
 
 # set floating (nontiling) for special apps
-for_window [class="zoom" instance="zoom"] floating enable
-for_window [class="Xsane" instance="xsane"] floating enable
 for_window [class="pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="qt5ct" instance="qt5ct"] floating enable
-for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="flameshot" instance="flameshot"] floating enable
 for_window [window_role="About"] floating enable
@@ -267,10 +229,6 @@ for_window [class=".*"] resize set 640 480 #to change size of all floating windo
 # set position of floating window
 for_window [class=".*"] move position center
 
-######################################
-# color settings for bar and windows #
-######################################
-
 # define colors for windows:
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #222222 #ffffff #222222   #222222
@@ -280,10 +238,6 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
-
-############################################
-# bar settings (input comes from i3blocks) #
-############################################
 
 # Start i3bar to display a workspace bar
 bar {
