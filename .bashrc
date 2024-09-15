@@ -121,7 +121,7 @@ alias la='ls -a'
 alias ll='ls -la'
 
 # For convenience
-alias autoremove='sudo pacman -Rns $(pacman -Qtdq)'
+alias autoremove='paru --pacman pacman -Rns $(paru --pacman pacman -Qtdq)'
 alias laptop='~/.screenlayout/laptop.sh'
 alias monitor='~/.screenlayout/monitor.sh'
 alias reload='source ~/.bashrc'
