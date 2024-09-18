@@ -72,8 +72,8 @@ multiplier = 3
 
 [shell]
 args = ["-l", "-c", "tmux attach || tmux"]
-program = "/usr/bin/bash"
 
+program = "/usr/bin/bash"
 [window]
 dynamic_title = true
 opacity = 1.0

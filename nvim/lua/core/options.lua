@@ -9,6 +9,16 @@ vim.g.skip_ts_context_commentstring_module = true
 -- Markdown
 vim.g.markdown_recommended_style = 0
 
+-- Neovide
+if vim.g.neovide then
+    vim.o.guifont = "ZedMono Nerd Font:h12"
+    vim.g.neovide_padding_top = 0
+    vim.g.neovide_padding_bottom = 0
+    vim.g.neovide_padding_right = 0
+    vim.g.neovide_padding_left = 0
+    vim.g.neovide_hide_mouse_when_typing = true
+end
+
 -- [[ Options ]]
 -- mouse mode enable
 vim.o.mouse = "a"
