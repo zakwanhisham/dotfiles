@@ -10,6 +10,7 @@ set $term /usr/bin/alacritty
 set $firefox /usr/bin/firefox-developer-edition
 set $chromium /usr/bin/chromium
 set $menu /usr/bin/dmenu_run -b -i
+set $gtext /home/ouraaa/.local/bin/neovide
 
 # default i3 tiling mode:
 workspace_layout default
@@ -155,6 +156,7 @@ bindsym XF86AudioPrev exec playerctl previous
 ## App shortcuts
 bindsym $mod+w exec $firefox
 bindsym $mod+c exec $chromium
+bindsym $mod+t exec $gtext
 bindsym Print exec flameshot gui
 
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles

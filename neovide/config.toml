@@ -1,0 +1,16 @@
+fork = false
+frame = "full"
+idle = true
+maximized = true
+neovim-bin = "/home/ouraaa/.local/share/bob/nvim-bin/nvim"
+no-multigrid = true
+srgb = false
+tabs = true
+theme = "auto"
+title-hidden = true
+vsync = true
+wsl = false
+
+[font]
+normal = ["ZedMono Nerd Font"]
+size = 11.5
