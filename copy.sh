@@ -15,7 +15,6 @@ source_folders=(
 	"$HOME/.config/git"
 	"$HOME/.config/i3"
 	"$HOME/.config/nvim"
-	"$HOME/.config/neovide"
 	"$HOME/.config/paru"
 	"$HOME/.config/starship.toml"
 	"$HOME/.config/topgrade.toml"
