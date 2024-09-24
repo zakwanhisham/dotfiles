@@ -117,6 +117,7 @@ minizip
 mkinitcpio
 modemmanager
 mongodb-bin
+mongodb-compass
 mongosh-bin
 mpv
 mtools
