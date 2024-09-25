@@ -77,7 +77,7 @@ program = "/usr/bin/bash"
 [window]
 dynamic_title = true
 opacity = 1.0
-startup_mode = "Maximized"
+startup_mode = "Fullscreen"
 
 [window.padding]
 x = 0
