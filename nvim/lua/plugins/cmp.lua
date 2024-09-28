@@ -7,12 +7,6 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-buffer",
         {
-            "supermaven-inc/supermaven-nvim",
-            config = function()
-                require("supermaven-nvim").setup {}
-            end,
-        },
-        {
             "L3MON4D3/LuaSnip",
             build = (function()
                 if vim.fn.executable "make" == 0 then
@@ -73,7 +67,6 @@ return {
                     group_index = 0,
                 },
                 { name = "nvim_lsp" },
-                { name = "supermaven" },
                 { name = "luasnip" },
                 { name = "buffer" },
                 { name = "path" },
