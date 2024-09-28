@@ -18,7 +18,16 @@ export VISUAL="nvim"
 HISTTIMEFORMAT='%F %T'
 
 # FZF default opts
-export FZF_DEFAULT_OPTS='--color=fg:#c8c093,bg:#181616,hl:#8ba4b0 --color=fg+:#c5c9c5,bg+:#0d0c0c,hl+:#7fb4ca --color=info:#8ea4a2,prompt:#8a9a7b,pointer:#a292a3 --color=marker:#7aa89f,spinner:#87a987,header:#938aa9'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" \
+    --layout=reverse \
+    --border=rounded \
+    --cycle \
+    --bind 'ctrl-y:accept' \
+    --color=fg:#c5c9c5,bg:#181616,hl:#7fb4ca \
+    --color=fg+:#c8c093,bg+:#0d0c0c,hl+:#8ba4b0 \
+    --color=info:#c4b28a,prompt:#c4746e,pointer:#938aa9 \
+    --color=marker:#8a9a7b,spinner:#a292a3,header:#8ea4a2 \
+    "
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -156,10 +165,6 @@ ff() {
 	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf-tmux \
 		-p \
 		--header "Directory Selection" \
-		--layout=reverse \
-		--border=rounded \
-		--cycle \
-		--bind 'ctrl-y:accept' \
 		-h 40%)
 	if [ -n "$selected_dir" ]; then
 		if [ -d "$selected_dir" ]; then
@@ -189,10 +194,6 @@ con() {
 				fzf-tmux \
 					-p \
 					--header "Conda Env" \
-					--layout=reverse \
-					--cycle \
-					--border=rounded \
-					--bind 'ctrl-y:accept' \
 					-w 35% \
 					-h 40%
 		)
