@@ -33,6 +33,8 @@ dmenu
 dmidecode
 dmraid
 dnsmasq
+docker
+docker-compose
 dosfstools
 downgrade
 dracut
