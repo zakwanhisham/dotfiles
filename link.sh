@@ -2,10 +2,8 @@
 
 set -xeu
 
-# Dotfiles folder (source of symlinks)
 dotfile="$HOME/dotfiles"
 
-# Array of the target folders where the symlinks should go
 source_folders=(
 	"$HOME/.Xresources"
 	"$HOME/.bashrc"
@@ -23,26 +21,19 @@ source_folders=(
 	"$HOME/.xsession"
 )
 
-# Variable to track errors
 errors=false
 
-# Create symlinks from dotfiles to each source location
 for folder in "${source_folders[@]}"; do
-	# Get the base name of the source folder/file
 	file_name=$(basename "$folder")
 
-	# Path to the file in the dotfiles directory
 	src="$dotfile/$file_name"
 
-	# Remove the existing file/symlink in the source folder, if it exists
 	if [ -L "$folder" ] || [ -e "$folder" ]; then
-		rm -rf "$folder"
+		rm -rvf "$folder"
 	fi
 
-	# Create a new symlink from the dotfiles folder to the respective location
 	ln -s "$src" "$folder"
 
-	# Check if an error occurred during symlink creation
 	if [ $? -ne 0 ]; then
 		errors=true
 		echo "Error: Failed to create symlink for $folder"
@@ -50,7 +41,6 @@ for folder in "${source_folders[@]}"; do
 	fi
 done
 
-# Display success message if no errors occurred
 if [ "$errors" = false ]; then
 	echo "Symlinks created successfully!"
 fi
