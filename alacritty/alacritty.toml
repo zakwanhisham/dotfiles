@@ -1,6 +1,6 @@
 live_config_reload = true
 
-import = [ "~/.config/alacritty/kanagawa_dragon.toml" ]
+import = ["~/dotfiles/alacritty/kanagawa_dragon.toml"]
 
 [cursor.style]
 blinking = "Never"
