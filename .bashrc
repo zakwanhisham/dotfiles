@@ -155,9 +155,9 @@ alias weather='curl wttr.in'
 alias vim='nvim'
 
 # Configuration
-alias ala='nvim ~/.config/alacritty/alacritty.toml'
-alias bashrc='nvim ~/.bashrc'
-alias tconf='nvim ~/.tmux.conf'
+alias ala='nvim ~/dotfiles/alacritty/alacritty.toml'
+alias bashrc='nvim ~/dotfiles/.bashrc'
+alias tconf='nvim ~/dotfiles/.tmux.conf'
 
 ### BASH FUNCTION
 # Quickly change to directory
