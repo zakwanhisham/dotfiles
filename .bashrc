@@ -132,12 +132,13 @@ alias ll='ls -la'
 # For convenience
 alias autoremove='paru --pacman pacman -Rns $(paru --pacman pacman -Qtdq)'
 alias laptop='~/.screenlayout/laptop.sh'
+alias mirror='sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist'
 alias monitor='~/.screenlayout/monitor.sh'
 alias reload='source ~/.bashrc'
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
-alias mirror='sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist'
+alias updatepkg="paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
 # Changing program name
 alias cal='cal --monday -3'
