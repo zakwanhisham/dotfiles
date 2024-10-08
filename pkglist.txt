@@ -145,8 +145,8 @@ obs-studio
 os-prober
 pacman-contrib
 papirus-icon-theme
-paru-git
-paru-git-debug
+paru
+paru-debug
 pavucontrol
 picom
 pipewire
