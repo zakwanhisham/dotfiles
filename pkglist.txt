@@ -141,6 +141,7 @@ nss-mdns
 ntfs-3g
 ntp
 numlockx
+nvidia
 obs-studio
 os-prober
 pacman-contrib
@@ -208,6 +209,7 @@ usb_modeswitch
 usbutils
 vim
 vulkan-intel
+vulkan-nouveau
 wget
 wireless_tools
 wireplumber
