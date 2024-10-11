@@ -160,7 +160,14 @@ return {
                     },
                 },
             },
-            ruff = {},
+            ruff = {
+                trace = "message",
+                init_options = {
+                    settings = {
+                        log_level = "debug",
+                    },
+                },
+            },
             rust_analyzer = {},
             taplo = {},
             yamlls = {},
