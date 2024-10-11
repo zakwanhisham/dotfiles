@@ -90,12 +90,6 @@ return {
                     clangdFileStatus = true,
                 },
             },
-            eslint = {
-                settings = {
-                    -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
-                    workingDirectories = { mode = "auto" },
-                },
-            },
             gopls = {
                 settings = {
                     gopls = {
@@ -134,7 +128,6 @@ return {
                     },
                 },
             },
-            html = { filetypes = { "html", "twig", "hbs" } },
             jsonls = {
                 settings = {
                     json = {
@@ -155,36 +148,21 @@ return {
                 },
             },
             marksman = {},
-            pylsp = {
-                plugins = {
-                    -- formatter options
-                    black = { enabled = true },
-                    autopep8 = { enabled = false },
-                    yapf = { enabled = false },
-                    -- linter options
-                    pylint = { enabled = true, executable = "pylint" },
-                    pyflakes = { enabled = false },
-                    pycodestyle = { enabled = false },
-                    -- type checker
-                    pylsp_mypy = { enabled = true },
-                    -- auto-completion options
-                    jedi_completion = { fuzzy = true },
-                    -- import sorting
-                    pyls_isort = { enabled = true },
-                },
-            },
-            rust_analyzer = {},
-            tailwindcss = {
-                filetypes = { "javascriptreact", "html" },
-            },
-            taplo = {},
-            ts_ls = {
+            pyright = {
                 settings = {
-                    completions = {
-                        complete_function_calls = true,
+                    pyright = {
+                        disableOrganizeImports = true,
+                    },
+                    python = {
+                        analysis = {
+                            ignore = { "*" },
+                        },
                     },
                 },
             },
+            ruff = {},
+            rust_analyzer = {},
+            taplo = {},
             yamlls = {},
         }
 

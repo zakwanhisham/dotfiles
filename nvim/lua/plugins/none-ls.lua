@@ -39,19 +39,8 @@ return {
                 formatting.gofumpt,
                 formatting.goimports,
                 formatting.golines,
-                formatting.prettier.with {
-                    condition = function(utils)
-                        return not utils.root_has_file {
-                            ".eslintrc.js",
-                            ".eslintrc.cjs",
-                            ".eslintrc.json",
-                            ".eslintrc",
-                        }
-                    end,
-                },
-                formatting.clang_format.with {
-                    extra_filetypes = { "h", "hpp", "cpp" },
-                },
+                formatting.prettier,
+                formatting.clang_format.with { extra_filetypes = { "h", "hpp", "cpp" } },
                 --[[ linting ]]
                 diagnostics.golangci_lint,
                 diagnostics.markdownlint,
