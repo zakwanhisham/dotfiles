@@ -131,10 +131,10 @@ alias ll='ls -la'
 
 # For convenience
 alias autoremove='paru --pacman pacman -Rns $(paru --pacman pacman -Qtdq)'
-alias laptop='~/.screenlayout/laptop.sh'
+alias laptop="$HOME/.screenlayout/laptop.sh && $HOME/.fehbg"
 alias mirror='sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist'
-alias monitor='~/.screenlayout/monitor.sh'
-alias reload='source ~/.bashrc'
+alias monitor="$HOME/.screenlayout/monitor.sh && $HOME/.fehbg"
+alias reload="source $HOME/.bashrc"
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
 alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
@@ -156,9 +156,9 @@ alias weather='curl wttr.in'
 alias vim='nvim'
 
 # Configuration
-alias ala='nvim ~/dotfiles/alacritty/alacritty.toml'
-alias bashrc='nvim ~/dotfiles/.bashrc'
-alias tconf='nvim ~/dotfiles/.tmux.conf'
+alias ala="nvim $HOME/dotfiles/alacritty/alacritty.toml"
+alias bashrc="nvim $HOME/dotfiles/.bashrc"
+alias tconf="nvim $HOME/dotfiles/.tmux.conf"
 
 ### BASH FUNCTION
 # Quickly change to directory
