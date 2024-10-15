@@ -8,4 +8,6 @@ This is just a backup and also simple step for configuring the new machine.
 
 ## Install from pkglist.txt
 
+```bash
 paru --pacman pacman -S - < pkglist.txt
+```
