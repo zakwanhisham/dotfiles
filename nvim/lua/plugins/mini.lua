@@ -6,7 +6,7 @@ return {
         require("mini.clue").setup {
             window = {
                 config = {
-                    anchor = "NE",
+                    anchor = "SE",
                     row = "auto",
                     col = "auto",
                 },
@@ -39,6 +39,7 @@ return {
                 { mode = "n", keys = "<Leader>l", desc = "Lsp" },
                 { mode = "n", keys = "<Leader>t", desc = "Tab" },
                 { mode = "n", keys = "<Leader>w", desc = "Workspace" },
+                { mode = "n", keys = "<Leader>g", desc = "Git" },
                 require("mini.clue").gen_clues.builtin_completion(),
                 require("mini.clue").gen_clues.g(),
                 require("mini.clue").gen_clues.windows(),

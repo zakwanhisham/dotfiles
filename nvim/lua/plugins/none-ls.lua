@@ -19,7 +19,6 @@ return {
                 "golines",
                 "gomodifytags",
                 "impl",
-                "markdownlint",
                 "prettier",
                 "shfmt",
                 "stylua",
@@ -43,7 +42,6 @@ return {
                 formatting.clang_format.with { extra_filetypes = { "h", "hpp", "cpp" } },
                 --[[ linting ]]
                 diagnostics.golangci_lint,
-                diagnostics.markdownlint,
                 --[[ code actions ]]
                 actions.gomodifytags,
                 actions.impl,
