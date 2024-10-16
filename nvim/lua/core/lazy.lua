@@ -18,21 +18,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-    defaults = {
-        lazy = true,
-    },
-    install = {
-        colorscheme = { "default" },
-    },
+    defaults = { lazy = true },
+    checker = { enabled = true },
+    install = { colorscheme = { "default" } },
+    pkg = { enabled = false },
+    rocks = { enabled = false },
     change_detection = {
         enabled = true,
         notify = false,
-    },
-    pkg = {
-        enabled = false,
-    },
-    rocks = {
-        enabled = false,
     },
     performance = {
         rtp = {
