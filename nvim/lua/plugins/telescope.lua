@@ -3,8 +3,8 @@ return {
     event = "VimEnter",
     version = false,
     dependencies = {
-        "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-ui-select.nvim",
+        { "nvim-lua/plenary.nvim", lazy = true },
         {
             "nvim-telescope/telescope-fzf-native.nvim",
             build = "make",
