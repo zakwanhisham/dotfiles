@@ -4,15 +4,16 @@
 set -o vi
 
 ### EXPORT
-export BROWSER="/usr/bin/firefox-developer-edition"
-export HISTCONTROL=ignoredups:erasedups
-export HISTFILESIZE=100000
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
-export HISTSIZE=500000
-export IGNOREEOF=100
-export MANPAGER="nvim +Man!"
-export SUDO_EDITOR="nvim"
-export VISUAL="nvim"
+export BROWSER="/usr/bin/firefox-developer-edition" \
+	HISTCONTROL=ignoredups:erasedups \
+	HISTFILESIZE=100000 \
+	HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear" \
+	HISTSIZE=500000 \
+	IGNOREEOF=100 \
+	MANPAGER="nvim +Man!" \
+	SUDO_EDITOR="nvim" \
+	VISUAL="nvim" \
+	EDITOR="nvim"
 
 # Standard ISO 8601 timestamp
 HISTTIMEFORMAT='%F %T'
@@ -29,31 +30,12 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" \
     --color=marker:#8a9a7b,spinner:#a292a3,header:#8ea4a2 \
     "
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='nvim'
-else
-	export EDITOR='nvim'
-fi
-
-# PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/home/zakwan/.local/bin:$PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-
-# CUSTOM PATH
-export BIN=$HOME/.local/bin
-export BOB=$HOME/.local/share/bob/nvim-bin
-export CARGO=$HOME/.cargo
-export GOPATH=$HOME/go
-export RUSTUP=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu
-export PATH=$PATH:$GOPATH/bin:$CARGO/bin:$RUSTUP/bin:$BOB:$BIN
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$HOME/.local/share/bob/nvim-bin:$PATH
 
 # ENV VARIABLES
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache" \
+	XDG_CONFIG_HOME="$HOME/.config" \
+	XDG_DATA_HOME="$HOME/.local/share"
 
 # Node Version Manager(NVM)
 export NVM_DIR="$HOME/.config/nvm"
@@ -76,17 +58,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # SHOPT
-shopt -s autocd 2>/dev/null
-shopt -s cdspell 2>/dev/null
-shopt -s checkwinsize
-shopt -s cmdhist
-shopt -s direxpand 2>/dev/null
-shopt -s dirspell
-shopt -s dotglob
-shopt -s expand_aliases
-shopt -s globstar 2>/dev/null
-shopt -s histappend
-shopt -s nocaseglob
+shopt -s autocd cdspell checkwinsize cmdhist direxpand dirspell dotglob expand_aliases globstar histappend nocaseglob 2>/dev/null
 
 ### KEYBINDS
 
@@ -104,7 +76,6 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 # TAB menu complete
-bind 'set show-all-if-ambiguous on'
 bind 'set show-all-if-unmodified on'
 bind 'TAB: menu-complete'
 
@@ -206,10 +177,10 @@ con() {
 
 ### SOURCE AND EVAL
 # source bash completion
-source /usr/share/bash-completion/bash_completion
+[ -f /usr/share/bash-completion/bash_completion ] && source /usr/share/bash-completion/bash_completion
 
 # source command-not-found
-source /usr/share/doc/pkgfile/command-not-found.bash
+[ -f /usr/share/doc/pkgfile/command-not-found.bash ] && source /usr/share/doc/pkgfile/command-not-found.bash
 
 # bob completion
 eval "$(bob complete bash)"
