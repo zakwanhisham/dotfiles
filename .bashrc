@@ -60,6 +60,8 @@ unset __conda_setup
 # SHOPT
 shopt -s autocd cdspell checkwinsize cmdhist direxpand dirspell dotglob expand_aliases globstar histappend nocaseglob 2>/dev/null
 
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
 ### KEYBINDS
 
 # ignore upper and lowercase when TAB completion
