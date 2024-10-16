@@ -136,18 +136,11 @@ alias tconf="nvim $HOME/dotfiles/.tmux.conf"
 # Quickly change to directory
 ff() {
 	local selected_dir
-	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf-tmux \
-		-p \
-		--header "Directory Selection" \
-		-h 40%)
+	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf-tmux -p --header "Directory Selection" -h 40%)
+
 	if [ -n "$selected_dir" ]; then
-		if [ -d "$selected_dir" ]; then
-			printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
-			cd "$selected_dir" || return 1
-		else
-			echo "Selected directory does not exist: $selected_dir"
-			return 1
-		fi
+		printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
+		cd "$selected_dir" || return 1
 	else
 		echo "No directory selected."
 	fi
@@ -155,24 +148,15 @@ ff() {
 
 # Conda activate environment
 con() {
-	choice=(
-		$(
-			conda env list |
-				sed 's/\*/ /;1,2d' |
-				xargs -I {} bash -c '
-                name_path=( {} );
-                py_version=( $(${name_path[1]}/bin/python --version) );
-                echo ${name_path[0]} ${py_version[1]} ${name_path[1]}
-            ' |
-				column -t |
-				fzf-tmux \
-					-p \
-					--header "Conda Env" \
-					-w 35% \
-					-h 40%
-		)
-	)
-	[[ -n "$choice" ]] && conda activate "$choice"
+	local choice
+	choice=$(conda env list | sed 's/\*/ /;1,2d' | while read -r name path; do
+		if [[ -d "$path" ]]; then
+			py_version=$("$path/bin/python" --version 2>/dev/null | awk '{print $2}')
+			echo "$name  $py_version  $path"
+		fi
+	done | column -t | fzf-tmux -p --header "Conda Env" -w 35% -h 40%)
+
+	[[ -n "$choice" ]] && conda activate "$(echo "$choice" | awk '{print $1}')"
 }
 
 ### SOURCE AND EVAL
