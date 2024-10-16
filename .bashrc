@@ -144,16 +144,17 @@ alias updatepkg="paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 alias cal='cal --monday -3'
 alias cat='bat'
 alias cp='cp -iv'
+alias feh='feh -B black'
+alias ld='lazydocker'
 alias less='less --use-color -N'
 alias lg='lazygit'
-alias ld='lazydocker'
 alias mkdir='mkdir -v'
 alias mv='mv -iv'
 alias ng='nvim -c Neogit'
 alias open='xdg-open'
 alias rm='rm -iv'
-alias weather='curl wttr.in'
 alias vim='nvim'
+alias weather='curl wttr.in'
 
 # Configuration
 alias ala="nvim $HOME/dotfiles/alacritty/alacritty.toml"
