@@ -113,6 +113,11 @@ alias ssr='shutdown -r now'
 alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 alias updatepkg="paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
+# Power profile
+alias perf='powerprofilesctl set performance'
+alias bal='powerprofilesctl set balanced'
+alias saver='powerprofilesctl set power-saver'
+
 # Changing program name
 alias cal='cal --monday -3'
 alias cat='bat'
