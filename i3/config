@@ -157,7 +157,7 @@ bindsym $mod+w exec $firefox
 bindsym $mod+c exec $chromium
 bindsym Print exec flameshot gui
 
-bindsym $mod+Shift+p exec ~/dotfiles/i3/scripts/power-profiles
+# bindsym $mod+Shift+p exec ~/dotfiles/i3/scripts/power-profiles
 
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1"
