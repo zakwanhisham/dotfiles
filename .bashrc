@@ -7,7 +7,7 @@ set -o vi
 export BROWSER="/usr/bin/firefox-developer-edition" \
 	HISTCONTROL=ignoredups:erasedups \
 	HISTFILESIZE=100000 \
-	HISTIGNORE="&:[ ]*:exit:ls:ll:bg:fg:history:clear:cd:ssn:ssr:monitor:laptop" \
+	HISTIGNORE="&:[ ]*:exit:ls:ll:bg:fg:history:clear:cd:ssn:ssr:monitor:laptop:ff:con" \
 	HISTSIZE=500000 \
 	IGNOREEOF=100 \
 	MANPAGER="nvim +Man!" \
