@@ -12,14 +12,9 @@ return {
         mason_nls.setup {
             automatic_installation = true,
             ensure_installed = {
-                "clang-format",
-                "gofumpt",
-                "goimports",
-                "golangci-lint",
                 "golines",
                 "gomodifytags",
                 "impl",
-                "prettier",
                 "shfmt",
                 "stylua",
             },
@@ -35,11 +30,8 @@ return {
                 --[[ formatting ]]
                 formatting.stylua,
                 formatting.shfmt,
-                formatting.gofumpt,
                 formatting.goimports,
                 formatting.golines,
-                formatting.prettier,
-                formatting.clang_format.with { extra_filetypes = { "h", "hpp", "cpp" } },
                 --[[ linting ]]
                 diagnostics.golangci_lint,
                 --[[ code actions ]]
