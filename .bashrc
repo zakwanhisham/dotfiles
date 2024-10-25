@@ -115,9 +115,9 @@ alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 alias updatepkg="paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
 # Power profile
-alias perf='powerprofilesctl set performance'
-alias bal='powerprofilesctl set balanced'
-alias saver='powerprofilesctl set power-saver'
+alias perf='powerprofilesctl set performance && echo "Set power to Performance"'
+alias bal='powerprofilesctl set balanced && echo "Set power to Balanced"'
+alias saver='powerprofilesctl set power-saver && echo "Set power to Power-Saver"'
 
 # Changing program name
 alias cal='cal --monday -3'
