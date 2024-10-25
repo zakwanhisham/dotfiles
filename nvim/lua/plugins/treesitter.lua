@@ -4,11 +4,6 @@ return {
     build = ":TSUpdate",
     dependencies = {
         { "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 3 } },
-        {
-            "JoosepAlviste/nvim-ts-context-commentstring",
-            lazy = true,
-            opts = { enable_autocmd = false },
-        },
     },
     config = function()
         require("nvim-treesitter.install").prefer_git = true
