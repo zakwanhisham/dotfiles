@@ -7,6 +7,7 @@ dotfile="$HOME/dotfiles"
 source_folders=(
 	"$HOME/.Xresources"
 	"$HOME/.bashrc"
+	"$HOME/.condarc"
 	"$HOME/.config/alacritty"
 	"$HOME/.config/bat"
 	"$HOME/.config/fastfetch"
@@ -17,9 +18,9 @@ source_folders=(
 	"$HOME/.config/starship.toml"
 	"$HOME/.config/topgrade.toml"
 	"$HOME/.fehbg"
+	"$HOME/.local/bin/swap-usage"
 	"$HOME/.tmux.conf"
 	"$HOME/.xsession"
-	"$HOME/.condarc"
 )
 
 errors=false
