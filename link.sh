@@ -19,7 +19,7 @@ source_folders=(
 	"$HOME/.fehbg"
 	"$HOME/.tmux.conf"
 	"$HOME/.xsession"
-    "$HOME/.condarc"
+	"$HOME/.condarc"
 )
 
 errors=false
