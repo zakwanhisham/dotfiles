@@ -148,23 +148,12 @@ return {
                 },
             },
             marksman = {},
-            pyright = {
-                settings = {
-                    pyright = {
-                        disableOrganizeImports = true,
-                    },
-                    python = {
-                        analysis = {
-                            ignore = { "*" },
-                        },
-                    },
-                },
-            },
+            basedpyright = {},
             ruff = {
                 trace = "message",
                 init_options = {
                     settings = {
-                        log_level = "debug",
+                        log_level = "error",
                     },
                 },
             },
