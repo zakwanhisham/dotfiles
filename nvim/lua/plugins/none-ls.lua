@@ -12,7 +12,6 @@ return {
         mason_nls.setup {
             automatic_installation = true,
             ensure_installed = {
-                "clang-format",
                 "gofumpt",
                 "goimports",
                 "golangci-lint",
@@ -26,23 +25,22 @@ return {
 
         local formatting = nls.builtins.formatting
         local diagnostics = nls.builtins.diagnostics
-        local actions = nls.builtins.code_actions
+        local code_actions = nls.builtins.code_actions
 
         nls.setup {
             root_dir = nls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
             sources = {
                 --[[ formatting ]]
-                formatting.stylua,
-                formatting.shfmt,
                 formatting.gofumpt,
                 formatting.goimports,
                 formatting.golines,
-                formatting.clang_format.with { extra_filetypes = { "h", "hpp", "cpp" } },
+                formatting.shfmt,
+                formatting.stylua,
                 --[[ linting ]]
                 diagnostics.golangci_lint,
                 --[[ code actions ]]
-                actions.gomodifytags,
-                actions.impl,
+                code_actions.gomodifytags,
+                code_actions.impl,
             },
         }
     end,
