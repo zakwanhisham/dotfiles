@@ -1,5 +1,5 @@
+[general]
 live_config_reload = true
-
 import = ["~/dotfiles/alacritty/kanagawa_dragon.toml"]
 
 [cursor.style]
@@ -70,7 +70,7 @@ hide_when_typing = true
 history = 100000
 multiplier = 3
 
-[shell]
+[terminal.shell]
 args = ["-l", "-c", "tmux attach || tmux"]
 program = "/usr/bin/bash"
 
@@ -86,3 +86,5 @@ y = 0
 [window.position]
 x = 0
 y = 0
+
+[terminal]
