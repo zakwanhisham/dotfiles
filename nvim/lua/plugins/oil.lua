@@ -18,5 +18,8 @@ return {
             show_hidden = true,
             case_insensitive = true,
         },
+        keymaps = {
+            ["q"] = "actions.close",
+        },
     },
 }
