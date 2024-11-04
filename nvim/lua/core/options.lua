@@ -80,7 +80,7 @@ vim.o.timeoutlen = 400
 
 -- colorcolumn
 vim.o.colorcolumn = "80"
-vim.o.cursorline = true
+vim.o.cursorline = false
 
 -- code gutter
 vim.o.scrolloff = 12
