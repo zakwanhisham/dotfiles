@@ -6,18 +6,13 @@ return {
     },
     opts = {
         window = {
-            backdrop = 1,
+            backdrop = 0.85,
             width = 160,
             height = 1,
             options = {
                 number = true,
                 relativenumber = true,
-            },
-        },
-        plugins = {
-            alacritty = {
-                enabled = true,
-                font = "15",
+                list = false,
             },
         },
     },
