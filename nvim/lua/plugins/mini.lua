@@ -51,6 +51,7 @@ return {
                 { mode = "n", keys = "<Leader>t", desc = "Tab" },
                 { mode = "n", keys = "<Leader>w", desc = "Workspace" },
                 { mode = "n", keys = "<Leader>g", desc = "Git" },
+                { mode = "n", keys = "<Leader>z", desc = "Focus" },
                 require("mini.clue").gen_clues.builtin_completion(),
                 require("mini.clue").gen_clues.g(),
                 require("mini.clue").gen_clues.marks(),
