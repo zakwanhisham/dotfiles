@@ -105,9 +105,9 @@ alias ll='ls -la'
 
 # For convenience
 alias autoremove='paru --pacman pacman -Rns $(paru --pacman pacman -Qtdq)'
-alias laptop="$HOME/.screenlayout/laptop.sh && $HOME/.fehbg"
+alias laptop="$HOME/dotfiles/.screenlayout/laptop.sh && $HOME/.fehbg"
 alias mirror='sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist'
-alias monitor="$HOME/.screenlayout/monitor.sh && $HOME/.fehbg"
+alias monitor="$HOME/dotfiles/.screenlayout/monitor.sh && $HOME/.fehbg"
 alias reload="source $HOME/.bashrc"
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'

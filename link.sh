@@ -19,6 +19,7 @@ source_folders=(
 	"$HOME/.config/topgrade.toml"
 	"$HOME/.fehbg"
 	"$HOME/.local/bin/swap-usage"
+	"$HOME/.screenlayout"
 	"$HOME/.tmux.conf"
 	"$HOME/.xsession"
 )
