@@ -10,9 +10,10 @@ return {
             width = 160,
             height = 1,
             options = {
+                cursorline = false,
+                list = false,
                 number = true,
                 relativenumber = true,
-                list = false,
             },
         },
     },

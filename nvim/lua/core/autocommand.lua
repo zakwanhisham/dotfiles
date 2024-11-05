@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         vim.bo.bufhidden = "unload"
         vim.cmd.wincmd "L"
-        vim.cmd "vertical resize 81"
+        vim.cmd "vertical resize 120"
     end,
 })
 
