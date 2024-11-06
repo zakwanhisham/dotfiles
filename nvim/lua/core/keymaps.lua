@@ -50,8 +50,10 @@ vim.keymap.set("n", "<leader>bd", function()
 end, { desc = "Buffer Delete" })
 
 -- [[ Tab ]]
+vim.keymap.set("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Tab New" })
 vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "Tab Previous" })
 vim.keymap.set("n", "<leader>tn", "<cmd>tabNext<cr>", { desc = "Tab Next" })
+vim.keymap.set("n", "<leader>td", "<cmd>tabclose<cr>", { desc = "Tab Close" })
 
 --[[ Diagnostic keymaps ]]
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Floating Diagnostic" })
