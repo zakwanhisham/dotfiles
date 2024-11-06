@@ -132,7 +132,6 @@ alias mv='mv -iv'
 alias ng='nvim -c Neogit'
 alias open='xdg-open'
 alias rm='rm -iv'
-alias vim='nvim'
 alias weather='curl wttr.in'
 
 # Configuration

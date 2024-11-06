@@ -21,6 +21,7 @@ source_folders=(
 	"$HOME/.local/bin/swap-usage"
 	"$HOME/.screenlayout"
 	"$HOME/.tmux.conf"
+	"$HOME/.vimrc"
 	"$HOME/.xsession"
 )
 
