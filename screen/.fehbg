@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+feh --no-fehbg --bg-max "$HOME/dotfiles/wallpaper/chinatown.png"

@@ -1,0 +1,33 @@
+[user]
+	email = hishamzakwan@gmail.com
+	name = zakwan hisham
+[core]
+	editor = nvim
+	pager = delta
+	commentChar = ";"
+[alias]
+	c = commit
+	s = status
+	st = status
+	lg = log --oneline
+	last = log -1 HEAD
+[merge]
+	tool = nvim -d
+    conflictstyle = zdiff3
+[help]
+    autocorrect = prompt
+[color]
+	ui = auto
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    true-color = always
+    syntax-theme = ansi
+    navigate = true
+    dark = true
+    line-numbers = true
+    side-by-side = true

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# Find directory and create/switch to tmux session
+
+search_dir=(
+    "$HOME/.config"
+    "$HOME/Documents"
+    "$HOME/Projects"
+    "$HOME/Work"
+    "$HOME/dotfiles"
+)
+
+# Get directories from fd
+directories=$(fd --hidden -L --type directory . ${search_dir[@]} 2>/dev/null)
+
+selected=$(echo "$directories" | fzf --header "Tmux Sessionizer")
+
+if [[ -n "$selected" ]]; then
+    # Selected item is a directory path
+    selected_dir="$selected"
+    session_name=$(basename "$selected_dir")
+
+    # Check if tmux session already exists
+    if tmux has-session -t "$session_name" 2>/dev/null; then
+        printf "Switching to existing tmux session: %s\n" "$session_name"
+        if [[ -n "$TMUX" ]]; then
+            tmux switch-client -t "$session_name"
+        else
+            tmux attach-session -t "$session_name"
+        fi
+    else
+        printf "Creating new tmux session: %s in %s\n" "$session_name" "$selected_dir"
+        if [[ -n "$TMUX" ]]; then
+            tmux new-session -d -s "$session_name" -c "$selected_dir"
+            tmux switch-client -t "$session_name"
+        else
+            tmux new-session -d -s "$session_name" -c "$selected_dir"
+            tmux attach-session -t "$session_name"
+        fi
+    fi
+else
+    echo "No selection made."
+fi

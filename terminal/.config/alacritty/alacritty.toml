@@ -1,0 +1,24 @@
+[general]
+import = [ "~/.config/alacritty/themes/gruvbox-dark-hard.toml" ]
+live_config_reload = true
+
+[window]
+dynamic_padding = true
+decorations = "None"
+startup_mode = "Maximized"
+
+[scrolling]
+history = 100000
+
+[font]
+normal = { family = "IosevkaTerm Nerd Font" }
+size = 12.5
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true

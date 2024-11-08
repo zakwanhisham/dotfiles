@@ -1,0 +1,15 @@
+theme = Gruvbox Dark Hard
+font-family = IosevkaTerm Nerd Font
+font-size = 12
+font-feature = -calt, -liga, -dlig
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+mouse-hide-while-typing = true
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-decoration = false
+confirm-close-surface = false
+bold-color = bright
+resize-overlay = never
