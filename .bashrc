@@ -179,9 +179,6 @@ eval "$(bob complete bash)"
 # fzf completion and keybinds
 eval "$(fzf --bash)"
 
-# source go-blueprint completion
-eval "$(go-blueprint completion bash)"
-
 # rg completion
 eval "$(rg --generate=complete-bash)"
 
