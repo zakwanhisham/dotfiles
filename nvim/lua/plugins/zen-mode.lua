@@ -7,13 +7,14 @@ return {
     opts = {
         window = {
             backdrop = 0.85,
-            width = 160,
+            width = 150,
             height = 1,
             options = {
                 cursorline = false,
                 list = false,
                 number = true,
                 relativenumber = true,
+                wrap = true,
             },
         },
     },
