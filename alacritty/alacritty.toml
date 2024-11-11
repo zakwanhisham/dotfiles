@@ -70,6 +70,7 @@ hide_when_typing = true
 history = 100000
 multiplier = 3
 
+# [terminal]
 # [terminal.shell]
 # args = ["-l", "-c", "tmux attach || tmux"]
 # program = "/usr/bin/bash"
@@ -86,5 +87,3 @@ y = 0
 [window.position]
 x = 0
 y = 0
-
-[terminal]
