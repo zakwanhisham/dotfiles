@@ -111,7 +111,8 @@ alias monitor="$HOME/dotfiles/.screenlayout/monitor.sh && $HOME/.fehbg"
 alias reload="source $HOME/.bashrc"
 alias ssn='shutdown now'
 alias ssr='shutdown -r now'
-alias notes="nvim $HOME/Documents/NOTES.md"
+alias notes="nvim $HOME/dotfiles/NOTES.md"
+alias todos="nvim $HOME/dotfiles/TODOS.md"
 alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
 alias updatepkg="paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
