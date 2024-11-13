@@ -148,30 +148,28 @@ return {
                 },
             },
             marksman = {},
-            -- pylsp = {
-            --     plugins = {
-            --         -- formatter options
-            --         black = { enabled = true },
-            --         autopep8 = { enabled = false },
-            --         yapf = { enabled = false },
-            --         -- linter options
-            --         pylint = { enabled = true, executable = "pylint" },
-            --         pyflakes = { enabled = false },
-            --         pycodestyle = { enabled = false },
-            --         -- type checker
-            --         pylsp_mypy = { enabled = true },
-            --         -- auto-completion options
-            --         jedi_completion = { fuzzy = true },
-            --         -- import sorting
-            --         pyls_isort = { enabled = true },
-            --     },
-            -- },
-            basedpyright = {},
+            pyright = {
+                settings = {
+                    pyright = {
+                        -- Using Ruff's import organizer
+                        disableOrganizeImports = true,
+                    },
+                    python = {
+                        analysis = {
+                            -- Ignore all files for analysis to exclusively use Ruff for linting
+                            ignore = { "*" },
+                            autoImportCompletion = true,
+                            diagnosticMode = "OpenFilesOnly",
+                            typeCheckingMode = "basic",
+                        },
+                    },
+                },
+            },
             ruff = {
-                trace = "message",
+                trace = "verbose",
                 init_options = {
                     settings = {
-                        log_level = "error",
+                        log_level = "debug",
                     },
                 },
             },
