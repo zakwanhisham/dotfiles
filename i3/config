@@ -208,7 +208,7 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 # run `paru -S keyd`
 
 #Autotiling
-exec_always --no-startup-id autotiling -sw 0.8
+exec_always --no-startup-id autotiling -sw 0.7
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
