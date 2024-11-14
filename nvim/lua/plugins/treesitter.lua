@@ -3,7 +3,7 @@ return {
     event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
     build = ":TSUpdate",
     dependencies = {
-        { "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 0 } },
+        { "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 5 } },
     },
     config = function()
         require("nvim-treesitter.install").prefer_git = true
