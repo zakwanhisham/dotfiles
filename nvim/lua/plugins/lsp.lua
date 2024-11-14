@@ -156,11 +156,13 @@ return {
                     },
                     python = {
                         analysis = {
+                            autoImportCompletion = true,
+                            autoSearchPaths = true,
+                            diagnosticMode = "OpenFilesOnly",
                             -- Ignore all files for analysis to exclusively use Ruff for linting
                             ignore = { "*" },
-                            autoImportCompletion = true,
-                            diagnosticMode = "OpenFilesOnly",
                             typeCheckingMode = "basic",
+                            useLibraryCodeForTypes = true,
                         },
                     },
                 },
