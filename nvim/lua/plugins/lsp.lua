@@ -148,21 +148,23 @@ return {
                 },
             },
             marksman = {},
-            pyright = {
+            basedpyright = {
                 settings = {
-                    pyright = {
+                    basedpyright = {
                         -- Using Ruff's import organizer
                         disableOrganizeImports = true,
-                    },
-                    python = {
                         analysis = {
                             autoImportCompletion = true,
                             autoSearchPaths = true,
-                            diagnosticMode = "OpenFilesOnly",
-                            -- Ignore all files for analysis to exclusively use Ruff for linting
-                            ignore = { "*" },
+                            diagnosticMode = "openFilesOnly",
                             typeCheckingMode = "basic",
                             useLibraryCodeForTypes = true,
+                        },
+                    },
+                    python = {
+                        analysis = {
+                            -- Ignore all files for analysis to exclusively use Ruff for linting
+                            ignore = { "*" },
                         },
                     },
                 },
