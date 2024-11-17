@@ -3,12 +3,19 @@
 	name = zakwan hisham
 [core]
 	editor = nvim
-	pager = less
+	pager = delta
 [merge]
 	tool = nvim
+    conflictstyle = zdiff3
 [color]
 	ui = auto
 [init]
 	defaultBranch = main
 [pull]
 	rebase = false
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    dark = true
+    line-numbers = true
