@@ -19,19 +19,6 @@ return {
                 left = 1,
             },
         }
-        local diagnostics = {
-            "diagnostics",
-            symbols = {
-                error = " ",
-                warn = " ",
-                info = "󰋼 ",
-                hint = "󰌵 ",
-            },
-            padding = {
-                right = 0,
-                left = 1,
-            },
-        }
         local diff = {
             "diff",
             symbols = {
@@ -89,7 +76,7 @@ return {
             sections = {
                 lualine_a = { mode },
                 lualine_b = {},
-                lualine_c = { filename, diagnostics },
+                lualine_c = { filename},
                 lualine_x = { diff, branch },
                 lualine_y = {},
                 lualine_z = { location, progress },
