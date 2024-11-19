@@ -107,7 +107,7 @@ vim.opt.listchars = { eol = "↲", nbsp = "␣", tab = "» ", trail = "·" }
 vim.opt.fillchars = { eob = "~" }
 
 -- misc
-vim.o.conceallevel = 0
+vim.o.conceallevel = 1
 vim.o.laststatus = 2
 vim.o.ruler = true
 vim.o.linebreak = true
