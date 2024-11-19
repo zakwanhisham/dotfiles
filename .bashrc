@@ -173,5 +173,8 @@ eval "$(rg --generate=complete-bash)"
 # pipx completion
 eval "$(register-python-argcomplete pipx)"
 
+# delta completion
+eval "$(delta --generate-completion bash)"
+
 # PROMPT
 eval "$(starship init bash)"

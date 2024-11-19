@@ -16,6 +16,9 @@
 [interactive]
     diffFilter = delta --color-only
 [delta]
+    true-color = always
+    syntax-theme = base16-256
     navigate = true
     dark = true
     line-numbers = true
+    side-by-side = true
