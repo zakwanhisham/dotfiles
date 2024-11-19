@@ -157,7 +157,7 @@ return {
                             autoImportCompletion = true,
                             autoSearchPaths = true,
                             diagnosticMode = "openFilesOnly",
-                            typeCheckingMode = "basic",
+                            typeCheckingMode = "off",
                             useLibraryCodeForTypes = true,
                         },
                     },
