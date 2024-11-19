@@ -141,19 +141,6 @@ ff() {
 	fi
 }
 
-# Conda activate environment
-con() {
-	local choice
-	choice=$(conda env list | sed 's/\*/ /;1,2d' | while read -r name path; do
-		if [[ -d "$path" ]]; then
-			py_version=$("$path/bin/python" --version 2>/dev/null | awk '{print $2}')
-			echo "$name  $py_version  $path"
-		fi
-	done | column -t | fzf-tmux -p --header "Conda Env" -w 35% -h 40%)
-
-	[[ -n "$choice" ]] && conda activate "$(echo "$choice" | awk '{print $1}')"
-}
-
 ### SOURCE AND EVAL
 # source bash completion
 [ -f /usr/share/bash-completion/bash_completion ] && source /usr/share/bash-completion/bash_completion
