@@ -171,5 +171,8 @@ eval "$(fzf --bash)"
 # rg completion
 eval "$(rg --generate=complete-bash)"
 
+# pipx completion
+eval "$(register-python-argcomplete pipx)"
+
 # PROMPT
 eval "$(starship init bash)"
