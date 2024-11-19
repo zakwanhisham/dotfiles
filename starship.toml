@@ -2,7 +2,6 @@ format = """
 $directory\
 $git_branch\
 $git_status\
-$conda\
 $cmd_duration\
 $line_break\
 $character"""
@@ -39,8 +38,3 @@ style = "218"
 [cmd_duration]
 format = "[took $duration]($style)"
 style = "white"
-
-[conda]
-symbol = "󰯲 "
-format = '([$symbol$environment]($style)) '
-style = "bright-black"
