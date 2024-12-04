@@ -5,16 +5,16 @@ set -o vi
 
 ### EXPORT
 export HISTCONTROL=ignoredups:erasedups \
-	HISTFILESIZE=100000 \
-	HISTIGNORE="&:[ ]*:exit:ls:ll:bg:fg:history:clear:cd:ssn:ssr:monitor:laptop:ff:con:lg:ng" \
-	HISTSIZE=500000 \
-	IGNOREEOF=100
+    HISTFILESIZE=100000 \
+    HISTIGNORE="&:[ ]*:exit:ls:ll:bg:fg:history:clear:cd:ssn:ssr:monitor:laptop:ff:con:lg:ng" \
+    HISTSIZE=500000 \
+    IGNOREEOF=100
 
 export BROWSER="/usr/bin/firefox-developer-edition" \
-	MANPAGER="nvim +Man!" \
-	SUDO_EDITOR="nvim" \
-	VISUAL="nvim" \
-	EDITOR="nvim"
+    MANPAGER="nvim +Man!" \
+    SUDO_EDITOR="nvim" \
+    VISUAL="nvim" \
+    EDITOR="nvim"
 
 # Standard ISO 8601 timestamp
 HISTTIMEFORMAT='%F %T'
@@ -35,8 +35,8 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/
 
 # ENV VARIABLES
 export XDG_CACHE_HOME="$HOME/.cache" \
-	XDG_CONFIG_HOME="$HOME/.config" \
-	XDG_DATA_HOME="$HOME/.local/share"
+    XDG_CONFIG_HOME="$HOME/.config" \
+    XDG_DATA_HOME="$HOME/.local/share"
 
 # Node Version Manager(NVM)
 export NVM_DIR="$HOME/.config/nvm"
@@ -130,15 +130,15 @@ alias vimrc="\vim $HOME/dotfiles/.vimrc"
 ### BASH FUNCTION
 # Quickly change to directory
 ff() {
-	local selected_dir
-	selected_dir=$(fd --hidden --type directory . "$HOME" | fzf-tmux -p --header "Directory Selection" -h 40%)
+    local selected_dir
+    selected_dir=$(fd --hidden --type directory . "$HOME" | fzf-tmux -p --header "Directory Selection" -h 40%)
 
-	if [ -n "$selected_dir" ]; then
-		printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
-		cd "$selected_dir" || return 1
-	else
-		echo "No directory selected."
-	fi
+    if [ -n "$selected_dir" ]; then
+        printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
+        cd "$selected_dir" || return 1
+    else
+        echo "No directory selected."
+    fi
 }
 
 ### SOURCE AND EVAL
@@ -162,6 +162,9 @@ eval "$(register-python-argcomplete pipx)"
 
 # delta completion
 eval "$(delta --generate-completion bash)"
+
+# gh completion
+eval "$(gh completion -s bash)"
 
 # PROMPT
 eval "$(starship init bash)"
