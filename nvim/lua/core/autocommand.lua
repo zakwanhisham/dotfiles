@@ -50,6 +50,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {
         "Trouble",
+        "gitcommit",
         "help",
         "lazy",
         "man",
