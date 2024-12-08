@@ -21,11 +21,6 @@ return {
         }
         local diff = {
             "diff",
-            symbols = {
-                added = "󰐖 ",
-                modified = "󱗜 ",
-                removed = "󰍵 ",
-            },
             padding = {
                 right = 1,
                 left = 1,
