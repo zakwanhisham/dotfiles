@@ -22,7 +22,7 @@ return {
             defaults = {
                 file_ignore_patterns = { ".git/", "node_modules" },
                 preview = {
-                    filesize_limit = 0.1, -- MB
+                    filesize_limit = 0.2, -- MB
                 },
                 mappings = {
                     i = {
