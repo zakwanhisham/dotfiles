@@ -25,6 +25,10 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increa
 vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
 vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })
 
+--[[ Quickfix list movement ]]
+vim.keymap.set("n", "<M-j>", "<cmd>cnext<cr>", { desc = "Quickfix next" })
+vim.keymap.set("n", "<M-k>", "<cmd>cprev<cr>", { desc = "Quickfix prev" })
+
 -- [[ https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n ]]
 vim.keymap.set("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
 vim.keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
