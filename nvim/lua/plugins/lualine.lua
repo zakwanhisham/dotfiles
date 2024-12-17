@@ -19,6 +19,13 @@ return {
                 left = 1,
             },
         }
+        local diagnostics = {
+            "diagnostics",
+            padding = {
+                right = 0,
+                left = 1,
+            },
+        }
         local diff = {
             "diff",
             padding = {
@@ -71,7 +78,7 @@ return {
             sections = {
                 lualine_a = { mode },
                 lualine_b = {},
-                lualine_c = { filename},
+                lualine_c = { filename, diagnostics },
                 lualine_x = { diff, branch },
                 lualine_y = {},
                 lualine_z = { location, progress },
