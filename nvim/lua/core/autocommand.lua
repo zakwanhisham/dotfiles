@@ -38,6 +38,7 @@ vim.api.nvim_create_autocmd("FileType", {
         "lspinfo",
         "qf",
         "term",
+        "gitsigns-blame",
     },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
