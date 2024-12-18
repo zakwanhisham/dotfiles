@@ -6,7 +6,7 @@ return {
         { "williamboman/mason.nvim", config = true }, -- Must be loaded before dependant
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        { "j-hui/fidget.nvim", opts = {} },
+        { "j-hui/fidget.nvim",       opts = {} },
     },
     config = function()
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -16,6 +16,7 @@ return {
                         desc = "LSP: " .. desc
                     end
 
+                    ---@diagnostic disable-next-line: missing-fields
                     vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
                 end
 
@@ -41,7 +42,7 @@ return {
                 end, "Workspace List Folders")
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
-                ---@diagnostic disable-next-line: missing-parameter
+                ---@diagnostic disable-next-line: param-type-mismatch, missing-parameter
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
                     local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = true })
                     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -67,30 +68,12 @@ return {
             end,
         })
 
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+        local capabilities = vim.tbl_deep_extend("force", {}, require("blink.cmp").get_lsp_capabilities() or {})
 
         local servers = {
             bashls = {},
-            clangd = {
-                capabilities = {
-                    offsetEncoding = { "utf-16" },
-                },
-                cmd = {
-                    "clangd",
-                    "--background-index",
-                    "--clang-tidy",
-                    "--header-insertion=iwyu",
-                    "--completion-style=detailed",
-                    "--function-arg-placeholders",
-                    "--fallback-style=llvm",
-                },
-                init_options = {
-                    usePlaceholders = true,
-                    completeUnimported = true,
-                    clangdFileStatus = true,
-                },
-            },
+            clangd = {},
+            golangci_lint_ls = {},
             gopls = {
                 settings = {
                     gopls = {
@@ -115,7 +98,6 @@ return {
                             rangeVariableTypes = true,
                         },
                         analyses = {
-                            fieldalignment = true,
                             nilness = true,
                             unusedparams = true,
                             unusedwrite = true,
