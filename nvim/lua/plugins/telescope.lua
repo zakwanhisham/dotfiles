@@ -3,7 +3,6 @@ return {
     event = "VimEnter",
     version = false,
     dependencies = {
-        "nvim-telescope/telescope-ui-select.nvim",
         { "nvim-lua/plenary.nvim", lazy = true },
         {
             "nvim-telescope/telescope-fzf-native.nvim",
@@ -22,7 +21,7 @@ return {
             defaults = {
                 file_ignore_patterns = { ".git/", "node_modules" },
                 preview = {
-                    filesize_limit = 0.2, -- MB
+                    filesize_limit = 0.4, -- MB
                 },
                 mappings = {
                     i = {
@@ -52,50 +51,36 @@ return {
                     sort_lastused = true,
                 },
             },
-            extensions = {
-                ["ui-select"] = {
-                    themes.get_dropdown {
-                        winblend = 0,
-                        previewer = false,
-                    },
-                },
-            },
         }
 
         -- Call extensions
         pcall(require("telescope").load_extension, "fzf")
-        pcall(require("telescope").load_extension, "ui-select")
 
         -- Telescope
         vim.keymap.set("n", "<leader><space>", function()
-            builtin.buffers(themes.get_dropdown {
-                winblend = 0,
-                previewer = false,
-            })
+            builtin.buffers(themes.get_ivy {})
         end, { desc = "Buffer" })
+
         vim.keymap.set("n", "<leader>ff", function()
-            local opts = themes.get_dropdown {
-                winblend = 0,
-                previewer = false,
-            }
-            builtin.find_files(opts)
+            builtin.find_files(themes.get_ivy {})
         end, { desc = "Find Files" })
+
         vim.keymap.set("n", "<leader>fs", function()
-            builtin.live_grep(themes.get_dropdown {
-                winblend = 0,
-                previewer = true,
-            })
+            builtin.live_grep(themes.get_ivy {})
         end, { desc = "Live Grep" })
+
         vim.keymap.set("n", "<leader>fw", function()
-            builtin.grep_string(themes.get_dropdown {
+            builtin.grep_string(themes.get_ivy {})
+        end, { desc = "Grep String" })
+
+        vim.keymap.set("n", "<leader>fo", function()
+            builtin.oldfiles(themes.get_ivy {})
+        end, { desc = "Oldfiles" })
+
+        vim.keymap.set("n", "<leader>/", function()
+            builtin.current_buffer_fuzzy_find(themes.get_ivy {
                 winblend = 0,
                 previewer = true,
-            })
-        end, { desc = "Grep String" })
-        vim.keymap.set("n", "<leader>/", function()
-            builtin.current_buffer_fuzzy_find(themes.get_dropdown {
-                winblend = 0,
-                previewer = false,
             })
         end, { desc = "Fuzzy search" })
     end,
