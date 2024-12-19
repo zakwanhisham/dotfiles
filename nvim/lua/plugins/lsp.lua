@@ -120,16 +120,6 @@ return {
                     },
                 },
             },
-            jsonls = {
-                settings = {
-                    json = {
-                        format = {
-                            enable = true,
-                        },
-                        validate = { enable = true },
-                    },
-                },
-            },
             lua_ls = {
                 settings = {
                     Lua = {
@@ -139,7 +129,6 @@ return {
                     },
                 },
             },
-            marksman = {},
             basedpyright = {
                 settings = {
                     basedpyright = {
@@ -156,7 +145,6 @@ return {
                 },
             },
             taplo = {},
-            yamlls = {},
         }
 
         require("mason").setup()
