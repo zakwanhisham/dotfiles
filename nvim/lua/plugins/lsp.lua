@@ -132,8 +132,7 @@ return {
             basedpyright = {
                 settings = {
                     basedpyright = {
-                        -- Using Ruff's import organizer
-                        disableOrganizeImports = true,
+                        disableOrganizeImports = false,
                         analysis = {
                             autoImportCompletion = true,
                             autoSearchPaths = true,
