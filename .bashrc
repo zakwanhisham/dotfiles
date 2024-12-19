@@ -118,7 +118,7 @@ alias mv='mv -iv'
 alias open='xdg-open'
 alias rm='rm -iv'
 alias weather='curl wttr.in'
-alias vim='nvim'
+alias lvim='NVIM_APPNAME=lvim nvim'
 
 # Configuration
 alias ala="nvim $HOME/dotfiles/alacritty/alacritty.toml"
