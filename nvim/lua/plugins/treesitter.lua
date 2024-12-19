@@ -13,6 +13,7 @@ return {
             -- Add languages to be installed here that you want installed for treesitter
             highlight = {
                 enable = true,
+                ---@diagnostic disable-next-line: unused-local
                 disable = function(lang, buf)
                     local max_filesize = 100 * 1024 -- 100 KB
                     ---@diagnostic disable-next-line: undefined-field
