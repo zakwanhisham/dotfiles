@@ -58,6 +58,7 @@ vim.api.nvim_create_autocmd("FileType", {
         "mason",
         "term",
         "trouble",
+        "fzf",
     },
     callback = function()
         vim.b.miniindentscope_disable = true
