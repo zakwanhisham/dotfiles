@@ -4,6 +4,7 @@ return {
     keys = {
         { "<leader><space>", "<cmd>FzfLua buffers<cr>",     desc = "Buffers" },
         { "<leader>ff",      "<cmd>FzfLua files<cr>",       desc = "Find Files" },
+        { "<leader>fg",      "<cmd>FzfLua git_files<cr>",   desc = "Git Files" },
         { "<leader>fs",      "<cmd>FzfLua live_grep<cr>",   desc = "Live Grep" },
         { "<leader>fw",      "<cmd>FzfLua grep<cr>",        desc = "Grep String" },
         { "<leader>fo",      "<cmd>FzfLua oldfiles<cr>",    desc = "Oldfies" },
