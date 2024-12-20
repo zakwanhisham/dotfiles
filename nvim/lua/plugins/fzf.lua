@@ -11,8 +11,6 @@ return {
         { "<leader>/",       "<cmd>FzfLua grep_curbuf<cr>", desc = "Grep Current Buffer" },
     },
     config = function()
-        local actions = require "fzf-lua.actions"
-
         require("fzf-lua").setup {
             winopts = {
                 split = "belowright new"
@@ -40,9 +38,12 @@ return {
             actions = {
                 files = {
                     true,
-                    ["ctrl-y"] = actions.file_edit_or_qf,
+                    ["ctrl-y"] = require("fzf-lua.actions").file_edit_or_qf,
                 },
             },
         }
+    end,
+    init = function()
+        require("fzf-lua").register_ui_select()
     end
 }
