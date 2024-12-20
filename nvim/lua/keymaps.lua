@@ -62,7 +62,7 @@ vim.keymap.set("n", "<leader>td", "<cmd>tabclose<cr>", { desc = "Tab Close" })
 
 --[[ Diagnostic keymaps ]]
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Floating Diagnostic" })
-vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
+vim.keymap.set("n", "<leader>d", "<cmd>FzfLua diagnostics_document<cr>", { desc = "Diagnostic list" })
 vim.keymap.set("n", "[d", function()
     vim.diagnostic.jump { count = -1 }
 end, { desc = "Go to previous diagnostic message" })

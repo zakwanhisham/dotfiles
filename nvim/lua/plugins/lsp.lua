@@ -29,21 +29,19 @@ return {
                     vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
                 end
 
-                --[[
-                -- To rename, use `grn`
-                -- To find reference, use `grr`
-                -- To do code action, use `gra`
-                --]]
+                nmap("<leader>lf", vim.lsp.buf.format, "Format")
+                nmap("<leader>la", vim.lsp.buf.code_action, "Code actions")
+                nmap("<leader>ln", vim.lsp.buf.rename, "Rename")
+                nmap("<leader>lr", "<cmd>FzfLua lsp_references<cr>", "Reference")
+                nmap("<leader>li", "<cmd>FzfLua lsp_implementations<cr>", "Reference")
 
-                nmap("<leader>lf", vim.lsp.buf.format, "Lsp Format")
-
-                nmap("gd", vim.lsp.buf.definition, "Goto Definition")
+                nmap("gd", "<cmd>FzfLua lsp_definitions<cr>", "Goto Definition")
+                nmap("gD", "<cmd>FzfLua lsp_declarations<cr>", "Goto Declaration")
 
                 -- See `:help K` for why this keymap
                 nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 
                 -- Lesser used LSP functionality
-                nmap("gD", vim.lsp.buf.declaration, "Goto Declaration")
                 nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "Workspace Add Folder")
                 nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "Workspace Remove Folder")
                 nmap("<leader>wl", function()
