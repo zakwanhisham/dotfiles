@@ -1,7 +1,7 @@
 return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    config = function()
+    opts = function()
         local mode = {
             "mode",
             fmt = function(str)
