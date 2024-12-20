@@ -8,6 +8,7 @@ return {
         { "<leader>fs",      "<cmd>FzfLua live_grep<cr>",   desc = "Live Grep" },
         { "<leader>fw",      "<cmd>FzfLua grep<cr>",        desc = "Grep String" },
         { "<leader>fo",      "<cmd>FzfLua oldfiles<cr>",    desc = "Oldfies" },
+        { "<leader>fr",      "<cmd>FzfLua resume<cr>",      desc = "Resume" },
         { "<leader>/",       "<cmd>FzfLua grep_curbuf<cr>", desc = "Grep Current Buffer" },
     },
     config = function()
