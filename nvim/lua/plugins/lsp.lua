@@ -30,7 +30,7 @@ return {
                 end
 
                 nmap("<leader>lf", vim.lsp.buf.format, "Format")
-                nmap("<leader>la", vim.lsp.buf.code_action, "Code actions")
+                nmap("<leader>la", vim.lsp.buf.code_action, "Code Actions")
                 nmap("<leader>ln", vim.lsp.buf.rename, "Rename")
                 nmap("<leader>lr", "<cmd>FzfLua lsp_references<cr>", "Reference")
                 nmap("<leader>li", "<cmd>FzfLua lsp_implementations<cr>", "Reference")
