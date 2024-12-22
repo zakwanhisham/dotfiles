@@ -6,12 +6,11 @@ $cmd_duration\
 $line_break\
 $character"""
 
-add_newline = false
-
 [directory]
 read_only = " 󰌾"
 read_only_style = "red"
 truncate_to_repo = false
+fish_style_pwd_dir_length = 1
 style = "blue"
 
 [character]
