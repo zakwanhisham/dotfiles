@@ -1,0 +1,47 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export BROWSER:/usr/bin/firefox\x2ddeveloper\x2dedition
+SETUVAR --export EDITOR:nvim
+SETUVAR --export FZF_DEFAULT_OPTS:\x0a\x20\x20\x20\x20\x2d\x2dlayout\x3dreverse\x20\x20\x20\x20\x20\x2d\x2dborder\x3drounded\x20\x20\x20\x20\x20\x2d\x2dcycle\x20\x20\x20\x20\x20\x2d\x2dbind\x20\x27ctrl\x2dy\x3aaccept\x27\x20\x20\x20\x20\x20\x2d\x2dcolor\x3dfg\x3a\x23c5c9c5\x2cbg\x3a\x23181616\x2chl\x3a\x237fb4ca\x20\x20\x20\x20\x20\x2d\x2dcolor\x3dfg\x2b\x3a\x23c8c093\x2cbg\x2b\x3a\x230d0c0c\x2chl\x2b\x3a\x238ba4b0\x20\x20\x20\x20\x20\x2d\x2dcolor\x3dinfo\x3a\x23c4b28a\x2cprompt\x3a\x23c4746e\x2cpointer\x3a\x23938aa9\x20\x20\x20\x20\x20\x2d\x2dcolor\x3dmarker\x3a\x238a9a7b\x2cspinner\x3a\x23a292a3\x2cheader\x3a\x238ea4a2\x20
+SETUVAR HISTCONTROL:ignoredups\x3aerasedups
+SETUVAR HISTIGNORE:\x26\x3a\x5b\x20\x5d\x2a\x3aexit\x3als\x3all\x3abg\x3afg\x3ahistory\x3aclear\x3acd\x3assn\x3assr\x3amonitor\x3alaptop\x3aff\x3acon\x3alg\x3ang
+SETUVAR IGNOREEOF:100
+SETUVAR --export MANPAGER:nvim\x20\x2bMan\x21
+SETUVAR --export NVM_DIR:/home/ouraaa/\x2econfig/nvm
+SETUVAR --export SUDO_EDITOR:nvim
+SETUVAR --export VISUAL:nvim
+SETUVAR --export XDG_CACHE_HOME:/home/ouraaa/\x2ecache
+SETUVAR --export XDG_CONFIG_HOME:/home/ouraaa/\x2econfig
+SETUVAR --export XDG_DATA_HOME:/home/ouraaa/\x2elocal/share
+SETUVAR __fish_initialized:3400
+SETUVAR fish_color_autosuggestion:brblack
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:blue
+SETUVAR fish_color_comment:red
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:green
+SETUVAR fish_color_error:brred
+SETUVAR fish_color_escape:brcyan
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:brcyan
+SETUVAR fish_color_param:cyan
+SETUVAR fish_color_quote:yellow
+SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
+SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_history_format:iso8601
+SETUVAR fish_history_max_items:500000
+SETUVAR fish_key_bindings:fish_vi_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:yellow\x1e\x2di
+SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/home/ouraaa/bin\x1e/usr/local/bin\x1e/home/ouraaa/\x2elocal/bin\x1e/home/ouraaa/go/bin\x1e/home/ouraaa/\x2ecargo/bin\x1e/home/ouraaa/\x2erustup/toolchains/stable\x2dx86_64\x2dunknown\x2dlinux\x2dgnu/bin\x1e/home/ouraaa/\x2elocal/share/bob/nvim\x2dbin

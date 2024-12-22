@@ -10,6 +10,7 @@ source_folders=(
   "$HOME/.config/alacritty"
   "$HOME/.config/bat"
   "$HOME/.config/fastfetch"
+  "$HOME/.config/fish"
   "$HOME/.config/i3"
   "$HOME/.config/nvim"
   "$HOME/.config/lvim"
