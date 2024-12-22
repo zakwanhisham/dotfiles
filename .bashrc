@@ -124,7 +124,7 @@ alias lvim='NVIM_APPNAME=lvim nvim'
 alias ala="nvim $HOME/dotfiles/alacritty/alacritty.toml"
 alias bashrc="nvim $HOME/dotfiles/.bashrc"
 alias tconf="nvim $HOME/dotfiles/.tmux.conf"
-alias vimrc="\vim $HOME/dotfiles/.vimrc"
+alias vimrc="vim $HOME/dotfiles/.vimrc"
 
 ### BASH FUNCTION
 # Quickly change to directory
