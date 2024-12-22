@@ -130,4 +130,5 @@ end
 
 fzf --fish | source
 
+enable_transience
 starship init fish | source
