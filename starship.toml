@@ -1,13 +1,10 @@
 format = """
 $directory\
-$line_break\
-$character"""
-
-right_format = """
 $git_branch\
 $git_status\
 $cmd_duration\
-"""
+$line_break\
+$character"""
 
 [directory]
 read_only = " 󰌾"
