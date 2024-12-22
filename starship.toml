@@ -1,10 +1,13 @@
 format = """
 $directory\
+$line_break\
+$character"""
+
+right_format = """
 $git_branch\
 $git_status\
 $cmd_duration\
-$line_break\
-$character"""
+"""
 
 [directory]
 read_only = " 󰌾"
@@ -18,7 +21,7 @@ error_symbol = "[](bold red)"
 vimcmd_symbol = "[](bold green)"
 
 [git_branch]
-format = "[$branch]($style)"
+format = '\[[$branch]($style)\]'
 style = "bright-black"
 
 [git_status]
@@ -33,5 +36,5 @@ stashed = "≡"
 style = "218"
 
 [cmd_duration]
-format = "[took $duration]($style)"
+format = "[took $duration]($style) "
 style = "white"
