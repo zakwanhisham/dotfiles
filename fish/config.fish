@@ -42,11 +42,6 @@ set -Ux XDG_CACHE_HOME "$HOME/.cache"
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
 
-### ALIASES
-alias ls "eza --color=always --group-directories-first --icons --git"
-alias la "ls -a"
-alias ll "ls -la"
-
 ### ABBREVIATIONS
 abbr autoremove "paru --pacman pacman -Rns (paru --pacman pacman -Qtdq)"
 abbr laptop "$HOME/dotfiles/.screenlayout/laptop.sh; and $HOME/.fehbg"
@@ -58,11 +53,6 @@ abbr ssr "shutdown -r now"
 abbr notes "nvim $HOME/dotfiles/NOTES.md"
 abbr updatelist "paru --pacman pacman -Syy; and paru --pacman pacman -Qu"
 abbr updatepkg "paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
-
-# Power profile
-abbr perf "powerprofilesctl set performance; and echo 'Set power to Performance'"
-abbr bal "powerprofilesctl set balanced; and echo 'Set power to Balanced'"
-abbr saver "powerprofilesctl set power-saver; and echo 'Set power to Power-Saver'"
 
 # Apps 
 abbr cal "cal --monday -3"
@@ -77,7 +67,6 @@ abbr mv "mv -iv"
 abbr open "xdg-open"
 abbr rm "rm -iv"
 abbr weather "curl wttr.in"
-abbr lvim "env NVIM_APPNAME=lvim nvim"
 
 # Config
 abbr ala "nvim $HOME/dotfiles/alacritty/alacritty.toml"
@@ -85,46 +74,6 @@ abbr bashrc "nvim $HOME/dotfiles/.bashrc"
 abbr fishrc "nvim $HOME/dotfiles/fish/config.fish"
 abbr tconf "nvim $HOME/dotfiles/.tmux.conf"
 abbr vimrc "vim $HOME/dotfiles/.vimrc"
-
-### FUNCTIONS
-# Functions needed for !! and !$
-function __history_previous_command
-  switch (commandline -t)
-  case "!"
-    commandline -t $history[1]; commandline -f repaint
-  case "*"
-    commandline -i !
-  end
-end
-
-function __history_previous_command_arguments
-  switch (commandline -t)
-  case "!"
-    commandline -t ""
-    commandline -f history-token-search-backward
-  case "*"
-    commandline -i '$'
-  end
-end
-
-# The bindings for !! and !$
-if [ "$fish_key_bindings" = "fish_vi_key_bindings" ];
-  bind -Minsert ! __history_previous_command
-  bind -Minsert '$' __history_previous_command_arguments
-else
-  bind ! __history_previous_command
-  bind '$' __history_previous_command_arguments
-end
-
-function ff -d "Find files and cd into it"
-    set selected_dir (fd --hidden --type directory . "$HOME" | fzf-tmux -p --header "Directory Selection" -h 40%)
-    if test -n "$selected_dir"
-        printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
-        cd "$selected_dir"
-    else
-        echo "No directory selected."
-    end
-end
 
 ### PROMPT AND COMPLETIONS
 
