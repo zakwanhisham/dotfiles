@@ -28,10 +28,10 @@ set -Ux FZF_DEFAULT_OPTS "
     --border=rounded \
     --cycle \
     --bind 'ctrl-y:accept' \
-    --color=fg:#c5c9c5,bg:#181616,hl:#7fb4ca \
-    --color=fg+:#c8c093,bg+:#0d0c0c,hl+:#8ba4b0 \
-    --color=info:#c4b28a,prompt:#c4746e,pointer:#938aa9 \
-    --color=marker:#8a9a7b,spinner:#a292a3,header:#8ea4a2 \
+    --color=fg:#DCD7BA,bg:#181616,hl:#7AA89F \
+    --color=fg+:#C8C093,bg+:#2D4F67,hl+:#957FB8 \
+    --color=info:#C0A36E,prompt:#C34043,pointer:#D27E99 \
+    --color=marker:#76946A,spinner:#957FB8,header:#7AA89F
 "
 
 # PATH
