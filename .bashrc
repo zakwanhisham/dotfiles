@@ -1,8 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-set -o vi
-
 ### EXPORT
 export HISTCONTROL=ignoredups:erasedups \
     HISTFILESIZE=100000 \
@@ -41,8 +39,6 @@ export XDG_CACHE_HOME="$HOME/.cache" \
 # SHOPT
 shopt -s autocd cdspell checkwinsize cmdhist direxpand dirspell dotglob expand_aliases globstar histappend nocaseglob 2>/dev/null
 
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-
 ### KEYBINDS
 
 # ignore upper and lowercase when TAB completion
@@ -69,11 +65,6 @@ bind 'set mark-symlinked-directories On'
 bind 'set colored-completion-prefix On'
 bind 'set menu-complete-display-prefix On'
 
-# Show vim mode
-bind 'set show-mode-in-prompt on'
-bind 'set vi-ins-mode-string ""'
-bind 'set vi-cmd-mode-string ""'
-
 # Disable control echo
 bind 'set echo-control-characters off'
 
@@ -83,43 +74,14 @@ alias ls='eza --color=always --group-directories-first --icons --git'
 alias la='ls -a'
 alias ll='ls -la'
 
-# For convenience
-alias autoremove='paru --pacman pacman -Rns $(paru --pacman pacman -Qtdq)'
-alias laptop="$HOME/dotfiles/.screenlayout/laptop.sh && $HOME/.fehbg"
-alias mirror='sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist'
-alias monitor="$HOME/dotfiles/.screenlayout/monitor.sh && $HOME/.fehbg"
-alias reload="source $HOME/.bashrc"
-alias ssn='shutdown now'
-alias ssr='shutdown -r now'
-alias notes="nvim $HOME/dotfiles/NOTES.md"
-alias updatelist='paru --pacman pacman -Syy && paru --pacman pacman -Qu'
-alias updatepkg="paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
-
-# Power profile
-alias perf='powerprofilesctl set performance && echo "Set power to Performance"'
-alias bal='powerprofilesctl set balanced && echo "Set power to Balanced"'
-alias saver='powerprofilesctl set power-saver && echo "Set power to Power-Saver"'
-
 # Changing program name
-alias cal='cal --monday -3'
 alias cat='bat'
 alias cp='cp -iv'
-alias feh='feh -B black'
-alias ld='lazydocker'
 alias less='less --use-color -N'
-alias lg='lazygit'
 alias mkdir='mkdir -v'
 alias mv='mv -iv'
 alias open='xdg-open'
 alias rm='rm -iv'
-alias weather='curl wttr.in'
-alias lvim='NVIM_APPNAME=lvim nvim'
-
-# Configuration
-alias ala="nvim $HOME/dotfiles/alacritty/alacritty.toml"
-alias bashrc="nvim $HOME/dotfiles/.bashrc"
-alias tconf="nvim $HOME/dotfiles/.tmux.conf"
-alias vimrc="vim $HOME/dotfiles/.vimrc"
 
 ### BASH FUNCTION
 # Quickly change to directory
@@ -142,23 +104,8 @@ ff() {
 # source command-not-found
 [ -f /usr/share/doc/pkgfile/command-not-found.bash ] && source /usr/share/doc/pkgfile/command-not-found.bash
 
-# bob completion
-eval "$(bob complete bash)"
-
 # fzf completion and keybinds
 eval "$(fzf --bash)"
 
 # rg completion
 eval "$(rg --generate=complete-bash)"
-
-# pipx completion
-eval "$(register-python-argcomplete pipx)"
-
-# delta completion
-eval "$(delta --generate-completion bash)"
-
-# gh completion
-eval "$(gh completion -s bash)"
-
-# PROMPT
-eval "$(starship init bash)"
