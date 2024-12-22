@@ -6,6 +6,8 @@ $cmd_duration\
 $line_break\
 $character"""
 
+add_newline = false
+
 [directory]
 read_only = " 󰌾"
 read_only_style = "red"
