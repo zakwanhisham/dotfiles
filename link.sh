@@ -13,7 +13,6 @@ source_folders=(
   "$HOME/.config/fish"
   "$HOME/.config/i3"
   "$HOME/.config/nvim"
-  "$HOME/.config/lvim"
   "$HOME/.config/paru"
   "$HOME/.config/starship.toml"
   "$HOME/.config/topgrade.toml"
