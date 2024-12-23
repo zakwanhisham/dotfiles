@@ -28,11 +28,13 @@ set -Ux FZF_DEFAULT_OPTS "
     --border=rounded \
     --cycle \
     --bind 'ctrl-y:accept' \
-    --color=fg:#DCD7BA,bg:#181616,hl:#7AA89F \
-    --color=fg+:#C8C093,bg+:#2D4F67,hl+:#957FB8 \
-    --color=info:#C0A36E,prompt:#C34043,pointer:#D27E99 \
-    --color=marker:#76946A,spinner:#957FB8,header:#7AA89F
-"
+    --color=bg:#181616,bg+:#2d4f67,fg:#c5c9c5,fg+:#c8c093
+    --color=hl:#8ea4a2,hl+:#7aa89f
+    --color=info:#8ba4b0
+    --color=border:#c5c9c5
+    --color=prompt:#c4b28a,pointer:#e46876
+    --color=marker:#938aa9,spinner:#7fb4ca
+    --color=header:#a6a69c"
 
 # PATH
 set -U fish_user_paths $HOME/bin /usr/local/bin $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin $HOME/.local/share/bob/nvim-bin
