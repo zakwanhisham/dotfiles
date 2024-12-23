@@ -19,7 +19,7 @@ error_symbol = "[](bold red)"
 vimcmd_symbol = "[](bold green)"
 
 [git_branch]
-format = '\[[$branch]($style)\]'
+format = '[$branch]($style)'
 style = "bright-black"
 
 [git_status]
