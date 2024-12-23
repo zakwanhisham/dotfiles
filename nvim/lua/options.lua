@@ -44,7 +44,7 @@ vim.o.breakindent = true
 vim.o.smartcase = true
 vim.o.smartindent = true
 vim.o.wrap = false
-vim.o.completeopt = "menuone,noselect,preview,noinsert"
+vim.o.completeopt = "menuone,noselect,preview,noinsert,fuzzy"
 vim.o.ignorecase = true
 
 -- spell check
@@ -100,11 +100,6 @@ vim.o.showcmd = true
 -- sign
 vim.o.signcolumn = "yes"
 vim.o.showtabline = 1
-
--- list
-vim.opt.list = true
-vim.opt.listchars = { eol = "↲", nbsp = "␣", tab = "» ", trail = "·" }
-vim.opt.fillchars = { eob = "~" }
 
 -- misc
 vim.o.conceallevel = 1
