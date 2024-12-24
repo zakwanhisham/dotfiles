@@ -2,14 +2,15 @@ return {
     'ibhagwan/fzf-lua',
     cmd = "FzfLua",
     keys = {
-        { "<leader><space>", "<cmd>FzfLua buffers<cr>",     desc = "Buffers" },
-        { "<leader>ff",      "<cmd>FzfLua files<cr>",       desc = "Find Files" },
-        { "<leader>fg",      "<cmd>FzfLua git_files<cr>",   desc = "Git Files" },
-        { "<leader>fs",      "<cmd>FzfLua live_grep<cr>",   desc = "Live Grep" },
-        { "<leader>fw",      "<cmd>FzfLua grep<cr>",        desc = "Grep String" },
-        { "<leader>fo",      "<cmd>FzfLua oldfiles<cr>",    desc = "Oldfies" },
-        { "<leader>fr",      "<cmd>FzfLua resume<cr>",      desc = "Resume" },
-        { "<leader>/",       "<cmd>FzfLua grep_curbuf<cr>", desc = "Grep Current Buffer" },
+        { "<leader><space>", "<cmd>FzfLua buffers<cr>",       desc = "Buffers" },
+        { "<leader>ff",      "<cmd>FzfLua files<cr>",         desc = "Find Files" },
+        { "<leader>fg",      "<cmd>FzfLua git_files<cr>",     desc = "Git Files" },
+        { "<leader>fs",      "<cmd>FzfLua live_grep<cr>",     desc = "Live Grep" },
+        { "<leader>fw",      "<cmd>FzfLua grep<cr>",          desc = "Grep String" },
+        { "<leader>fo",      "<cmd>FzfLua oldfiles<cr>",      desc = "Oldfies" },
+        { "<leader>fr",      "<cmd>FzfLua resume<cr>",        desc = "Resume" },
+        { "<leader>fz",      "<cmd>FzfLua spell_suggest<cr>", desc = "Spell suggest" },
+        { "<leader>/",       "<cmd>FzfLua grep_curbuf<cr>",   desc = "Grep Current Buffer" },
     },
     config = function()
         require("fzf-lua").setup {
