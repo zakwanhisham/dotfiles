@@ -3,7 +3,7 @@ return {
     branch = "harpoon2",
     opts = {
         menu = {
-            width = vim.api.nvim_win_get_width(0) - 4,
+            width = math.floor(vim.api.nvim_win_get_width(0) / 2),
         },
         settings = {
             save_on_toggle = true,
