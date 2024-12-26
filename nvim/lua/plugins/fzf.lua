@@ -14,8 +14,9 @@ return {
     },
     config = function()
         require("fzf-lua").setup {
+            file_ignore_patterns = { "%.git/.*", "node_modules/.*" },
             winopts = {
-                split = "belowright new"
+                split = "botright new"
             },
             preview = {
                 default = "bat",
@@ -42,6 +43,15 @@ return {
                     true,
                     ["ctrl-y"] = require("fzf-lua.actions").file_edit_or_qf,
                 },
+            },
+            files = {
+                prompt = "Files> ",
+                cwd_prompt = false,
+            },
+            oldfiles = {
+                cwd_only = function()
+                    return vim.api.nvim_command('pwd') ~= vim.env.HOME
+                end
             },
         }
     end,
