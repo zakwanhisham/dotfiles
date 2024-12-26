@@ -32,10 +32,14 @@ return {
                 nmap("<leader>lf", vim.lsp.buf.format, "Format")
                 nmap("<leader>la", vim.lsp.buf.code_action, "Code Actions")
                 nmap("<leader>ln", vim.lsp.buf.rename, "Rename")
-                nmap("<leader>lr", "<cmd>FzfLua lsp_references<cr>", "Reference")
+                nmap("<leader>lr", function()
+                    require("fzf-lua").lsp_references({ ignore_current_line = true })
+                end, "Reference")
                 nmap("<leader>li", "<cmd>FzfLua lsp_implementations<cr>", "Reference")
 
-                nmap("gd", "<cmd>FzfLua lsp_definitions<cr>", "Goto Definition")
+                nmap("gd", function()
+                    require("fzf-lua").lsp_definitions({ jump_to_single_result = true })
+                end, "Goto Definition")
                 nmap("gD", "<cmd>FzfLua lsp_declarations<cr>", "Goto Declaration")
 
                 -- See `:help K` for why this keymap
