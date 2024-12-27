@@ -11,6 +11,7 @@ source_folders=(
   "$HOME/.config/bat"
   "$HOME/.config/fastfetch"
   "$HOME/.config/fish"
+  "$HOME/.config/ghostty"
   "$HOME/.config/i3"
   "$HOME/.config/nvim"
   "$HOME/.config/paru"
