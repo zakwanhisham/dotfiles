@@ -66,7 +66,6 @@ abbr less "less --use-color -N"
 abbr lg "lazygit"
 abbr mkdir "mkdir -pv"
 abbr mv "mv -iv"
-abbr open "xdg-open"
 abbr rm "rm -iv"
 abbr weather "curl wttr.in"
 
