@@ -7,6 +7,7 @@ set $mod Mod4
 
 # set app
 set $term /usr/bin/alacritty
+set $ghostty /usr/bin/ghostty
 set $firefox /usr/bin/firefox-developer-edition
 set $menu /usr/bin/dmenu_run -b -i
 
@@ -68,6 +69,7 @@ bindsym $mod+r mode "resize"
 
 # start a terminal
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
