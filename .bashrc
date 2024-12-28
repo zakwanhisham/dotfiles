@@ -87,7 +87,7 @@ alias rm='rm -iv'
 # Quickly change to directory
 ff() {
     local selected_dir
-    selected_dir=$(fd --hidden --type directory . "$HOME" | fzf-tmux -p --header "Directory Selection" -h 40%)
+    selected_dir=$(fd --hidden --type directory . "$HOME" | fzf --header "Directory Selection" --height 40%)
 
     if [ -n "$selected_dir" ]; then
         printf "Moving to \033[34m%s\033[0m\n" "$selected_dir"
@@ -96,7 +96,6 @@ ff() {
         echo "No directory selected."
     fi
 }
-
 ### SOURCE AND EVAL
 # source bash completion
 [ -f /usr/share/bash-completion/bash_completion ] && source /usr/share/bash-completion/bash_completion
