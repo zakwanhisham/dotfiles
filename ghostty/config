@@ -11,6 +11,7 @@ bold-is-bright = true
 confirm-close-surface = false
 window-new-tab-position = end
 window-decoration = false
+resize-overlay = never
 
 # Custom Palette
 
