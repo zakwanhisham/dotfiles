@@ -1,7 +1,7 @@
 return {
     "stevearc/oil.nvim",
     dependencies = { require("mini.icons").setup {} },
-    cmd = { "Oil" },
+    cmd = "Oil",
     keys = {
         { "<leader>-", "<cmd>Oil<cr>", desc = "Oil" },
     },
