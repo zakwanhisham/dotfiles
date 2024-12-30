@@ -1,3 +1,4 @@
+# Basic 
 font-family = ZedMono Nerd Font
 font-size = 12
 cursor-style = block
@@ -5,6 +6,7 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 window-padding-x = 0
 window-padding-y = 0
+window-padding-balance = true
 window-theme = ghostty
 mouse-hide-while-typing = true
 bold-is-bright = true
@@ -13,8 +15,7 @@ window-new-tab-position = end
 window-decoration = false
 resize-overlay = never
 
-# Custom Palette
-
+# Custom Kanagawa Palette
 ## black
 palette = 0=#0d0c0c
 palette = 8=#a6a69c

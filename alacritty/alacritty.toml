@@ -70,15 +70,11 @@ hide_when_typing = true
 history = 100000
 multiplier = 3
 
-# [terminal]
-# [terminal.shell]
-# args = ["-l", "-c", "tmux attach || tmux"]
-# program = "/usr/bin/bash"
-
 [window]
 dynamic_title = true
 opacity = 1.0
 startup_mode = "Maximized"
+decorations = "full"
 
 [window.padding]
 x = 0
