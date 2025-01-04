@@ -8,10 +8,6 @@ fish_vi_key_bindings
 
 ### EXPORT
 set fish_greeting
-set -U HISTCONTROL ignoredups:erasedups
-set -U fish_history_max_items 500000
-set -U HISTIGNORE "&:[ ]*:exit:ls:ll:bg:fg:history:clear:cd:ssn:ssr:monitor:laptop:ff:con:lg:ng"
-set -U IGNOREEOF 100
 
 set -Ux BROWSER "/usr/bin/firefox-developer-edition"
 set -Ux MANPAGER "nvim +Man!"
