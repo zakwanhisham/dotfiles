@@ -23,5 +23,6 @@ return {
         sources = {
             default = { "lsp", "path", "snippets", "buffer" },
         },
+        signature = { enabled = true },
     },
 }
