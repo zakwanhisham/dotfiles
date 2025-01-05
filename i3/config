@@ -8,7 +8,7 @@ set $mod Mod4
 # set app
 set $term /usr/bin/ghostty
 set $firefox /usr/bin/firefox-developer-edition
-set $menu /usr/bin/dmenu_run -i
+set $menu /usr/bin/dmenu_run -b -i
 
 # default i3 tiling mode:
 workspace_layout default
@@ -241,7 +241,7 @@ client.background       #ffffff
 bar {
 	font pango: Ubuntu Nerd Font Regular 10
 	status_command i3blocks -c ~/dotfiles/i3/i3blocks.conf
-    position top 
+    position bottom
     tray_padding 0
     strip_workspace_numbers no
 	colors {
