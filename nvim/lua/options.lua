@@ -67,7 +67,7 @@ vim.o.termguicolors = true
 vim.o.background = "dark"
 
 -- command height
-vim.o.cmdheight = 1
+vim.o.cmdheight = 0
 
 -- command line
 vim.o.wildmode = "longest:full,full"
