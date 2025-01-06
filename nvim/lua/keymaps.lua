@@ -26,8 +26,8 @@ vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
 vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })
 
 --[[ Quickfix list movement ]]
-vim.keymap.set("n", "<M-N>", "<cmd>cnext<cr>", { desc = "Quickfix next" })
-vim.keymap.set("n", "<M-P>", "<cmd>cprev<cr>", { desc = "Quickfix prev" })
+vim.keymap.set("n", "<M-n>", "<cmd>cnext<cr>", { desc = "Quickfix next" })
+vim.keymap.set("n", "<M-p>", "<cmd>cprev<cr>", { desc = "Quickfix prev" })
 
 -- [[ https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n ]]
 vim.keymap.set("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
