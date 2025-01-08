@@ -6,8 +6,8 @@ alsa-utils
 arandr
 archlinux-xdg-menu
 aspell
-autotiling
 awesome-terminal-fonts
+aws-cli-v2
 b43-fwcutter
 base
 base-devel
@@ -21,7 +21,6 @@ bluez-utils
 bob
 btop
 ccache
-chromium
 clang
 cmake
 codespell
@@ -39,6 +38,7 @@ dosfstools
 downgrade
 dracut
 duf
+dunst
 efibootmgr
 efitools
 ethtool
@@ -52,14 +52,19 @@ feh
 ffmpegthumbnailer
 firefox-developer-edition
 firewalld
+fish
 flameshot
 fsarchiver
 fzf
 galculator
 garcon
 gdb
+ghostty
 git
+git-delta
+github-cli
 go
+gobject-introspection
 gparted
 gst-libav
 gst-plugin-pipewire
@@ -74,6 +79,7 @@ gvfs-nfs
 gvfs-smb
 haveged
 hdparm
+htop
 httpie-desktop-bin
 hwdetect
 hwinfo
@@ -118,9 +124,6 @@ mesa-utils
 minizip
 mkinitcpio
 modemmanager
-mongodb-bin
-mongodb-compass
-mongosh-bin
 mpv
 mtools
 ncdu
@@ -157,6 +160,7 @@ pipewire-pulse
 pkgfile
 playerctl
 plocate
+postgresql
 power-profiles-daemon
 pv
 python-bottle
@@ -178,6 +182,7 @@ rng-tools
 rsync
 rtkit
 s-nail
+scrot
 sg3_utils
 shfmt
 smartmontools
