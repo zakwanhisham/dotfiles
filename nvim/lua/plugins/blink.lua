@@ -2,7 +2,7 @@ return {
     "saghen/blink.cmp",
     event = "InsertEnter",
     dependencies = "rafamadriz/friendly-snippets",
-    version = "v0.*",
+    version = "*",
     opts = {
         keymap = { preset = "default" },
         appearance = {
@@ -12,6 +12,10 @@ return {
         completion = {
             menu = {
                 draw = {
+                    columns = {
+                        { "label",     "label_description", gap = 1 },
+                        { "kind_icon", "kind",              gap = 1 }
+                    },
                     treesitter = { "lsp" },
                 },
             },
