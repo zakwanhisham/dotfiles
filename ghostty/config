@@ -14,6 +14,7 @@ confirm-close-surface = false
 window-new-tab-position = end
 window-decoration = false
 resize-overlay = never
+gtk-tabs-location = bottom
 
 # Custom Kanagawa Palette
 ## black
