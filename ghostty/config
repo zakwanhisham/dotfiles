@@ -1,49 +1,27 @@
-# Basic 
+# Theme
+theme = Kanagawa Dragon
+foreground = c5c9c5
+bold-is-bright = true
+
+# Font
 font-family = ZedMono Nerd Font
 font-size = 12
+
+# Cursor
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
+mouse-hide-while-typing = true
+
+# Window
 window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
-window-theme = ghostty
-mouse-hide-while-typing = true
-bold-is-bright = true
-confirm-close-surface = false
 window-new-tab-position = end
+window-theme = ghostty
 window-decoration = false
+
+# System
 resize-overlay = never
 gtk-tabs-location = bottom
-
-# Custom Kanagawa Palette
-## black
-palette = 0=#0d0c0c
-palette = 8=#a6a69c
-## red
-palette = 1=#c4746e
-palette = 9=#e46876
-## green
-palette = 2=#8a9a7b
-palette = 10=#87a987
-## yellow
-palette = 3=#c4b28a
-palette = 11=#e6c384
-## blue
-palette = 4=#8ba4b0
-palette = 12=#7fb4ca
-## magenta
-palette = 5=#a292a3
-palette = 13=#938aa9
-## cyan
-palette = 6=#8ea4a2
-palette = 14=#7aa89f
-## white
-palette = 7=#c8c093
-palette = 15=#c5c9c5
-
-background = 181616
-foreground = c5c9c5
-cursor-color = c5c9c5
-selection-background = 2d4f67
-selection-foreground = c8c093
+confirm-close-surface = false
