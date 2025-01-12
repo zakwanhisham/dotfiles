@@ -19,12 +19,7 @@ set -Ux EDITOR "nvim"
 set -U fish_history_format iso8601
 
 # FZF default opts
-set -Ux FZF_DEFAULT_OPTS "
-    --layout=reverse \
-    --border=sharp \
-    --preview-window=border-sharp \
-    --cycle \
-    --bind 'ctrl-y:accept' "
+set -Ux FZF_DEFAULT_OPTS "--layout=reverse --border=sharp --preview-window=border-sharp --cycle --bind 'ctrl-y:accept'"
 
 # PATH
 set -U fish_user_paths $HOME/bin /usr/local/bin $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin $HOME/.local/share/bob/nvim-bin
