@@ -160,7 +160,6 @@ pipewire-pulse
 pkgfile
 playerctl
 plocate
-postgresql
 power-profiles-daemon
 pv
 python-bottle
