@@ -21,16 +21,10 @@ set -U fish_history_format iso8601
 # FZF default opts
 set -Ux FZF_DEFAULT_OPTS "
     --layout=reverse \
-    --border=rounded \
+    --border=sharp \
+    --preview-window=border-sharp \
     --cycle \
-    --bind 'ctrl-y:accept' \
-    --color=bg:#181616,bg+:#2d4f67,fg:#c5c9c5,fg+:#c8c093
-    --color=hl:#8ea4a2,hl+:#7aa89f
-    --color=info:#8ba4b0
-    --color=border:#c5c9c5
-    --color=prompt:#c4b28a,pointer:#e46876
-    --color=marker:#938aa9,spinner:#7fb4ca
-    --color=header:#a6a69c"
+    --bind 'ctrl-y:accept' "
 
 # PATH
 set -U fish_user_paths $HOME/bin /usr/local/bin $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin $HOME/.local/share/bob/nvim-bin
