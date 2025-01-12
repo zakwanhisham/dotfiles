@@ -18,10 +18,6 @@ return {
             winopts = {
                 split = "botright new"
             },
-            preview = {
-                default = "bat",
-                border = "noborder",
-            },
             keymap = {
                 builtin = {
                     true,
