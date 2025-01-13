@@ -41,6 +41,10 @@ abbr notes "nvim $HOME/dotfiles/NOTES.md"
 abbr updatelist "paru --pacman pacman -Syy; and paru --pacman pacman -Qu"
 abbr updatepkg "paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
+# Eza to ls
+abbr la "ls -a"
+abbr ll "ls -la"
+
 # Apps 
 abbr cal "cal --monday -3"
 abbr cat "bat"
