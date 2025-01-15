@@ -15,9 +15,6 @@ set -Ux SUDO_EDITOR "nvim"
 set -Ux VISUAL "nvim"
 set -Ux EDITOR "nvim"
 
-# Standard ISO 8601 timestamp
-set -U fish_history_format iso8601
-
 # FZF default opts
 set -Ux FZF_DEFAULT_OPTS "--layout=reverse --border=sharp --preview-window=border-sharp --cycle --bind 'ctrl-y:accept'"
 
