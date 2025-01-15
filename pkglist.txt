@@ -21,6 +21,7 @@ bluez-utils
 bob
 btop
 ccache
+chromium
 clang
 cmake
 codespell
