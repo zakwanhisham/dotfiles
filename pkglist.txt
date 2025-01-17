@@ -146,6 +146,7 @@ ntfs-3g
 ntp
 numlockx
 nvidia
+nvtop
 obs-studio
 os-prober
 pacman-contrib
