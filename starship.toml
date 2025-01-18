@@ -14,7 +14,7 @@ fish_style_pwd_dir_length = 1
 style = "blue"
 
 [character]
-success_symbol = "[](bold purple)"
+success_symbol = "[](bold green)"
 error_symbol = "[](bold red)"
 vimcmd_symbol = "[](bold green)"
 
