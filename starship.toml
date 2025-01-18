@@ -22,20 +22,8 @@ vimcmd_symbol = "[](bold green)"
 format = '[$branch]($style)'
 style = "bright-black"
 
-# [git_status]
-# format = '([*$stashed$conflicted$untracked$modified$staged$renamed$deleted$ahead_behind]($style)) '
-# conflicted = "​"
-# untracked = "​"
-# modified = "​"
-# staged = "​"
-# renamed = "​"
-# deleted = "​"
-# stashed = "≡"
-# style = "218"
-
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
+format = '([*$stashed$conflicted$untracked$modified$staged$renamed$deleted$ahead_behind]($style)) '
 conflicted = "​"
 untracked = "​"
 modified = "​"
@@ -43,6 +31,7 @@ staged = "​"
 renamed = "​"
 deleted = "​"
 stashed = "≡"
+style = "218"
 
 [cmd_duration]
 format = "[took $duration]($style) "
