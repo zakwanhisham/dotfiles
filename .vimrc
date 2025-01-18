@@ -46,11 +46,11 @@ set showmatch " show the matching part of pairs [] {} and ()
 set laststatus=2 " Show status bar
 set colorcolumn=80 " Set colorcolumn to 80 space
 set cursorline
-" set statusline=%f " Path to the file
-" set statusline+=%= " Switch to the right side
-" set statusline+=%l " Current line
-" set statusline+=/ " Separator
-" set statusline+=%L " Total lines
+set statusline=%f " Path to the file
+set statusline+=%= " Switch to the right side
+set statusline+=%l " Current line
+set statusline+=/ " Separator
+set statusline+=%L " Total lines
 
 
 " ========================================
