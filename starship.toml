@@ -14,7 +14,7 @@ fish_style_pwd_dir_length = 1
 style = "blue"
 
 [character]
-success_symbol = "[](bold green)"
+success_symbol = "[](bold purple)"
 error_symbol = "[](bold red)"
 vimcmd_symbol = "[](bold green)"
 
@@ -22,8 +22,20 @@ vimcmd_symbol = "[](bold green)"
 format = '[$branch]($style)'
 style = "bright-black"
 
+# [git_status]
+# format = '([*$stashed$conflicted$untracked$modified$staged$renamed$deleted$ahead_behind]($style)) '
+# conflicted = "​"
+# untracked = "​"
+# modified = "​"
+# staged = "​"
+# renamed = "​"
+# deleted = "​"
+# stashed = "≡"
+# style = "218"
+
 [git_status]
-format = '([*$stashed$conflicted$untracked$modified$staged$renamed$deleted$ahead_behind]($style)) '
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
 conflicted = "​"
 untracked = "​"
 modified = "​"
@@ -31,7 +43,6 @@ staged = "​"
 renamed = "​"
 deleted = "​"
 stashed = "≡"
-style = "218"
 
 [cmd_duration]
 format = "[took $duration]($style) "
