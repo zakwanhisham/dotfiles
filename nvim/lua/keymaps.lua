@@ -38,6 +38,7 @@ vim.keymap.set("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Se
 vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
 --[[ Buffer ]]
+vim.keymap.set("n", "<leader>bc", "<cmd>vnew<cr>", { desc = "Buffer New" })
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>", { desc = "Buffer Previous" })
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Buffer Next" })
 vim.keymap.set("n", "<leader>bd", function()
@@ -55,7 +56,7 @@ vim.keymap.set("n", "<leader>bd", function()
 end, { desc = "Buffer Delete" })
 
 -- [[ Tab ]]
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Tab New" })
+vim.keymap.set("n", "<leader>tc", "<cmd>tabnew<cr>", { desc = "Tab New" })
 vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "Tab Previous" })
 vim.keymap.set("n", "<leader>tn", "<cmd>tabNext<cr>", { desc = "Tab Next" })
 vim.keymap.set("n", "<leader>td", "<cmd>tabclose<cr>", { desc = "Tab Close" })
