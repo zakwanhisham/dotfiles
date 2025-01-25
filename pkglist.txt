@@ -194,6 +194,7 @@ sshpass
 starship
 sysfsutils
 sysstat
+task
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
