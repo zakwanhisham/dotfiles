@@ -195,6 +195,7 @@ starship
 sysfsutils
 sysstat
 task
+taskwarrior-tui
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
