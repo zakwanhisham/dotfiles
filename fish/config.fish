@@ -62,6 +62,7 @@ abbr ala "nvim $HOME/dotfiles/alacritty/alacritty.toml"
 abbr bashrc "nvim $HOME/dotfiles/.bashrc"
 abbr fishrc "nvim $HOME/dotfiles/fish/config.fish"
 abbr ghost "nvim $HOME/dotfiles/ghostty/config"
+abbr taskrc "nvim $HOME/dotfiles/.taskrc"
 abbr tconf "nvim $HOME/dotfiles/.tmux.conf"
 abbr vimrc "vim $HOME/dotfiles/.vimrc"
 
