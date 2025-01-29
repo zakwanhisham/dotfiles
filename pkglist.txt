@@ -52,7 +52,7 @@ fastfetch
 fd
 feh
 ffmpegthumbnailer
-firefox-developer-edition
+firefox
 firewalld
 fish
 flameshot

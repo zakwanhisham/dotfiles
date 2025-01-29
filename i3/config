@@ -7,7 +7,7 @@ set $mod Mod4
 
 # set app
 set $term /usr/bin/ghostty
-set $firefox /usr/bin/firefox-developer-edition
+set $firefox /usr/bin/firefox
 set $chromium /usr/bin/chromium
 set $menu /usr/bin/dmenu_run -b -i
 

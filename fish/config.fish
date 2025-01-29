@@ -9,7 +9,7 @@ fish_vi_key_bindings
 ### EXPORT
 set fish_greeting
 
-set -Ux BROWSER "/usr/bin/firefox-developer-edition"
+set -Ux BROWSER "/usr/bin/firefox"
 set -Ux MANPAGER "nvim +Man!"
 set -Ux SUDO_EDITOR "nvim"
 set -Ux VISUAL "nvim"
