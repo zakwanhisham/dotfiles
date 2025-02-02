@@ -4,7 +4,7 @@
 ### EXPORT
 export HISTCONTROL=ignoredups:erasedups \
     HISTFILESIZE=100000 \
-    HISTIGNORE="&:[ ]*:exit:ls:ll:bg:fg:history:clear:cd:ssn:ssr:monitor:laptop:ff:con:lg:ng" \
+    HISTIGNORE="&:[ ]*:exit:ls:ll:bg:fg:history:clear:cd:ssn" \
     HISTSIZE=500000 \
     IGNOREEOF=100
 
