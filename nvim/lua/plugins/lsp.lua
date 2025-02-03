@@ -131,10 +131,13 @@ return {
                     },
                 },
             },
-            basedpyright = {
+            pyright = {
                 settings = {
-                    basedpyright = {
+                    pyright = {
+                        openFilesOnly = true,
                         disableOrganizeImports = false,
+                    },
+                    python = {
                         analysis = {
                             autoImportCompletion = true,
                             autoSearchPaths = true,
