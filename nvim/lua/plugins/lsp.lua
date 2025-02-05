@@ -35,7 +35,7 @@ return {
                 nmap("<leader>lr", function()
                     require("fzf-lua").lsp_references({ ignore_current_line = true })
                 end, "Reference")
-                nmap("<leader>li", "<cmd>FzfLua lsp_implementations<cr>", "Reference")
+                nmap("<leader>li", "<cmd>FzfLua lsp_implementations<cr>", "Implementation")
 
                 nmap("gd", function()
                     require("fzf-lua").lsp_definitions({ jump_to_single_result = true })
