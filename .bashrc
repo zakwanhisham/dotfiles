@@ -8,7 +8,7 @@ export HISTCONTROL=ignoredups:erasedups \
     HISTSIZE=500000 \
     IGNOREEOF=100
 
-export BROWSER="/usr/bin/firefox-developer-edition" \
+export BROWSER="/usr/bin/firefox" \
     MANPAGER="nvim +Man!" \
     SUDO_EDITOR="nvim" \
     VISUAL="nvim" \
@@ -22,11 +22,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" \
     --layout=reverse \
     --border=rounded \
     --cycle \
-    --bind 'ctrl-y:accept' \
-    --color=fg:#c5c9c5,bg:#181616,hl:#7fb4ca \
-    --color=fg+:#c8c093,bg+:#0d0c0c,hl+:#8ba4b0 \
-    --color=info:#c4b28a,prompt:#c4746e,pointer:#938aa9 \
-    --color=marker:#8a9a7b,spinner:#a292a3,header:#8ea4a2 \
     "
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$HOME/.local/share/bob/nvim-bin:$PATH
