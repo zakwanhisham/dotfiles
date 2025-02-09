@@ -14,11 +14,11 @@ fish_style_pwd_dir_length = 1
 style = "blue"
 
 [character]
-success_symbol = "[󰘧](bold green)"
-error_symbol = "[󰘧](bold red)"
+success_symbol = "[󰘧](green)"
+error_symbol = "[󰘧](red)"
 
 [git_branch]
-format = '[git::$branch]($style)'
+format = '[git:$branch]($style)'
 style = "bright-black"
 
 [git_status]
