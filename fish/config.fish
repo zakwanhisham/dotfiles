@@ -55,7 +55,6 @@ abbr lg "lazygit"
 abbr mkdir "mkdir -pv"
 abbr mv "mv -iv"
 abbr rm "rm -iv"
-abbr tt "taskwarrior-tui"
 abbr weather "curl wttr.in"
 
 # Config
