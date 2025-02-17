@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export BROWSER:/usr/bin/firefox
+SETUVAR --export BROWSER:/usr/bin/chromium
 SETUVAR --export EDITOR:nvim
 SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dlayout\x3dreverse\x20\x2d\x2dborder\x3dsharp\x20\x2d\x2dpreview\x2dwindow\x3dborder\x2dsharp\x20\x2d\x2dcycle
 SETUVAR HISTCONTROL:ignoredups\x3aerasedups
