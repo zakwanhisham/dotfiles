@@ -52,7 +52,6 @@ fastfetch
 fd
 feh
 ffmpegthumbnailer
-firefox
 firewalld
 fish
 flameshot
