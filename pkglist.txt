@@ -250,6 +250,7 @@ xorg-xinput
 xorg-xkill
 xsel
 xterm
+zen-browser-bin
 zenity
 zip
 zram-generator

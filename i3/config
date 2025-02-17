@@ -7,7 +7,7 @@ set $mod Mod4
 
 # set app
 set $term /usr/bin/ghostty
-set $firefox /usr/bin/firefox
+set $zen-browser /usr/bin/zen-browser
 set $chromium /usr/bin/chromium
 set $menu /usr/bin/dmenu_run -b -i
 
@@ -153,7 +153,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec $firefox
+bindsym $mod+w exec $zen-browser
 bindsym $mod+c exec $chromium
 bindsym Print exec flameshot gui
 
