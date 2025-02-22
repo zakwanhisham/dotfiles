@@ -1,6 +1,5 @@
 # Theme
-theme = Kanagawa Dragon
-foreground = c5c9c5
+theme = GruvboxDarkHard
 bold-is-bright = true
 
 # Font
