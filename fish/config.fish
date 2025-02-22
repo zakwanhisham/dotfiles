@@ -3,8 +3,7 @@ if not status is-interactive
     return
 end
 
-# Use vi mode
-# fish_vi_key_bindings
+# Use default keybindings
 fish_default_key_bindings
 
 ### EXPORT
