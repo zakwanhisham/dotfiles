@@ -20,8 +20,6 @@ source_folders=(
   "$HOME/.gitconfig"
   "$HOME/.local/bin/swap-usage"
   "$HOME/.screenlayout"
-  "$HOME/.taskrc"
-  "$HOME/.task"
   "$HOME/.tmux.conf"
   "$HOME/.vimrc"
   "$HOME/.xsession"
