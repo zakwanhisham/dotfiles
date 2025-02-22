@@ -3,12 +3,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ";"
 
--- TS context comment string
-vim.g.skip_ts_context_commentstring_module = true
-
--- Markdown
-vim.g.markdown_recommended_style = 0
-
 -- [[ Options ]]
 -- mouse mode enable
 vim.o.mouse = "a"
@@ -102,7 +96,7 @@ vim.o.signcolumn = "yes"
 vim.o.showtabline = 1
 
 -- misc
-vim.o.conceallevel = 1
+vim.o.conceallevel = 0
 vim.o.laststatus = 2
 vim.o.ruler = true
 vim.o.linebreak = true
