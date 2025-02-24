@@ -3,7 +3,7 @@ return {
     event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     lazy = false,
     dependencies = {
-        { "williamboman/mason.nvim", config = true }, -- Must be loaded before dependant
+        { "williamboman/mason.nvim", config = true }, -- Must be loaded before dependent
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         { "j-hui/fidget.nvim",       opts = {} },
@@ -25,12 +25,14 @@ return {
                         desc = "LSP: " .. desc
                     end
 
-                    ---@diagnostic disable-next-line: missing-fields
                     vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
                 end
 
                 nmap("<leader>lf", vim.lsp.buf.format, "Format")
-                nmap("<leader>la", vim.lsp.buf.code_action, "Code Actions")
+                -- nmap("<leader>la", vim.lsp.buf.code_action, "Code Actions")
+                nmap("<leader>la", function()
+                    require("fzf-lua").lsp_code_actions({ async = false })
+                end, "Code Actions")
                 nmap("<leader>ln", vim.lsp.buf.rename, "Rename")
                 nmap("<leader>lr", function()
                     require("fzf-lua").lsp_references({ ignore_current_line = true })
@@ -38,7 +40,7 @@ return {
                 nmap("<leader>li", "<cmd>FzfLua lsp_implementations<cr>", "Implementation")
 
                 nmap("gd", function()
-                    require("fzf-lua").lsp_definitions({ jump_to_single_result = true })
+                    require("fzf-lua").lsp_definitions({ jump1 = true })
                 end, "Goto Definition")
                 nmap("gD", "<cmd>FzfLua lsp_declarations<cr>", "Goto Declaration")
 
