@@ -29,7 +29,6 @@ return {
                 end
 
                 nmap("<leader>lf", vim.lsp.buf.format, "Format")
-                -- nmap("<leader>la", vim.lsp.buf.code_action, "Code Actions")
                 nmap("<leader>la", function()
                     require("fzf-lua").lsp_code_actions({ async = false })
                 end, "Code Actions")
