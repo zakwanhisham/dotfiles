@@ -1,6 +1,5 @@
 # Theme
 theme = GruvboxDarkHard
-bold-is-bright = true
 
 # Font
 font-family = ZedMono Nerd Font
