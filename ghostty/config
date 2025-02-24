@@ -4,6 +4,7 @@ theme = GruvboxDarkHard
 # Font
 font-family = ZedMono Nerd Font
 font-size = 12
+font-feature = -calt, -liga, -dlig
 
 # Cursor
 cursor-style = block
