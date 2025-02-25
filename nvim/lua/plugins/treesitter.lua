@@ -5,14 +5,7 @@ return {
     event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
     dependencies = {
         {
-            "nvim-treesitter/nvim-treesitter-context",
-            opts = {
-                mode = "cursor",
-                max_lines = 5,
-            },
-            config = function()
-                vim.g.skip_ts_context_commentstring_module = true
-            end
+            "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 5, },
         },
     },
     config = function()
