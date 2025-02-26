@@ -2,15 +2,6 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function()
-        local mode = {
-            "mode",
-            fmt = function(str)
-                return str:lower(str)
-            end,
-            cond = function()
-                return vim.bo.modifiable
-            end,
-        }
         local branch = {
             "branch",
             icons_enabled = false,
@@ -37,14 +28,10 @@ return {
             "filename",
             file_status = true,
             newfile_status = true,
-            path = 3,
-        }
-        local filetype = {
-            "filetype",
-            icons_enabled = false,
+            path = 1,
             padding = {
                 right = 1,
-                left = 0,
+                left = 1,
             },
         }
         local location = {
@@ -58,7 +45,7 @@ return {
             "progress",
             padding = {
                 right = 1,
-                left = 0,
+                left = 1,
             },
         }
         require("lualine").setup {
@@ -76,18 +63,18 @@ return {
                 globalstatus = false,
             },
             sections = {
-                lualine_a = { mode },
+                lualine_a = {},
                 lualine_b = {},
                 lualine_c = { filename, diagnostics },
-                lualine_x = { diff, branch },
+                lualine_x = { diff, branch, location, progress },
                 lualine_y = {},
-                lualine_z = { location, progress },
+                lualine_z = {},
             },
             inactive_sections = {
                 lualine_a = {},
                 lualine_b = {},
                 lualine_c = { filename },
-                lualine_x = { filetype },
+                lualine_x = { location, progress },
                 lualine_y = {},
                 lualine_z = {},
             },
