@@ -88,7 +88,7 @@ vim.o.splitright = true
 vim.o.splitkeep = "screen"
 
 -- mode
-vim.o.showmode = false
+vim.o.showmode = true
 vim.o.showcmd = true
 
 -- sign
