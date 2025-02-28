@@ -6,7 +6,7 @@ return {
         { "<leader>ff",      "<cmd>FzfLua files<cr>",         desc = "Find Files" },
         { "<leader>fg",      "<cmd>FzfLua git_files<cr>",     desc = "Git Files" },
         { "<leader>fs",      "<cmd>FzfLua live_grep<cr>",     desc = "Live Grep" },
-        { "<leader>fw",      "<cmd>FzfLua grep<cr>",          desc = "Grep String" },
+        { "<leader>fw",      "<cmd>FzfLua grep_cWORD<cr>",    desc = "Grep Word" },
         { "<leader>fm",      "<cmd>FzfLua marks<cr>",         desc = "Marks" },
         { "<leader>fo",      "<cmd>FzfLua oldfiles<cr>",      desc = "Oldfies" },
         { "<leader>fr",      "<cmd>FzfLua resume<cr>",        desc = "Resume" },
