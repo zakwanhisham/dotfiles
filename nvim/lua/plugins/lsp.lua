@@ -28,16 +28,17 @@ return {
                     vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
                 end
 
-                nmap("<leader>lf", vim.lsp.buf.format, "Format")
-                nmap("<leader>la", function()
-                    require("fzf-lua").lsp_code_actions({ async = false })
-                end, "Code Actions")
-                nmap("<leader>ln", vim.lsp.buf.rename, "Rename")
-                nmap("<leader>lr", function()
+                --[[
+                -- USE DEFAULT ONE
+                -- Format: `gqq`
+                -- Code Action: `gra`
+                -- Rename: `grn`
+                -- Implementation: `gri`
+                --]]
+
+                nmap("grr", function()
                     require("fzf-lua").lsp_references({ ignore_current_line = true })
                 end, "Reference")
-                nmap("<leader>li", "<cmd>FzfLua lsp_implementations<cr>", "Implementation")
-
                 nmap("gd", function()
                     require("fzf-lua").lsp_definitions({ jump1 = true })
                 end, "Goto Definition")
