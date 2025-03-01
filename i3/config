@@ -7,8 +7,8 @@ set $mod Mod4
 
 # set app
 set $term /usr/bin/ghostty
-set $firefox /usr/bin/firefox-developer-edition
-set $chromium /usr/bin/chromium
+set $brave /usr/bin/brave
+set $firefox /usr/bin/firefox
 set $menu /usr/bin/dmenu_run -b -i
 
 # default i3 tiling mode:
@@ -153,8 +153,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec $firefox
-bindsym $mod+c exec $chromium
+bindsym $mod+w exec $brave
+bindsym $mod+c exec $firefox
 bindsym Print exec flameshot gui
 
 # bindsym $mod+Shift+p exec ~/dotfiles/i3/scripts/power-profiles
