@@ -18,9 +18,9 @@ blueman
 bluez
 bluez-utils
 bob
+brave-bin
 btop
 ccache
-chromium
 clang
 cmake
 codespell
@@ -51,7 +51,7 @@ fastfetch
 fd
 feh
 ffmpegthumbnailer
-firefox-developer-edition
+firefox
 firewalld
 fish
 flameshot
