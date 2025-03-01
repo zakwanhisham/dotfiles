@@ -18,9 +18,9 @@ blueman
 bluez
 bluez-utils
 bob
-brave-bin
 btop
 ccache
+chromium
 clang
 cmake
 codespell
