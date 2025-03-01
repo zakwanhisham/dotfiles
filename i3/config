@@ -7,7 +7,7 @@ set $mod Mod4
 
 # set app
 set $term /usr/bin/ghostty
-set $brave /usr/bin/brave
+set $chromium /usr/bin/chromium
 set $firefox /usr/bin/firefox
 set $menu /usr/bin/dmenu_run -b -i
 
@@ -153,8 +153,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec $brave
-bindsym $mod+c exec $firefox
+bindsym $mod+w exec $firefox
+bindsym $mod+c exec $chromium
 bindsym Print exec flameshot gui
 
 # bindsym $mod+Shift+p exec ~/dotfiles/i3/scripts/power-profiles
