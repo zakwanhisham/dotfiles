@@ -8,9 +8,7 @@ return {
         "LazyGitFilter",
         "LazyGitFilterCurrentFile",
     },
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-    },
+    dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
         { "<leader>gg", "<cmd>LazyGit<cr>",                  desc = "LazyGit" },
         { "<leader>gf", "<cmd>LazyGitFilter<cr>",            desc = "LazyGit Filter" },

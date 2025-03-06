@@ -22,8 +22,9 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window he
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 --[[ Better indenting ]]
-vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
-vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })
+-- Don't know if this is needed because already has mini.move
+-- vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
+-- vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })
 
 --[[ Quickfix list movement ]]
 vim.keymap.set("n", "<M-n>", "<cmd>cnext<cr>", { desc = "Quickfix next" })

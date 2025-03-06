@@ -3,10 +3,10 @@ return {
     event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     lazy = false,
     dependencies = {
-        { "williamboman/mason.nvim", config = true }, -- Must be loaded before dependent
-        "williamboman/mason-lspconfig.nvim",
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        { "j-hui/fidget.nvim",       opts = {} },
+        { "williamboman/mason.nvim",                  config = true }, -- Must be loaded before dependent
+        { "williamboman/mason-lspconfig.nvim" },
+        { "WhoIsSethDaniel/mason-tool-installer.nvim" },
+        { "j-hui/fidget.nvim",                        opts = {} },
         {
             "folke/lazydev.nvim",
             ft = "lua",
@@ -44,7 +44,6 @@ return {
                 end, "Goto Definition")
                 nmap("gD", "<cmd>FzfLua lsp_declarations<cr>", "Goto Declaration")
 
-                -- See `:help K` for why this keymap
                 nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 
                 -- Lesser used LSP functionality

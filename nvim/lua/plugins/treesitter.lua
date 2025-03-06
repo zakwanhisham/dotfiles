@@ -3,11 +3,7 @@ return {
     version = false,
     build = ":TSUpdate",
     event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
-    dependencies = {
-        {
-            "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 5, },
-        },
-    },
+    dependencies = { "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 5, } },
     config = function()
         require("nvim-treesitter.install").prefer_git = true
 
@@ -19,36 +15,18 @@ return {
             },
             indent = { enable = true },
             ensure_installed = {
-                "c",
-                "diff",
-                "go",
-                "gomod",
-                "gosum",
-                "gowork",
-                "http",
-                "json",
-                "json5",
-                "jsonc",
-                "lua",
-                "markdown",
-                "python",
-                "toml",
-                "vim",
-                "vimdoc",
-                "yaml",
+                "c", "diff", "go", "gomod", "gosum", "gowork", "http", "json",
+                "json5", "jsonc", "lua", "markdown", "python", "toml", "vim",
+                "vimdoc", "yaml",
             },
             ignore_install = {},
             sync_install = true,
-
             -- Context comment
             context_commentstring = {
                 enable = true,
                 enable_autocmd = false,
             },
-
-            -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
             auto_install = true,
-
             incremental_selection = {
                 enable = true,
                 keymaps = {
