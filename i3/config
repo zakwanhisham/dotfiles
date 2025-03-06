@@ -201,14 +201,10 @@ exec --no-startup-id ~/.fehbg
 # Desktop notifications
 # Use native xfce4 notification
 exec --no-startup-id /usr/bin/dunst
-# exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 # Swap caps-lock with esc
 # This is already covered by using keyd (https://github.com/rvaiya/keyd)
 # run `paru -S keyd`
-
-#Autotiling
-# exec_always --no-startup-id autotiling -sw 0.8
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
@@ -245,15 +241,4 @@ bar {
     position bottom
     tray_padding 0
     strip_workspace_numbers no
-	colors {
-		background	           #0d0c0c
-		statusline	           #ffffff
-		separator	           #c8c093
-	#	class		           border  backgr  text
-		focused_workspace      #0d0c0c #a6a69c #0d0c0c
-		active_workspace       #0d0c0c #a6a69c #0d0c0c
-		inactive_workspace     #0d0c0c #0d0c0c #ffffff
-		urgent_workspace       #c47c6e #c4746e #ffffff
-		binding_mode           #c47c6e #c4746e #ffffff
-	}
 }
