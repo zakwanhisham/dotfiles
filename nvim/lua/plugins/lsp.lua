@@ -30,12 +30,12 @@ return {
 
                 --[[
                 -- USE DEFAULT ONE
-                -- Format: `gqq`
                 -- Code Action: `gra`
                 -- Rename: `grn`
                 -- Implementation: `gri`
                 --]]
 
+                nmap("grf", vim.lsp.buf.format, "Format")
                 nmap("grr", function()
                     require("fzf-lua").lsp_references({ ignore_current_line = true })
                 end, "Reference")
