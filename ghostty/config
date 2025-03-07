@@ -21,6 +21,8 @@ window-theme = ghostty
 window-decoration = false
 
 # System
+adw-toolbar-style = flat
 resize-overlay = never
 gtk-tabs-location = bottom
+gtk-wide-tabs = false
 confirm-close-surface = false
