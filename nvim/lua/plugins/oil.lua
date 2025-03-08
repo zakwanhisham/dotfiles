@@ -9,12 +9,7 @@ return {
     opts = {
         default_file_explorer = true,
         watch_for_changes = true,
-        columns = {
-            "permissions",
-            "size",
-            "birthtime",
-            "icon",
-        },
+        columns = { "permissions", "size", "birthtime", "icon" },
         view_options = {
             show_hidden = true,
             case_insensitive = true,
