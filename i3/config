@@ -111,7 +111,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+z fullscreen toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -153,7 +153,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec $firefox
+bindsym $mod+f exec $firefox
 bindsym $mod+c exec $chromium
 bindsym Print exec flameshot gui
 
