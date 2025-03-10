@@ -57,7 +57,6 @@ abbr rm "rm -iv"
 abbr weather "curl wttr.in"
 
 # Config
-abbr ala "nvim $HOME/dotfiles/alacritty/alacritty.toml"
 abbr bashrc "nvim $HOME/dotfiles/.bashrc"
 abbr fishrc "nvim $HOME/dotfiles/fish/config.fish"
 abbr ghostrc "nvim $HOME/dotfiles/ghostty/config"
