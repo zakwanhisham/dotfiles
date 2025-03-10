@@ -11,7 +11,7 @@ read_only = " 󰌾"
 read_only_style = "red"
 truncate_to_repo = true
 fish_style_pwd_dir_length = 1
-style = "blue"
+style = "cyan"
 
 [character]
 success_symbol = "[󰘧](bold green)"
