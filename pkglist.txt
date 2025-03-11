@@ -193,11 +193,11 @@ sshpass
 starship
 sysfsutils
 sysstat
+tealdeer
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
-tldr
 tmux
 topgrade-bin
 tree
