@@ -148,6 +148,8 @@ numlockx
 nvidia
 nvtop
 obs-studio
+obsidian
+obsidian-icon-theme
 os-prober
 pacman-contrib
 papirus-icon-theme
