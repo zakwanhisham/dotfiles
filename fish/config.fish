@@ -53,6 +53,7 @@ abbr less "less --use-color -N"
 abbr lg "lazygit"
 abbr mkdir "mkdir -pv"
 abbr mv "mv -iv"
+abbr pac "paru --pacman pacman"
 abbr rm "rm -iv"
 abbr weather "curl wttr.in"
 
