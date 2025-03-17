@@ -13,10 +13,7 @@ return {
             list = { selection = { preselect = false, auto_insert = false } },
             menu = {
                 draw = {
-                    columns = {
-                        { "label", "label_description", gap = 1 },
-                        { "kind",  gap = 1 }
-                    },
+                    columns = { { "label", gap = 1 }, { "kind", gap = 1 } },
                     treesitter = { "lsp" },
                 },
             },
