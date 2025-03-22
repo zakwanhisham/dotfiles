@@ -34,7 +34,6 @@ abbr monitor "$HOME/dotfiles/.screenlayout/monitor.sh && $HOME/.fehbg"
 abbr reload "source $HOME/.config/fish/config.fish"
 abbr ssn "shutdown now"
 abbr ssr "shutdown -r now"
-abbr notes "nvim $HOME/dotfiles/NOTES.md"
 abbr updatelist "paru --pacman pacman -Syy && paru --pacman pacman -Qu"
 abbr updatepkg "paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
