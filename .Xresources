@@ -92,41 +92,59 @@ XTerm*VT100*translations:    #override \n\
 
 ! Font
 xterm*faceName: ZedMono Nerd Font
-xterm*faceSize: 16
+xterm*faceSize: 12
 
-! special
-xterm*foreground:   #c5c9c5
-xterm*background:   #181616
-xterm*cursorColor:  #dcd7ba
+! Base16 Gruvbox dark, hard
+! Scheme: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
-! black
-xterm*color0:       #0d0c0c
-xterm*color8:       #a6a69c
+#define base00 #1d2021
+#define base01 #3c3836
+#define base02 #504945
+#define base03 #665c54
+#define base04 #bdae93
+#define base05 #d5c4a1
+#define base06 #ebdbb2
+#define base07 #fbf1c7
+#define base08 #fb4934
+#define base09 #fe8019
+#define base0A #fabd2f
+#define base0B #b8bb26
+#define base0C #8ec07c
+#define base0D #83a598
+#define base0E #d3869b
+#define base0F #d65d0e
 
-! red
-xterm*color1:       #c4746e
-xterm*color9:       #e46876
+xterm*foreground:   base05
+#ifdef background_opacity
+xterm*background:   [background_opacity]base00
+#else
+xterm*background:   base00
+#endif
+xterm*cursorColor:  base05
 
-! green
-xterm*color2:       #8a9a7b
-xterm*color10:      #87a987
+xterm*color0:       base00
+xterm*color1:       base08
+xterm*color2:       base0B
+xterm*color3:       base0A
+xterm*color4:       base0D
+xterm*color5:       base0E
+xterm*color6:       base0C
+xterm*color7:       base05
 
-! yellow
-xterm*color3:       #c4b28a
-xterm*color11:      #e6c384
+xterm*color8:       base03
+xterm*color9:       base08
+xterm*color10:      base0B
+xterm*color11:      base0A
+xterm*color12:      base0D
+xterm*color13:      base0E
+xterm*color14:      base0C
+xterm*color15:      base07
 
-! blue
-xterm*color4:       #8ba4b0
-xterm*color12:      #7fb4ca
-
-! magenta
-xterm*color5:       #a292a3
-xterm*color13:      #938aa9
-
-! cyan
-xterm*color6:       #8ea4a2
-xterm*color14:      #7aa89f
-
-! white
-xterm*color7:       #c8c093
-xterm*color15:      #c5c9c5
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+xterm*color16:      base09
+xterm*color17:      base0F
+xterm*color18:      base01
+xterm*color19:      base02
+xterm*color20:      base04
+xterm*color21:      base06
