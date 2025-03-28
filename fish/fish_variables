@@ -10,6 +10,7 @@ SETUVAR --export XDG_CACHE_HOME:/home/ouraaa/\x2ecache
 SETUVAR --export XDG_CONFIG_HOME:/home/ouraaa/\x2econfig
 SETUVAR --export XDG_DATA_HOME:/home/ouraaa/\x2elocal/share
 SETUVAR __fish_initialized:3800
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1emeaningful\x2dooo/sponge\x1efranciscolourenco/done\x1enickeb96/puffer\x2dfish\x1ejorgebucaran/nvm\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x1d
