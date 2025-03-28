@@ -5,6 +5,7 @@ SETUVAR --export EDITOR:nvim
 SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dlayout\x3dreverse\x20\x2d\x2dborder\x3dsharp\x20\x2d\x2dpreview\x2dwindow\x3dborder\x2dsharp\x20\x2d\x2dcycle
 SETUVAR --export MANPAGER:nvim\x20\x2bMan\x21
 SETUVAR --export SUDO_EDITOR:nvim
+SETUVAR --export TERM:tmux\x2d256\x2dcolor
 SETUVAR --export VISUAL:nvim
 SETUVAR --export XDG_CACHE_HOME:/home/ouraaa/\x2ecache
 SETUVAR --export XDG_CONFIG_HOME:/home/ouraaa/\x2econfig
