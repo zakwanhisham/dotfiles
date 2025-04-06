@@ -16,8 +16,8 @@ return {
             indent = { enable = true },
             ensure_installed = {
                 "c", "diff", "go", "gomod", "gosum", "gowork", "http", "json",
-                "json5", "jsonc", "lua", "markdown", "python", "toml", "vim",
-                "vimdoc", "yaml",
+                "json5", "jsonc", "lua", "markdown", "python", "vim", "vimdoc",
+                "yaml",
             },
             ignore_install = {},
             sync_install = true,
