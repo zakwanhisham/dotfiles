@@ -1,10 +1,17 @@
 format = """
+$jobs\
 $directory\
 $git_branch\
 $git_status\
 $cmd_duration\
+$status\
 $line_break\
 $character"""
+
+[jobs]
+number_threshold = 1
+format = '[\[$number\]]($style) '
+style = "bright-black"
 
 [directory]
 read_only = " 󰌾"
@@ -35,3 +42,8 @@ stashed = "≡"
 [cmd_duration]
 format = "[took $duration]($style) "
 style = "bright-white"
+
+[status]
+disabled = false
+format = '[\[$status $common_meaning\]]($style) '
+style = "red"
