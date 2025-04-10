@@ -62,7 +62,6 @@ gdb
 ghostty
 git
 git-delta
-github-cli
 go
 gobject-introspection
 gparted
