@@ -40,7 +40,7 @@ abbr updatepkg "paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
 # Eza to ls
 abbr la "ls -a"
-abbr ll "ls -la"
+abbr ll "ls -agl"
 abbr lt "ls -aT"
 
 # Apps 
