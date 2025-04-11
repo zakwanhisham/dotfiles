@@ -58,11 +58,11 @@ abbr rm "rm -iv"
 abbr weather "curl wttr.in"
 
 # Config
-abbr bashrc "nvim $HOME/dotfiles/.bashrc"
-abbr fishrc "nvim $HOME/dotfiles/fish/config.fish"
-abbr ghostrc "nvim $HOME/dotfiles/ghostty/config"
-abbr tconf "nvim $HOME/dotfiles/.tmux.conf"
-abbr vimrc "vim $HOME/dotfiles/.vimrc"
+abbr bashrc "nvim $HOME/.bashrc"
+abbr fishrc "nvim $HOME/.config/fish/config.fish"
+abbr ghostrc "nvim $HOME/.config/ghostty/config"
+abbr tconf "nvim $HOME/.tmux.conf"
+abbr vimrc "vim $HOME/.vimrc"
 
 ### PROMPT AND COMPLETIONS
 

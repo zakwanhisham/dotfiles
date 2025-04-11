@@ -82,7 +82,7 @@ bindsym $mod+d exec $menu
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'Exit i3' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # lock screen
-bindsym $mod+Shift+e exec --no-startup-id /home/ouraaa/dotfiles/i3/scripts/blur-lock 
+bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/blur-lock 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -130,7 +130,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # open new empty workspace
-bindsym $mod+Shift+n exec ~/dotfiles/i3/scripts/empty_workspace
+bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
 
 # Multimedia Keys
 
@@ -159,7 +159,7 @@ bindsym $mod+f exec $firefox
 bindsym $mod+c exec $chromium
 bindsym Print exec flameshot gui
 
-# bindsym $mod+Shift+p exec ~/dotfiles/i3/scripts/power-profiles
+# bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1"
@@ -240,7 +240,7 @@ client.background       #ffffff
 # Start i3bar to display a workspace bar
 bar {
     mode hide
-	status_command i3blocks -c ~/dotfiles/i3/i3blocks.conf
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
     position bottom
     tray_padding 0
     strip_workspace_numbers no
