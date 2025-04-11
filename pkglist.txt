@@ -192,6 +192,7 @@ sof-firmware
 speech-dispatcher
 sshpass
 starship
+stow
 sysfsutils
 sysstat
 tealdeer
@@ -252,4 +253,5 @@ xsel
 xterm
 zenity
 zip
+zoxide
 zram-generator
