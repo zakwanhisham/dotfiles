@@ -67,7 +67,7 @@ bind 'set echo-control-characters off'
 # Changing "ls" to "exa"
 alias ls='eza --color=always --group-directories-first --git'
 alias la='ls -a'
-alias ll='ls -la'
+alias ll='ls -lga'
 
 # Changing program name
 alias cat='bat'
