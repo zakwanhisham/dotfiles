@@ -253,5 +253,4 @@ xsel
 xterm
 zenity
 zip
-zoxide
 zram-generator

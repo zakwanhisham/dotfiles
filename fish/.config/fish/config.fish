@@ -29,9 +29,9 @@ set -Ux XDG_DATA_HOME "$HOME/.local/share"
 
 ### ABBREVIATIONS
 abbr autoremove "paru --pacman pacman -Rns (paru --pacman pacman -Qtdq)"
-abbr laptop "$HOME/dotfiles/.screenlayout/laptop.sh && $HOME/.fehbg"
+abbr laptop "$HOME/.screenlayout/laptop.sh && $HOME/.fehbg"
 abbr mirror "sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist"
-abbr monitor "$HOME/dotfiles/.screenlayout/monitor.sh && $HOME/.fehbg"
+abbr monitor "$HOME/.screenlayout/monitor.sh && $HOME/.fehbg"
 abbr reload "source $HOME/.config/fish/config.fish"
 abbr ssn "shutdown now"
 abbr ssr "shutdown -r now"
@@ -67,8 +67,6 @@ abbr vimrc "vim $HOME/.vimrc"
 ### PROMPT AND COMPLETIONS
 
 fzf --fish | source
-
-zoxide init fish --cmd cd | source
 
 function starship_transient_prompt_func
     starship module character
