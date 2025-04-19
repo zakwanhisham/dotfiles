@@ -132,44 +132,44 @@ return {
                     },
                 },
             },
-            basedpyright = {
-                settings = {
-                    basedpyright = {
-                        openFilesOnly = true,
-                        disableOrganizeImports = false,
-                        analysis = {
-                            autoImportCompletion = true,
-                            autoSearchPaths = true,
-                            diagnosticMode = "openFilesOnly",
-                            typeCheckingMode = "off",
-                            useLibraryCodeForTypes = true,
-                            inlayHints = {
-                                callArgumentNames = false,
-                                functionReturnTypes = false,
-                                genericTypes = false,
-                                useTypingExtensions = false,
-                            },
-                        },
-                    },
-                },
-            },
-            -- pyright = {
+            -- basedpyright = {
             --     settings = {
-            --         pyright = {
+            --         basedpyright = {
             --             openFilesOnly = true,
             --             disableOrganizeImports = false,
-            --         },
-            --         python = {
             --             analysis = {
             --                 autoImportCompletion = true,
             --                 autoSearchPaths = true,
             --                 diagnosticMode = "openFilesOnly",
             --                 typeCheckingMode = "off",
             --                 useLibraryCodeForTypes = true,
+            --                 inlayHints = {
+            --                     callArgumentNames = false,
+            --                     functionReturnTypes = false,
+            --                     genericTypes = false,
+            --                     useTypingExtensions = false,
+            --                 },
             --             },
             --         },
             --     },
             -- },
+            pyright = {
+                settings = {
+                    pyright = {
+                        openFilesOnly = true,
+                        disableOrganizeImports = false,
+                    },
+                    python = {
+                        analysis = {
+                            autoImportCompletion = true,
+                            autoSearchPaths = true,
+                            diagnosticMode = "openFilesOnly",
+                            typeCheckingMode = "off",
+                            useLibraryCodeForTypes = true,
+                        },
+                    },
+                },
+            },
         }
 
         local ensure_installed = vim.tbl_keys(servers) or {}
