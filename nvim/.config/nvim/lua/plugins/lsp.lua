@@ -132,27 +132,6 @@ return {
                     },
                 },
             },
-            -- basedpyright = {
-            --     settings = {
-            --         basedpyright = {
-            --             openFilesOnly = true,
-            --             disableOrganizeImports = false,
-            --             analysis = {
-            --                 autoImportCompletion = true,
-            --                 autoSearchPaths = true,
-            --                 diagnosticMode = "openFilesOnly",
-            --                 typeCheckingMode = "off",
-            --                 useLibraryCodeForTypes = true,
-            --                 inlayHints = {
-            --                     callArgumentNames = false,
-            --                     functionReturnTypes = false,
-            --                     genericTypes = false,
-            --                     useTypingExtensions = false,
-            --                 },
-            --             },
-            --         },
-            --     },
-            -- },
             pyright = {
                 settings = {
                     pyright = {
