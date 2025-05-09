@@ -91,7 +91,7 @@ XTerm*VT100*translations:    #override \n\
    Ctrl <Key> -:       smaller-vt-font() \n\
 
 ! Font
-xterm*faceName: ZedMono Nerd Font
+xterm*faceName: IosevkaTerm Nerd Font
 xterm*faceSize: 11
 
 ! Base16 Gruvbox dark, hard
