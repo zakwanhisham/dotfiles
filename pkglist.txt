@@ -163,6 +163,7 @@ pipewire-pulse
 pkgfile
 playerctl
 plocate
+postgresql-libs
 power-profiles-daemon
 pv
 python-bottle
@@ -203,17 +204,18 @@ thunar-volman
 tmux
 topgrade-bin
 tree
+ttf-iosevkaterm-nerd
 ttf-liberation
 ttf-ms-fonts
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
 ttf-opensans
-ttf-zed-mono-nerd
 tumbler
 unrar
 unzip
 usb_modeswitch
 usbutils
+vi
 vim
 vulkan-intel
 vulkan-nouveau
