@@ -4,7 +4,6 @@
 
 set encoding=UTF-8
 set spelllang=en_us
-" set nohlsearch " Disable highlight on search
 set number " Enable line numbers
 set mouse=a " Enable mouse mode
 set breakindent " Enable break indent
@@ -33,7 +32,6 @@ set splitbelow " Horizontal splits below current window
 set splitright " Vertical splits to the right
 set noswapfile " Don't use a swap file
 set smartindent " Smart indentation
-" set showtabline=2 " Always show tab line
 set backspace=indent,eol,start " Configurable backspace behavior
 set pumheight=10 " Popup menu height
 set conceallevel=0 " Make `` visible in markdown
@@ -45,13 +43,6 @@ set iskeyword+=- " Treat hyphenated words as whole words
 set showmatch " show the matching part of pairs [] {} and ()
 set laststatus=2 " Show status bar
 set colorcolumn=80 " Set colorcolumn to 80 space
-set cursorline
-set statusline=%f " Path to the file
-set statusline+=%= " Switch to the right side
-set statusline+=%l " Current line
-set statusline+=/ " Separator
-set statusline+=%L " Total lines
-
 
 " ========================================
 " Keymaps
@@ -72,9 +63,6 @@ nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
 " clear highlights
 nnoremap <Esc> :noh<CR>
 
-" save file without auto-formatting
-nnoremap <leader>sn :noautocmd w<CR>
-
 " delete single character without copying into register
 nnoremap x "_x
 
@@ -85,32 +73,6 @@ nnoremap <C-u> <C-u>zz
 " Find and center
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-" Resize with arrows
-nnoremap <Up> :resize -2<CR>
-nnoremap <Down> :resize +2<CR>
-nnoremap <Left> :vertical resize -2<CR>
-nnoremap <Right> :vertical resize +2<CR>
-
-" Navigate buffers
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
-nnoremap <leader>sb :buffers<CR>:buffer<Space>
-
-" Navigate between splits
-nnoremap <C-k> :wincmd k<CR>
-nnoremap <C-j> :wincmd j<CR>
-nnoremap <C-h> :wincmd h<CR>
-nnoremap <C-l> :wincmd l<CR>
-
-" tabs
-nnoremap <leader>to :tabnew<CR>
-nnoremap <leader>tx :tabclose<CR>
-nnoremap <leader>tn :tabn<CR>
-nnoremap <leader>tp :tabp<CR>
-
-nnoremap <leader>bd :bdelete<CR>
-nnoremap <leader>bb :enew<CR>
 
 " Stay in indent mode
 vnoremap < <gv
@@ -132,21 +94,13 @@ noremap <silent> <leader>- :Ex<CR>
 " ========================================
 
 " Syntax highlighting
-syntax on
+" syntax on
 
 " Colorscheme
 colorscheme retrobox
 set background=dark
-" hi Normal ctermbg=NONE guibg=NONE
-" hi NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-" hi VertSplit guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE
 
-" Sync clipboard with OS
-if system('uname -s') == "Darwin\n"
-  set clipboard=unnamed "OSX
-else
-  set clipboard=unnamedplus "Linux
-endif
+set clipboard=unnamedplus
 
 " True colors
 if !has('gui_running') && &term =~ '\%(screen\|tmux\)'
@@ -154,19 +108,3 @@ if !has('gui_running') && &term =~ '\%(screen\|tmux\)'
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 set termguicolors
-
-" Use a line cursor within insert mode and a block cursor everywhere else.
-" let &t_SI = "\e[6 q"
-" let &t_EI = "\e[2 q"
-
-" Netrw
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25 
-" Use 'l' instead of <CR> to open files
-augroup netrw_setup | au!
-    au FileType netrw nmap <buffer> l <CR>
-augroup END
-
