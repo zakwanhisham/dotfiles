@@ -241,6 +241,7 @@ client.background       #ffffff
 bar {
     mode hide
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    # status_command i3status -c ~/.config/i3/i3status.conf
     position top
     tray_padding 0
     strip_workspace_numbers no
