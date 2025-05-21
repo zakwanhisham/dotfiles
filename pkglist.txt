@@ -103,6 +103,7 @@ libgsf
 libmad
 libopenraw
 libpulse
+libreoffice-fresh
 libva-intel-driver
 lightdm
 lightdm-slick-greeter
