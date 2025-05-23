@@ -92,7 +92,7 @@ XTerm*VT100*translations:    #override \n\
 
 ! Font
 xterm*faceName: IosevkaTerm Nerd Font
-xterm*faceSize: 11
+xterm*faceSize: 12
 
 ! Base16 Gruvbox dark, hard
 ! Scheme: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
