@@ -2,6 +2,7 @@ acpi
 alsa-firmware
 alsa-plugins
 alsa-utils
+amazon-q-bin
 arandr
 archlinux-xdg-menu
 aspell
@@ -27,6 +28,7 @@ curlie
 dex
 dhclient
 dialog
+dictd
 dmenu
 dmidecode
 dmraid
@@ -230,9 +232,6 @@ xdg-user-dirs-gtk
 xdg-utils
 xf86-video-intel
 xfce4-appfinder
-xfce4-artwork
-xfce4-battery-plugin
-xfce4-clipman-plugin
 xfce4-fsguard-plugin
 xfce4-notifyd
 xfce4-panel
