@@ -14,7 +14,7 @@ set -Ux MANPAGER "nvim +Man!"
 set -Ux SUDO_EDITOR "nvim"
 set -Ux VISUAL "nvim"
 set -Ux EDITOR "nvim"
-set -Ux TERM "tmux-256-color"
+set -Ux TERM "tmux-256color"
 
 # FZF default opts
 set -Ux FZF_DEFAULT_OPTS "--layout=reverse --border=sharp --preview-window=border-sharp --cycle"
