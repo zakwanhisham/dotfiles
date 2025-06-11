@@ -81,7 +81,7 @@ return {
         event = "VeryLazy",
         version = false,
         config = function()
-            require("mini.indentscope").setup { options = { try_as_border = false } }
+            require("mini.indentscope").setup {}
         end
     },
     {
