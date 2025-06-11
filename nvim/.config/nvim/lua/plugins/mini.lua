@@ -39,7 +39,6 @@ return {
                 },
                 clues = {
                     -- Enhance this by adding descriptions for <Leader> mapping groups
-                    { mode = "n", keys = "<Leader>a", desc = "Augment" },
                     { mode = "n", keys = "<Leader>b", desc = "Buffers" },
                     { mode = "n", keys = "<Leader>f", desc = "Fzf" },
                     { mode = "n", keys = "<Leader>g", desc = "Git" },
