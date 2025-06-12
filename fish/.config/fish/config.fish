@@ -57,7 +57,6 @@ abbr mvim "NVIM_APPNAME=mvim nvim"
 abbr pac "paru --pacman pacman"
 abbr rm "rm -iv"
 abbr vim "nvim"
-abbr weather "curl wttr.in"
 
 # Config
 abbr bashrc "nvim $HOME/.bashrc"
