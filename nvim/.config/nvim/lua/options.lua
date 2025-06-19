@@ -11,7 +11,7 @@ vim.o.mouse = "a"
 vim.o.pumheight = 10
 
 -- set cursor
-vim.o.guicursor = ""
+-- vim.o.guicursor = ""
 
 -- clipboard
 vim.o.clipboard = "unnamedplus"
