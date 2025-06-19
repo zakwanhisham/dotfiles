@@ -7,7 +7,6 @@ return {
     config = function()
         require("nvim-treesitter.install").prefer_git = true
 
-        ---@diagnostic disable-next-line: missing-fields
         require("nvim-treesitter.configs").setup {
             highlight = {
                 enable = true,

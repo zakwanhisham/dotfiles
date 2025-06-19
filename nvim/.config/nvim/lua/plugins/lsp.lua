@@ -54,7 +54,6 @@ return {
                 end, "Workspace List Folders")
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
-                ---@diagnostic disable-next-line: param-type-mismatch, missing-parameter
                 if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
                     local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = true })
                     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
