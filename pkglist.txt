@@ -1,8 +1,8 @@
 acpi
+alacritty
 alsa-firmware
 alsa-plugins
 alsa-utils
-amazon-q-bin
 arandr
 archlinux-xdg-menu
 aspell
