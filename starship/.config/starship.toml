@@ -13,8 +13,7 @@ format = '[\[$number\]]($style) '
 style = "bright-black"
 
 [directory]
-read_only = " 󰌾"
-read_only_style = "red"
+read_only = " "
 truncate_to_repo = true
 fish_style_pwd_dir_length = 1
 style = "cyan"
