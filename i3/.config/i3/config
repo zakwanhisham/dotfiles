@@ -7,7 +7,7 @@ set $mod Mod4
 
 # set app
 set $term /usr/bin/ghostty
-set $xterm /usr/bin/xterm
+set $alacritty /usr/bin/alacritty
 set $chromium /usr/bin/chromium
 set $firefox /usr/bin/firefox
 set $menu /usr/bin/dmenu_run -i
@@ -70,7 +70,7 @@ bindsym $mod+r mode "resize"
 
 # start a terminal
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $xterm
+bindsym $mod+Shift+Return exec $alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
