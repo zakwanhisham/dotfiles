@@ -30,12 +30,12 @@ set -Ux XDG_DATA_HOME "$HOME/.local/share"
 ### ABBREVIATIONS
 abbr autoremove "paru --pacman pacman -Rns (paru --pacman pacman -Qtdq)"
 abbr laptop "$HOME/.screenlayout/laptop.sh && $HOME/.fehbg"
-abbr mirror "sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist"
 abbr monitor "$HOME/.screenlayout/monitor.sh && $HOME/.fehbg"
 abbr reload "source $HOME/.config/fish/config.fish"
 abbr ssn "shutdown now"
 abbr ssr "shutdown -r now"
 abbr updatelist "paru --pacman pacman -Syy && paru --pacman pacman -Qu"
+abbr updatemirror "sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist"
 abbr updatepkg "paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
 # Eza to ls
