@@ -59,6 +59,7 @@ abbr rm "rm -iv"
 abbr vim "nvim"
 
 # Config
+abbr alarc "nvim $HOME/.config/alacritty/alacritty.toml"
 abbr bashrc "nvim $HOME/.bashrc"
 abbr fishrc "nvim $HOME/.config/fish/config.fish"
 abbr ghostrc "nvim $HOME/.config/ghostty/config"
