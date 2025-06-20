@@ -5,7 +5,7 @@ live_config_reload = true
 [window]
 dynamic_padding = true
 decorations = "None"
-startup_mode = "Fullscreen"
+startup_mode = "Maximized"
 
 [scrolling]
 history = 100000
