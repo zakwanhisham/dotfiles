@@ -201,7 +201,6 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id ~/.fehbg
 
 # Desktop notifications
-# Use native xfce4 notification
 exec --no-startup-id /usr/bin/dunst
 
 # Swap caps-lock with esc
