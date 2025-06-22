@@ -3,6 +3,7 @@ $jobs\
 $directory\
 $git_branch\
 $git_status\
+$python\
 $cmd_duration\
 $line_break\
 $character"""
@@ -36,6 +37,10 @@ staged = "​"
 renamed = "​"
 deleted = "​"
 stashed = "≡"
+
+[python]
+format ='[(${version})(\($virtualenv\) )]($style)'
+style = "bright-white"
 
 [cmd_duration]
 format = "[took $duration]($style) "
