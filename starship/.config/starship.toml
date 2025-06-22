@@ -40,7 +40,7 @@ stashed = "≡"
 
 [python]
 format ='[(${version})(\($virtualenv\) )]($style) '
-style = "yellow"
+style = "bold yellow"
 
 [cmd_duration]
 format = "[took $duration]($style) "
