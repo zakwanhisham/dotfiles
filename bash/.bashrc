@@ -103,3 +103,5 @@ eval "$(fzf --bash)"
 
 # rg completion
 eval "$(rg --generate=complete-bash)"
+
+. "$HOME/.local/share/../bin/env"
