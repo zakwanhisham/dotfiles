@@ -53,8 +53,6 @@ abbr less "less --use-color -N"
 abbr lg "lazygit"
 abbr mkdir "mkdir -pv"
 abbr mv "mv -iv"
-abbr mvim "NVIM_APPNAME=mvim nvim"
-abbr pac "paru --pacman pacman"
 abbr rm "rm -iv"
 abbr vim "nvim"
 
