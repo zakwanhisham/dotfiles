@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "6/11/2025, 1:30:13 AM",
-	"time": 1749576613690,
+	"@time": "6/24/2025, 8:11:44 AM",
+	"time": 1750723904673,
 	"environment": {
 		"extension": "2.12.3",
 		"platform": "linux",
@@ -11,6 +11,8 @@
 	"keyMappings": [
 		"#!no-check",
 		"map t createTab position=\"end\"",
+		"map K previousTab",
+		"map J nextTab",
 		""
 	],
 	"linkHintCharacters": "asdfghjkl;'nm",
