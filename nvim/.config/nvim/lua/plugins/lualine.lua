@@ -4,7 +4,6 @@ return {
     opts = function()
         local branch = {
             "branch",
-            fmt = function(str) return "[" .. str .. "]" end,
             icons_enabled = false,
             padding = { right = 1, left = 1 },
         }
