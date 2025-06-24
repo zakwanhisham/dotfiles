@@ -4,62 +4,40 @@ return {
     opts = function()
         local branch = {
             "branch",
+            fmt = function(str) return "[" .. str .. "]" end,
             icons_enabled = false,
-            padding = {
-                right = 1,
-                left = 1,
-            },
+            padding = { right = 1, left = 1 },
         }
         local diagnostics = {
             "diagnostics",
-            padding = {
-                right = 0,
-                left = 1,
-            },
+            symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
+            padding = { right = 0, left = 1 },
         }
         local diff = {
             "diff",
-            padding = {
-                right = 1,
-                left = 1,
-            },
+            padding = { right = 1, left = 1 },
         }
         local filename = {
             "filename",
             file_status = true,
             newfile_status = true,
             path = 1,
-            padding = {
-                right = 1,
-                left = 1,
-            },
+            padding = { right = 1, left = 1 },
         }
         local location = {
             "location",
-            padding = {
-                right = 1,
-                left = 1,
-            },
+            padding = { right = 1, left = 1 },
         }
         local progress = {
             "progress",
-            padding = {
-                right = 1,
-                left = 1,
-            },
+            padding = { right = 1, left = 1 },
         }
         require("lualine").setup {
             options = {
                 theme = "auto",
                 always_divide_middle = true,
-                component_separators = {
-                    left = "",
-                    right = "",
-                },
-                section_separators = {
-                    left = "",
-                    right = "",
-                },
+                component_separators = { left = "", right = "" },
+                section_separators = { left = "", right = "" },
                 globalstatus = false,
             },
             sections = {
