@@ -2,6 +2,9 @@
 import = [ "~/.config/alacritty/themes/gruvbox-dark-hard.toml" ]
 live_config_reload = true
 
+[env]
+TERM = "xterm-256color"
+
 [window]
 dynamic_padding = true
 decorations = "None"
