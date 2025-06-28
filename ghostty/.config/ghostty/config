@@ -4,7 +4,6 @@ theme = GruvboxDarkHard
 # Font
 font-family = IosevkaTerm Nerd Font
 font-size = 12
-font-feature = -calt, -liga, -dlig
 
 # Cursor
 cursor-style = block
@@ -17,8 +16,7 @@ window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
 window-new-tab-position = end
-window-theme = ghostty
-window-decoration = false
+window-decoration = true
 
 # System
 adw-toolbar-style = flat
@@ -26,3 +24,4 @@ resize-overlay = never
 gtk-tabs-location = bottom
 gtk-wide-tabs = false
 confirm-close-surface = false
+bold-is-bright = true
