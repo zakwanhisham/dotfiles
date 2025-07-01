@@ -39,8 +39,8 @@ deleted = "​"
 stashed = "≡"
 
 [python]
-format ='[(${version})(\($virtualenv\) )]($style) '
-style = "bold yellow"
+format ='[(\($virtualenv\))]($style) '
+style = "bold white"
 
 [cmd_duration]
 format = "[took $duration]($style) "
