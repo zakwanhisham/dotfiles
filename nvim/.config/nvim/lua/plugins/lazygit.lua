@@ -13,7 +13,7 @@ return {
         { "<leader>gf", "<cmd>LazyGitFilter<cr>",            desc = "LazyGit Filter" },
         { "<leader>gc", "<cmd>LazyGitFilterCurrentFile<cr>", desc = "LazyGit Filter Current File" },
     },
-    config = function ()
+    config = function()
         vim.g.lazygit_floating_window_scaling_factor = 1
     end
 }
