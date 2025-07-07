@@ -7,6 +7,7 @@ To restore this, need to download `stow`
 ## TODO
 
 - [ ] Need to make sure that `nvidia` stuffs is removed when trying to install on new devices
+- [ ] Need to rework file structure for stow
 
 ## Install from pkglist.txt
 
