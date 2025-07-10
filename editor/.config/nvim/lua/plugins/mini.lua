@@ -7,7 +7,7 @@ return {
             require("mini.clue").setup {
                 window = {
                     config = {
-                        anchor = "NE",
+                        anchor = "SE",
                         row = "auto",
                         col = "auto",
                         width = "auto",
