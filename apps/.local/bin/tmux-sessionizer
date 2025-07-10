@@ -2,11 +2,18 @@
 
 # Find directory and create/switch to tmux session
 
+search_dir=(
+    "$HOME/Work"
+    "$HOME/Projects"
+    "$HOME/dotfiles"
+    "$HOME/Documents"
+)
+
 # Get existing tmux sessions
 existing_sessions=$(tmux list-sessions -F "#{session_name}: #{session_path}" 2>/dev/null || echo "")
 
 # Get directories from fd
-directories=$(fd --hidden --type directory . "$HOME")
+directories=$(fd --hidden --exclude *.git --type directory . ${search_dir[@]} 2>/dev/null)
 
 # Combine existing sessions at the top, then directories
 if [[ -n "$existing_sessions" ]]; then
@@ -15,7 +22,7 @@ else
     combined_list="$directories"
 fi
 
-selected=$(echo "$combined_list" | fzf --header "Select directory or existing tmux session")
+selected=$(echo "$combined_list" | fzf-tmux --header "Select directory or existing tmux session")
 
 if [[ -n "$selected" ]]; then
     # Check if the selected item is an existing session (contains ": ")
