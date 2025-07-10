@@ -39,14 +39,17 @@ return {
                 },
             },
             files = {
-                prompt = "Files> ",
+                prompt = "Files❯ ",
                 cwd_prompt = false,
             },
             oldfiles = {
+                prompt = "History❯ ",
                 cwd_only = function()
                     return vim.api.nvim_command('pwd') ~= vim.env.HOME
                 end
             },
+            buffers = { prompt = "Buffers❯ " },
+            grep = { prompt = "Rg❯ " },
         }
     end,
 }
