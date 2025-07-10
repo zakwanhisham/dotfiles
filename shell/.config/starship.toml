@@ -46,7 +46,7 @@ style = "bright-black"
 
 [python]
 format ='[(\($virtualenv\))]($style) '
-style = "bold white"
+style = "bright-white"
 
 [cmd_duration]
 format = "[took $duration]($style) "
