@@ -22,7 +22,7 @@ else
     combined_list="$directories"
 fi
 
-selected=$(echo "$combined_list" | fzf-tmux --header "Select directory or existing tmux session")
+selected=$(echo "$combined_list" | fzf --header "Select directory or existing tmux session")
 
 if [[ -n "$selected" ]]; then
     # Check if the selected item is an existing session (contains ": ")
