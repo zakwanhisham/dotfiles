@@ -16,7 +16,7 @@ window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
 window-new-tab-position = end
-window-decoration = true
+window-decoration = false
 
 # System
 adw-toolbar-style = flat
