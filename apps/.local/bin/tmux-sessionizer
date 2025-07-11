@@ -9,55 +9,43 @@ search_dir=(
     "$HOME/Documents"
 )
 
-# Get existing tmux sessions
-existing_sessions=$(tmux list-sessions -F "#{session_name}: #{session_path}" 2>/dev/null || echo "")
+exclude_patterns=(
+    "*.git"
+    "*.github"
+    "*.venv"
+)
+
+exclude_pattern=()
+for pattern in "${exclude_patterns[@]}"; do
+    exclude_pattern+=(--exclude "$pattern")
+done
 
 # Get directories from fd
-directories=$(fd --hidden --exclude *.git --type directory . ${search_dir[@]} 2>/dev/null)
+directories=$(fd --hidden ${exclude_pattern[@]} --type directory . ${search_dir[@]} 2>/dev/null)
 
-# Combine existing sessions at the top, then directories
-if [[ -n "$existing_sessions" ]]; then
-    combined_list=$(printf "%s\n%s" "$existing_sessions" "$directories")
-else
-    combined_list="$directories"
-fi
-
-selected=$(echo "$combined_list" | fzf --header "Select directory or existing tmux session")
+selected=$(echo "$directories" | fzf --header "Tmux Sessionizer")
 
 if [[ -n "$selected" ]]; then
-    # Check if the selected item is an existing session (contains ": ")
-    if [[ "$selected" == *": "* ]]; then
-        # Extract session name from "session_name: /path"
-        session_name=$(echo "$selected" | cut -d':' -f1)
-        printf "Switching to existing tmux session: %s\n" "$session_name"
+    # Selected item is a directory path
+    selected_dir="$selected"
+    session_name=$(basename "$selected_dir")
 
+    # Check if tmux session already exists
+    if tmux has-session -t "$session_name" 2>/dev/null; then
+        printf "Switching to existing tmux session: %s\n" "$session_name"
         if [[ -n "$TMUX" ]]; then
             tmux switch-client -t "$session_name"
         else
             tmux attach-session -t "$session_name"
         fi
     else
-        # Selected item is a directory path
-        selected_dir="$selected"
-        session_name=$(basename "$selected_dir")
-
-        # Check if tmux session already exists
-        if tmux has-session -t "$session_name" 2>/dev/null; then
-            printf "Switching to existing tmux session: %s\n" "$session_name"
-            if [[ -n "$TMUX" ]]; then
-                tmux switch-client -t "$session_name"
-            else
-                tmux attach-session -t "$session_name"
-            fi
+        printf "Creating new tmux session: %s in %s\n" "$session_name" "$selected_dir"
+        if [[ -n "$TMUX" ]]; then
+            tmux new-session -d -s "$session_name" -c "$selected_dir"
+            tmux switch-client -t "$session_name"
         else
-            printf "Creating new tmux session: %s in %s\n" "$session_name" "$selected_dir"
-            if [[ -n "$TMUX" ]]; then
-                tmux new-session -d -s "$session_name" -c "$selected_dir"
-                tmux switch-client -t "$session_name"
-            else
-                tmux new-session -d -s "$session_name" -c "$selected_dir"
-                tmux attach-session -t "$session_name"
-            fi
+            tmux new-session -d -s "$session_name" -c "$selected_dir"
+            tmux attach-session -t "$session_name"
         fi
     fi
 else
