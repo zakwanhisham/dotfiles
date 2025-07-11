@@ -81,7 +81,6 @@ gvfs-smb
 haveged
 hdparm
 htop
-httpie-desktop-bin
 hwdetect
 hwinfo
 i3-wm
