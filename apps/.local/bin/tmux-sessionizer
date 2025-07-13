@@ -3,10 +3,11 @@
 # Find directory and create/switch to tmux session
 
 search_dir=(
-    "$HOME/Work"
-    "$HOME/Projects"
-    "$HOME/dotfiles"
+    "$HOME/.config"
     "$HOME/Documents"
+    "$HOME/Projects"
+    "$HOME/Work"
+    "$HOME/dotfiles"
 )
 
 exclude_patterns=(
@@ -21,7 +22,7 @@ for pattern in "${exclude_patterns[@]}"; do
 done
 
 # Get directories from fd
-directories=$(fd --hidden ${exclude_pattern[@]} --type directory . ${search_dir[@]} 2>/dev/null)
+directories=$(fd --hidden -L ${exclude_pattern[@]} --type directory . ${search_dir[@]} 2>/dev/null)
 
 selected=$(echo "$directories" | fzf --header "Tmux Sessionizer")
 
