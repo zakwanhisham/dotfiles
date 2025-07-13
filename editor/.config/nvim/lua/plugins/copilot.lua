@@ -7,6 +7,6 @@ return {
             vim.env.HOME .. "Work/landing",
         }
         vim.g.copilot_no_tab_map = true
-        vim.api.nvim_set_keymap("i", "<C-L>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
+        vim.api.nvim_set_keymap("i", "<C-L>", 'copilot#Accept("\\<CR>")', { expr = true, silent = true })
     end
 }
