@@ -58,7 +58,11 @@ vim.o.incsearch = true
 
 -- colors
 vim.o.termguicolors = true
-vim.o.background = "dark"
+if os.getenv("TERM") == "xterm-ghostty" then
+    vim.o.background = "light"
+else
+    vim.o.background = "dark"
+end
 
 -- command height
 vim.o.cmdheight = 1
