@@ -192,6 +192,7 @@ shfmt
 smartmontools
 sof-firmware
 speech-dispatcher
+spotify
 sshpass
 starship
 stow
