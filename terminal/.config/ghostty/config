@@ -16,12 +16,13 @@ window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
 window-new-tab-position = end
-window-decoration = false
+window-decoration = true
+window-theme = ghostty
 
 # System
 adw-toolbar-style = flat
 resize-overlay = never
 gtk-tabs-location = bottom
-gtk-wide-tabs = false
+gtk-wide-tabs = true
 confirm-close-surface = false
 bold-is-bright = true
