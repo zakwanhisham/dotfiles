@@ -36,6 +36,8 @@ set cmdheight=1 " Command line height
 set autoindent " Auto-indent new lines
 set iskeyword+=- " Treat hyphenated words as whole words
 set showmatch " show the matching part of pairs [] {} and ()
+set number " line number
+set relativenumber "relative number
 
 " ========================================
 " Keymaps
@@ -91,7 +93,7 @@ syntax on
 
 " Colorscheme
 colorscheme retrobox
-set background=dark
+set background=light
 
 set clipboard=unnamedplus
 
