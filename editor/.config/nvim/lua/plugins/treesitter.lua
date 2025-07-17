@@ -21,11 +21,6 @@ return {
             },
             ignore_install = {},
             sync_install = true,
-            -- Context comment
-            context_commentstring = {
-                enable = true,
-                enable_autocmd = false,
-            },
             auto_install = true,
             incremental_selection = {
                 enable = true,
