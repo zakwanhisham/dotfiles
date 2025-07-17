@@ -26,30 +26,5 @@ require("lazy").setup("plugins", {
     install = { colorscheme = { "default" } },
     pkg = { enabled = false },
     rocks = { enabled = false },
-    change_detection = {
-        enabled = true,
-        notify = false,
-    },
-    performance = {
-        rtp = {
-            disabled_plugins = {
-                "2html_plugin",
-                "getscript",
-                "getscriptPlugin",
-                "gzip",
-                "logiPat",
-                "osc52",
-                "rplugin",
-                "rrhelper",
-                "spellfile",
-                "tar",
-                "tarPlugin",
-                "tohtml",
-                "tutor",
-                "vimball",
-                "zip",
-                "zipPlugin",
-            },
-        },
-    },
+    change_detection = { enabled = true, notify = false },
 })
