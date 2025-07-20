@@ -25,10 +25,6 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increa
 vim.keymap.set("v", "<", "<gv", { desc = "better indenting" })
 vim.keymap.set("v", ">", ">gv", { desc = "better indenting" })
 
---[[ Quickfix list movement ]]
-vim.keymap.set("n", "<M-n>", "<cmd>cnext<cr>", { desc = "Quickfix next" })
-vim.keymap.set("n", "<M-p>", "<cmd>cprev<cr>", { desc = "Quickfix prev" })
-
 -- [[ https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n ]]
 vim.keymap.set("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
 vim.keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
@@ -37,36 +33,6 @@ vim.keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Pr
 vim.keymap.set("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
---[[ Buffer ]]
-vim.keymap.set("n", "<leader>bc", "<cmd>vnew<cr>", { desc = "Buffer New" })
-vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>", { desc = "Buffer Previous" })
-vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Buffer Next" })
-vim.keymap.set("n", "<leader>bd", function()
-    if vim.bo.modified then
-        local choice = vim.fn.confirm(("Save changes to %q"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
-        if choice == 1 then
-            vim.cmd.write()
-            vim.api.nvim_buf_delete(0, { force = false })
-        elseif choice == 2 then
-            vim.api.nvim_buf_delete(0, { force = true })
-        end
-    else
-        vim.api.nvim_buf_delete(0, { force = true })
-    end
-end, { desc = "Buffer Delete" })
-
--- [[ Tab ]]
-vim.keymap.set("n", "<leader>tc", "<cmd>tabnew<cr>", { desc = "Tab New" })
-vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "Tab Previous" })
-vim.keymap.set("n", "<leader>tn", "<cmd>tabNext<cr>", { desc = "Tab Next" })
-vim.keymap.set("n", "<leader>td", "<cmd>tabclose<cr>", { desc = "Tab Close" })
-
 --[[ Diagnostic keymaps ]]
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Floating Diagnostic" })
 vim.keymap.set("n", "<leader>d", "<cmd>FzfLua diagnostics_document<cr>", { desc = "Diagnostic list" })
-vim.keymap.set("n", "[d", function()
-    vim.diagnostic.jump { count = -1 }
-end, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", function()
-    vim.diagnostic.jump { count = 1 }
-end, { desc = "Go to next diagnostic message" })
