@@ -1,7 +1,7 @@
 return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = function()
+    config = function()
         local branch = {
             "branch",
             icons_enabled = false,
