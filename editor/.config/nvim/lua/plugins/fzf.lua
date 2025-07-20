@@ -20,7 +20,7 @@ return {
         require("fzf-lua").setup {
             file_ignore_patterns = { "%.git/.*", "node_modules/.*" },
             winopts = {
-                split = "botright new"
+                split = "belowright new"
             },
             keymap = {
                 builtin = {
