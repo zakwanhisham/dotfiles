@@ -208,6 +208,9 @@ exec --no-startup-id ~/.fehbg
 # Desktop notifications
 exec --no-startup-id /usr/bin/dunst
 
+# Autostart spotify
+exec --no-startup-id /usr/bin/spotify
+
 # Swap caps-lock with esc
 # This is already covered by using keyd (https://github.com/rvaiya/keyd)
 # run `paru -S keyd`
