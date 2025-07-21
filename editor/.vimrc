@@ -93,7 +93,7 @@ syntax on
 
 " Colorscheme
 colorscheme retrobox
-set background=light
+set background=dark
 
 set clipboard=unnamedplus
 
