@@ -22,8 +22,8 @@ fish_style_pwd_dir_length = 1
 style = "bright-cyan"
 
 [character]
-success_symbol = "[;](bold green)"
-error_symbol = "[;](bold red)"
+success_symbol = "[󰘧](bold green)"
+error_symbol = "[󰘧](bold red)"
 
 [git_branch]
 format = '[$branch]($style)'
