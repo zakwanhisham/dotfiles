@@ -9,6 +9,8 @@ $cmd_duration\
 $line_break\
 $character"""
 
+add_newline = false
+
 [jobs]
 number_threshold = 1
 format = '[\[$number\]]($style) '
@@ -20,10 +22,6 @@ truncation_length = 2
 truncate_to_repo = true
 fish_style_pwd_dir_length = 1
 style = "bright-cyan"
-
-[character]
-success_symbol = "[󰘧](bold green)"
-error_symbol = "[󰘧](bold red)"
 
 [git_branch]
 format = '[$branch]($style)'
