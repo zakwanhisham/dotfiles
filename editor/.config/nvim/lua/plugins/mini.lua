@@ -59,13 +59,7 @@ return {
         event = "VeryLazy",
         version = false,
         config = function()
-            require("mini.comment").setup {
-                mappings = {
-                    -- SOLUTION: https://stackoverflow.com/questions/9051837/how-to-map-c-to-toggle-comments-in-vim
-                    comment_line = "<C-_>",   -- this equate to "<C-/>"
-                    comment_visual = "<C-_>", -- this equate to "<C-/>"
-                },
-            }
+            require("mini.comment").setup {}
         end
     },
     {
