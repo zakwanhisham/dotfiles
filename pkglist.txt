@@ -95,7 +95,6 @@ jasper
 jfsutils
 jq
 keyd
-lazydocker
 lazygit
 less
 libdvdcss
