@@ -100,4 +100,15 @@ return {
             require("mini.surround").setup {}
         end
     },
+    {
+        "echasnovski/mini.trailspace",
+        event = "VeryLazy",
+        version = false,
+        keys = {
+            { "<Leader>wt", function() require("mini.trailspace").trim() end, desc = "Trim Whitespace" },
+        },
+        config = function()
+            require("mini.trailspace").setup {}
+        end
+    },
 }
