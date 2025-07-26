@@ -6,7 +6,6 @@ return {
         { "williamboman/mason.nvim",                  config = true }, -- Must be loaded before dependent
         { "williamboman/mason-lspconfig.nvim" },
         { "WhoIsSethDaniel/mason-tool-installer.nvim" },
-        { "j-hui/fidget.nvim",                        opts = {} },
         {
             "folke/lazydev.nvim",
             ft = "lua",
