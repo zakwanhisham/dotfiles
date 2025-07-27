@@ -127,7 +127,6 @@ modemmanager
 mpv
 mtools
 ncdu
-ncspot
 neovim
 netctl
 network-manager-applet
@@ -191,6 +190,7 @@ shfmt
 smartmontools
 sof-firmware
 speech-dispatcher
+spotify-player
 sshpass
 starship
 stow
