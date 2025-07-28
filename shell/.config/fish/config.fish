@@ -48,7 +48,6 @@ abbr lg "lazygit"
 abbr mkdir "mkdir -pv"
 abbr mv "mv -iv"
 abbr rm "rm -iv"
-abbr sp "spotify_player"
 abbr tree "tree -a -I \"*.git\" -C"
 abbr vim "nvim"
 
