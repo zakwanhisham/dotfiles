@@ -208,6 +208,9 @@ exec --no-startup-id ~/.fehbg
 # Desktop notifications
 exec --no-startup-id /usr/bin/dunst
 
+# Autostart spotify
+exec --no-startup-id /usr/bin/spotify-launcher
+
 # Swap caps-lock with esc
 # This is already covered by using keyd (https://github.com/rvaiya/keyd)
 # run `paru -S keyd`
@@ -230,6 +233,10 @@ for_window [class=".*"] resize set 640 480 #to change size of all floating windo
 
 # set position of floating window
 for_window [class=".*"] move position center
+
+# Assign spotify to workspace 10
+assign [class="Spotify"] $ws10
+assign [class="spotify"] $ws10
 
 # define colors for windows:
 # class                 border  backgr. text    indicator child_border
