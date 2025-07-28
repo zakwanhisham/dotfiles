@@ -197,6 +197,7 @@ stow
 sysfsutils
 sysstat
 tealdeer
+termdown
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
