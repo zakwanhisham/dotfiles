@@ -32,13 +32,6 @@ return {
                     require("fzf-lua").lsp_definitions({ jump1 = true })
                 end, "Goto Definition")
                 nmap("gD", "<cmd>FzfLua lsp_declarations<cr>", "Goto Declaration")
-
-                -- Lesser used LSP functionality
-                nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "Workspace Add Folder")
-                nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "Workspace Remove Folder")
-                nmap("<leader>wl", function()
-                    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-                end, "Workspace List Folders")
             end,
         })
 
