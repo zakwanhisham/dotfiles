@@ -43,7 +43,6 @@ return {
                     -- Enhance this by adding descriptions for <Leader> mapping groups
                     { mode = "n", keys = "<Leader>f", desc = "Fzf" },
                     { mode = "n", keys = "<Leader>g", desc = "Git" },
-                    { mode = "n", keys = "<Leader>w", desc = "Workspace" },
                     require("mini.clue").gen_clues.builtin_completion(),
                     require("mini.clue").gen_clues.g(),
                     require("mini.clue").gen_clues.marks(),
