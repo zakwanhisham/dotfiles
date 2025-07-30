@@ -11,7 +11,7 @@ vim.o.mouse = "a"
 vim.o.pumheight = 10
 
 -- set cursor
-vim.o.guicursor = ""
+-- vim.o.guicursor = ""
 
 -- clipboard
 vim.o.clipboard = "unnamedplus"
@@ -48,7 +48,7 @@ vim.o.spell = true
 -- temp files
 vim.o.swapfile = false
 vim.o.backup = false
-vim.o.undodir = os.getenv "HOME" .. "/.cache/nvim/undodir"
+vim.o.undodir = os.getenv "HOME" .. ".cache/nvim/undodir"
 vim.o.undofile = true
 vim.o.writebackup = false
 
