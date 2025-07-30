@@ -46,23 +46,6 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
--- [[ Mini-Indentscope ]]
--- Disable mini.indentscope on some of the file
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = {
-        "gitcommit",
-        "help",
-        "lazy",
-        "man",
-        "mason",
-        "term",
-        "fzf",
-    },
-    callback = function()
-        vim.b.miniindentscope_disable = true
-    end,
-})
-
 -- [[ Resize ]]
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
