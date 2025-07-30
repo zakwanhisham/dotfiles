@@ -3,9 +3,8 @@ return {
     event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     lazy = false,
     dependencies = {
-        { "williamboman/mason.nvim",                  config = true }, -- Must be loaded before dependent
-        { "williamboman/mason-lspconfig.nvim" },
-        { "WhoIsSethDaniel/mason-tool-installer.nvim" },
+        { "mason-org/mason.nvim",          config = true },         -- Must be loaded before dependent
+        { "mason-org/mason-lspconfig.nvim" },
         {
             "folke/lazydev.nvim",
             ft = "lua",
@@ -42,8 +41,6 @@ return {
                     require("fzf-lua").lsp_definitions({ jump1 = true })
                 end, "Goto Definition")
                 nmap("gD", "<cmd>FzfLua lsp_declarations<cr>", "Goto Declaration")
-
-                nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 
                 -- Lesser used LSP functionality
                 nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "Workspace Add Folder")
@@ -129,7 +126,6 @@ return {
 
         local ensure_installed = vim.tbl_keys(servers) or {}
         require("mason").setup()
-        require("mason-tool-installer").setup { ensure_installed = ensure_installed, auto_update = true }
         require("mason-lspconfig").setup {
             ensure_installed = ensure_installed,
             automatic_installation = true,
