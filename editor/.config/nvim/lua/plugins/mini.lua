@@ -1,7 +1,6 @@
 return {
     {
         "echasnovski/mini.clue",
-        event = "VeryLazy",
         version = false,
         config = function()
             require("mini.clue").setup {
@@ -55,7 +54,6 @@ return {
     },
     {
         "echasnovski/mini.ai",
-        event = "VeryLazy",
         version = false,
         config = function()
             require("mini.ai").setup { n_lines = 500 }
@@ -63,7 +61,6 @@ return {
     },
     {
         "echasnovski/mini.surround",
-        event = "VeryLazy",
         version = false,
         config = function()
             require("mini.surround").setup {}

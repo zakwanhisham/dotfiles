@@ -2,7 +2,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     version = false,
     build = ":TSUpdate",
-    event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
     dependencies = { "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 5, } },
     config = function()
         require("nvim-treesitter.install").prefer_git = true
