@@ -13,9 +13,6 @@ return {
         { "<leader>fz",      "<cmd>FzfLua spell_suggest<cr>", desc = "Spell suggest" },
         { "<leader>/",       "<cmd>FzfLua grep_curbuf<cr>",   desc = "Grep Current Buffer" },
     },
-    init = function()
-        require("fzf-lua").register_ui_select()
-    end,
     config = function()
         require("fzf-lua").setup {
             file_ignore_patterns = { "%.git/.*", "node_modules/.*" },
