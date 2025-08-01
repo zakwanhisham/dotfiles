@@ -2,7 +2,6 @@
 .gitignore
 README.md
 anime/
-default.conf
 pkglist.txt
 q11_keymap.json
 vimium_c.json
