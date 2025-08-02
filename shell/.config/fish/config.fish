@@ -38,7 +38,7 @@ abbr updatelist "paru --pacman pacman -Syy && paru --pacman pacman -Qu"
 abbr updatemirror "sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist"
 abbr updatepkg "paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
-# Apps 
+# Apps
 abbr cal "cal --monday -3"
 abbr cat "bat"
 abbr cp "cp -iv"
