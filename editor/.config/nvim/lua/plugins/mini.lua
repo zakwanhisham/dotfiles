@@ -42,6 +42,7 @@ return {
                     -- Enhance this by adding descriptions for <Leader> mapping groups
                     { mode = "n", keys = "<Leader>f", desc = "Fzf" },
                     { mode = "n", keys = "<Leader>g", desc = "Git" },
+                    { mode = "n", keys = "<Leader>w", desc = "Whitespace" },
                     require("mini.clue").gen_clues.builtin_completion(),
                     require("mini.clue").gen_clues.g(),
                     require("mini.clue").gen_clues.marks(),
@@ -64,6 +65,18 @@ return {
         version = false,
         config = function()
             require("mini.surround").setup {}
+        end
+    },
+    {
+        "echasnovski/mini.trailspace",
+        version = false,
+        config = function()
+            require("mini.trailspace").setup {}
+
+            vim.keymap.set("n", "<leader>wt", function() require("mini.trailspace").trim() end,
+                { desc = "Trim trailing whitespace" })
+            vim.keymap.set("n", "<leader>wl", function() require("mini.trailspace").trim_last_lines() end,
+                { desc = "Trim last blank lines" })
         end
     },
 }
