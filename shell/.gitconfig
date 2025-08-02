@@ -5,7 +5,7 @@
 	editor = nvim
 	pager = delta
 [merge]
-	tool = nvim
+	tool = nvim -d
     conflictstyle = zdiff3
 [color]
 	ui = auto
