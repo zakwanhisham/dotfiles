@@ -64,10 +64,9 @@ bind 'set menu-complete-display-prefix On'
 bind 'set echo-control-characters off'
 
 ### ALIASES
-# Changing "ls" to "exa"
 alias ls='ls --color=always --group-directories-first'
-alias la='ls -a'
-alias ll='ls -al'
+alias la='ls -Al'
+alias ll='ls -lh'
 
 # Changing program name
 alias cat='bat'
