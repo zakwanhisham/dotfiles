@@ -17,5 +17,8 @@ size = 12.5
 [colors]
 draw_bold_text_with_bright_colors = true
 
+[selection]
+save_to_clipboard = true
+
 [mouse]
 hide_when_typing = true
