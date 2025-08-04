@@ -58,7 +58,7 @@ vim.o.incsearch = true
 
 -- colors
 vim.o.termguicolors = true
-if os.getenv("TERM") == "alacritty" then
+if os.getenv("TERM") == "xterm-ghostty" then
     vim.o.background = "light"
 else
     vim.o.background = "dark"
