@@ -40,7 +40,6 @@ vim.o.smartindent = true
 vim.o.wrap = false
 vim.o.completeopt = "menuone,noselect,preview,noinsert,fuzzy"
 vim.o.ignorecase = true
-vim.o.winborder = "solid"
 
 -- spell check
 vim.o.spelllang = "en_us"
