@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    event = { "BufReadPre", "BufReadPost" },
     version = false,
     build = ":TSUpdate",
     dependencies = { "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 5, } },
