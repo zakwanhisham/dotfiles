@@ -6,8 +6,8 @@ font pango: IosevkaTerm Nerd Font Regular 10
 set $mod Mod4
 
 # set app
-set $term /usr/bin/ghostty
 set $alacritty /usr/bin/alacritty
+set $ghostty /usr/bin/ghostty
 set $chromium /usr/bin/chromium
 set $firefox /usr/bin/firefox
 set $menu /usr/bin/dmenu_run -i
@@ -74,8 +74,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # start a terminal
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $alacritty
+bindsym $mod+Return exec $alacritty
+bindsym $mod+Shift+Return exec $ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -87,7 +87,7 @@ bindsym $mod+d exec $menu
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'Exit i3' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # lock screen
-bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/blur-lock 
+bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/blur-lock
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -229,7 +229,7 @@ for_window [window_role="About"] floating enable
 
 # set size of floating window
 for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
-for_window [class=".*"] resize set 640 480 #to change size of all floating windows 
+for_window [class=".*"] resize set 640 480 #to change size of all floating windows
 
 # set position of floating window
 for_window [class=".*"] move position center
