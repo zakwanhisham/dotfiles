@@ -8,10 +8,7 @@ return {
 
         ---@diagnostic disable-next-line: missing-fields
         require("nvim-treesitter.configs").setup {
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
+            highlight = { enable = true },
             indent = { enable = true },
             ensure_installed = {
                 "c", "diff", "go", "gomod", "gosum", "gowork", "http", "json",
