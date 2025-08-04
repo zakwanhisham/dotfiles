@@ -1,0 +1,14 @@
+vim.lsp.enable({
+    "bashls",
+    "clangd",
+    "eslint",
+    "fish_lsp",
+    "golangci_lint_ls",
+    "gopls",
+    "html",
+    "jsonls",
+    "lua_ls",
+    "pyright",
+    "taplo",
+    "ts_ls",
+})
