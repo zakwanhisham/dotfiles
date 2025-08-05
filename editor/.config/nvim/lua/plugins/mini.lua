@@ -51,6 +51,31 @@ return {
                 require("mini.clue").gen_clues.z(),
             },
         }
+        require("mini.statusline").setup {
+            content = {
+                active = function()
+                    local MiniStatusline = require("mini.statusline")
+
+                    local git            = MiniStatusline.section_git({ trunc_width = 40 })
+                    local diff           = MiniStatusline.section_diff({ trunc_width = 75 })
+                    local diagnostics    = MiniStatusline.section_diagnostics({ trunc_width = 75 })
+                    local lsp            = MiniStatusline.section_lsp({ trunc_width = 75 })
+                    local filename       = MiniStatusline.section_filename({ trunc_width = 400 })
+                    local location       = MiniStatusline.section_location({ trunc_width = 75 })
+
+                    return MiniStatusline.combine_groups({
+                        { hl = "MiniStatuslineFilename", strings = { filename } },
+                        { hl = "MiniStatuslineFilename", strings = { lsp } },
+                        { hl = "MiniStatuslineFilename", strings = { diagnostics } },
+                        '%=',
+                        { hl = "MiniStatuslineFilename", strings = { diff } },
+                        { hl = "MiniStatuslineFilename", strings = { git } },
+                        { hl = "MiniStatuslineFilename", strings = { location } },
+                    })
+                end,
+            },
+            use_icons = false,
+        }
         require("mini.ai").setup { n_lines = 500 }
         require("mini.surround").setup {}
         require("mini.trailspace").setup {}
