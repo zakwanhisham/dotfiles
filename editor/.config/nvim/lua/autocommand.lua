@@ -97,4 +97,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
         nmap("gD", "<cmd>FzfLua lsp_declarations<cr>", "Goto Declaration")
     end
 })
-
