@@ -60,14 +60,14 @@ return {
                     local diff           = MiniStatusline.section_diff({ trunc_width = 75 })
                     local diagnostics    = MiniStatusline.section_diagnostics({ trunc_width = 75 })
                     local lsp            = MiniStatusline.section_lsp({ trunc_width = 75 })
-                    local filename       = MiniStatusline.section_filename({ trunc_width = 400 })
+                    local filename       = MiniStatusline.section_filename({ trunc_width = 140 })
                     local location       = MiniStatusline.section_location({ trunc_width = 75 })
 
                     return MiniStatusline.combine_groups({
                         { hl = "MiniStatuslineFilename", strings = { filename } },
                         { hl = "MiniStatuslineFilename", strings = { lsp } },
                         { hl = "MiniStatuslineFilename", strings = { diagnostics } },
-                        '%=',
+                        "%=",
                         { hl = "MiniStatuslineFilename", strings = { diff } },
                         { hl = "MiniStatuslineFilename", strings = { git } },
                         { hl = "MiniStatuslineFilename", strings = { location } },
