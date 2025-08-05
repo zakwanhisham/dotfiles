@@ -1,7 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufReadPost" },
-    version = false,
+    branch = "master",
     build = ":TSUpdate",
     dependencies = { "nvim-treesitter/nvim-treesitter-context", opts = { mode = "cursor", max_lines = 5, } },
     config = function()
@@ -10,15 +10,12 @@ return {
         ---@diagnostic disable-next-line: missing-fields
         require("nvim-treesitter.configs").setup {
             highlight = { enable = true },
-            indent = { enable = true },
+            indent = { enable = false },
             ensure_installed = {
-                "c", "diff", "go", "gomod", "gosum", "gowork", "http", "json",
-                "json5", "jsonc", "lua", "markdown", "python", "vim", "vimdoc",
-                "yaml",
+                "c", "diff", "go", "gomod", "gosum", "gowork", "json", "lua",
+                "markdown", "python", "vim", "vimdoc", "yaml",
             },
-            ignore_install = {},
-            sync_install = true,
-            auto_install = true,
+            auto_install = false,
             incremental_selection = {
                 enable = true,
                 keymaps = {
