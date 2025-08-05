@@ -10,7 +10,6 @@ fish_default_key_bindings
 set fish_greeting
 
 set -Ux BROWSER "/usr/bin/firefox"
-set -Ux MANPAGER "nvim +Man!"
 set -Ux SUDO_EDITOR "nvim"
 set -Ux VISUAL "nvim"
 set -Ux EDITOR "nvim"
