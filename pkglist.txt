@@ -189,7 +189,6 @@ shfmt
 smartmontools
 sof-firmware
 speech-dispatcher
-spotify-launcher
 sshpass
 starship
 stow
