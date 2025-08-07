@@ -11,6 +11,7 @@ set $ghostty /usr/bin/ghostty
 set $chromium /usr/bin/chromium
 set $firefox /usr/bin/firefox
 set $menu /usr/bin/dmenu_run -i
+set $music /usr/bin/chromium --app=https://music.youtube.com --user-data-dir=/tmp/chromium-music
 
 # default i3 tiling mode:
 workspace_layout default
@@ -162,6 +163,7 @@ bindsym XF86AudioPrev exec playerctl previous
 ## App shortcuts
 bindsym $mod+w exec $firefox
 bindsym $mod+c exec $chromium
+bindsym $mod+m exec $music
 bindsym Print exec flameshot gui
 
 # bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
