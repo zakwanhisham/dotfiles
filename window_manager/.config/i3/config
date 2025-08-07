@@ -210,9 +210,8 @@ exec --no-startup-id ~/.fehbg
 # Desktop notifications
 exec --no-startup-id /usr/bin/dunst
 
-# Swap caps-lock with esc
-# This is already covered by using keyd (https://github.com/rvaiya/keyd)
-# run `paru -S keyd`
+# Autostart music
+exec --no-startup-id $music
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
@@ -232,6 +231,9 @@ for_window [class=".*"] resize set 640 480 #to change size of all floating windo
 
 # set position of floating window
 for_window [class=".*"] move position center
+
+# set music to workspace 10
+for_window [class="Chromium" instance="music.youtube.com"] move to workspace $ws10
 
 # define colors for windows:
 # class                 border  backgr. text    indicator child_border
