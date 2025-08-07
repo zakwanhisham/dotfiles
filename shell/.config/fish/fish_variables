@@ -6,6 +6,7 @@ SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dlayout\x3dreverse\x20\x2d\x2dborder\x3
 SETUVAR --export SUDO_EDITOR:nvim
 SETUVAR --export TERM:tmux\x2d256color
 SETUVAR --export VISUAL:nvim
+SETUVAR --export XDG_BIN_DIR:/home/ouraaa/\x2elocal/bin
 SETUVAR --export XDG_CACHE_HOME:/home/ouraaa/\x2ecache
 SETUVAR --export XDG_CONFIG_HOME:/home/ouraaa/\x2econfig
 SETUVAR --export XDG_DATA_HOME:/home/ouraaa/\x2elocal/share

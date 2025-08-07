@@ -25,6 +25,7 @@ set -U fish_user_paths $HOME/bin /usr/local/bin $HOME/.local/bin $HOME/go/bin $H
 set -Ux XDG_CACHE_HOME "$HOME/.cache"
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
+set -Ux XDG_BIN_DIR "$HOME/.local/bin"
 
 ### ABBREVIATIONS
 abbr autoremove "paru --pacman pacman -Rns (paru --pacman pacman -Qtdq)"
