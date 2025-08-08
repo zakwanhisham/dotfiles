@@ -1,8 +1,3 @@
-return {
-    "mason-org/mason.nvim",
-    event = "LspAttach",
-    lazy = false,
-    config = function()
-        require("mason").setup {}
-    end
-}
+MiniDeps.add { source = "mason-org/mason.nvim" }
+
+require("mason").setup {}

@@ -1,18 +1,15 @@
-return {
-    "christoomey/vim-tmux-navigator",
-    cmd = {
-        "TmuxNavigateLeft",
-        "TmuxNavigateDown",
-        "TmuxNavigateUp",
-        "TmuxNavigateRight",
-        "TmuxNavigatePrevious",
-        "TmuxNavigatorProcessList",
-    },
-    keys = {
-        { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>",      desc = "Tmux: Navigate Left" },
-        { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>",      desc = "Tmux: Navigate Down" },
-        { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>",        desc = "Tmux: Navigate Up" },
-        { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>",     desc = "Tmux: Navigate Right" },
-        { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>",  desc = "Tmux: Navigate Previous" },
-    },
-}
+MiniDeps.add { source = "christoomey/vim-tmux-navigator" }
+
+local nmap = function(keymap, command, desc)
+    if desc then
+        desc = "Tmux: " .. desc
+    end
+
+    vim.keymap.set("n", keymap, command, { desc = desc })
+end
+
+nmap("<c-h>", "<cmd>TmuxNavigateLeft<cr>", "Navigate Left")
+nmap("<c-j>", "<cmd>TmuxNavigateDown<cr>", "Navigate Down")
+nmap("<c-k>", "<cmd>TmuxNavigateUp<cr>", "Navigate Up")
+nmap("<c-l>", "<cmd>TmuxNavigateRight<cr>", "Navigate Right")
+nmap("<c-\\>", "<cmd>TmuxNavigatePrevious<cr>", "Navigate Previous")

@@ -1,7 +1,3 @@
-return {
-    "github/copilot.vim",
-    lazy = false,
-    config = function()
-        vim.g.copilot_wokspace_folders = { vim.env.HOME .. "Work/landing" }
-    end
-}
+MiniDeps.add { source = "github/copilot.vim" }
+
+vim.g.copilot_workspace_folders = { vim.env.HOME .. "Work/landing" }
