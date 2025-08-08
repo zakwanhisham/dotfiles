@@ -82,13 +82,7 @@ return {
     },
     settings = {
         Lua = {
-            runtime = {
-                version = 'LuaJIT',
-            },
-            workspace = {
-                checkThirdParty = true,
-                library = { vim.api.nvim_get_runtime_file('', true) },
-            },
+            workspace = { library = vim.api.nvim_get_runtime_file('', true) },
             diagnostics = { globals = { 'vim' } },
             telemetry = { enable = false },
         },
