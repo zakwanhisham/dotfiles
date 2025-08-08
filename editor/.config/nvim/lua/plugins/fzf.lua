@@ -11,7 +11,6 @@ later(function()
         vim.keymap.set("n", keymap, command, { desc = desc })
     end
 
-
     nmap("<leader><space>", "<cmd>FzfLua buffers<cr>", "Buffers")
     nmap("<leader>ff", "<cmd>FzfLua files<cr>", "Find Files")
     nmap("<leader>fg", "<cmd>FzfLua git_files<cr>", "Git Files")
