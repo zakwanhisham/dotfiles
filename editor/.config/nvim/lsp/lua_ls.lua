@@ -84,16 +84,10 @@ return {
         Lua = {
             runtime = {
                 version = 'LuaJIT',
-                path = {
-                    'lua/?.lua',
-                    'lua/?/init.lua',
-                },
             },
             workspace = {
-                checkThirdParty = false,
-                library ={
-                    vim.api.nvim_get_runtime_file('', true),
-                },
+                checkThirdParty = true,
+                library = { vim.api.nvim_get_runtime_file('', true) },
             },
             diagnostics = { globals = { 'vim' } },
             telemetry = { enable = false },
