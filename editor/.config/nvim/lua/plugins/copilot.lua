@@ -1,3 +1,7 @@
-MiniDeps.add { source = "github/copilot.vim" }
+local add, later = MiniDeps.add, MiniDeps.later
 
-vim.g.copilot_workspace_folders = { vim.env.HOME .. "Work/landing" }
+add { source = "github/copilot.vim" }
+
+later(function()
+    vim.g.copilot_workspace_folders = { vim.env.HOME .. "Work/landing" }
+end)

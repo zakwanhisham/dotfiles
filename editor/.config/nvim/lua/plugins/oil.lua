@@ -1,11 +1,15 @@
-MiniDeps.add { source = "stevearc/oil.nvim" }
+local add, now = MiniDeps.add, MiniDeps.now
 
-vim.keymap.set("n", "<leader>-", "<cmd>Oil<cr>", { desc = "Oil" })
+add { source = "stevearc/oil.nvim" }
 
-require("oil").setup {
-    default_file_explorer = true,
-    watch_for_changes = true,
-    columns = { "permissions", "size", "birthtime" },
-    keymaps = { ["q"] = "actions.close" },
-    view_options = { show_hidden = true, case_insensitive = true },
-}
+now(function()
+    vim.keymap.set("n", "<leader>-", "<cmd>Oil<cr>", { desc = "Oil" })
+
+    require("oil").setup {
+        default_file_explorer = true,
+        watch_for_changes = true,
+        columns = { "permissions", "size", "birthtime" },
+        keymaps = { ["q"] = "actions.close" },
+        view_options = { show_hidden = true, case_insensitive = true },
+    }
+end)

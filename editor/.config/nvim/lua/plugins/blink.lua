@@ -1,3 +1,5 @@
+local add, later = MiniDeps.add, MiniDeps.later
+
 local function build_blink(params)
     vim.notify('Building blink.cmp', vim.log.levels.INFO)
     local obj = vim.system({ 'cargo', 'build', '--release' }, { cwd = params.path }):wait()
@@ -8,13 +10,13 @@ local function build_blink(params)
     end
 end
 
-MiniDeps.add {
+add {
     source = "saghen/blink.cmp",
     depends = { "rafamadriz/friendly-snippets" },
     hooks = { post_install = build_blink, post_checkout = build_blink },
 }
 
-MiniDeps.later(function()
+later(function()
     require("blink.cmp").setup {
         keymap = { preset = "enter" },
         completion = {

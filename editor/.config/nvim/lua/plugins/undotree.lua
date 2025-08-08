@@ -1,7 +1,11 @@
-MiniDeps.add { source = "mbbill/undotree" }
+local add, later = MiniDeps.add, MiniDeps.later
 
-vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
+add { source = "mbbill/undotree" }
 
-vim.g.undotree_SetFocusWhenToggle = 1
-vim.g.undotree_SplitWidth = 50
-vim.g.undotree_DiffpanelHeight = 15
+later(function()
+    vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
+
+    vim.g.undotree_SetFocusWhenToggle = 1
+    vim.g.undotree_SplitWidth = 50
+    vim.g.undotree_DiffpanelHeight = 15
+end)

@@ -1,4 +1,6 @@
-MiniDeps.add { source = "sainnhe/gruvbox-material" }
+local add, now = MiniDeps.add, MiniDeps.now
+
+add { source = "sainnhe/gruvbox-material" }
 
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_foreground = "original"
@@ -8,4 +10,4 @@ vim.g.gruvbox_material_float_style = "dim"
 vim.g.gruvbox_material_statusline_style = "original"
 vim.g.gruvbox_material_better_performance = 1
 
-MiniDeps.now(function() vim.cmd.colorscheme "gruvbox-material" end)
+now(function() vim.cmd.colorscheme "gruvbox-material" end)

@@ -1,8 +1,9 @@
-MiniDeps.add { source = "lewis6991/gitsigns.nvim" }
+local add, later = MiniDeps.add, MiniDeps.later
 
-local gitsigns = require("gitsigns")
+add { source = "lewis6991/gitsigns.nvim" }
 
-MiniDeps.later(function()
+later(function()
+    local gitsigns = require("gitsigns")
     gitsigns.setup {
         on_attach = function(bufnr)
             local gs = package.loaded.gitsigns
