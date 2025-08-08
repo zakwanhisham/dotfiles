@@ -35,9 +35,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {
         "help",
-        "lspinfo",
         "qf",
-        "term",
         "gitsigns-blame",
     },
     callback = function(event)

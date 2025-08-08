@@ -5,10 +5,6 @@ vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Escape terminal mode"
 vim.keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 vim.keymap.set("v", "p", '"_dP', { noremap = true, silent = true })
 
---[[ Macro ]]
-vim.keymap.set("n", "Q", "@qj")
-vim.keymap.set("x", "Q", ":norm @q<cr>")
-
 --[[ Better Up/Down ]]
 vim.keymap.set({ "n", "x" }, "j", "v:count==0 ? 'gj' : 'j'", { expr = true, noremap = true })
 vim.keymap.set({ "n", "x" }, "k", "v:count==0 ? 'gk' : 'k'", { expr = true, noremap = true })
