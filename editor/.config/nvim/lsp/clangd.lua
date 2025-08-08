@@ -58,6 +58,7 @@ local function symbol_info()
 end
 
 ---@class ClangdInitializeResult: lsp.InitializeResult
+---@diagnostic disable-next-line: duplicate-doc-field
 ---@field offsetEncoding? string
 
 return {

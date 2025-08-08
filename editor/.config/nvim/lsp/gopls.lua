@@ -6,8 +6,10 @@
 
 --- @class go_dir_custom_args
 ---
+---@diagnostic disable-next-line: duplicate-doc-field
 --- @field envvar_id string
 ---
+---@diagnostic disable-next-line: duplicate-doc-field
 --- @field custom_subdir string?
 
 local mod_cache = nil
