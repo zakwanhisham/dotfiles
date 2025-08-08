@@ -19,7 +19,7 @@ later(function()
             "c", "diff", "go", "gomod", "gosum", "gowork", "json", "lua",
             "markdown", "python", "vim", "vimdoc", "yaml",
         },
-        auto_install = false,
+        auto_install = true,
         incremental_selection = {
             enable = true,
             keymaps = {
