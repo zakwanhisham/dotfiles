@@ -3,19 +3,23 @@ local add, later = MiniDeps.add, MiniDeps.later
 add { source = "lewis6991/gitsigns.nvim" }
 
 later(function()
+    local nmap = function(keymap, command, buffer, desc)
+        if desc then
+            desc = "Git: " .. desc
+        end
+
+        vim.keymap.set("n", keymap, command, {buffer = buffer, desc = desc })
+    end
+
     local gitsigns = require("gitsigns")
     gitsigns.setup {
         on_attach = function(bufnr)
             local gs = package.loaded.gitsigns
 
-            vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk,
-                { buffer = bufnr, desc = "Preview git hunk" })
-            vim.keymap.set("n", "<leader>gb", gitsigns.blame,
-                { buffer = bufnr, desc = "Git blame" })
-            vim.keymap.set("n", "<leader>gl", gitsigns.blame_line,
-                { buffer = bufnr, desc = "Git blame line" })
-            vim.keymap.set("n", "<leader>gt", gitsigns.toggle_current_line_blame,
-                { buffer = bufnr, desc = "Toggle current line blame" })
+            nmap("<leader>gp", gitsigns.preview_hunk, bufnr, "Preview hunk")
+            nmap("<leader>gb", gitsigns.blame, bufnr, "Blame")
+            nmap("<leader>gl", gitsigns.blame_line, bufnr, "Blame line")
+            nmap("<leader>gt", gitsigns.toggle_current_line_blame, bufnr, "Toggle blame line")
 
             vim.keymap.set({ "n", "v" }, "]c", function()
                 if vim.wo.diff then
