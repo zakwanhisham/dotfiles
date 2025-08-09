@@ -10,7 +10,7 @@ set $alacritty /usr/bin/alacritty
 set $ghostty /usr/bin/ghostty
 set $chromium /usr/bin/chromium
 set $firefox /usr/bin/firefox
-set $menu /usr/bin/dmenu_run -i -b
+set $menu /usr/bin/dmenu_run -i
 set $music /usr/bin/chromium --app=https://music.youtube.com
 
 # default i3 tiling mode:
@@ -250,7 +250,7 @@ bar {
     mode hide
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
     # status_command i3status -c ~/.config/i3/i3status.conf
-    position bottom
+    position top
     tray_padding 0
     strip_workspace_numbers no
 }
