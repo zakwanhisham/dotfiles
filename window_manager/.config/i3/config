@@ -11,7 +11,7 @@ set $ghostty /usr/bin/ghostty
 set $chromium /usr/bin/chromium
 set $firefox /usr/bin/firefox
 set $menu /usr/bin/dmenu_run -i -b
-set $music /usr/bin/chromium --app=https://music.youtube.com --user-data-dir=/tmp/chromium-music
+set $music /usr/bin/chromium --app=https://music.youtube.com
 
 # default i3 tiling mode:
 workspace_layout default
