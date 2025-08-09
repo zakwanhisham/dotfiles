@@ -1,7 +1,7 @@
-local add, later = MiniDeps.add, MiniDeps.later
+local add, now = MiniDeps.add, MiniDeps.now
 
 add { source = "mason-org/mason.nvim" }
 
-later(function()
+now(function()
     require("mason").setup {}
 end)
