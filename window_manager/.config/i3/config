@@ -12,6 +12,7 @@ set $chromium /usr/bin/chromium
 set $firefox /usr/bin/firefox
 set $menu /usr/bin/dmenu_run -i
 set $music /usr/bin/chromium --app=https://music.youtube.com
+set $teams /usr/bin/chromium --app=https://teams.microsoft.com/v2/
 
 # default i3 tiling mode:
 workspace_layout default
@@ -164,6 +165,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+w exec $firefox
 bindsym $mod+c exec $chromium
 bindsym $mod+m exec $music
+bindsym $mod+t exec $teams
 bindsym Print exec flameshot gui
 
 # bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -232,8 +234,10 @@ for_window [class=".*"] resize set 640 480 #to change size of all floating windo
 # set position of floating window
 for_window [class=".*"] move position center
 
-# set music to workspace 10
-for_window [class="Chromium" instance="music.youtube.com"] move to workspace $ws5
+# set music to workspace 6
+for_window [class="Chromium" instance="music.youtube.com"] move to workspace $ws6
+# set teams to workspace 5
+for_window [class="Chromium" instance="teams.microsoft.com__v2"] move to workspace $ws5
 
 # define colors for windows:
 # class                 border  backgr. text    indicator child_border
