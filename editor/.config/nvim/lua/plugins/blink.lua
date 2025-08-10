@@ -29,5 +29,4 @@ later(function()
         signature = { enabled = false },
         fuzzy = { implementation = "prefer_rust_with_warning" },
     }
-end
-)
+end)
