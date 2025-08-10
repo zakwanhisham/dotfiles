@@ -1,8 +1,8 @@
-local add, later = MiniDeps.add, MiniDeps.later
+local add, now = MiniDeps.add, MiniDeps.now
 
 add { source = "lewis6991/gitsigns.nvim" }
 
-later(function()
+now(function()
     local nmap = function(keymap, command, buffer, desc)
         if desc then
             desc = "Git: " .. desc
