@@ -30,5 +30,6 @@ later(function()
             },
         },
     }
+
     require("treesitter-context").setup { max_lines = 5 }
 end)
