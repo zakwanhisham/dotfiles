@@ -8,7 +8,7 @@ now(function()
             desc = "Git: " .. desc
         end
 
-        vim.keymap.set("n", keymap, command, {buffer = buffer, desc = desc })
+        vim.keymap.set("n", keymap, command, { buffer = buffer, desc = desc })
     end
 
     local gitsigns = require("gitsigns")
