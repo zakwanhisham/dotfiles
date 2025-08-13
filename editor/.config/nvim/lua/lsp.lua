@@ -1,17 +1,13 @@
-vim.lsp.enable({
-    "bashls",
-    "clangd",
-    "eslint",
-    "fish_lsp",
-    "golangci_lint_ls",
-    "gopls",
-    "html",
-    "jsonls",
-    "lua_ls",
-    "pyright",
-    "taplo",
-    "ts_ls",
-})
+local lsps = vim.fn.readdir(vim.fn.stdpath("config") .. "/lsp")
+for _, lsp in ipairs(lsps) do
+    if lsp:match("%.lua$") then
+        local lsp_name = lsp:sub(1, -5)
+        local ok, err = pcall(vim.lsp.enable, lsp_name)
+        if not ok then
+            vim.api.nvim_echo("Error loading LSP " .. lsp_name .. ": " .. err, true, { err = true })
+        end
+    end
+end
 
 -- [[ LSP  Keymaps ]]
 vim.api.nvim_create_autocmd("LspAttach", {
