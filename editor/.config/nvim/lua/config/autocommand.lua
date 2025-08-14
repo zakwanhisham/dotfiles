@@ -34,13 +34,12 @@ vim.api.nvim_create_autocmd("FileType", {
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {
+        "fugitive",
+        "fugitiveblame",
+        "git",
         "help",
         "qf",
         "term",
-        "git",
-        "gitsigns-blame",
-        "fugitiveblame",
-        "fugitive",
     },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
