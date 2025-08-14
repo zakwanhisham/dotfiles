@@ -63,6 +63,11 @@ later(function()
             -- `z` key
             { mode = "n", keys = "z" },
             { mode = "x", keys = "z" },
+            -- `[` and `]` keys
+            { mode = "n", keys = "[" },
+            { mode = "n", keys = "]" },
+            { mode = "x", keys = "[" },
+            { mode = "x", keys = "]" },
         },
         clues = {
             -- Enhance this by adding descriptions for <Leader> mapping groups
