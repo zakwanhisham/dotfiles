@@ -35,12 +35,31 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {
         "help",
+        "lspinfo",
         "qf",
+        "term",
         "gitsigns-blame",
     },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
         vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+    end,
+})
+
+-- [[ Mini-Indentscope ]]
+-- Disable mini.indentscope on some of the file
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {
+        "gitcommit",
+        "help",
+        "lazy",
+        "man",
+        "mason",
+        "term",
+        "fzf",
+    },
+    callback = function()
+        vim.b.miniindentscope_disable = true
     end,
 })
 
