@@ -17,8 +17,8 @@ now(function()
                     { hl = "MiniStatuslineFilename", strings = { lsp } },
                     { hl = "MiniStatuslineFilename", strings = { diagnostics } },
                     "%=",
-                    { hl = "MiniStatuslineFilename", strings = { diff } },
                     { hl = "MiniStatuslineFilename", strings = { "%{FugitiveStatusline()}" } },
+                    { hl = "MiniStatuslineFilename", strings = { diff } },
                     { hl = "MiniStatuslineFilename", strings = { location } },
                 }
             end,
