@@ -4,6 +4,7 @@
 [core]
 	editor = nvim
 	pager = delta
+	commentChar = $
 [merge]
 	tool = nvim -d
     conflictstyle = zdiff3
