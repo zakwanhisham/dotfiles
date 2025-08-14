@@ -35,10 +35,11 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {
         "help",
-        "lspinfo",
         "qf",
         "term",
+        "git",
         "gitsigns-blame",
+        "fugitive",
     },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
