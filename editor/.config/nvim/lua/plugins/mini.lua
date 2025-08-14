@@ -1,18 +1,18 @@
 local now, later = MiniDeps.now, MiniDeps.later
 
 now(function()
-    require("mini.statusline").setup {
+    local MiniStatusline = require("mini.statusline")
+
+    local git            = MiniStatusline.section_git { trunc_width = 40 }
+    local diff           = MiniStatusline.section_diff { trunc_width = 75 }
+    local diagnostics    = MiniStatusline.section_diagnostics { trunc_width = 75 }
+    local lsp            = MiniStatusline.section_lsp { trunc_width = 75 }
+    local filename       = MiniStatusline.section_filename { trunc_width = 140 }
+    local location       = MiniStatusline.section_location { trunc_width = 75 }
+
+    MiniStatusline.setup {
         content = {
             active = function()
-                local MiniStatusline = require("mini.statusline")
-
-                local git            = MiniStatusline.section_git { trunc_width = 40 }
-                local diff           = MiniStatusline.section_diff { trunc_width = 75 }
-                local diagnostics    = MiniStatusline.section_diagnostics { trunc_width = 75 }
-                local lsp            = MiniStatusline.section_lsp { trunc_width = 75 }
-                local filename       = MiniStatusline.section_filename { trunc_width = 140 }
-                local location       = MiniStatusline.section_location { trunc_width = 75 }
-
                 return MiniStatusline.combine_groups {
                     { hl = "MiniStatuslineFilename", strings = { filename } },
                     { hl = "MiniStatuslineFilename", strings = { lsp } },
@@ -85,15 +85,7 @@ later(function()
         },
     }
     require("mini.ai").setup { n_lines = 500 }
-    require("mini.diff").setup {
-        view = { style = "sign" },
-        mappings = {
-            goto_first = "[C",
-            goto_prev = "[C",
-            goto_next = "]c",
-            goto_last = "]C",
-        },
-    }
+    require("mini.git").setup {}
     require("mini.indentscope").setup {}
     require("mini.surround").setup {}
     require("mini.trailspace").setup {}
