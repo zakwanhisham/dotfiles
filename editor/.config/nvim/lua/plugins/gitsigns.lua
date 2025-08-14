@@ -11,6 +11,14 @@ now(function()
         vim.keymap.set("n", keymap, command, { buffer = buffer, desc = desc })
     end
 
+    local nvmap = function(keymap, command, buffer, desc)
+        if desc then
+            desc = "Git: " .. desc
+        end
+
+        vim.keymap.set({ "n", "v" }, keymap, command, { expr = true, buffer = buffer, desc = desc })
+    end
+
     local gitsigns = require("gitsigns")
     gitsigns.setup {
         signs = {
@@ -37,25 +45,18 @@ now(function()
             nmap("<leader>gl", gitsigns.blame_line, bufnr, "Blame line")
             nmap("<leader>gt", gitsigns.toggle_current_line_blame, bufnr, "Toggle blame line")
 
-            vim.keymap.set({ "n", "v" }, "]c", function()
-                if vim.wo.diff then
-                    return "]c"
-                end
-                vim.schedule(function()
-                    gs.next_hunk()
-                end)
-                return "<Ignore>"
-            end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+            nvmap("]c", function()
+                if vim.wo.diff then return "]c" end
+                vim.schedule(function() gs.next_hunk() end)
 
-            vim.keymap.set({ "n", "v" }, "[c", function()
-                if vim.wo.diff then
-                    return "[c"
-                end
-                vim.schedule(function()
-                    gs.prev_hunk()
-                end)
                 return "<Ignore>"
-            end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
+            end, bufnr, "Jump to next hunk")
+            nvmap("[c", function()
+                if vim.wo.diff then return "[c" end
+                vim.schedule(function() gs.prev_hunk() end)
+
+                return "<Ignore>"
+            end, bufnr, "Jump to next hunk")
         end,
     }
 end)

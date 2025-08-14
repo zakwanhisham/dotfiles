@@ -1,9 +1,6 @@
 local add, now = MiniDeps.add, MiniDeps.now
 
-add {
-    source = "neovim/nvim-lspconfig",
-    depends = { "mason-org/mason.nvim" },
-}
+add { source = "neovim/nvim-lspconfig", depends = { "mason-org/mason.nvim" } }
 
 now(function()
     require("mason").setup {}
@@ -19,21 +16,18 @@ now(function()
                 vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
             end
 
-            --[[
-            --USE Default LSP Keymaps
-            -- Code Actions: `gra`
-            -- Rename: `grn`
-            -- Implementation: `gri`
-            --]]
+            local fzf = require("fzf-lua")
 
             nmap("grf", vim.lsp.buf.format, "Format")
             nmap("grr", function()
-                require("fzf-lua").lsp_references({ ignore_current_line = true })
+                fzf.lsp_references { ignore_current_line = true }
             end, "Reference")
             nmap("gd", function()
-                require("fzf-lua").lsp_definitions({ jump1 = true })
+                fzf.lsp_definitions { jump1 = true }
             end, "Goto Definition")
-            nmap("gD", "<cmd>FzfLua lsp_declarations<cr>", "Goto Declaration")
+            nmap("gD", function()
+                fzf.lsp_declarations { jump1 = true }
+            end, "Goto Declaration")
         end
     })
 

@@ -1,19 +1,19 @@
 local now, later = MiniDeps.now, MiniDeps.later
 
 now(function()
-    require("mini.statusline").setup {
+    local MiniStatusline = require("mini.statusline")
+
+    local git            = MiniStatusline.section_git { trunc_width = 40 }
+    local diff           = MiniStatusline.section_diff { trunc_width = 75 }
+    local diagnostics    = MiniStatusline.section_diagnostics { trunc_width = 75 }
+    local lsp            = MiniStatusline.section_lsp { trunc_width = 75 }
+    local filename       = MiniStatusline.section_filename { trunc_width = 140 }
+    local location       = MiniStatusline.section_location { trunc_width = 75 }
+
+    MiniStatusline.setup {
         content = {
             active = function()
-                local MiniStatusline = require("mini.statusline")
-
-                local git            = MiniStatusline.section_git({ trunc_width = 40 })
-                local diff           = MiniStatusline.section_diff({ trunc_width = 75 })
-                local diagnostics    = MiniStatusline.section_diagnostics({ trunc_width = 75 })
-                local lsp            = MiniStatusline.section_lsp({ trunc_width = 75 })
-                local filename       = MiniStatusline.section_filename({ trunc_width = 140 })
-                local location       = MiniStatusline.section_location({ trunc_width = 75 })
-
-                return MiniStatusline.combine_groups({
+                return MiniStatusline.combine_groups {
                     { hl = "MiniStatuslineFilename", strings = { filename } },
                     { hl = "MiniStatuslineFilename", strings = { lsp } },
                     { hl = "MiniStatuslineFilename", strings = { diagnostics } },
@@ -21,7 +21,7 @@ now(function()
                     { hl = "MiniStatuslineFilename", strings = { diff } },
                     { hl = "MiniStatuslineFilename", strings = { git } },
                     { hl = "MiniStatuslineFilename", strings = { location } },
-                })
+                }
             end,
         },
         use_icons = false,
@@ -29,7 +29,9 @@ now(function()
 end)
 
 later(function()
-    require("mini.clue").setup {
+    local clue = require("mini.clue")
+
+    clue.setup {
         window = {
             config = {
                 anchor = "SE",
@@ -74,12 +76,12 @@ later(function()
             { mode = "n", keys = "<Leader>f", desc = "Fzf" },
             { mode = "n", keys = "<Leader>g", desc = "Git" },
             { mode = "n", keys = "<Leader>w", desc = "Whitespace" },
-            require("mini.clue").gen_clues.builtin_completion(),
-            require("mini.clue").gen_clues.g(),
-            require("mini.clue").gen_clues.marks(),
-            require("mini.clue").gen_clues.registers(),
-            require("mini.clue").gen_clues.windows(),
-            require("mini.clue").gen_clues.z(),
+            clue.gen_clues.builtin_completion(),
+            clue.gen_clues.g(),
+            clue.gen_clues.marks(),
+            clue.gen_clues.registers(),
+            clue.gen_clues.windows(),
+            clue.gen_clues.z(),
         },
     }
     require("mini.ai").setup { n_lines = 500 }
