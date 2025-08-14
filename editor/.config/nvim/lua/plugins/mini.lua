@@ -6,7 +6,6 @@ now(function()
             active = function()
                 local MiniStatusline = require("mini.statusline")
 
-                local git            = MiniStatusline.section_git { trunc_width = 40 }
                 local diff           = MiniStatusline.section_diff { trunc_width = 75 }
                 local diagnostics    = MiniStatusline.section_diagnostics { trunc_width = 75 }
                 local lsp            = MiniStatusline.section_lsp { trunc_width = 75 }
@@ -19,7 +18,7 @@ now(function()
                     { hl = "MiniStatuslineFilename", strings = { diagnostics } },
                     "%=",
                     { hl = "MiniStatuslineFilename", strings = { diff } },
-                    { hl = "MiniStatuslineFilename", strings = { git } },
+                    { hl = "MiniStatuslineFilename", strings = { "%{FugitiveStatusline()}" } },
                     { hl = "MiniStatuslineFilename", strings = { location } },
                 }
             end,
