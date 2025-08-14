@@ -39,6 +39,7 @@ vim.api.nvim_create_autocmd("FileType", {
         "term",
         "git",
         "gitsigns-blame",
+        "fugitiveblame",
         "fugitive",
     },
     callback = function(event)
