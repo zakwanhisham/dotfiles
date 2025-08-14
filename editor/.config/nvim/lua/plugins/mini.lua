@@ -85,6 +85,15 @@ later(function()
         },
     }
     require("mini.ai").setup { n_lines = 500 }
+    require("mini.diff").setup {
+        view = { style = "sign" },
+        mappings = {
+            goto_first = '[C',
+            goto_prev = '[c',
+            goto_next = ']c',
+            goto_last = ']C',
+        }
+    }
     require("mini.indentscope").setup {}
     require("mini.surround").setup {}
     require("mini.trailspace").setup {}
