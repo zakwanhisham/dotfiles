@@ -40,9 +40,7 @@ now(function()
         on_attach = function(bufnr)
             local gs = package.loaded.gitsigns
 
-            nmap("<leader>gp", gitsigns.preview_hunk, bufnr, "Preview hunk")
             nmap("<leader>gb", gitsigns.blame, bufnr, "Blame")
-            nmap("<leader>gl", gitsigns.blame_line, bufnr, "Blame line")
             nmap("<leader>gt", gitsigns.toggle_current_line_blame, bufnr, "Toggle blame line")
 
             nvmap("]c", function()
