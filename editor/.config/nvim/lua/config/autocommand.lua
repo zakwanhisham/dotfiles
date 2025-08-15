@@ -51,13 +51,14 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Disable mini.indentscope on some of the file
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {
+        "fugitive",
+        "fzf",
+        "git",
         "gitcommit",
         "help",
-        "lazy",
         "man",
         "mason",
         "term",
-        "fzf",
     },
     callback = function()
         vim.b.miniindentscope_disable = true
