@@ -25,6 +25,7 @@ later(function()
     require("fzf-lua").setup {
         file_ignore_patterns = { "%.git/.*", "node_modules/.*" },
         winopts = { split = "belowright new" },
+        fzf_opts = { ["--color"] = "bw" },
         keymap = {
             builtin = {
                 true,

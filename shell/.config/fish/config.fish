@@ -16,7 +16,7 @@ set -Ux EDITOR "nvim"
 set -Ux TERM "tmux-256color"
 
 # FZF default opts
-set -Ux FZF_DEFAULT_OPTS "--layout=reverse --border=none --preview-window=border-sharp --cycle"
+set -Ux FZF_DEFAULT_OPTS "--layout=reverse --border=none --preview-window=border-sharp --cycle --color=bw"
 
 # PATH
 set -U fish_user_paths $HOME/bin /usr/local/bin $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
