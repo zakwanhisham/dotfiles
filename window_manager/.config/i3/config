@@ -212,9 +212,6 @@ exec --no-startup-id ~/.fehbg
 # Desktop notifications
 exec --no-startup-id /usr/bin/dunst
 
-# Autostart music
-exec --no-startup-id $music
-
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
