@@ -84,6 +84,13 @@ later(function()
         },
     }
     require("mini.ai").setup { n_lines = 500 }
+    require("mini.comment").setup {
+        options = { ignore_blank_line = true },
+        mappings = {
+            comment_line = "<C-_>",
+            comment_visual = "<C-_>",
+        }
+    }
     require("mini.diff").setup {
         view = { style = "sign" },
         mappings = {
@@ -93,7 +100,7 @@ later(function()
             goto_last = ']C',
         }
     }
-    require("mini.indentscope").setup {}
+    require("mini.move").setup {}
     require("mini.surround").setup {}
     require("mini.trailspace").setup {}
 end)
