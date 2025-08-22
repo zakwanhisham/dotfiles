@@ -84,13 +84,6 @@ later(function()
         },
     }
     require("mini.ai").setup { n_lines = 500 }
-    require("mini.comment").setup {
-        options = { ignore_blank_line = true },
-        mappings = {
-            comment_line = "<C-_>",
-            comment_visual = "<C-_>",
-        }
-    }
     require("mini.diff").setup {
         view = { style = "sign" },
         mappings = {
