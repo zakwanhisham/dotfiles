@@ -14,10 +14,6 @@ later(function()
     ---@diagnostic disable-next-line: missing-fields
     require("nvim-treesitter.configs").setup {
         auto_install = true,
-        ensure_installed = {
-            "c", "diff", "go", "gomod", "gosum", "gowork", "json", "lua",
-            "markdown", "python", "vim", "vimdoc", "yaml",
-        },
         highlight = { enable = true },
         indent = { enable = false },
         incremental_selection = {
