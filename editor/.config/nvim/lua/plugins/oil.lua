@@ -3,7 +3,7 @@ local add, now = MiniDeps.add, MiniDeps.now
 add { source = "stevearc/oil.nvim" }
 
 now(function()
-    vim.keymap.set("n", "<leader>-", "<cmd>Oil<cr>", { desc = "Oil" })
+    vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Oil" })
 
     require("oil").setup {
         default_file_explorer = true,
