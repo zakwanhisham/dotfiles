@@ -19,59 +19,13 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end,
 })
 
--- [[ Help File ]]
--- Open Vim Help file vertically on the right
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "help",
-    callback = function()
-        vim.bo.bufhidden = "unload"
-        vim.cmd.wincmd "L"
-        vim.cmd "vertical resize 120"
-    end,
-})
-
 -- [[ Close File]]
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {
-        "fugitive",
-        "fugitiveblame",
-        "git",
-        "help",
-        "qf",
-        "term",
-    },
+    pattern = { "fugitive", "fugitiveblame", "git", "help", "qf", "term" },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
         vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
-    end,
-})
-
--- [[ Mini-Indentscope ]]
--- Disable mini.indentscope on some of the file
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = {
-        "fugitive",
-        "fzf",
-        "git",
-        "gitcommit",
-        "help",
-        "man",
-        "mason",
-        "term",
-    },
-    callback = function()
-        vim.b.miniindentscope_disable = true
-    end,
-})
-
--- [[ Resize ]]
--- resize splits if window got resized
-vim.api.nvim_create_autocmd({ "VimResized" }, {
-    callback = function()
-        local current_tab = vim.fn.tabpagenr()
-        vim.cmd "tabdo wincmd ="
-        vim.cmd("tabnext " .. current_tab)
     end,
 })
 
