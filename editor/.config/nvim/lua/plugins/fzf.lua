@@ -23,33 +23,14 @@ later(function()
         file_ignore_patterns = { "%.git/.*", "node_modules/.*" },
         winopts = { split = "botright new" },
         fzf_opts = { ["--color"] = "bw" },
-        keymap = {
-            builtin = {
-                true,
-                ["<c-f>"] = "preview-page-down",
-                ["<c-b>"] = "preview-page-up",
-            },
-            fzf = {
-                true,
-                ["ctrl-q"] = "select-all+accept",
-                ["ctrl-u"] = "half-page-up",
-                ["ctrl-d"] = "half-page-down",
-                ["ctrl-x"] = "jump",
-                ["ctrl-f"] = "preview-page-down",
-                ["ctrl-b"] = "preview-page-up",
-            },
-        },
-        files = {
-            prompt = "Files❯ ",
-            cwd_prompt = false,
-        },
+        files = { prompt = "Files❯ ", cwd_prompt = false },
+        buffers = { prompt = "Buffers❯ " },
+        grep = { prompt = "Rg❯ " },
         oldfiles = {
             prompt = "History❯ ",
             cwd_only = function()
                 return vim.api.nvim_command('pwd') ~= vim.env.HOME
             end
         },
-        buffers = { prompt = "Buffers❯ " },
-        grep = { prompt = "Rg❯ " },
     }
 end)
