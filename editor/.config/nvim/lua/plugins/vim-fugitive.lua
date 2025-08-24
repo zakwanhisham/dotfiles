@@ -13,4 +13,5 @@ later(function()
 
     nmap("<leader>gl", "<cmd>tab Git log --graph %<cr>", "Log")
     nmap("<leader>gb", "<cmd>Git blame<cr>", "Blame")
+    nmap("<leader>gd", "<cmd>tab Gvdiffsplit<cr>", "Diff")
 end)
