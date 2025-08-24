@@ -12,12 +12,12 @@ later(function()
     end
 
     nmap("<leader><space>", "<cmd>FzfLua buffers<cr>", "Buffers")
-    nmap("<leader>ff", "<cmd>FzfLua files<cr>", "Find Files")
-    nmap("<leader>fs", "<cmd>FzfLua live_grep<cr>", "Live Grep")
-    nmap("<leader>fw", "<cmd>FzfLua grep_cword<cr>", "Grep Word")
+    nmap("<leader>ff", "<cmd>FzfLua files<cr>", "Files")
+    nmap("<leader>fs", "<cmd>FzfLua grep<cr>", "Grep")
+    nmap("<leader>fw", "<cmd>FzfLua grep_cword<cr>", "Word")
     nmap("<leader>fm", "<cmd>FzfLua marks<cr>", "Marks")
     nmap("<leader>fr", "<cmd>FzfLua resume<cr>", "Resume")
-    nmap("<leader>/", "<cmd>FzfLua grep_curbuf<cr>", "Grep Current Buffer")
+    nmap("<leader>/", "<cmd>FzfLua grep_curbuf<cr>", "Search Buffer")
 
     require("fzf-lua").setup {
         file_ignore_patterns = { "%.git/.*", "node_modules/.*" },
