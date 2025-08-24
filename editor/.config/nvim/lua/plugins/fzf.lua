@@ -20,17 +20,12 @@ later(function()
     nmap("<leader>/", "<cmd>FzfLua grep_curbuf<cr>", "Search Buffer")
 
     require("fzf-lua").setup {
+        defaults = { file_icons = false },
         file_ignore_patterns = { "%.git/.*", "node_modules/.*" },
         winopts = { split = "botright new" },
         fzf_opts = { ["--color"] = "bw" },
-        files = { prompt = "Files❯ ", cwd_prompt = false },
+        files = { prompt = "Files❯ ", cwd_prompt = false, no_ignore = true },
         buffers = { prompt = "Buffers❯ " },
-        grep = { prompt = "Rg❯ " },
-        oldfiles = {
-            prompt = "History❯ ",
-            cwd_only = function()
-                return vim.api.nvim_command('pwd') ~= vim.env.HOME
-            end
-        },
+        grep = { prompt = "Rg❯ ", no_ignore = true },
     }
 end)
