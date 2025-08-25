@@ -29,6 +29,15 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- [[ Mini-Indentscope ]]
+-- Disable mini.indentscope on some of the file
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "fugitive", "fzf", "git", "gitcommit", "help", "man", "mason", "term" },
+    callback = function()
+        vim.b.miniindentscope_disable = true
+    end,
+})
+
 -- [[ Auto create dir]]
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
