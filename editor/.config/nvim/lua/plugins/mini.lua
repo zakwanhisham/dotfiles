@@ -92,6 +92,7 @@ later(function()
             goto_last = ']C',
         }
     }
+    require("mini.indentscope").setup {}
     require("mini.move").setup {}
     require("mini.surround").setup {}
     require("mini.trailspace").setup {}
