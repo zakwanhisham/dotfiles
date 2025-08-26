@@ -29,7 +29,6 @@ end)
 
 later(function()
     local clue = require("mini.clue")
-
     clue.setup {
         window = {
             config = {
