@@ -47,6 +47,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
         vim.cmd("tabnext " .. current_tab)
     end,
 })
+
 -- [[ Auto create dir]]
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
