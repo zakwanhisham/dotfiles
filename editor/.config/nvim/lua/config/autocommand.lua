@@ -38,6 +38,15 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- [[ Resize ]]
+-- resize splits if window got resized
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+    callback = function()
+        local current_tab = vim.fn.tabpagenr()
+        vim.cmd "tabdo wincmd ="
+        vim.cmd("tabnext " .. current_tab)
+    end,
+})
 -- [[ Auto create dir]]
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
