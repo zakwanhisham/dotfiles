@@ -1,6 +1,6 @@
-require "config.options"
-require "config.keymaps"
-require "config.autocommand"
+require "core.options"
+require "core.keymaps"
+require "core.autocommand"
 
 local path_package = vim.fn.stdpath('data') .. '/site/'
 local mini_path = path_package .. 'pack/deps/start/mini.nvim'
