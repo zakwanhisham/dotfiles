@@ -24,8 +24,12 @@ later(function()
         file_ignore_patterns = { "%.git/.*", "node_modules/.*" },
         winopts = { split = "botright new" },
         fzf_opts = { ["--color"] = "bw" },
-        files = { prompt = "Files❯ ", cwd_prompt = false, no_ignore = true },
+        files = { prompt = "Files❯ ", cwd_prompt = false },
         buffers = { prompt = "Buffers❯ " },
-        grep = { prompt = "Rg❯ ", no_ignore = true },
+        grep = {
+            prompt       = "Rg❯ ",
+            input_prompt = "Rg For❯ ",
+            cmd          = "rg --vimgrep --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
+        },
     }
 end)
