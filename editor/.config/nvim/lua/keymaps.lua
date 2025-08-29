@@ -1,7 +1,7 @@
 --[[ Useful keymap ]]
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set({ "n", "x" }, "<esc>", "<cmd>nohlsearch<cr><esc>", { desc = "Escape and clear hlsearch" })
-vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Escape terminal mode" })
+vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 vim.keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 vim.keymap.set("v", "p", '"_dP', { noremap = true, silent = true })
 
