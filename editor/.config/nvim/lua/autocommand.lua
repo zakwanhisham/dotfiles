@@ -39,6 +39,15 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- [[ Help file ]]
+-- Open help file vertically
+vim.api.nvim_create_autocmd("BufWinEnter", {
+    pattern = { "help", "*.txt" },
+    callback = function()
+        if vim.o.filetype == "help" then vim.cmd.wincmd("L") end
+    end,
+})
+
 -- [[ Resize ]]
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
