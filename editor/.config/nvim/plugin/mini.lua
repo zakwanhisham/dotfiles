@@ -91,7 +91,7 @@ later(function()
             goto_last = ']C',
         }
     }
-    require("mini.indentscope").setup {}
+    require("mini.indentscope").setup { options = { try_as_border = true } }
     require("mini.move").setup {}
     require("mini.surround").setup {}
     require("mini.trailspace").setup {}
