@@ -23,13 +23,7 @@ later(function()
         defaults = { file_icons = false },
         file_ignore_patterns = { "%.git/.*", "node_modules/.*" },
         winopts = { split = "botright new" },
-        fzf_opts = { ["--color"] = "bw" },
-        files = { prompt = "Files❯ ", cwd_prompt = false },
-        buffers = { prompt = "Buffers❯ " },
-        grep = {
-            prompt       = "Rg❯ ",
-            input_prompt = "Rg For❯ ",
-            cmd          = "rg --vimgrep --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
-        },
+        files = { cwd_prompt = false },
+        grep = { cmd = "rg --vimgrep --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e" },
     }
 end)
