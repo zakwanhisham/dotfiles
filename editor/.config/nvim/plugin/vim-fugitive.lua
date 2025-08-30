@@ -12,7 +12,7 @@ later(function()
     end
 
     nmap("<leader>gg", "<cmd>tab Git<cr>", "Fugitive")
-    nmap("<leader>gl", "<cmd>tab Git log --graph %<cr>", "Log")
+    nmap("<leader>gl", "<cmd>Git log --graph --decorate<cr>", "Log")
     nmap("<leader>gb", "<cmd>Git blame<cr>", "Blame")
     nmap("<leader>gd", "<cmd>Gdiffsplit<cr>", "Diff")
 end)
