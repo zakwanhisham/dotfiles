@@ -80,7 +80,7 @@ later(function()
             clue.gen_clues.z(),
         },
     }
-    require("mini.ai").setup { n_lines = 500 }
+    require("mini.ai").setup {}
     require("mini.comment").setup { options = { ignore_blank_line = true } }
     require("mini.diff").setup {
         view = { style = "sign" },
