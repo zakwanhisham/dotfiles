@@ -16,18 +16,9 @@ now(function()
                 vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
             end
 
-            local fzf = require("fzf-lua")
-
             nmap("grf", vim.lsp.buf.format, "Format")
-            nmap("grr", function()
-                fzf.lsp_references { ignore_current_line = true }
-            end, "Reference")
-            nmap("gd", function()
-                fzf.lsp_definitions { jump1 = true }
-            end, "Goto Definition")
-            nmap("gD", function()
-                fzf.lsp_declarations { jump1 = true }
-            end, "Goto Declaration")
+            nmap("grr", "<cmd>FzfLua lsp_references ignore_current_line=true<cr>", "Reference")
+            nmap("gd", "<cmd>FzfLua lsp_definitions jump1=true<cr>", "Definition")
         end
     })
 
