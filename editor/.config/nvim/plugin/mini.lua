@@ -10,6 +10,7 @@ now(function()
                 local diagnostics    = MiniStatusline.section_diagnostics { trunc_width = 75 }
                 local lsp            = MiniStatusline.section_lsp { trunc_width = 75 }
                 local filename       = MiniStatusline.section_filename { trunc_width = 140 }
+                local location       = MiniStatusline.section_location { trunc_width = 75 }
 
                 return MiniStatusline.combine_groups {
                     { hl = "MiniStatuslineModeNormal", strings = { filename } },
@@ -18,8 +19,7 @@ now(function()
                     "%=",
                     { hl = "MiniStatuslineModeNormal", strings = { "%{FugitiveStatusline()}" } },
                     { hl = "MiniStatuslineModeNormal", strings = { diff } },
-                    { hl = "MiniStatuslineModeNormal", strings = { "%l:%L" } },
-                    { hl = "MiniStatuslineModeNormal", strings = { "%P" } },
+                    { hl = "MiniStatuslineModeNormal", strings = { location } },
                 }
             end,
         },
