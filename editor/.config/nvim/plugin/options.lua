@@ -1,8 +1,3 @@
---[[ Globals ]]
-vim.g.mapleader = " "
-vim.g.maplocalleader = ";"
-
--- [[ Options ]]
 vim.o.mouse = "a"
 vim.o.pumheight = 10
 -- vim.o.guicursor = ""
