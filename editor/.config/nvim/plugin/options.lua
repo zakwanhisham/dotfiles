@@ -1,3 +1,7 @@
+-- [[ GLOBALS ]]
+vim.g.mapleader = " "
+
+-- [[ OPTIONS ]]
 vim.o.mouse = "a"
 vim.o.pumheight = 10
 -- vim.o.guicursor = ""
