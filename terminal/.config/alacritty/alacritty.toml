@@ -1,5 +1,5 @@
 [general]
-import = [ "~/.config/alacritty/themes/gruvbox-light-hard.toml" ]
+import = [ "~/.config/alacritty/themes/gruvbox-dark-hard.toml" ]
 live_config_reload = true
 
 [window]

@@ -54,9 +54,4 @@ vim.o.conceallevel = 0
 vim.o.laststatus = 2
 vim.o.ruler = true
 vim.o.linebreak = true
-vim.opt.path:append "**"
-if os.getenv("TERM") == "alacritty" then
-    vim.o.background = "light"
-else
-    vim.o.background = "dark"
-end
+vim.o.background = "dark"
