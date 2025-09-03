@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 vim.o.mouse = "a"
 vim.o.pumheight = 10
 -- vim.o.guicursor = ""
