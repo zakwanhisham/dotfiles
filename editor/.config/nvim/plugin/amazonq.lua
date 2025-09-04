@@ -1,8 +1,8 @@
-local add, now = MiniDeps.add, MiniDeps.now
+local add, later = MiniDeps.add, MiniDeps.later
 
 add { source = "awslabs/amazonq.nvim" }
 
-now(function()
+later(function()
     require("amazonq").setup {
         ssoStartUrl = "https://view.awsapps.com/start",
         inline_suggest = false,
