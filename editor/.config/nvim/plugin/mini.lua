@@ -30,15 +30,7 @@ end)
 later(function()
     local clue = require("mini.clue")
     clue.setup {
-        window = {
-            config = {
-                anchor = "SE",
-                row = "auto",
-                col = "auto",
-                width = "auto",
-                border = "bold",
-            },
-        },
+        window = { config = { row = "auto", col = "auto", width = "auto" } },
         triggers = {
             -- Leader triggers
             { mode = "n", keys = "<Leader>" },
@@ -68,7 +60,6 @@ later(function()
             { mode = "x", keys = "]" },
         },
         clues = {
-            -- Enhance this by adding descriptions for <Leader> mapping groups
             { mode = "n", keys = "<Leader>f", desc = "Fzf" },
             { mode = "n", keys = "<Leader>g", desc = "Git" },
             { mode = "n", keys = "<Leader>w", desc = "Whitespace" },
