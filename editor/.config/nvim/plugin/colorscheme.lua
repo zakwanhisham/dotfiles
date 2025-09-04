@@ -3,6 +3,7 @@ local add, now = MiniDeps.add, MiniDeps.now
 add { source = "sainnhe/gruvbox-material" }
 
 now(function()
+    vim.o.background = "dark"
     vim.g.gruvbox_material_background = "hard"
     vim.g.gruvbox_material_foreground = "original"
     vim.g.gruvbox_material_enable_bold = 1
