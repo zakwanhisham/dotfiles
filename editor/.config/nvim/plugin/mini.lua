@@ -13,13 +13,13 @@ now(function()
                 local location       = MiniStatusline.section_location { trunc_width = 75 }
 
                 return MiniStatusline.combine_groups {
-                    { hl = "MiniStatuslineModeNormal", strings = { filename } },
-                    { hl = "MiniStatuslineModeNormal", strings = { lsp } },
-                    { hl = "MiniStatuslineModeNormal", strings = { diagnostics } },
+                    { hl = "MiniStatuslineFileinfo", strings = { filename } },
+                    { hl = "MiniStatuslineFileinfo", strings = { lsp } },
+                    { hl = "MiniStatuslineFileinfo", strings = { diagnostics } },
                     "%=",
-                    { hl = "MiniStatuslineModeNormal", strings = { "%{FugitiveStatusline()}" } },
-                    { hl = "MiniStatuslineModeNormal", strings = { diff } },
-                    { hl = "MiniStatuslineModeNormal", strings = { location } },
+                    { hl = "MiniStatuslineFileinfo", strings = { "%{FugitiveStatusline()}" } },
+                    { hl = "MiniStatuslineFileinfo", strings = { diff } },
+                    { hl = "MiniStatuslineFileinfo", strings = { location } },
                 }
             end,
         },
