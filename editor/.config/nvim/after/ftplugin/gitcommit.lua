@@ -1,3 +1,5 @@
-vim.cmd("setlocal colorcolumn=50")
-vim.cmd("setlocal spell wrap")
-vim.cmd("setlocal foldmethod=expr foldexpr=v:lua.MiniGit.diff_foldexpr() foldlevel=1")
+vim.cmd [[
+    setlocal colorcolumn=50 spell wrap
+    setlocal foldmethod=expr foldexpr=v:lua.MiniGit.diff_foldexpr() foldlevel=1
+]]
+
