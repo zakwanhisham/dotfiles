@@ -26,7 +26,6 @@ now(function()
         bashls = {},
         clangd = {},
         eslint = {},
-        fish_lsp = {},
         golangci_lint_ls = {},
         gopls = {},
         lua_ls = {
