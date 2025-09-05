@@ -9,7 +9,7 @@ add {
 }
 
 later(function()
-    require("treesitter-context").setup { max_lines = 5 }
+    require("treesitter-context").setup { max_lines = 5, separator = "" }
     require("nvim-treesitter.install").prefer_git = true
 
     ---@diagnostic disable-next-line: missing-fields
