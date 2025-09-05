@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 -- [[ Close File]]
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "fugitive", "fugitiveblame", "git", "help", "qf", "term" },
+    pattern = { "fugitive", "fugitiveblame", "git", "help", "qf", "term", "minideps-confirm" },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
         vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
