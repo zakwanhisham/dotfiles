@@ -4,9 +4,7 @@ local yank_highlight = vim.api.nvim_create_augroup("YankHighlight", { clear = tr
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = yank_highlight,
     pattern = "*",
-    callback = function()
-        vim.hl.on_yank()
-    end,
+    callback = function() vim.hl.on_yank() end
 })
 
 -- [[ Terminal ]]
@@ -14,9 +12,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("TermOpen", {
     pattern = { "*" },
     callback = function()
-        vim.cmd [[startinsert]]
-        vim.cmd.setlocal "nonumber"
-        vim.cmd.setlocal "norelativenumber"
+        vim.cmd [[
+            startinsert
+            setlocal nonumber norelativenumber
+        ]]
     end,
 })
 
@@ -34,9 +33,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Disable mini.indentscope on some of the file
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "fugitive", "fzf", "git", "gitcommit", "help", "man", "mason", "term", "undotree" },
-    callback = function()
-        vim.b.miniindentscope_disable = true
-    end,
+    callback = function() vim.b.miniindentscope_disable = true end,
 })
 
 -- [[ Resize ]]
@@ -44,7 +41,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd({ "VimResized" }, {
     callback = function()
         local current_tab = vim.fn.tabpagenr()
-        vim.cmd "tabdo wincmd ="
+        vim.cmd("tabdo wincmd =")
         vim.cmd("tabnext " .. current_tab)
     end,
 })
@@ -53,9 +50,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     callback = function(event)
-        if event.match:match "^%w%w+:[\\/][\\/]" then
-            return
-        end
+        if event.match:match "^%w%w+:[\\/][\\/]" then return end
         ---@diagnostic disable-next-line: undefined-field
         local file = vim.uv.fs_realpath(event.match) or event.match
         vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")

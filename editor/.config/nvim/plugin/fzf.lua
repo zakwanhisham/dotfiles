@@ -4,9 +4,7 @@ add { source = "ibhagwan/fzf-lua" }
 
 later(function()
     local nmap = function(keymap, command, desc)
-        if desc then
-            desc = "FZF: " .. desc
-        end
+        if desc then desc = "FZF: " .. desc end
 
         vim.keymap.set("n", keymap, command, { desc = desc })
     end
@@ -19,8 +17,5 @@ later(function()
     nmap("<leader>fr", "<cmd>FzfLua resume<cr>", "Resume")
     nmap("<leader>/", "<cmd>BLines<cr>", "Buffer Lines")
 
-    require("fzf-lua").setup {
-        { "fzf-vim", "ivy" },
-        keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } }
-    }
+    require("fzf-lua").setup { { "fzf-vim", "ivy" }, keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } } }
 end)

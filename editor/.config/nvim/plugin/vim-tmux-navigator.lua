@@ -4,9 +4,7 @@ add { source = "christoomey/vim-tmux-navigator" }
 
 later(function()
     local nmap = function(keymap, command, desc)
-        if desc then
-            desc = "Tmux: " .. desc
-        end
+        if desc then desc = "Tmux: " .. desc end
 
         vim.keymap.set("n", keymap, command, { desc = desc })
     end

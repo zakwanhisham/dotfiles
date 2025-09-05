@@ -4,9 +4,7 @@ add { source = "NeogitOrg/neogit", depends = { "nvim-lua/plenary.nvim" } }
 
 later(function()
     local nmap = function(keymap, command, desc)
-        if desc then
-            desc = "Git: " .. desc
-        end
+        if desc then desc = "Git: " .. desc end
 
         vim.keymap.set("n", keymap, command, { desc = desc })
     end

@@ -75,12 +75,7 @@ later(function()
     require("mini.comment").setup { options = { ignore_blank_line = true } }
     require("mini.diff").setup {
         view = { style = "sign" },
-        mappings = {
-            goto_first = '[C',
-            goto_prev = '[c',
-            goto_next = ']c',
-            goto_last = ']C',
-        }
+        mappings = { goto_first = '[C', goto_prev = '[c', goto_next = ']c', goto_last = ']C' }
     }
     require("mini.indentscope").setup {}
     require("mini.move").setup {}
