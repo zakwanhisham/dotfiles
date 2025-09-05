@@ -53,16 +53,15 @@ else:
 
     # stands for charging
     color = config.get("color_charging", "yellow")
-    FA_LIGHTNING = "<span color='{}'><span font='FontAwesome'>\uf0e7</span></span>".format(color)
 
     # stands for plugged in
-    FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
+    FA_PLUG = "CHR:"
 
     # stands for using battery
-    FA_BATTERY = "<span font='FontAwesome'>\uf240</span>"
+    FA_BATTERY = "BAT:"
 
     # stands for unknown status of battery
-    FA_QUESTION = "<span font='FontAwesome'>\uf128</span>"
+    FA_QUESTION = "?:"
 
 
     if state == "Discharging":
@@ -74,7 +73,7 @@ else:
         fulltext = FA_QUESTION + " " + FA_BATTERY + " "
         timeleft = ""
     else:
-        fulltext = FA_LIGHTNING + " " + FA_PLUG + " "
+        fulltext = FA_PLUG + " "
 
     def color(percent):
         if percent < 10:
