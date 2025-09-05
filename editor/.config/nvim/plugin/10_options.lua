@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.cmd.colorscheme("gruvbox")
 
 vim.o.mouse = "a"
 vim.o.pumheight = 10
