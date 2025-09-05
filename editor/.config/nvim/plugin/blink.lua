@@ -25,7 +25,7 @@ later(function()
             documentation = { auto_show = true, auto_show_delay_ms = 200 },
             ghost_text = { enabled = false },
         },
-        sources = { default = { "lsp", "path", "snippets", "buffer" } },
+        sources = { default = { "lsp", "snippets", "buffer", "path" } },
         signature = { enabled = false },
         fuzzy = { implementation = "prefer_rust_with_warning" },
     }
