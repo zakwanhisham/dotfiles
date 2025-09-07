@@ -11,6 +11,7 @@ later(function()
 
     nmap("<leader><space>", "<cmd>Buffers<cr>", "Buffers")
     nmap("<leader>ff", "<cmd>Files<cr>", "Files")
+    nmap("<leader>fg", "<cmd>GFiles<cr>", "Git Files")
     nmap("<leader>fs", "<cmd>Rg<cr>", "Grep")
     nmap("<leader>fw", "<cmd>FzfLua grep_cword<cr>", "Word")
     nmap("<leader>fk", "<cmd>FzfLua keymaps<cr>", "Keymaps")
