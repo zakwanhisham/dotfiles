@@ -14,6 +14,7 @@ now(function()
 
                 return MiniStatusline.combine_groups {
                     { hl = "MiniStatuslineModeNormal", strings = { filename } },
+                    "%<",
                     { hl = "MiniStatuslineModeNormal", strings = { lsp } },
                     { hl = "MiniStatuslineModeNormal", strings = { diagnostics } },
                     "%=",
