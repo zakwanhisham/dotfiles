@@ -28,49 +28,6 @@ now(function()
 end)
 
 later(function()
-    local clue = require("mini.clue")
-    clue.setup {
-        window = { config = { row = "auto", col = "auto", width = "auto" } },
-        triggers = {
-            -- Leader triggers
-            { mode = "n", keys = "<Leader>" },
-            { mode = "x", keys = "<Leader>" },
-            -- `g` key
-            { mode = "n", keys = "g" },
-            { mode = "x", keys = "g" },
-            -- Marks
-            { mode = "n", keys = "'" },
-            { mode = "n", keys = "`" },
-            { mode = "x", keys = "'" },
-            { mode = "x", keys = "`" },
-            -- Registers
-            { mode = "n", keys = '"' },
-            { mode = "x", keys = '"' },
-            { mode = "i", keys = "<C-r>" },
-            { mode = "c", keys = "<C-r>" },
-            -- Window commands
-            { mode = "n", keys = "<C-w>" },
-            -- `z` key
-            { mode = "n", keys = "z" },
-            { mode = "x", keys = "z" },
-            -- `[` and `]` keys
-            { mode = "n", keys = "[" },
-            { mode = "n", keys = "]" },
-            { mode = "x", keys = "[" },
-            { mode = "x", keys = "]" },
-        },
-        clues = {
-            { mode = "n", keys = "<Leader>f", desc = "Fzf" },
-            { mode = "n", keys = "<Leader>g", desc = "Git" },
-            { mode = "n", keys = "<Leader>w", desc = "Whitespace" },
-            clue.gen_clues.builtin_completion(),
-            clue.gen_clues.g(),
-            clue.gen_clues.marks(),
-            clue.gen_clues.registers(),
-            clue.gen_clues.windows(),
-            clue.gen_clues.z(),
-        },
-    }
     require("mini.ai").setup {}
     require("mini.comment").setup { options = { ignore_blank_line = true } }
     require("mini.diff").setup {
