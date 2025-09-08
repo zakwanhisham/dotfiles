@@ -189,6 +189,7 @@ shfmt
 smartmontools
 sof-firmware
 speech-dispatcher
+speedtest-cli
 sshpass
 starship
 stow
