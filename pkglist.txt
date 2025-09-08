@@ -23,6 +23,7 @@ ccache
 chromium
 clang
 cmake
+cmatrix
 codespell
 curlie
 dex
@@ -183,6 +184,7 @@ rng-tools
 rsync
 rtkit
 s-nail
+scdoc
 scrot
 sg3_utils
 shfmt
