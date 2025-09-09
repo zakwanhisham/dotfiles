@@ -6,21 +6,17 @@ now(function()
             active = function()
                 local MiniStatusline = require("mini.statusline")
 
-                local diff           = MiniStatusline.section_diff { trunc_width = 75 }
                 local diagnostics    = MiniStatusline.section_diagnostics { trunc_width = 75 }
-                local lsp            = MiniStatusline.section_lsp { trunc_width = 75 }
+                local diff           = MiniStatusline.section_diff { trunc_width = 75 }
                 local filename       = MiniStatusline.section_filename { trunc_width = 140 }
-                local location       = MiniStatusline.section_location { trunc_width = 75 }
 
                 return MiniStatusline.combine_groups {
-                    { hl = "MiniStatuslineModeNormal", strings = { filename } },
                     "%<",
-                    { hl = "MiniStatuslineModeNormal", strings = { lsp } },
+                    { hl = "MiniStatuslineModeNormal", strings = { filename } },
                     { hl = "MiniStatuslineModeNormal", strings = { diagnostics } },
                     "%=",
-                    { hl = "MiniStatuslineModeNormal", strings = { "%{FugitiveStatusline()}" } },
                     { hl = "MiniStatuslineModeNormal", strings = { diff } },
-                    { hl = "MiniStatuslineModeNormal", strings = { location } },
+                    { hl = "MiniStatuslineModeNormal", strings = { "%{FugitiveStatusline()}" } },
                 }
             end,
         },
