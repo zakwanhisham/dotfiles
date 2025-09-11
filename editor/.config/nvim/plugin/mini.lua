@@ -9,12 +9,16 @@ now(function()
                 local diagnostics    = MiniStatusline.section_diagnostics { trunc_width = 75 }
                 local diff           = MiniStatusline.section_diff { trunc_width = 75 }
                 local filename       = MiniStatusline.section_filename { trunc_width = 140 }
+                local git            = "%{FugitiveStatusline()}"
+                local highlight      = "MiniStatuslineModeNormal"
+                local location       = MiniStatusline.section_location { trunc_width = 75 }
 
                 return MiniStatusline.combine_groups {
                     "%<",
-                    { hl = "MiniStatuslineModeNormal", strings = { filename, diagnostics } },
+                    { hl = highlight, strings = { filename, diagnostics } },
                     "%=",
-                    { hl = "MiniStatuslineModeNormal", strings = { diff, "%{FugitiveStatusline()}" } },
+                    { hl = highlight, strings = { git, diff } },
+                    { hl = highlight, strings = { location } },
                 }
             end,
         },
