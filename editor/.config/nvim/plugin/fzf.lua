@@ -14,7 +14,6 @@ later(function()
     nmap("<leader>fg", "<cmd>GFiles<cr>", "Git Files")
     nmap("<leader>fs", "<cmd>Rg<cr>", "Grep")
     nmap("<leader>fw", "<cmd>FzfLua grep_cword<cr>", "Word")
-    nmap("<leader>fk", "<cmd>FzfLua keymaps<cr>", "Keymaps")
     nmap("<leader>fr", "<cmd>FzfLua resume<cr>", "Resume")
     nmap("<leader>/", "<cmd>BLines<cr>", "Buffer Lines")
 
