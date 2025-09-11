@@ -17,7 +17,7 @@ now(function()
                     "%<",
                     { hl = highlight, strings = { filename, diagnostics } },
                     "%=",
-                    { hl = highlight, strings = { git, diff } },
+                    { hl = highlight, strings = { diff, git } },
                     { hl = highlight, strings = { location } },
                 }
             end,
