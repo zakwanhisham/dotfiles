@@ -15,9 +15,11 @@ now(function()
 
                 return MiniStatusline.combine_groups {
                     "%<",
-                    { hl = highlight, strings = { filename, diagnostics } },
+                    { hl = highlight, strings = { filename } },
+                    { hl = highlight, strings = { diagnostics } },
                     "%=",
-                    { hl = highlight, strings = { diff, git } },
+                    { hl = highlight, strings = { diff } },
+                    { hl = highlight, strings = { git } },
                     { hl = highlight, strings = { location } },
                 }
             end,
