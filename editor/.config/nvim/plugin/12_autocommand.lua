@@ -1,22 +1,8 @@
 -- [[ Highlight on yank ]]
 -- See `:help vim.hl.on_yank()`
-local yank_highlight = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = yank_highlight,
     pattern = "*",
-    callback = function() vim.hl.on_yank() end
-})
-
--- [[ Terminal ]]
--- Remove number and relative number when `:term` is open
-vim.api.nvim_create_autocmd("TermOpen", {
-    pattern = { "*" },
-    callback = function()
-        vim.cmd [[
-            startinsert
-            setlocal nonumber norelativenumber
-        ]]
-    end,
+    callback = function() vim.hl.on_yank {} end
 })
 
 -- [[ Close File]]
