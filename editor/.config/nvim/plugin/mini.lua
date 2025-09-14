@@ -13,6 +13,8 @@ now(function()
                 local highlight      = "MiniStatuslineModeNormal"
                 local location       = MiniStatusline.section_location { trunc_width = 75 }
 
+                vim.api.nvim_set_hl(0, "MiniStatuslineModeNormal", { bg = "#ebdbb2", fg = "#1d2021", bold = false })
+
                 return MiniStatusline.combine_groups {
                     "%<",
                     { hl = highlight, strings = { filename } },
