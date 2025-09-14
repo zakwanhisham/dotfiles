@@ -4,7 +4,7 @@ add { source = "ibhagwan/fzf-lua" }
 
 later(function()
     local nmap = function(keymap, command, desc)
-        if desc then desc = "FZF: " .. desc end
+        if desc then desc = "Fzf: " .. desc end
 
         vim.keymap.set("n", keymap, command, { desc = desc })
     end
