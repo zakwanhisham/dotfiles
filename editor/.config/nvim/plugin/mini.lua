@@ -75,16 +75,6 @@ later(function()
         view = { style = "sign" },
         mappings = { goto_first = '[C', goto_prev = '[c', goto_next = ']c', goto_last = ']C' }
     }
-    local hipatterns = require("mini.hipatterns")
-    hipatterns.setup {
-        highlighters = {
-            fixme     = { pattern = 'FIXME', group = 'MiniHipatternsFixme' },
-            hack      = { pattern = 'HACK', group = 'MiniHipatternsHack' },
-            todo      = { pattern = 'TODO', group = 'MiniHipatternsTodo' },
-            note      = { pattern = 'NOTE', group = 'MiniHipatternsNote' },
-            hex_color = hipatterns.gen_highlighter.hex_color()
-        }
-    }
     require("mini.indentscope").setup {}
     require("mini.move").setup {}
     require("mini.surround").setup {}
