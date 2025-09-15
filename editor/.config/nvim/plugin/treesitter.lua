@@ -5,7 +5,7 @@ add {
     depends = { "nvim-treesitter/nvim-treesitter-context" },
     checkout = "master",
     monitor = "main",
-    hooks = { post_checkout = function() vim.cmd("TSUpdate") end },
+    hooks = { post_checkout = function() vim.cmd [[ TSUpdate ]] end },
 }
 
 later(function()
