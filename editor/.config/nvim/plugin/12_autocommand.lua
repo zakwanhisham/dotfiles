@@ -5,6 +5,20 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function() vim.hl.on_yank {} end
 })
 
+-- [[ Help ]]
+-- Help autocommand
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "help" },
+    callback = function()
+        vim.cmd [[
+            setlocal nofoldenable
+            wincmd L
+            vertical resize 81
+            set wrap nonumber norelativenumber nolist signcolumn=no colorcolumn=81
+        ]]
+    end
+})
+
 -- [[ Close File]]
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
