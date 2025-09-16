@@ -37,7 +37,9 @@ set autoindent " Auto-indent new lines
 set iskeyword+=- " Treat hyphenated words as whole words
 set showmatch " show the matching part of pairs [] {} and ()
 set number " line number
-set relativenumber "relative number
+set relativenumber " relative number
+set hlsearch " highlight search
+set incsearch " increment search
 
 " ========================================
 " Keymaps
