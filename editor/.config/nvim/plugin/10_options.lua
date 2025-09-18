@@ -53,3 +53,4 @@ vim.o.conceallevel = 0
 vim.o.laststatus = 2
 vim.o.ruler = true
 vim.o.linebreak = true
+vim.o.winborder = "single"
