@@ -19,7 +19,7 @@ later(function()
 
     require("fzf-lua").setup {
         "fzf-vim",
-        winopts = { split = "botright new" },
+        winopts = { height = 0.4, width = 1, row = 1, border = "border-top", backdrop = 100 },
         keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } },
     }
 end)
