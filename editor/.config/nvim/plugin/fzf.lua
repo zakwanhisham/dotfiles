@@ -17,5 +17,9 @@ later(function()
     nmap("<leader>fr", "<cmd>FzfLua resume<cr>", "Resume")
     nmap("<leader>/", "<cmd>BLines<cr>", "Buffer Lines")
 
-    require("fzf-lua").setup { { "fzf-vim", "ivy" }, keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } } }
+    require("fzf-lua").setup {
+        "fzf-vim",
+        winopts = { split = "botright new" },
+        keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } },
+    }
 end)
