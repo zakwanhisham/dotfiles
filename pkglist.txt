@@ -95,6 +95,7 @@ iwd
 jasper
 jfsutils
 jq
+lazydocker
 lazygit
 less
 libdvdcss
@@ -158,6 +159,7 @@ picom
 pipewire
 pipewire-alsa
 pipewire-jack
+pipewire-libcamera
 pipewire-pulse
 pkgfile
 playerctl
