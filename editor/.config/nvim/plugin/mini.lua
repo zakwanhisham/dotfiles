@@ -11,6 +11,7 @@ now(function()
                 local git         = "%{FugitiveStatusline()}"
                 local highlight   = "MiniStatuslineModeNormal"
                 local location    = MiniStatusline.section_location { trunc_width = 75 }
+                local lsp         = MiniStatusline.section_lsp { trunc_width = 75 }
 
                 vim.cmd [[
                     hi MiniStatuslineModeNormal cterm=NONE ctermfg=234 ctermbg=246 gui=NONE guifg=#1d2021 guibg=#a89984
@@ -19,6 +20,7 @@ now(function()
                 return MiniStatusline.combine_groups {
                     "%<",
                     { hl = highlight, strings = { filename } },
+                    { hl = highlight, strings = { lsp } },
                     { hl = highlight, strings = { diagnostics } },
                     "%=",
                     { hl = highlight, strings = { diff } },
