@@ -20,4 +20,5 @@ window-decoration = false
 
 # System
 confirm-close-surface = false
-bold-is-bright = true
+bold-color = bright
+resize-overlay = never
