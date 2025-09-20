@@ -8,7 +8,7 @@ later(function()
             enable = function(buf, win, _)
                 buf = vim._resolve_bufnr(buf)
                 local stat = vim.uv.fs_stat(vim.api.nvim_buf_get_name(buf))
-                local exclude_filetypes = { "help", "terminal", "gitcommit", "NeogitDiffView" }
+                local exclude_filetypes = { "checkhealth","help", "terminal", "gitcommit", "NeogitDiffView" }
 
                 if
                     not vim.api.nvim_buf_is_valid(buf)
