@@ -1,6 +1,6 @@
 local add, now = MiniDeps.add, MiniDeps.now
 
-add { source = "neovim/nvim-lspconfig", depends = { "mason-org/mason.nvim" } }
+add { source = "neovim/nvim-lspconfig", depends = { "mason-org/mason.nvim", "mason-org/mason-lspconfig.nvim" } }
 
 now(function()
     require("mason").setup {}
@@ -54,8 +54,7 @@ now(function()
         ts_ls = {},
     }
 
-    for server, config in pairs(servers) do
-        vim.lsp.config(server, config)
-        vim.lsp.enable(server)
-    end
+    for server, config in pairs(servers) do vim.lsp.config(server, config) end
+
+    require("mason-lspconfig").setup { ensure_installed = vim.tbl_keys(servers), automatic_enable = true }
 end)
