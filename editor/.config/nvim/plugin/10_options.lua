@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 vim.o.mouse = "a"
-vim.o.guicursor= ""
+-- vim.o.guicursor= ""
 vim.o.pumheight = 10
 vim.o.clipboard = "unnamedplus"
 vim.o.number = true
