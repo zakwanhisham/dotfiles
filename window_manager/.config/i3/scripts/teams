@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-i3-msg 'workspace 5; exec /usr/bin/chromium --app=https://teams.microsoft.com/v2/'
+teams='/usr/bin/chromium --app=https://teams.microsoft.com/v2/'
+
+i3-msg "workspace 5; exec ${teams}"
