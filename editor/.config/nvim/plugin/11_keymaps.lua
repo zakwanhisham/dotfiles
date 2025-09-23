@@ -23,10 +23,6 @@ vim.keymap.set({"x", "o"}, "n", "'Nn'[v:searchforward]", { expr = true, desc = "
 vim.keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search Result" })
 vim.keymap.set({"x","o"}, "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
---[[ Diagnostic keymaps ]]
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Floating Diagnostic" })
-vim.keymap.set("n", "<leader>d", "<cmd>FzfLua diagnostics_document<cr>", { desc = "Diagnostic list" })
-
 --[[ Trailing whitespace ]]
 vim.keymap.set("n", "<leader>wt", function() require("mini.trailspace").trim() end, {desc = "Remove trailing whitespace"})
 vim.keymap.set("n", "<leader>wl", function() require("mini.trailspace").trim_last_lines() end, {desc = "Remove trailing last line"})
