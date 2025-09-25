@@ -35,6 +35,7 @@ now(function()
                 },
             },
         },
+        protols = {},
         pyright = {
             settings = {
                 pyright = {
