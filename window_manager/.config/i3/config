@@ -127,9 +127,9 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # change container layout
-# bindsym $mod+Shift+s layout stacking
-# bindsym $mod+Shift+w layout tabbed
-# bindsym $mod+Shift+e layout default
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+d layout default
 
 # focus the parent container
 bindsym $mod+a focus parent
