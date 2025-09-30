@@ -22,10 +22,10 @@ now(function()
                 config.colors_override)
             local set_hl = vim.fn['gruvbox_material#highlight']
 
-            set_hl('LineNrAbove', palette.fg0, palette.bg5)
-            set_hl('LineNr', palette.yellow, palette.bg5)
-            set_hl('LineNrBelow', palette.fg0, palette.bg5)
-            set_hl('SignColumn', palette.none, palette.bg5)
+            set_hl('LineNrAbove', palette.grey2, palette.bg4)
+            set_hl('LineNr', palette.fg0, palette.bg4)
+            set_hl('LineNrBelow', palette.grey2, palette.bg4)
+            set_hl('SignColumn', palette.none, palette.bg4)
         end
     })
 
