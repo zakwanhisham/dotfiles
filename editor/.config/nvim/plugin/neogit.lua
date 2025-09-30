@@ -10,6 +10,4 @@ later(function()
     end
 
     nmap("<leader>gg", "<cmd>Neogit<cr>", "Neogit")
-
-    require("neogit").setup { disable_hint = true }
 end)
