@@ -82,7 +82,15 @@ later(function()
         mappings = { goto_first = '[C', goto_prev = '[c', goto_next = ']c', goto_last = ']C' }
     }
     local MiniHipatterns = require("mini.hipatterns")
-    MiniHipatterns.setup { highlighters = { MiniHipatterns.gen_highlighter.hex_color() } }
+    MiniHipatterns.setup {
+        highlighters = {
+            fixme = { pattern = 'FIXME', group = 'MiniHipatternsFixme' },
+            hack  = { pattern = 'HACK', group = 'MiniHipatternsHack' },
+            todo  = { pattern = 'TODO', group = 'MiniHipatternsTodo' },
+            note  = { pattern = 'NOTE', group = 'MiniHipatternsNote' },
+            MiniHipatterns.gen_highlighter.hex_color()
+        }
+    }
     require("mini.indentscope").setup {}
     require("mini.move").setup {}
     require("mini.surround").setup {}
