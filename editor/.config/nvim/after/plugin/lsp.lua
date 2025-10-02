@@ -44,10 +44,8 @@ now(function()
                 },
                 python = {
                     analysis = {
-                        autoSearchPaths = true,
-                        useLibraryCodeForTypes = true,
-                        diagnosticMode = 'openFilesOnly',
-                        typeCheckingMode = 'off',
+                        -- Options are: [off, basic, standard, strict]
+                        typeCheckingMode = 'basic',
                     },
                 },
             },
