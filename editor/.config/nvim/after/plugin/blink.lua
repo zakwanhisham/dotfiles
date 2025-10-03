@@ -13,7 +13,6 @@ end
 
 add {
     source = "saghen/blink.cmp",
-    depends = { "rafamadriz/friendly-snippets" },
     hooks = { post_install = build_blink, post_checkout = build_blink }
 }
 
