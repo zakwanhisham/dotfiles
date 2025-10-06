@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+email='/usr/bin/thunderbird'
+
+i3-msg "workspace 4; exec ${email}"
