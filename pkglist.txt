@@ -205,6 +205,7 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
+thunderbird
 tk
 tmux
 topgrade-bin
