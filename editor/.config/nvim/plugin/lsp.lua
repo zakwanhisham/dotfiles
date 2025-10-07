@@ -45,7 +45,7 @@ now(function()
                 python = {
                     analysis = {
                         -- Options are: [off, basic, standard, strict]
-                        typeCheckingMode = 'basic',
+                        typeCheckingMode = "off",
                     },
                 },
             },
