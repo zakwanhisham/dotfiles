@@ -1,12 +1,5 @@
 vim.g.mapleader = " "
 
-vim.g.loaded_gzip = 1
-vim.g.gzip_exec = 0
-vim.g.loaded_tarPlugin = 1
-vim.g.loaded_tar = 1
-vim.g.loaded_zipPlugin = 1
-vim.g.loaded_zip = 1
-
 vim.o.mouse = "a"
 vim.o.guicursor = ""
 vim.o.pumheight = 10
