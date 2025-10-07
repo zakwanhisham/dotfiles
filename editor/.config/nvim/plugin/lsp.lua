@@ -1,8 +1,8 @@
-local add, now = MiniDeps.add, MiniDeps.now
+local add, later = MiniDeps.add, MiniDeps.later
 
-add { source = "neovim/nvim-lspconfig", depends = { "mason-org/mason.nvim", "mason-org/mason-lspconfig.nvim" } }
+later(function()
+    add { source = "neovim/nvim-lspconfig", depends = { "mason-org/mason.nvim", "mason-org/mason-lspconfig.nvim" } }
 
-now(function()
     require("mason").setup {}
 
     -- [[ LSP  Keymaps ]]

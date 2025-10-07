@@ -1,8 +1,8 @@
 local add, later = MiniDeps.add, MiniDeps.later
 
-add { source = "christoomey/vim-tmux-navigator" }
-
 later(function()
+    add { source = "christoomey/vim-tmux-navigator" }
+
     local nmap = function(keymap, command, desc)
         if desc then desc = "Tmux: " .. desc end
 

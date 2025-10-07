@@ -1,8 +1,8 @@
-local add, later = MiniDeps.add, MiniDeps.later
+local add, now = MiniDeps.add, MiniDeps.now
 
-add { source = "tpope/vim-fugitive" }
+now(function()
+    add { source = "tpope/vim-fugitive" }
 
-later(function()
     local nmap = function(keymap, command, desc)
         if desc then desc = "Git: " .. desc end
 

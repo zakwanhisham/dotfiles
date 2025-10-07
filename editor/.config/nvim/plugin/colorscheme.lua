@@ -1,8 +1,8 @@
 local add, now = MiniDeps.add, MiniDeps.now
 
-add { source = "sainnhe/gruvbox-material" }
-
 now(function()
+    add { source = "sainnhe/gruvbox-material" }
+
     vim.o.background = "dark"
 
     vim.g.gruvbox_material_background = "hard"

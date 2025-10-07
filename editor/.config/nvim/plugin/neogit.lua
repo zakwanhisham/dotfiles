@@ -1,8 +1,8 @@
-local add, later = MiniDeps.add, MiniDeps.later
+local add, now = MiniDeps.add, MiniDeps.now
 
-add { source = "NeogitOrg/neogit", depends = { "nvim-lua/plenary.nvim" } }
+now(function()
+    add { source = "NeogitOrg/neogit", depends = { "nvim-lua/plenary.nvim" } }
 
-later(function()
     local nmap = function(keymap, command, desc)
         if desc then desc = "Git: " .. desc end
 

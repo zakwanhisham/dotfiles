@@ -1,8 +1,8 @@
 local add, later = MiniDeps.add, MiniDeps.later
 
-add { source = "ibhagwan/fzf-lua" }
-
 later(function()
+    add { source = "ibhagwan/fzf-lua" }
+
     local nmap = function(keymap, command, desc)
         if desc then desc = "Fzf: " .. desc end
 

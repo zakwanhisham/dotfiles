@@ -1,8 +1,8 @@
 local add, now = MiniDeps.add, MiniDeps.now
 
-add { source = "stevearc/oil.nvim" }
-
 now(function()
+    add { source = "stevearc/oil.nvim" }
+
     vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Oil" })
 
     require("oil").setup {
