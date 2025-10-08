@@ -242,9 +242,9 @@ set $darkgray #1d2021
 set $lightgray #bdae93
 
 # class                 border      backgr      text        indicator  child_border
-client.focused          $darkgray   $lightgray  $darkgray   $purple    $darkgray
-client.focused_inactive $darkgray   $darkgray   $lightgray  $purple    $darkgray
-client.unfocused        $darkgray   $darkgray   $lightgray  $purple    $darkgray
+client.focused          $darkgray   $lightgray  $darkgray   $darkgray  $darkgray
+client.focused_inactive $darkgray   $darkgray   $lightgray  $lightgray $darkgray
+client.unfocused        $darkgray   $darkgray   $lightgray  $darkgray  $darkgray
 client.urgent           $red        $red        $white      $red       $red
 
 bar {
