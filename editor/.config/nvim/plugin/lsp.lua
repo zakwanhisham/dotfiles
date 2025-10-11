@@ -50,6 +50,7 @@ later(function()
                 },
             },
         },
+        rust_analyzer = {},
         ts_ls = {},
     }
 
