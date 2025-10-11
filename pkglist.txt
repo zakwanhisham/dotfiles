@@ -23,7 +23,6 @@ ccache
 chromium
 clang
 cmake
-cmatrix
 codespell
 dex
 dhclient
