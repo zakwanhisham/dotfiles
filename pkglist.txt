@@ -25,7 +25,6 @@ clang
 cmake
 cmatrix
 codespell
-curlie
 dex
 dhclient
 dialog
