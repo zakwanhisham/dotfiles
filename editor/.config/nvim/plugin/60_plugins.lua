@@ -185,6 +185,7 @@ now(function()
     nmap("<leader>gd", "<cmd>Gdiffsplit<cr>", "Diff")
     nmap("<leader>gs", "<cmd>Git status<cr>", "Status")
 end)
+
 later(function()
     add { source = "christoomey/vim-tmux-navigator" }
 
