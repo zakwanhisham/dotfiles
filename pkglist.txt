@@ -21,6 +21,7 @@ bluez-utils
 btop
 ccache
 chromium
+clamav
 clang
 cmake
 codespell
@@ -116,7 +117,7 @@ lsb-release
 lsof
 lsscsi
 lvm2
-lxappearance-gtk3
+lxappearance
 man-db
 man-pages
 mesa-utils
@@ -207,6 +208,7 @@ tk
 tmux
 topgrade-bin
 tree
+tree-sitter-cli
 ttf-iosevkaterm-nerd
 ttf-liberation
 ttf-ms-fonts
