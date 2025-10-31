@@ -13,12 +13,16 @@ history = 100000
 [font]
 normal = { family = "IosevkaTerm Nerd Font" }
 size = 12
+offset = { x = 0, y = -1 }
 
 [colors]
 draw_bold_text_with_bright_colors = true
 
 [selection]
 save_to_clipboard = true
+
+[cursor]
+style = { shape = "Block", blinking = "Never" }
 
 [mouse]
 hide_when_typing = true
