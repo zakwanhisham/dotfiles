@@ -74,8 +74,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # start a terminal
-bindsym $mod+Return exec $ghostty
-bindsym $mod+Shift+Return exec $alacritty
+bindsym $mod+Return exec $alacritty
+bindsym $mod+Shift+Return exec $ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
