@@ -1,12 +1,22 @@
 {
 	"name": "Vimium C",
-	"@time": "6/24/2025, 8:11:44 AM",
-	"time": 1750723904673,
+	"@time": "11/1/2025, 5:57:22 PM",
+	"time": 1761991042770,
 	"environment": {
 		"extension": "2.12.3",
 		"platform": "linux",
-		"firefox": 139
+		"firefox": 144
 	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://www.youtube.com/"
+		}
+	],
 	"keyLayout": 2,
 	"keyMappings": [
 		"#!no-check",
