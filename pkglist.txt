@@ -22,7 +22,6 @@ bluez-utils
 btop
 ccache
 chromium
-clamav
 clang
 cmake
 codespell
