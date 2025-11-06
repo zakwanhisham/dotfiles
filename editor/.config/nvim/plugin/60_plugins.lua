@@ -72,6 +72,12 @@ now_if_args(function()
             nmap("grf", function() vim.lsp.buf.format { async = true } end, "Format")
             nmap("grr", "<cmd>FzfLua lsp_references ignore_current_line=true<cr>", "Reference")
             nmap("gd", "<cmd>FzfLua lsp_definitions jump1=true<cr>", "Definition")
+
+            local client = vim.lsp.get_client_by_id(event.data.client_id)
+            if client == nil then return end
+            if client.name == "ruff" then
+                client.server_capabilities.hoverProvider = false
+            end
         end
     })
 
@@ -95,11 +101,13 @@ now_if_args(function()
         protols = {},
         pyright = {
             settings = {
-                pyright = { openFilesOnly = true, disableOrganizeImports = false },
+                pyright = { openFilesOnly = true, disableOrganizeImports = true },
                 -- Options are: [off, basic, standard, strict]
-                python = { analysis = { typeCheckingMode = "off" } },
+                -- python = { analysis = { typeCheckingMode = "off" } },
+                python = { analysis = { ignore = { "*" } } },
             },
         },
+        ruff = {},
         rust_analyzer = {},
         ts_ls = {},
     }
