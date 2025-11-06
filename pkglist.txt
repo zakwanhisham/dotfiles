@@ -12,6 +12,7 @@ b43-fwcutter
 base
 base-devel
 bash-completion
+bash-language-server
 bat
 bc
 bind
@@ -43,6 +44,7 @@ duf
 dunst
 efibootmgr
 efitools
+eslint-language-server
 ethtool
 exfatprogs
 exo
@@ -65,6 +67,7 @@ git
 git-delta
 go
 gobject-introspection
+gopls
 gparted
 gst-libav
 gst-plugin-pipewire
@@ -116,6 +119,7 @@ logrotate
 lsb-release
 lsof
 lsscsi
+lua-language-server
 lvm2
 lxappearance
 man-db
@@ -167,6 +171,7 @@ plocate
 postgresql-libs
 power-profiles-daemon
 pv
+pyright
 python-bottle
 python-capng
 python-defusedxml
@@ -185,6 +190,9 @@ ripgrep
 rng-tools
 rsync
 rtkit
+ruff
+rust-analyzer
+rustup
 s-nail
 scdoc
 scrot
@@ -217,6 +225,7 @@ ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
 ttf-opensans
 tumbler
+typescript-language-server
 unrar
 unzip
 usb_modeswitch

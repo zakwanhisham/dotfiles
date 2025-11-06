@@ -57,9 +57,7 @@ later(function()
 end)
 
 now_if_args(function()
-    add { source = "neovim/nvim-lspconfig", depends = { "mason-org/mason.nvim", "mason-org/mason-lspconfig.nvim" } }
-
-    require("mason").setup {}
+    add { source = "neovim/nvim-lspconfig" }
 
     vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(event)
@@ -98,7 +96,6 @@ now_if_args(function()
                 },
             },
         },
-        protols = {},
         pyright = {
             settings = {
                 pyright = { openFilesOnly = true, disableOrganizeImports = true },
@@ -113,7 +110,7 @@ now_if_args(function()
     }
 
     for server, config in pairs(servers) do vim.lsp.config(server, config) end
-    require("mason-lspconfig").setup { ensure_installed = vim.tbl_keys(servers), automatic_enable = true }
+    vim.lsp.enable(vim.tbl_keys(servers))
 end)
 
 now(function()
