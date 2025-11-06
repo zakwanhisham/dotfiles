@@ -129,6 +129,7 @@ mkinitcpio
 modemmanager
 mpv
 mtools
+mypy
 ncdu
 neovim
 netctl
