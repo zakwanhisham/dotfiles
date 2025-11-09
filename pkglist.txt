@@ -6,6 +6,7 @@ alsa-utils
 arandr
 archlinux-xdg-menu
 aspell
+autotiling
 awesome-terminal-fonts
 aws-cli-v2
 b43-fwcutter
