@@ -116,6 +116,8 @@ end)
 now(function()
     add { source = "NeogitOrg/neogit", depends = { "nvim-lua/plenary.nvim" } }
 
+    require("neogit").setup { disable_hint = true }
+
     local nmap = function(keymap, command, desc)
         if desc then desc = "Git: " .. desc end
 
