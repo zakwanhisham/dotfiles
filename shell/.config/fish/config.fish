@@ -19,7 +19,7 @@ set -Ux TERM "tmux-256color"
 set -Ux FZF_DEFAULT_OPTS "--layout=reverse --border=none --cycle --color=bw"
 
 # PATH
-set -U fish_user_paths $HOME/bin /usr/local/bin $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
+set -U fish_user_paths $HOME/bin /usr/local/bin $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin
 
 # ENV VARIABLES
 set -Ux XDG_CACHE_HOME "$HOME/.cache"
