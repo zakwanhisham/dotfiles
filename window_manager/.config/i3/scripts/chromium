@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+chromium='/usr/bin/chromium'
+
+i3-msg "workspace 3; exec ${chromium}"
