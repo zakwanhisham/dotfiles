@@ -15,7 +15,6 @@ vim.o.shiftround = true
 vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.breakindent = true
-vim.o.smartcase = true
 vim.o.smartindent = true
 vim.o.wrap = false
 vim.o.completeopt = "menuone,noselect,preview,noinsert,fuzzy"
