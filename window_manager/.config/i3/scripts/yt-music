@@ -2,4 +2,4 @@
 
 yt_music='/usr/bin/chromium --app=https://music.youtube.com'
 
-i3-msg "workspace 10; exec ${yt_music}"
+i3-msg "workspace 6; exec ${yt_music}"
