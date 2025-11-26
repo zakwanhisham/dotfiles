@@ -2,6 +2,22 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 local now_if_args = vim.fn.argc(-1) > 0 and now or later
 
 later(function()
+    add { source = "awslabs/amazonq.nvim" }
+
+    require("amazonq").setup {
+        ssoStartUrl = "https://view.awsapps.com/start",
+        inline_suggest = false,
+        on_chat_open = function()
+            vim.cmd [[
+                setlocal wrap breakindent nonumber norelativenumber nolist
+                wincmd L
+                vertical resize 81
+            ]]
+        end
+    }
+end)
+
+later(function()
     local function build_blink(params)
         vim.notify('Building blink.cmp', vim.log.levels.INFO)
         local obj = vim.system({ 'cargo', 'build', '--release' }, { cwd = params.path }):wait()
