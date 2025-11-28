@@ -7,6 +7,8 @@ set $mod Mod4
 
 # set app
 set $alacritty /usr/bin/alacritty
+set $firefox /usr/bin/firefox
+set $chromium /usr/bin/chromium
 set $ghostty /usr/bin/ghostty
 set $menu /usr/bin/dmenu_run -i
 
@@ -158,8 +160,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec ~/.config/i3/scripts/firefox
-bindsym $mod+c exec ~/.config/i3/scripts/chromium
+bindsym $mod+w exec $firefox
+bindsym $mod+c exec $chromium
 bindsym $mod+t exec ~/.config/i3/scripts/teams
 bindsym $mod+m exec ~/.config/i3/scripts/email
 bindsym $mod+y exec ~/.config/i3/scripts/yt-music
