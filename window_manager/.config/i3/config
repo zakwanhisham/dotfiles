@@ -212,7 +212,7 @@ exec --no-startup-id ~/.fehbg
 exec --no-startup-id /usr/bin/dunst
 
 # Autotiling
-exec --no-startup-id /usr/bin/autotiling -sw 0.85
+exec_always --no-startup-id /usr/bin/autotiling -sw 0.85
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
