@@ -233,8 +233,8 @@ for_window [class=".*"] resize set 640 480 #to change size of all floating windo
 # set position of floating window
 for_window [class=".*"] move position center
 
-# Make workspace 5 tabbed layout
-for_window [workspace="5"] layout tabbed
+# Make workspace 3 tabbed layout
+for_window [workspace="3"] layout tabbed
 
 # define colors for windows:
 # class                 border  backgr. text    indicator child_border
