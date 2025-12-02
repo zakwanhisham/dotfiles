@@ -205,7 +205,7 @@ now(function()
 
     nmap("<leader>gl", "<cmd>Git log --graph --decorate<cr>", "Log")
     nmap("<leader>gb", "<cmd>Git blame<cr>", "Blame")
-    nmap("<leader>gd", "<cmd>Gdiffsplit<cr>", "Diff")
+    nmap("<leader>gd", "<cmd>Git diff<cr>", "Diff")
     nmap("<leader>gs", "<cmd>Git status<cr>", "Status")
 end)
 
