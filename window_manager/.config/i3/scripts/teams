@@ -2,4 +2,4 @@
 
 teams='/usr/bin/chromium --app=https://teams.microsoft.com/v2/'
 
-i3-msg "workspace 6; exec ${teams}"
+i3-msg "workspace 5; exec ${teams}"
