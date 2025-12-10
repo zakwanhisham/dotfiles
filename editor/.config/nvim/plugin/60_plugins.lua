@@ -43,7 +43,6 @@ later(function()
 
     local nmap = function(keymap, command, desc)
         if desc then desc = "Fzf: " .. desc end
-
         vim.keymap.set("n", keymap, command, { desc = desc })
     end
 
@@ -64,7 +63,6 @@ now_if_args(function()
         callback = function(event)
             local nmap = function(keys, func, desc)
                 if desc then desc = "Lsp: " .. desc end
-
                 vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
             end
 
@@ -121,7 +119,6 @@ now(function()
 
     local nmap = function(keymap, command, desc)
         if desc then desc = "Git: " .. desc end
-
         vim.keymap.set("n", keymap, command, { desc = desc })
     end
 
@@ -184,7 +181,6 @@ now(function()
 
     local nmap = function(keymap, command, desc)
         if desc then desc = "Git: " .. desc end
-
         vim.keymap.set("n", keymap, command, { desc = desc })
     end
 
@@ -199,7 +195,6 @@ later(function()
 
     local nmap = function(keymap, command, desc)
         if desc then desc = "Tmux: " .. desc end
-
         vim.keymap.set("n", keymap, command, { desc = desc })
     end
 

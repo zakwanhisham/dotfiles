@@ -91,15 +91,6 @@ now(function()
                     { hl = highlight, strings = { location } },
                 }
             end,
-            inactive = function()
-                local filename  = MiniStatusline.section_filename { trunc_width = 140 }
-                local highlight = "MiniStatuslineInactive"
-
-                return MiniStatusline.combine_groups {
-                    "%<",
-                    { hl = highlight, strings = { filename } }
-                }
-            end,
         },
         use_icons = false,
     }
@@ -113,7 +104,6 @@ later(function()
 
     local nmap = function(keymap, command, desc)
         if desc then desc = "Trail: " .. desc end
-
         vim.keymap.set("n", keymap, command, { desc = desc })
     end
 
