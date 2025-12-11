@@ -91,6 +91,15 @@ now(function()
                     { hl = highlight, strings = { location } },
                 }
             end,
+            inactive = function()
+                local filename  = MiniStatusline.section_filename { trunc_width = 140 }
+                local highlight = "MiniStatuslineInactive"
+
+                return MiniStatusline.combine_groups {
+                    "%<",
+                    { hl = highlight, strings = { filename } }
+                }
+            end,
         },
         use_icons = false,
     }
