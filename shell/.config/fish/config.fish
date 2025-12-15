@@ -54,6 +54,7 @@ abbr rm "rm -iv"
 abbr timestamp "date +%d%b%H%M%S"
 abbr tree "tree -a -I \"*.git\" -C"
 abbr vim "nvim"
+abbr zed "zeditor"
 
 # Config
 abbr alarc "nvim $HOME/.config/alacritty/alacritty.toml"
