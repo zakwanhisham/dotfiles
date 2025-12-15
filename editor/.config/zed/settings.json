@@ -124,7 +124,7 @@
     "indent_guides": {
       "show": "never"
     },
-    "starts_open": false,
+    "starts_open": true,
     "dock": "right",
     "hide_root": false,
     "folder_icons": false,
