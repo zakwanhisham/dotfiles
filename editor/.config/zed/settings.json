@@ -34,7 +34,8 @@
   },
   "colorize_brackets": false,
   "inlay_hints": {
-    "enabled": true
+    "show_value_hints": true,
+    "enabled": false
   },
   "show_whitespaces": "selection",
   "use_autoclose": false,
