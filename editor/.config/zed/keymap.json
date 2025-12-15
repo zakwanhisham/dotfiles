@@ -37,6 +37,7 @@
       "space g b": "git::Blame",
       "space g d": "git::Diff",
       "space g l": "editor::ToggleGitBlameInline",
+      "space g s": "git::Switch",
 
       // Resize
       "ctrl-left": "vim::ResizePaneLeft",
