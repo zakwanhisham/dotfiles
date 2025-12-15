@@ -45,7 +45,6 @@
       "ctrl-up": "vim::ResizePaneUp",
       "ctrl-right": "vim::ResizePaneRight"
     }
-
   },
   {
     "context": "VimControl && !menu || !Editor && !Terminal",
