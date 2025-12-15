@@ -11,6 +11,7 @@ set $firefox /usr/bin/firefox
 set $chromium /usr/bin/chromium
 set $ghostty /usr/bin/ghostty
 set $menu /usr/bin/dmenu_run -i
+set $zed /usr/bin/zeditor
 
 # default i3 tiling mode:
 workspace_layout default
@@ -162,6 +163,7 @@ bindsym XF86AudioPrev exec playerctl previous
 ## App shortcuts
 bindsym $mod+w exec $firefox
 bindsym $mod+c exec $chromium
+bindsym $mod+e exec $zed
 bindsym $mod+t exec ~/.config/i3/scripts/teams
 bindsym $mod+m exec ~/.config/i3/scripts/email
 bindsym $mod+y exec ~/.config/i3/scripts/yt-music
@@ -235,6 +237,9 @@ for_window [class=".*"] move position center
 
 # Make workspace 3 tabbed layout
 for_window [workspace="3"] layout tabbed
+
+# Bind Zed to workspace 4
+assign [class="dev.zed.Zed" instance="dev.zed.Zed"] $ws4
 
 # Start i3bar to display a workspace bar
 bar {
