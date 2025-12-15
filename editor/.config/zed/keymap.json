@@ -1,0 +1,64 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // File Explorer
+      "-": "project_panel::ToggleFocus",
+      // LSP
+      "g r f": "editor::Format",
+
+      // Fuzzy
+      "space f f": "file_finder::Toggle",
+      "space f o": "projects::OpenRecent",
+      "space f s": "pane::DeploySearch",
+      "space space": "tab_switcher::ToggleAll",
+
+      // Git
+      "space g g": "git_panel::ToggleFocus",
+      "space g b": "git::Blame",
+      "space g d": "git::Diff",
+      "space g l": "editor::ToggleGitBlameInline",
+
+      // Resize
+      "ctrl-left": "vim::ResizePaneLeft",
+      "ctrl-down": "vim::ResizePaneDown",
+      "ctrl-up": "vim::ResizePaneUp",
+      "ctrl-right": "vim::ResizePaneRight"
+    }
+
+  },
+  {
+    "context": "VimControl && !menu || !Editor && !Terminal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "-": "workspace::ToggleRightDock"
+    }
+  }
+]

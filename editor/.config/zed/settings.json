@@ -1,0 +1,159 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "model_parameters": []
+  },
+  "buffer_font_features": {
+    "calt": false,
+    "liga": false,
+    "dlig": false
+  },
+  "format_on_save": "off",
+  "git": {
+    "blame": {
+      "show_avatar": false
+    },
+    "inline_blame": {
+      "show_commit_summary": false,
+      "enabled": false
+    }
+  },
+  "current_line_highlight": "none",
+  "buffer_font_weight": 400.0,
+  "diagnostics": {
+    "inline": {
+      "enabled": false
+    }
+  },
+  "colorize_brackets": false,
+  "inlay_hints": {
+    "enabled": true
+  },
+  "show_whitespaces": "selection",
+  "use_autoclose": false,
+  "toolbar": {
+    "quick_actions": false,
+    "agent_review": false,
+    "breadcrumbs": false
+  },
+  "scrollbar": {
+    "axes": {
+      "horizontal": false,
+      "vertical": false
+    }
+  },
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "show_wrap_guides": true,
+  "wrap_guides": [80],
+  "unnecessary_code_fade": 0.3,
+  "preview_tabs": {
+    "enabled": false
+  },
+  "on_last_window_closed": "platform_default",
+  "restore_on_startup": "none",
+  "use_auto_surround": false,
+  "outline_panel": {
+    "folder_icons": false,
+    "file_icons": false,
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "bottom_dock_layout": "contained",
+  "gutter": {
+    "folds": false,
+    "runnables": false,
+    "breakpoints": false
+  },
+  "relative_line_numbers": "enabled",
+  "tab_bar": {
+    "show_tab_bar_buttons": false,
+    "show_nav_history_buttons": false,
+    "show": false
+  },
+  "cursor_shape": "bar",
+  "cursor_blink": false,
+  "disable_ai": true,
+  "terminal": {
+    "copy_on_select": true
+  },
+  "window_decorations": "client",
+  "use_system_window_tabs": false,
+  "tabs": {
+    "file_icons": false,
+    "git_status": false
+  },
+  "title_bar": {
+    "show_branch_name": true,
+    "show_project_items": true,
+    "show_menus": false,
+    "show_sign_in": false,
+    "show_user_picture": false,
+    "show_onboarding_banner": false,
+    "show_branch_icon": false
+  },
+  "debugger": {
+    "save_breakpoints": false,
+    "button": false
+  },
+  "search": {
+    "center_on_match": true,
+    "button": true
+  },
+  "status_bar": {
+    "cursor_position_button": true,
+    "active_language_button": true
+  },
+  "project_panel": {
+    "sort_mode": "directories_first",
+    "indent_size": 5.0,
+    "indent_guides": {
+      "show": "never"
+    },
+    "starts_open": false,
+    "dock": "right",
+    "hide_root": false,
+    "folder_icons": false,
+    "file_icons": false,
+    "entry_spacing": "standard",
+    "button": true
+  },
+  "file_finder": {
+    "file_icons": false
+  },
+  "use_smartcase_search": true,
+  "auto_signature_help": false,
+  "ui_font_weight": 400.0,
+  "ui_font_family": "IosevkaTerm Nerd Font",
+  "buffer_line_height": "standard",
+  "buffer_font_family": "IosevkaTerm Nerd Font",
+  "vim_mode": true,
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16.0,
+  "buffer_font_size": 15.0,
+  "theme": "Gruvbox Dark Hard",
+  "languages": {
+    "Python": {
+      "language_servers": [
+        // Disable basedpyright and enable Ty, and otherwise
+        // use the default configuration.
+        "pyright",
+        "!basedpyright",
+        "..."
+      ]
+    }
+  }
+}
