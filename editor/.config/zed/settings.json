@@ -101,6 +101,10 @@
   "cursor_blink": false,
   "disable_ai": true,
   "terminal": {
+    "toolbar": {
+      "breadcrumbs": false
+    },
+    "dock": "right",
     "button": false,
     "copy_on_select": true
   },
