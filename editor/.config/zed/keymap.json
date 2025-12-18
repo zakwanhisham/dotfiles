@@ -56,9 +56,15 @@
     }
   },
   {
-    "context": "ProjectPanel && not_editing",
+    "context": " ProjectPanel && not_editing",
     "bindings": {
-      "-": "workspace::ToggleRightDock"
+      "-": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "GitPanel && ChangesList",
+    "bindings": {
+      "q": "workspace::ToggleLeftDock"
     }
   }
 ]

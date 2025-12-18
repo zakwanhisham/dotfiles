@@ -50,10 +50,11 @@
   "show_whitespaces": "selection",
   "use_autoclose": false,
   "toolbar": {
+    "code_actions": false,
     "selections_menu": false,
     "quick_actions": false,
     "agent_review": false,
-    "breadcrumbs": false
+    "breadcrumbs": true
   },
   "scrollbar": {
     "axes": {
@@ -132,12 +133,12 @@
   },
   "project_panel": {
     "sort_mode": "directories_first",
-    "indent_size": 5.0,
+    "indent_size": 10.0,
     "indent_guides": {
-      "show": "never"
+      "show": "always"
     },
-    "starts_open": true,
-    "dock": "right",
+    "starts_open": false,
+    "dock": "left",
     "hide_root": false,
     "folder_icons": false,
     "file_icons": false,
@@ -148,14 +149,14 @@
     "file_icons": false
   },
   "use_smartcase_search": true,
-  "auto_signature_help": false,
+  "auto_signature_help": true,
   "ui_font_weight": 400.0,
   "ui_font_family": "IosevkaTerm Nerd Font",
   "buffer_line_height": "standard",
   "buffer_font_family": "IosevkaTerm Nerd Font",
   "vim_mode": true,
   "icon_theme": "Zed (Default)",
-  "ui_font_size": 16.0,
+  "ui_font_size": 15.0,
   "buffer_font_size": 15.0,
   "theme": "Gruvbox Dark Hard",
   "languages": {
