@@ -235,7 +235,8 @@ for_window [class=".*"] resize set 640 480 #to change size of all floating windo
 # set position of floating window
 for_window [class=".*"] move position center
 
-# Make workspace 3 tabbed layout
+# Make workspace 1 & 3 tabbed layout
+for_window [workspace="1"] layout tabbed
 for_window [workspace="3"] layout tabbed
 
 # Start i3bar to display a workspace bar
