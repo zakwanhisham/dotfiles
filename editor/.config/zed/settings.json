@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ui_font_family": "IosevkaTerm Nerd Font",
   "base_keymap": "VSCode",
   "indent_guides": {
     "background_coloring": "disabled",
@@ -54,7 +55,7 @@
     "selections_menu": false,
     "quick_actions": false,
     "agent_review": false,
-    "breadcrumbs": true
+    "breadcrumbs": false
   },
   "scrollbar": {
     "axes": {
@@ -155,7 +156,6 @@
   "use_smartcase_search": true,
   "auto_signature_help": true,
   "ui_font_weight": 400.0,
-  "ui_font_family": "IosevkaTerm Nerd Font",
   "buffer_line_height": "standard",
   "buffer_font_family": "IosevkaTerm Nerd Font",
   "vim_mode": true,
