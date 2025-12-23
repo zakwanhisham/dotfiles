@@ -17,13 +17,13 @@ set $zed /usr/bin/zeditor
 workspace_layout default
 
 # default maximize border
-default_border pixel 1
+default_border pixel 0
 
 # default floating border
-default_floating_border pixel 1
+default_floating_border pixel 0
 
 # border indicator on windows:
-title_align center
+title_align left
 
 # Set inner/outer gaps
 gaps inner 0
