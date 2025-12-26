@@ -67,6 +67,7 @@ abbr vimrc "vim $HOME/.vimrc"
 ### PROMPT AND COMPLETIONS
 
 fzf --fish | source
+ty generate-shell-completion fish | source
 
 function starship_transient_prompt_func
     starship module character
