@@ -10,7 +10,7 @@ set $alacritty /usr/bin/alacritty
 set $firefox /usr/bin/firefox
 set $chromium /usr/bin/chromium
 set $ghostty /usr/bin/ghostty
-set $menu /usr/bin/dmenu_run -i
+set $menu /usr/bin/dmenu_run -i -l 5 -p "Apps Launcher"
 set $zed /usr/bin/zeditor
 
 # default i3 tiling mode:
