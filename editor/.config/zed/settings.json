@@ -7,7 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ui_font_family": "Iosevka Nerd Font",
+  "ui_font_family": "IosevkaTerm Nerd Font",
   "base_keymap": "VSCode",
   "indent_guides": {
     "background_coloring": "disabled",
@@ -157,7 +157,7 @@
   "auto_signature_help": true,
   "ui_font_weight": 400.0,
   "buffer_line_height": "standard",
-  "buffer_font_family": "Iosevka Nerd Font",
+  "buffer_font_family": "IosevkaTerm Nerd Font",
   "vim_mode": true,
   "icon_theme": "Zed (Default)",
   "ui_font_size": 15.0,

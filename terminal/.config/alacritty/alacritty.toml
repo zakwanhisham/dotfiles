@@ -11,7 +11,7 @@ startup_mode = "Maximized"
 history = 100000
 
 [font]
-normal = { family = "Iosevka Nerd Font Mono" }
+normal = { family = "IosevkaTerm Nerd Font" }
 size = 12
 offset = { x = 0, y = -1 }
 

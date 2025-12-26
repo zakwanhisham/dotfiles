@@ -220,7 +220,7 @@ tmux
 topgrade-bin
 tree
 tree-sitter-cli
-ttf-iosevka-nerd
+ttf-iosevkaterm-nerd
 ttf-liberation
 ttf-ms-fonts
 ttf-nerd-fonts-symbols
