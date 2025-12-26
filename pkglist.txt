@@ -109,6 +109,7 @@ libopenraw
 libpulse
 libreoffice-fresh
 libva-intel-driver
+libva-utils
 lightdm
 lightdm-slick-greeter
 linux
