@@ -213,6 +213,9 @@ exec --no-startup-id ~/.fehbg
 # Desktop notifications
 exec --no-startup-id /usr/bin/dunst
 
+# Source .xprofile
+exec --no-startup-id ~/.xprofile
+
 # Autotiling
 exec_always --no-startup-id /usr/bin/autotiling -sw 0.85
 
