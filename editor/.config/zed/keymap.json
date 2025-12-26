@@ -7,64 +7,64 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
+    "context": "EmptyPane",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
-    }
+      "space f f": "file_finder::Toggle",
+      "space f o": "projects::OpenRecent",
+      "-": "project_panel::ToggleFocus",
+    },
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "ctrl-w": null,
       // File Explorer
       "-": "project_panel::ToggleFocus",
       // LSP
       "g r f": "editor::Format",
-
       // Fuzzy
       "space f f": "file_finder::Toggle",
       "space f o": "projects::OpenRecent",
       "space f s": "pane::DeploySearch",
       "space space": "tab_switcher::ToggleAll",
-
       // Git
-      "space g g": "git_panel::ToggleFocus",
       "space g b": "git::Blame",
       "space g d": "git::Diff",
       "space g l": "editor::ToggleGitBlameInline",
       "space g s": "git::Switch",
-
       // Resize
       "ctrl-left": "vim::ResizePaneLeft",
       "ctrl-down": "vim::ResizePaneDown",
       "ctrl-up": "vim::ResizePaneUp",
-      "ctrl-right": "vim::ResizePaneRight"
-    }
-  },
-  {
-    "context": "VimControl && !menu || !Editor && !Terminal",
-    "bindings": {
+      "ctrl-right": "vim::ResizePaneRight",
+      // Movement
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
+      "ctrl-j": "workspace::ActivatePaneDown",
+      // Zoom
+      "space z": "workspace::ToggleZoom",
+    },
   },
   {
-    "context": " ProjectPanel && not_editing",
+    "context": "Editor && VimControl",
     "bindings": {
-      "-": "workspace::ToggleLeftDock"
-    }
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+      "alt-h": "editor::Outdent",
+      "alt-l": "editor::Indent",
+    },
   },
   {
-    "context": "GitPanel && ChangesList",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
-      "q": "workspace::ToggleLeftDock"
-    }
-  }
+      "q": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "TabSwitcher || (TabSwitcher > Picker > Editor)",
+    "bindings": {
+      "ctrl-x": "tab_switcher::CloseSelectedItem",
+    },
+  },
 ]
