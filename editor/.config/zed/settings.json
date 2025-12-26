@@ -194,10 +194,17 @@
   "languages": {
     "Python": {
       "language_servers": [
-        "pyright",
         "!basedpyright",
+        "ty",
         "..."
       ],
+    },
+  },
+  "lsp": {
+    "ty": {
+      "settings": {
+        "diagnosticMode": "off"
+      },
     },
   },
 }

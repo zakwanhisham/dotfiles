@@ -174,7 +174,6 @@ plocate
 postgresql-libs
 power-profiles-daemon
 pv
-pyright
 python-bottle
 python-capng
 python-defusedxml
