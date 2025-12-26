@@ -119,7 +119,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # enter fullscreen mode for the focused container
-bindsym $mod+z fullscreen toggle
+bindsym $mod+Shift+z fullscreen toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
