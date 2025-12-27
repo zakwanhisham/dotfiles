@@ -9,9 +9,10 @@
   {
     "context": "EmptyPane",
     "bindings": {
-      "space f f": "file_finder::Toggle",
-      "space f o": "projects::OpenRecent",
       "-": "project_panel::ToggleFocus",
+      "space f f": "file_finder::Toggle",
+      "space f o": "workspace::Open",
+      "space f p": "projects::OpenRecent",
     },
   },
   {
@@ -24,12 +25,13 @@
       "g r f": "editor::Format",
       // Fuzzy
       "space f f": "file_finder::Toggle",
-      "space f o": "projects::OpenRecent",
+      "space f o": "workspace::Open",
+      "space f p": "projects::OpenRecent",
       "space f s": "pane::DeploySearch",
       "space space": "tab_switcher::ToggleAll",
       // Git
       "space g b": "git::Blame",
-      "space g d": "git::Diff",
+      "space g g": "git::Diff",
       "space g l": "editor::ToggleGitBlameInline",
       "space g s": "git::Switch",
       // Resize
@@ -65,6 +67,44 @@
     "context": "TabSwitcher || (TabSwitcher > Picker > Editor)",
     "bindings": {
       "ctrl-x": "tab_switcher::CloseSelectedItem",
+    },
+  },
+  {
+    "context": "FileFinder || (FileFinder > Picker > Editor)",
+    "bindings": {
+      "ctrl-w": "file_finder::ToggleSplitMenu",
+    },
+  },
+  {
+    "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
+    "bindings": {
+      "j": "pane::SplitDown",
+      "k": "pane::SplitUp",
+      "h": "pane::SplitLeft",
+      "l": "pane::SplitRight",
+    },
+  },
+  {
+    "context": "GitDiff > Editor",
+    "bindings": {
+      "s": "git::StageAndNext",
+      "u": "git::UnstageAndNext",
+      "shift-s": "git::StageAll",
+      "shift-u": "git::UnstageAll",
+      "c c": "git::Commit",
+    },
+  },
+  {
+    "context": "GitBranchSelector || (GitBranchSelector > Picker > Editor)",
+    "bindings": {
+      "ctrl-x": "branch_picker::DeleteBranch",
+      "ctrl-/": "branch_picker::FilterRemotes",
+    },
+  },
+  {
+    "context": "Editor && extension == md",
+    "bindings": {
+      "space m p": "markdown::OpenPreviewToTheSide",
     },
   },
 ]
