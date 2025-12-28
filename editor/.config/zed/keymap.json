@@ -92,6 +92,9 @@
       "shift-s": "git::StageAll",
       "shift-u": "git::UnstageAll",
       "c c": "git::Commit",
+      "x": "git::Restore",
+      "shift-p": "git::Push",
+      "p": "git::Pull",
     },
   },
   {
