@@ -85,7 +85,7 @@
     },
   },
   {
-    "context": "GitDiff > Editor",
+    "context": "GitDiff > Editor || GitDiff",
     "bindings": {
       "s": "git::StageAndNext",
       "u": "git::UnstageAndNext",
