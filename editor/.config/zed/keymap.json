@@ -100,7 +100,7 @@
     },
   },
   {
-    "context": "GitDiff",
+    "context": "GitPanel",
     "bindings": {
       "shift-p": "git::Push",
       "p": "git::Pull",
