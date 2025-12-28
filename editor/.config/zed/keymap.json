@@ -85,7 +85,7 @@
     },
   },
   {
-    "context": "GitDiff > Editor || GitPanel && CommitEditor",
+    "context": "GitDiff > Editor",
     "bindings": {
       "s": "git::StageAndNext",
       "u": "git::UnstageAndNext",
@@ -93,6 +93,11 @@
       "shift-u": "git::UnstageAll",
       "c c": "git::Commit",
       "x": "git::Restore",
+    },
+  },
+  {
+    "context": "GitDiff",
+    "bindings": {
       "shift-p": "git::Push",
       "p": "git::Pull",
     },
