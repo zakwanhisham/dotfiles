@@ -14,7 +14,7 @@
       "space f o": "workspace::Open",
       "space f p": "projects::OpenRecent",
       "ctrl-w": null,
-      // Git stuff
+      // Git push/pull after commiting
       "shift-p": "git::Push",
       "p": "git::Pull",
     },
