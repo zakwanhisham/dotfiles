@@ -100,13 +100,6 @@
     },
   },
   {
-    "context": "GitPanel",
-    "bindings": {
-      "shift-p": "git::Push",
-      "p": "git::Pull",
-    },
-  },
-  {
     "context": "GitBranchSelector || (GitBranchSelector > Picker > Editor)",
     "bindings": {
       "ctrl-x": "branch_picker::DeleteBranch",
