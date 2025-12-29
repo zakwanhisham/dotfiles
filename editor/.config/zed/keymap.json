@@ -74,12 +74,6 @@
     },
   },
   {
-    "context": "FileFinder || (FileFinder > Picker > Editor)",
-    "bindings": {
-      "ctrl-w": "file_finder::ToggleSplitMenu",
-    },
-  },
-  {
     "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
     "bindings": {
       "ctrl-j": "pane::SplitDown",
