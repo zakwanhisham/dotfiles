@@ -110,8 +110,6 @@ libpulse
 libreoffice-fresh
 libva-intel-driver
 libva-utils
-lightdm
-lightdm-slick-greeter
 linux
 linux-firmware
 linux-headers
@@ -153,7 +151,6 @@ nss-mdns
 ntfs-3g
 ntp
 numlockx
-nvidia
 nvtop
 obs-studio
 os-prober
@@ -236,7 +233,6 @@ uv
 vi
 vim
 vulkan-intel
-vulkan-nouveau
 wget
 wireless_tools
 wireplumber
@@ -247,21 +243,8 @@ xdg-user-dirs
 xdg-user-dirs-gtk
 xdg-utils
 xf86-video-intel
-xfce4-appfinder
-xfce4-fsguard-plugin
-xfce4-notifyd
-xfce4-panel
-xfce4-power-manager
-xfce4-pulseaudio-plugin
-xfce4-screensaver
-xfce4-session
-xfce4-settings
-xfce4-whiskermenu-plugin
 xfconf
-xfdesktop
 xfsprogs
-xfwm4
-xfwm4-themes
 xl2tpd
 xorg-xbacklight
 xorg-xdpyinfo
