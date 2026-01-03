@@ -94,9 +94,14 @@ now_if_args(function()
                 },
             },
         },
+        pyright = {
+            settings = {
+                pyright = { openFilesOnly = true, disableOrganizeImports = true },
+                python = { analysis = { ignore = { "*" } } },
+            },
+        },
         ruff = {},
         rust_analyzer = {},
-        ty = { settings = { ty = { diagnosticMode = "off" } } },
     }
 
     for server, config in pairs(servers) do vim.lsp.config(server, config) end
