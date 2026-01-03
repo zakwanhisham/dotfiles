@@ -213,8 +213,12 @@ exec --no-startup-id ~/.fehbg
 # Desktop notifications
 exec --no-startup-id /usr/bin/dunst
 
-# Source .xprofile
-exec --no-startup-id ~/.xprofile
+# set keyboard rate
+exec --no-startup-id xset r rate 200 35
+
+# disable DPMS turning off the screen
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s off
 
 # Autotiling
 exec_always --no-startup-id /usr/bin/autotiling -sw 0.85
