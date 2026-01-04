@@ -184,16 +184,16 @@ set $ws9 "9"
 set $ws10 "10"
 
 # use workspaces on different displays:
-workspace $ws1 output DP1
-workspace $ws2 output DP1
-workspace $ws3 output DP1
-workspace $ws4 output DP1
-workspace $ws5 output DP1
-workspace $ws6 output DP1
-workspace $ws7 output DP1
-workspace $ws8 output DP1
-workspace $ws9 output DP1
-workspace $ws10 output DP1
+workspace $ws1 output HDMI-A-0
+workspace $ws2 output HDMI-A-0
+workspace $ws3 output HDMI-A-0
+workspace $ws4 output HDMI-A-0
+workspace $ws5 output HDMI-A-0
+workspace $ws6 output HDMI-A-0
+workspace $ws7 output HDMI-A-0
+workspace $ws8 output HDMI-A-0
+workspace $ws9 output HDMI-A-0
+workspace $ws10 output HDMI-A-0
 
 # transparency
 exec_always --no-startup-id picom -b
