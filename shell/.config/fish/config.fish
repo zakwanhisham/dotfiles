@@ -36,8 +36,6 @@ abbr ssn "shutdown now"
 abbr ssr "shutdown -r now"
 abbr todo "nvim $HOME/Documents/NOTES/TODO.md"
 abbr updatelist "paru --pacman pacman -Syy && paru --pacman pacman -Qu"
-abbr updatemirror "sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist"
-abbr updatepkg "paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
 # Apps
 abbr cal "cal --monday -3"
