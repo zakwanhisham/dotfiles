@@ -193,8 +193,8 @@
   "buffer_font_family": "IosevkaTerm Nerd Font",
   "vim_mode": true,
   "icon_theme": "Zed (Default)",
-  "ui_font_size": 15.0,
-  "buffer_font_size": 15.0,
+  "ui_font_size": 14.0,
+  "buffer_font_size": 14.0,
   "theme": "Gruvbox Dark Hard",
   "languages": {
     "Python": {
