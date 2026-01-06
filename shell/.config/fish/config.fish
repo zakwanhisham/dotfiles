@@ -66,6 +66,8 @@ abbr vimrc "vim $HOME/.vimrc"
 
 fzf --fish | source
 
+fish_add_path /home/ouraaa/.opencode/bin
+
 function starship_transient_prompt_func
     starship module character
 end
