@@ -7,6 +7,8 @@
 	commentChar = ";"
 [alias]
 	c = commit
+    co = checkout
+    d = diff
     p = push
 	s = status
 	st = status
