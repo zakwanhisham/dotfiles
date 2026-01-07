@@ -12,6 +12,7 @@ set $chromium /usr/bin/chromium
 set $ghostty /usr/bin/ghostty
 set $menu /usr/bin/dmenu_run -i -l 5
 set $zed /usr/bin/zeditor
+set $monitor DisplayPort-0
 
 # default i3 tiling mode:
 workspace_layout default
@@ -184,16 +185,16 @@ set $ws9 "9"
 set $ws10 "10"
 
 # use workspaces on different displays:
-workspace $ws1 output HDMI-A-0
-workspace $ws2 output HDMI-A-0
-workspace $ws3 output HDMI-A-0
-workspace $ws4 output HDMI-A-0
-workspace $ws5 output HDMI-A-0
-workspace $ws6 output HDMI-A-0
-workspace $ws7 output HDMI-A-0
-workspace $ws8 output HDMI-A-0
-workspace $ws9 output HDMI-A-0
-workspace $ws10 output HDMI-A-0
+workspace $ws1 output $monitor
+workspace $ws2 output $monitor
+workspace $ws3 output $monitor
+workspace $ws4 output $monitor
+workspace $ws5 output $monitor
+workspace $ws6 output $monitor
+workspace $ws7 output $monitor
+workspace $ws8 output $monitor
+workspace $ws9 output $monitor
+workspace $ws10 output $monitor
 
 # transparency
 exec_always --no-startup-id picom -b
