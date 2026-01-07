@@ -169,6 +169,7 @@ bindsym $mod+t exec ~/.config/i3/scripts/teams
 bindsym $mod+m exec ~/.config/i3/scripts/email
 bindsym $mod+y exec ~/.config/i3/scripts/yt-music
 bindsym Print exec flameshot gui
+bindsym $mod+Print exec flameshot full
 
 # bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
