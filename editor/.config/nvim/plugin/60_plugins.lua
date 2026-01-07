@@ -81,6 +81,7 @@ now_if_args(function()
     local servers = {
         bashls = {},
         clangd = {},
+        eslint = {},
         gopls = {},
         lua_ls = {
             settings = {
@@ -102,6 +103,7 @@ now_if_args(function()
         },
         ruff = {},
         rust_analyzer = {},
+        ts_ls = {},
     }
 
     for server, config in pairs(servers) do vim.lsp.config(server, config) end
