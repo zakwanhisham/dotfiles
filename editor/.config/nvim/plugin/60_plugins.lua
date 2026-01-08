@@ -106,7 +106,7 @@ now_if_args(function()
         ts_ls = {},
     }
 
-    for server, config in pairs(servers) do vim.lsp.config(server, config) end
+    for server, config in pairs(servers) do vim.lsp.config[server] = config end
     vim.lsp.enable(vim.tbl_keys(servers))
 end)
 
