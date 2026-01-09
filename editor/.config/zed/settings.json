@@ -60,7 +60,6 @@
       "enabled": false,
     },
   },
-  "current_line_highlight": "none",
   "buffer_font_weight": 400.0,
   "diagnostics": {
     "button": true,
