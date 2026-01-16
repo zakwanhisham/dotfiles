@@ -7,15 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "text_rendering_mode": "platform_default",
+  "ui_font_size": 13.0,
   "pane_split_direction_horizontal": "down",
   "pane_split_direction_vertical": "right",
   "git_panel": {
     "sort_by_path": false,
     "status_style": "icon",
-    "button": true
+    "button": false
   },
   "zoomed_padding": true,
-  "window_decorations": "client",
   "close_on_file_delete": true,
   "prettier": {
     "allowed": false
@@ -42,6 +43,7 @@
     "inactive_opacity": 1.0
   },
   "agent": {
+    "button": false,
     "model_parameters": [],
   },
   "buffer_font_features": {
@@ -51,6 +53,7 @@
   },
   "format_on_save": "off",
   "git": {
+    "disable_git": false,
     "path_style": "file_path_first",
     "blame": {
       "show_avatar": false,
@@ -79,7 +82,7 @@
     "selections_menu": false,
     "quick_actions": false,
     "agent_review": false,
-    "breadcrumbs": false,
+    "breadcrumbs": true,
   },
   "scrollbar": {
     "show": "auto",
@@ -89,8 +92,7 @@
     },
   },
   "sticky_scroll": {
-    "enabled": true,
-  },
+    },
   "show_wrap_guides": true,
   "wrap_guides": [
     80
@@ -135,7 +137,7 @@
       "breadcrumbs": false,
     },
     "dock": "right",
-    "button": true,
+    "button": false,
     "copy_on_select": true,
   },
   "use_system_window_tabs": false,
@@ -145,6 +147,7 @@
     "git_status": false,
   },
   "title_bar": {
+    "show_user_menu": false,
     "show_branch_name": true,
     "show_project_items": true,
     "show_menus": false,
@@ -164,6 +167,7 @@
     "button": false,
   },
   "status_bar": {
+    "active_encoding_button": "enabled",
     "cursor_position_button": true,
     "active_language_button": true,
   },
@@ -179,7 +183,7 @@
     "folder_icons": false,
     "file_icons": false,
     "entry_spacing": "standard",
-    "button": true,
+    "button": false,
   },
   "file_finder": {
     "modal_max_width": "small",
@@ -192,8 +196,7 @@
   "buffer_font_family": "IosevkaTerm Nerd Font",
   "vim_mode": true,
   "icon_theme": "Zed (Default)",
-  "ui_font_size": 14.0,
-  "buffer_font_size": 14.0,
+  "buffer_font_size": 12.0,
   "theme": "Gruvbox Dark Hard",
   "languages": {
     "Python": {
