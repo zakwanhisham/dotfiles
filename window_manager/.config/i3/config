@@ -216,11 +216,11 @@ exec --no-startup-id ~/.fehbg
 exec --no-startup-id /usr/bin/dunst
 
 # set keyboard rate
-exec --no-startup-id xset r rate 200 35
+exec_always --no-startup-id xset r rate 200 35
 
 # disable DPMS turning off the screen
-exec --no-startup-id xset -dpms
-exec --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
+exec_always --no-startup-id xset s off
 
 # Autotiling
 exec_always --no-startup-id /usr/bin/autotiling -sw 0.65 -sr 1.61
