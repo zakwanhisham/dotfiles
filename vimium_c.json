@@ -1,0 +1,34 @@
+{
+	"name": "Vimium C",
+	"@time": "1/19/2026, 9:02:55 PM",
+	"time": 1768827775661,
+	"environment": {
+		"extension": "2.12.3",
+		"platform": "linux",
+		"firefox": 147
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://youtube.com/"
+		}
+	],
+	"hideHud": true,
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"map K previousTab",
+		"map J nextTab",
+		"map t createTab position=\"end\"",
+		"map O Vomnibar.activateInNewTab position=\"end\"",
+		"unmap /",
+		""
+	],
+	"linkHintCharacters": "asdfghjkl;mn",
+	"showInIncognito": true,
+	"vimSync": true
+}
