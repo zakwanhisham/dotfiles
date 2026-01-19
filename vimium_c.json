@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "1/19/2026, 9:02:55 PM",
-	"time": 1768827775661,
+	"@time": "1/20/2026, 12:24:42 AM",
+	"time": 1768839882558,
 	"environment": {
 		"extension": "2.12.3",
 		"platform": "linux",
@@ -17,7 +17,6 @@
 			"pattern": ":https://youtube.com/"
 		}
 	],
-	"hideHud": true,
 	"keyLayout": 2,
 	"keyMappings": [
 		"#!no-check",
@@ -25,6 +24,9 @@
 		"map J nextTab",
 		"map t createTab position=\"end\"",
 		"map O Vomnibar.activateInNewTab position=\"end\"",
+		"map f LinkHints.activate hideHUD",
+		"map F LinkHints.activate newtab hideHUD",
+		"map i enterInsertMode hideHUD",
 		"unmap /",
 		""
 	],
