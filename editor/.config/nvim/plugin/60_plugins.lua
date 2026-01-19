@@ -153,25 +153,11 @@ now_if_args(function()
 
     require("treesitter-context").setup { multiwindow = true, max_lines = 5 }
 
-    local function is_parser_installed(lang)
-        return #vim.api.nvim_get_runtime_file("parser/" .. lang .. ".*", false) > 0
-    end
+    local languages = require('nvim-treesitter').get_available()
+    require('nvim-treesitter').install(languages)
 
-    vim.api.nvim_create_autocmd("BufEnter", {
-        callback = function(event)
-            local filetype = vim.bo[event.buf].filetype
-            if filetype == "" then return end
-            local lang = vim.treesitter.language.get_lang(filetype)
-            if lang and not is_parser_installed(lang) then require("nvim-treesitter").install({ lang }) end
-        end
-    })
-
-    vim.api.nvim_create_autocmd("FileType", {
-        callback = function(event)
-            local lang = vim.treesitter.language.get_lang(vim.bo[event.buf].filetype)
-            if lang and is_parser_installed(lang) then vim.treesitter.start(event.buf) end
-        end
-    })
+    vim.api.nvim_create_autocmd("FileType",
+        { pattern = languages, callback = function(ev) vim.treesitter.start(ev.buf) end })
 end)
 
 now(function()
