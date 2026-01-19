@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "1/20/2026, 12:24:42 AM",
-	"time": 1768839882558,
+	"@time": "1/20/2026, 12:32:04 AM",
+	"time": 1768840324983,
 	"environment": {
 		"extension": "2.12.3",
 		"platform": "linux",
@@ -15,6 +15,10 @@
 		{
 			"passKeys": "",
 			"pattern": ":https://youtube.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://www.twitch.tv/"
 		}
 	],
 	"keyLayout": 2,
