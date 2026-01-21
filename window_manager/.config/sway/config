@@ -33,7 +33,6 @@ input type:keyboard {
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+Return exec ghostty
     bindsym $mod+w exec firefox
-    bindsym $mod+e exec zeditor
     bindsym $mod+c exec chromium
     bindsym $mod+m exec ~/.config/sway/scripts/email
     bindsym $mod+t exec ~/.config/sway/scripts/teams
