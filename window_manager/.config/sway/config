@@ -60,7 +60,10 @@ input type:keyboard {
     bindsym $mod+Shift+m bar mode toggle
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # Lock screen
+    bindsym $mod+Shift+e exec --no-startup-id ~/.config/sway/scripts/blur-lock
 #
 # Moving around:
 #
