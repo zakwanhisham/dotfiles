@@ -173,7 +173,7 @@ bindsym $mod+r mode "resize"
         gsettings set $gnome-schema gtk-theme 'Adwaita'
         gsettings set $gnome-schema icon-theme 'Papirus'
         gsettings set $gnome-schema cursor-theme 'Adwaita'
-        gsettings set $gnome-schema font-name 'IosevkaTerm Nerd Font'
+        gsettings set $gnome-schema font-name 'IosevkaTerm Nerd Font 11'
     }
 #
 # Special rule for apps and window
