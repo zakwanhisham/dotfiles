@@ -166,6 +166,14 @@ bindsym $mod+r mode "resize"
     exec --no-startup-id /usr/bin/mako
     exec --no-startup-id /usr/bin/nm-applet
     exec --no-startup-id /usr/bin/blueman-applet
+
+    set $gnome-schema org.gnome.desktop.interface
+    exec_always {
+        gsettings set $gnome-schema gtk-theme 'Adwaita'
+        gsettings set $gnome-schema icon-theme 'Papirus'
+        gsettings set $gnome-schema cursor-theme 'Adwaita'
+        gsettings set $gnome-schema font-name 'IosevkaTerm Nerd Font'
+    }
 #
 # Special rule for apps and window
 #
