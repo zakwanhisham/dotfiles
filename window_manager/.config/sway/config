@@ -164,7 +164,7 @@ bindsym $mod+r mode "resize"
 #
     exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1
     exec_always --no-startup-id /usr/bin/autotiling -sw 0.65 -sr 1.61
-    exec --no-startup-id /usr/bin/mako
+    exec --no-startup-id /usr/bin/mako -c ~/.config/mako/config
     exec --no-startup-id dex --autostart --environment sway
 
     set $gnome-schema org.gnome.desktop.interface
