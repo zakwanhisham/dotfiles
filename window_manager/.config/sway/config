@@ -16,7 +16,7 @@ set $menu wmenu-run -i -l 5
 
 ### Output configuration
 output DP-1 {
-    bg /home/ouraaa/dotfiles/wallpaper/animeskull.png fill
+    bg ~/dotfiles/wallpaper/animeskull.png fill
     resolution 3440x1440@200.000Hz position 0,0
 }
 
