@@ -126,6 +126,9 @@ input type:keyboard {
 
     # Open new empty workspace
     bindsym $mod+Shift+n exec ~/.config/sway/scripts/empty_workspace
+
+    # Woomer
+    bindsym $mod+Shift+p exec ~/.local/bin/woomer
 #
 # Resizing containers:
 #
