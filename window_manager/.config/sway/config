@@ -1,0 +1,250 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+font pango: IosevkaTerm Nerd Font Regular 10
+
+default_border none
+
+workspace_layout default
+
+gaps inner 0
+gaps outer 0
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term /usr/bin/alacritty
+# Your preferred application launcher
+set $menu wmenu-run -i -l 5
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg /home/ouraaa/dotfiles/wallpaper/animeskull.png fill
+#
+# Example configuration:
+#
+output DP-1 {
+    bg /home/ouraaa/dotfiles/wallpaper/animeskull.png fill
+    resolution 3440x1440@200.000Hz position 0,0
+}
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input type:touchpad {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+input type:keyboard {
+    repeat_delay 200
+    repeat_rate 35
+}
+#
+# You can also configure each device individually.
+# Read `man 5 sway-input` for more information about this section.
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+    bindsym $mod+w exec firefox
+    bindsym $mod+e exec zeditor
+    bindsym $mod+c exec chromium
+    bindsym $mod+m exec ~/.config/sway/scripts/email
+    bindsym $mod+t exec ~/.config/sway/scripts/teams
+    bindsym $mod+y exec ~/.config/sway/scripts/yt-music
+    bindsym Print exec flameshot gui
+    bindsym $mod+Print exec flameshot full
+
+    # Kill focused window
+    bindsym $mod+Shift+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    bindsym $mod+Shift+m bar mode toggle
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+#
+# Layout stuff:
+#
+    # Switch the current container between different layout styles
+    bindsym $mod+Shift+s layout stacking
+    bindsym $mod+Shift+w layout tabbed
+    bindsym $mod+Shift+d layout default
+
+    # Make the current focus fullscreen
+    bindsym $mod+Shift+z fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+
+    # Open new empty workspace
+    bindsym $mod+Shift+n exec ~/.config/sway/scripts/empty_workspace
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+#
+# Utilities:
+#
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # Special keys to adjust brightness via brightnessctl
+#
+# Startup things
+#
+    exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1
+    exec_always --no-startup-id /usr/bin/autotiling -sw 0.65 -sr 1.61
+    exec --no-startup-id /usr/bin/mako
+    exec --no-startup-id /usr/bin/nm-applet
+    exec --no-startup-id /usr/bin/blueman-applet
+#
+# Special rule for apps and window
+#
+    # set floating (nontiling) for apps needing it
+    for_window [class="Yad" instance="yad"] floating enable
+    for_window [class="Galculator" instance="galculator"] floating enable
+    for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
+    for_window [class="flameshot" instance="flameshot"] floating enable
+
+    # set floating (nontiling) for special apps
+    for_window [class="pavucontrol" instance="pavucontrol"] floating enable
+    for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
+    for_window [class="flameshot" instance="flameshot"] floating enable
+    for_window [window_role="About"] floating enable
+
+    # set size of floating window
+    for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
+    for_window [class=".*"] resize set 640 480 #to change size of all floating windows
+
+    # set position of floating window
+    for_window [class=".*"] move position center
+
+    for_window [workspace="3"] layout tabbed
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    mode hide
+    position top
+    tray_padding 0
+    strip_workspace_numbers no
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command i3blocks -c ~/.config/sway/i3blocks.conf
+}
+
+include /etc/sway/config.d/*

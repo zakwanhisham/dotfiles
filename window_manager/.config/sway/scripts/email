@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+email='/usr/bin/thunderbird'
+
+swaymsg "workspace 3; exec ${email}"
