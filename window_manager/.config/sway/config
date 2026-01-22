@@ -220,8 +220,7 @@ bindsym $mod+r mode "resize"
 bar {
     mode hide
     position top
-    tray_padding 0
-    tray_output DP-1
+    icon_theme Papirus
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command i3blocks -c ~/.config/sway/i3blocks.conf
