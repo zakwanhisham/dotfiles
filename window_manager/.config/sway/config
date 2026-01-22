@@ -133,7 +133,7 @@ input type:pointer {
     bindsym $mod+Shift+n exec ~/.config/sway/scripts/empty_workspace
 
     # Woomer
-    bindsym $mod+Shift+p exec ~/.local/bin/woomer
+    bindsym $mod+Shift+p exec ~/bin/woomer
 #
 # Resizing containers:
 #
