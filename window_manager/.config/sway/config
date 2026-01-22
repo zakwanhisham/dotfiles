@@ -1,10 +1,5 @@
 font pango: IosevkaTerm Nerd Font Regular 10
 
-default_border none
-workspace_layout default
-gaps inner 0
-gaps outer 0
-
 ### Variables
 set $mod Mod4
 set $left h
@@ -13,6 +8,12 @@ set $up k
 set $right l
 set $term /usr/bin/alacritty
 set $menu wmenu-run -i -l 5
+
+### Border and gaps
+default_border none
+workspace_layout default
+gaps inner 0
+gaps outer 0
 
 ### Output configuration
 output DP-1 {
@@ -146,12 +147,6 @@ mode "resize" {
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -173,10 +168,10 @@ bindsym $mod+r mode "resize"
 #
 # Startup things
 #
-    exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1
     exec_always --no-startup-id /usr/bin/autotiling -sw 0.65 -sr 1.61
-    exec --no-startup-id /usr/bin/mako -c ~/.config/mako/config
-    exec --no-startup-id dex --autostart --environment sway
+    exec /usr/lib/polkit-1/polkit-agent-helper-1
+    exec /usr/bin/mako -c ~/.config/mako/config
+    exec dex --autostart --environment sway
 
     set $gnome-schema org.gnome.desktop.interface
     exec_always {
