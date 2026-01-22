@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+pkill autotiling
+
+/usr/bin/autotiling -sw 0.65 -sr 1.61 &
