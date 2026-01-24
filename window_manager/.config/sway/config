@@ -169,7 +169,7 @@ bindsym $mod+r mode "resize"
 # Startup things
 #
     exec /usr/lib/polkit-1/polkit-agent-helper-1
-    exec_always ~/.config/sway/scripts/autotiling
+    exec_always pkill autotiling; /usr/bin/autotiling -sw 0.65 -sr 1.61
     exec /usr/bin/mako -c ~/.config/mako/config
     exec dex --autostart --environment sway
 
