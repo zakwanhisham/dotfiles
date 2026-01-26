@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-yt_music='/usr/bin/chromium --app=https://music.youtube.com'
+yt_music='/usr/bin/chromium --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland --app=https://music.youtube.com'
 
 swaymsg "workspace 10; exec ${yt_music}"
