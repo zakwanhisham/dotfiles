@@ -15,7 +15,8 @@ later(function()
     add {
         source = "saghen/blink.cmp",
         depends = { "rafamadriz/friendly-snippets" },
-        hooks = { post_install = build_blink, post_checkout = build_blink }
+        -- hooks = { post_install = build_blink, post_checkout = build_blink }
+        checkout = "v1.8.0"
     }
 
     require("blink.cmp").setup {
