@@ -40,9 +40,9 @@ input type:pointer {
     bindsym $mod+Shift+Return exec ghostty
     bindsym $mod+w exec firefox
     bindsym $mod+c exec chromium
-    bindsym $mod+m exec ~/.config/sway/scripts/email
+    bindsym $mod+e exec ~/.config/sway/scripts/email
     bindsym $mod+t exec ~/.config/sway/scripts/teams
-    bindsym $mod+y exec ~/.config/sway/scripts/yt-music
+    bindsym $mod+m exec ~/.config/sway/scripts/yt-music
     bindsym Print exec flameshot gui
     bindsym $mod+Print exec flameshot full
 
