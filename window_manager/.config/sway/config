@@ -37,7 +37,6 @@ input type:pointer {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec ghostty
     bindsym $mod+w exec firefox
     bindsym $mod+c exec chromium
     bindsym $mod+e exec ~/.config/sway/scripts/email
