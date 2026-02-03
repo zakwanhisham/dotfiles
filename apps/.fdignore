@@ -1,3 +1,4 @@
 *.git
 *.github
 *.venv
+*/node_module
