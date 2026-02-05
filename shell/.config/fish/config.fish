@@ -3,8 +3,9 @@ if not status is-interactive
     return
 end
 
-# Use default keybindings
-fish_default_key_bindings
+# keybindings
+fish_vi_key_bindings
+set fish_cursor_insert block
 
 ### EXPORT
 set fish_greeting
@@ -29,8 +30,6 @@ set -Ux XDG_BIN_DIR "$HOME/.local/bin"
 
 ### ABBREVIATIONS
 abbr autoremove "paru --pacman pacman -Rns (paru --pacman pacman -Qtdq)"
-abbr laptop "$HOME/.screenlayout/laptop.sh && $HOME/.fehbg"
-abbr monitor "$HOME/.screenlayout/monitor.sh && $HOME/.fehbg"
 abbr reload "source $HOME/.config/fish/config.fish"
 abbr ssn "shutdown now"
 abbr ssr "shutdown -r now"
@@ -52,13 +51,11 @@ abbr rm "rm -iv"
 abbr timestamp "date +%d%b%H%M%S"
 abbr tree "tree -a -I \"*.git\" -C"
 abbr vim "nvim"
-abbr zed "zeditor"
 
 # Config
 abbr alarc "nvim $HOME/.config/alacritty/alacritty.toml"
 abbr bashrc "nvim $HOME/.bashrc"
 abbr fishrc "nvim $HOME/.config/fish/config.fish"
-abbr ghostrc "nvim $HOME/.config/ghostty/config"
 abbr tconf "nvim $HOME/.tmux.conf"
 abbr vimrc "vim $HOME/.vimrc"
 
