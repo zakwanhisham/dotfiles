@@ -30,6 +30,7 @@ set -Ux XDG_BIN_DIR "$HOME/.local/bin"
 
 ### ABBREVIATIONS
 abbr autoremove "paru --pacman pacman -Rns (paru --pacman pacman -Qtdq)"
+abbr cleanup "paru --pacman pacman -Scc"
 abbr reload "source $HOME/.config/fish/config.fish"
 abbr ssn "shutdown now"
 abbr ssr "shutdown -r now"
