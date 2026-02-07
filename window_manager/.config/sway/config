@@ -209,6 +209,7 @@ bindsym $mod+r mode "resize"
     for_window [title="Picture-in-Picture"] floating enable, sticky enable
     for_window [title="Save File"] floating enable
     for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
+    for_window [title="sowon*"] floating enable, sticky enable
 
     # Inhibit idle
     for_window [app_id="firefox"] inhibit_idle fullscreen
