@@ -4,4 +4,4 @@
 #
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-. ~/.cargo/env
+[[ -f ~/.cargo/env ]] &&. ~/.cargo/env
