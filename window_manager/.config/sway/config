@@ -1,4 +1,4 @@
-font pango: IosevkaTerm Nerd Font Regular 10
+font pango: IosevkaTerm Nerd Font Regular 9
 
 ### Variables
 set $mod Mod4
@@ -183,7 +183,7 @@ bindsym $mod+r mode "resize"
         gsettings set $gnome-schema gtk-theme 'Adwaita'
         gsettings set $gnome-schema icon-theme 'Papirus'
         gsettings set $gnome-schema cursor-theme 'Adwaita'
-        gsettings set $gnome-schema font-name 'IosevkaTerm Nerd Font 11'
+        gsettings set $gnome-schema font-name 'IosevkaTerm Nerd Font 10'
     }
 #
 # Special rule for apps and window
