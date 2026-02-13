@@ -11,7 +11,7 @@ history = 100000
 
 [font]
 normal = { family = "IosevkaTerm Nerd Font" }
-size = 11
+size = 11.25
 offset = { x = 0, y = -2 }
 
 [colors]
