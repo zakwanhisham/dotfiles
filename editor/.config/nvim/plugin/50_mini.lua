@@ -86,8 +86,8 @@ now(function()
                     { hl = highlight, strings = { filename } },
                     { hl = highlight, strings = { diagnostics } },
                     "%=",
-                    { hl = highlight, strings = { diff } },
                     { hl = highlight, strings = { git } },
+                    { hl = highlight, strings = { diff } },
                     { hl = highlight, strings = { location } },
                 }
             end,
