@@ -44,6 +44,7 @@ input type:pointer {
     bindsym $mod+m exec ~/.config/sway/scripts/yt-music
     bindsym Print exec flameshot gui
     bindsym $mod+Print exec flameshot full
+    bindsym $mod+Shift+p exec ~/bin/woomer
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -75,6 +76,10 @@ input type:pointer {
 
     # Lock screen
     bindsym $mod+Shift+e exec --no-startup-id ~/.config/sway/scripts/blur-lock
+
+    # Navigate workspace using tab
+    bindsym $mod+Tab workspace next
+    bindsym $mod+Shift+Tab workspace prev
 #
 # Moving around:
 #
@@ -136,9 +141,6 @@ input type:pointer {
 
     # Open new empty workspace
     bindsym $mod+Shift+n exec ~/.config/sway/scripts/empty_workspace
-
-    # Woomer
-    bindsym $mod+Shift+p exec ~/bin/woomer
 #
 # Resizing containers:
 #
