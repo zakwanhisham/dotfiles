@@ -75,7 +75,7 @@ if [[ "${display_wifi_name}" == "1" ]]; then
         if [[ $BLOCK_BUTTON -eq 1 ]]; then
             message="$WIFI_NAME ($IPADDR)"
         else
-            message="$WIFI_NAME"
+            message="$IPADDR ($WIFI_NAME)"
         fi
     else
         message="$IPADDR"
