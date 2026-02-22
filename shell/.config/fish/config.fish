@@ -35,6 +35,7 @@ abbr reload "source $HOME/.config/fish/config.fish"
 abbr ssn "shutdown now"
 abbr ssr "shutdown -r now"
 abbr todo "nvim $HOME/Documents/NOTES/TODO.md"
+abbr updatemirror "sudo reflector --sort rate -c Malaysia -c Singapore -c Indonesia -c Thailand -c Worldwide --save /etc/pacman.d/mirrorlist"
 abbr updatelist "paru --pacman pacman -Syy && paru --pacman pacman -Qu"
 
 # Apps
