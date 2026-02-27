@@ -228,7 +228,7 @@ bar {
     height 18
     position top
     icon_theme Papirus
-    tray_output none
+    # tray_output none
     wrap_scroll yes
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
