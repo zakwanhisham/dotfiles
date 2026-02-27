@@ -224,7 +224,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    mode hide
+    mode dock
     height 18
     position top
     icon_theme Papirus
