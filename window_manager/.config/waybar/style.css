@@ -4,14 +4,13 @@
     font-family: "IosevkaTerm Nerd Font";
     font-size: 9pt;
     min-height: 18px;
+    color: #ffffff;
 }
 
 window#waybar {
     background: rgba(0, 0, 0, 1);
-    color: #ffffff;
 }
 
-/* --- Modules --- */
 #window,
 #custom-calendar,
 #custom-cpu,
@@ -25,7 +24,6 @@ window#waybar {
     margin: 0;
 }
 
-/* --- Separator (mimic | from i3blocks) --- */
 #custom-cpu,
 #custom-memory,
 #custom-disk,
@@ -37,76 +35,26 @@ window#waybar {
     border-left: 1px solid #666666;
 }
 
-/* --- Workspaces --- */
 #workspaces {
     background: transparent;
 }
 
 #workspaces button {
-    padding: 1px 2px;
-    color: #ffffff;
-    background: #2f343f;
+    padding: 0px 1px;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
-    color: #ffffff;
-    background: #4c7899;
-    font-weight: bold;
+    background: #285577;
 }
 
 #workspaces button.urgent {
-    color: #ffffff;
     background: #900000;
 }
 
 #mode {
-    padding: 1px 2px;
-    color: #ffffff;
+    padding: 0px 4px;
     background: #900000;
-}
-
-/* --- Window Title --- */
-#window {
-    color: #ffffff;
-}
-
-#window.empty {
-    color: #888888;
-}
-
-/* --- Custom Modules --- */
-#custom-calendar {
-    color: #ffffff;
-}
-
-#custom-cpu {
-    color: #ffffff;
-}
-
-#custom-memory {
-    color: #ffffff;
-}
-
-#custom-disk {
-    color: #ffffff;
-}
-
-#custom-gpu {
-    color: #ffffff;
-}
-
-#custom-iface {
-    color: #ffffff;
-}
-
-#custom-volume {
-    color: #ffffff;
-}
-
-/* --- Tray --- */
-#tray {
-    color: #ffffff;
 }
 
 #tray > .passive {
