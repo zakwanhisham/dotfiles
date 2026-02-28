@@ -12,13 +12,12 @@ window#waybar {
 }
 
 #window,
-#custom-calendar,
 #custom-cpu,
 #custom-memory,
 #custom-disk,
 #custom-gpu,
-#custom-iface,
 #custom-volume,
+#custom-calendar,
 #tray {
     padding: 0 8px;
     margin: 0;
@@ -28,7 +27,6 @@ window#waybar {
 #custom-memory,
 #custom-disk,
 #custom-gpu,
-#custom-iface,
 #custom-volume,
 #custom-calendar,
 #tray {
