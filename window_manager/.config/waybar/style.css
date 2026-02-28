@@ -8,10 +8,11 @@
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 1);
+    background: #285577;
 }
 
-#window,
+/* #window, */
+#custom-mode,
 #custom-cpu,
 #custom-memory,
 #custom-disk,
@@ -19,32 +20,49 @@ window#waybar {
 #custom-volume,
 #custom-calendar,
 #tray {
+    background: #181818;
     padding: 0 6px;
     margin: 0;
 }
 
 #workspaces {
-    background: #222222;
+    padding: 0px 2px;
+    background: #333333;
 }
 
 #workspaces button {
-    padding: 0px 0px;
-    border: 1px solid #333333;
+    padding: 0px 1px;
 }
 
-#workspaces button.active,
 #workspaces button.focused {
     background: #285577;
-    border: 1px solid #555555;
 }
 
 #workspaces button.urgent {
     background: #900000;
 }
 
+#workspaces button.empty {
+    background: #181818;
+}
+
 #mode {
     padding: 0px 4px;
     background: #900000;
+}
+
+#window {
+    padding: 0px 6px;
+    background: #285577;
+}
+
+window#waybar.empty #window {
+	background-color: transparent;
+	color: transparent;
+}
+
+window#waybar.empty {
+	color: transparent;
 }
 
 #tray > .passive {
