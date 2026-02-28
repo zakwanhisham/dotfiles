@@ -63,7 +63,7 @@ input type:pointer {
     bindsym $mod+Shift+c reload
 
     # Toggle bar
-    bindsym $mod+Shift+m bar mode toggle
+    # bindsym $mod+Shift+m bar mode toggle
 
     # Move to urgent workspace
     bindsym $mod+x [urgent=latest] focus
