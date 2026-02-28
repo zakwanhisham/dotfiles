@@ -44,7 +44,8 @@
         "format": "{}",
         "exec": "date +'%A-%d-%d %H:%M:%S'",
         "interval": 1,
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "/home/ouraaa/.config/sway/scripts/calendar"
     },
 
     // --- CPU Usage ---
