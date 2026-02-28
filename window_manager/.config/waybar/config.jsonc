@@ -45,13 +45,13 @@
         "exec": "date +'%A-%d-%d %H:%M:%S'",
         "interval": 1,
         "tooltip": false,
-        "on-click": "/home/ouraaa/.config/sway/scripts/calendar"
+        "on-click": "$HOME/.config/sway/scripts/calendar"
     },
 
     // --- CPU Usage ---
     "custom/cpu": {
         "format": "CPU: {}",
-        "exec": "/home/ouraaa/.config/sway/scripts/cpu_usage",
+        "exec": "$HOME/.config/sway/scripts/cpu_usage",
         "interval": 2,
         "on-click": "alacritty -T \"System Monitor (btop)\" -e btop",
         "tooltip": false
@@ -60,7 +60,7 @@
     // --- Memory Usage ---
     "custom/memory": {
         "format": "MEM: {}",
-        "exec": "/home/ouraaa/.config/sway/scripts/memory",
+        "exec": "$HOME/.config/sway/scripts/memory",
         "interval": 2,
         "tooltip": false
     },
@@ -68,7 +68,7 @@
     // --- Disk Usage ---
     "custom/disk": {
         "format": "DISK: {}",
-        "exec": "/home/ouraaa/.config/sway/scripts/disk",
+        "exec": "$HOME/.config/sway/scripts/disk",
         "interval": 30,
         "tooltip": false
     },
@@ -76,7 +76,7 @@
     // --- GPU Usage ---
     "custom/gpu": {
         "format": "GPU: {}",
-        "exec": "/home/ouraaa/.config/sway/scripts/gpu_usage",
+        "exec": "$HOME/.config/sway/scripts/gpu_usage",
         "interval": 2,
         "env": {
             "GPU_BRAND": "AMD"
@@ -88,7 +88,7 @@
     // --- Volume ---
     "custom/volume": {
         "format": "VOL: {}",
-        "exec": "/home/ouraaa/.config/sway/scripts/volume",
+        "exec": "$HOME/.config/sway/scripts/volume",
         "interval": 1,
         "on-click": "pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
