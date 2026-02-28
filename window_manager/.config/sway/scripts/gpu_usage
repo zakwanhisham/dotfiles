@@ -21,7 +21,7 @@ use Getopt::Long;
 # default values
 my $t_warn = $ENV{T_WARN} || 70;
 my $t_crit = $ENV{T_CRIT} || 90;
-my $gpu_brand = $ENV{GPU_BRAND} || "NVIDIA";
+my $gpu_brand = $ENV{GPU_BRAND} || "AMD";
 my $gpu_usage = -1;
 my $gpu_mem = -1;
 my $gpu_video = -1;
@@ -60,7 +60,7 @@ if ($gpu_brand eq "NVIDIA") {
 elsif ($gpu_brand eq "AMD") {
     open (AMD, 'radeontop -d - -l 1 |') or die;
     while (<AMD>) {
-        if (/^.*[gpu] (\d+)\.\d+%.*.*[vram] (\d+)\.\d+%.*$/) {
+        if (/gpu (\d+)\.\d+%.*vram (\d+)\.\d+%/) {
             $gpu_usage = $1;
             $gpu_mem = $2;
             last;
