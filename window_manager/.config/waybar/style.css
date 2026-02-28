@@ -19,31 +19,23 @@ window#waybar {
 #custom-volume,
 #custom-calendar,
 #tray {
-    padding: 0 8px;
+    padding: 0 6px;
     margin: 0;
 }
 
-#custom-cpu,
-#custom-memory,
-#custom-disk,
-#custom-gpu,
-#custom-volume,
-#custom-calendar,
-#tray {
-    border-left: 1px solid #666666;
-}
-
 #workspaces {
-    background: transparent;
+    background: #222222;
 }
 
 #workspaces button {
-    padding: 0px 1px;
+    padding: 0px 0px;
+    border: 1px solid #333333;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
     background: #285577;
+    border: 1px solid #555555;
 }
 
 #workspaces button.urgent {
