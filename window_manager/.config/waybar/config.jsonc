@@ -28,8 +28,6 @@
     "sway/window": {
         "format": "{}",
         "max-length": 150,
-        "icon": false,
-        "separate-outputs": false,
         "tooltip": false
     },
     "custom/cpu": {
