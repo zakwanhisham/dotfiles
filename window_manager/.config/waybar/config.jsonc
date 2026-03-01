@@ -71,7 +71,7 @@
     },
     "custom/calendar": {
         "format": "{}",
-        "exec": "date +'%a-%d-%b %H:%M:%S'",
+        "exec": "date +'%A-%d-%b %H:%M:%S'",
         "interval": 1,
         "tooltip": false,
         "on-click": "$HOME/.config/sway/scripts/calendar"
