@@ -33,16 +33,16 @@ window#waybar {
     padding: 0px 0px;
 }
 
+#workspaces button.empty {
+    background: #181818;
+}
+
 #workspaces button.focused {
     background: #285577;
 }
 
 #workspaces button.urgent {
     background: #900000;
-}
-
-#workspaces button.empty {
-    background: #181818;
 }
 
 #mode {
