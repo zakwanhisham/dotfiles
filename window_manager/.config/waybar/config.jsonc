@@ -4,11 +4,9 @@
     "height": 18,
     "margin": [0, 0, 0, 0],
     "font-family": "IosevkaTerm Nerd Font",
-    "modules-left": [ "sway/workspaces", "sway/mode", "custom/mode", "sway/window" ],
+    "modules-left": [ "sway/workspaces", "custom/mode", "sway/mode", "sway/window" ],
     "modules-center": [],
     "modules-right": [ "custom/cpu", "custom/memory", "custom/disk", "custom/gpu", "custom/volume", "custom/calendar", "tray" ],
-
-    // --- Workspaces ---
     "sway/workspaces": {
         "format": "{index}",
         "on-click": "activate",
@@ -23,8 +21,10 @@
    		"format": "{}",
    		"tooltip": false
     },
-
-    // --- Window Title (centered) ---
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>",
+   		"tooltip": false
+    },
     "sway/window": {
         "format": "{}",
         "max-length": 150,
@@ -32,17 +32,6 @@
         "separate-outputs": false,
         "tooltip": false
     },
-
-    // --- Calendar ---
-    "custom/calendar": {
-        "format": "{}",
-        "exec": "date +'%a-%d-%b %H:%M:%S'",
-        "interval": 1,
-        "tooltip": false,
-        "on-click": "$HOME/.config/sway/scripts/calendar"
-    },
-
-    // --- CPU Usage ---
     "custom/cpu": {
         "format": "CPU: {}",
         "exec": "$HOME/.config/sway/scripts/cpu_usage",
@@ -50,24 +39,18 @@
         "on-click": "alacritty -T \"System Monitor (btop)\" -e btop",
         "tooltip": false
     },
-
-    // --- Memory Usage ---
     "custom/memory": {
         "format": "MEM: {}",
         "exec": "$HOME/.config/sway/scripts/memory",
         "interval": 2,
         "tooltip": false
     },
-
-    // --- Disk Usage ---
     "custom/disk": {
         "format": "DISK: {}",
         "exec": "$HOME/.config/sway/scripts/disk",
         "interval": 30,
         "tooltip": false
     },
-
-    // --- GPU Usage ---
     "custom/gpu": {
         "format": "GPU: {}",
         "exec": "$HOME/.config/sway/scripts/gpu_usage",
@@ -78,8 +61,6 @@
         "on-click": "amdgpu_top --gui",
         "tooltip": false
     },
-
-    // --- Volume ---
     "custom/volume": {
         "format": "VOL: {}",
         "exec": "$HOME/.config/sway/scripts/volume",
@@ -90,8 +71,13 @@
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
         "tooltip": false
     },
-
-    // --- System Tray ---
+    "custom/calendar": {
+        "format": "{}",
+        "exec": "date +'%a-%d-%b %H:%M:%S'",
+        "interval": 1,
+        "tooltip": false,
+        "on-click": "$HOME/.config/sway/scripts/calendar"
+    },
     "tray": {
         "icon-size": 12,
         "spacing": 8,
