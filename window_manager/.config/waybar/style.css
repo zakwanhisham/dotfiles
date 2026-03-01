@@ -2,8 +2,8 @@
     border: none;
     border-radius: 0;
     font-family: "IosevkaTerm Nerd Font";
-    font-size: 9pt;
-    min-height: 18px;
+    font-size: 10pt;
+    min-height: 20px;
     color: #ffffff;
 }
 
@@ -71,4 +71,3 @@ window#waybar.empty {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
 }
-
