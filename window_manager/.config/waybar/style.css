@@ -61,6 +61,7 @@ window#waybar.empty #window {
 }
 
 window#waybar.empty {
+    background: #000000;
 	color: transparent;
 }
 
