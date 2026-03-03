@@ -1,23 +1,3 @@
---[[ MiniDeps ]]
-local path_package = vim.fn.stdpath('data') .. '/site/'
-local mini_path = path_package .. 'pack/deps/start/mini.nvim'
-
-if not (vim.uv or vim.loop).fs_stat(mini_path) then
-    vim.cmd('echo "Installing `mini.nvim`" | redraw')
-    local clone_cmd = {
-        'git', 'clone', '--filter=blob:none',
-        'https://github.com/nvim-mini/mini.nvim', mini_path
-    }
-    vim.fn.system(clone_cmd)
-    vim.cmd('packadd mini.nvim | helptags ALL')
-    vim.cmd('echo "Installed `mini.nvim`" | redraw')
-end
-
-require('mini.deps').setup({ path = { package = path_package } })
-
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
-local now_if_args = vim.fn.argc(-1) > 0 and now or later
-
 --[[ Options ]]
 vim.g.mapleader = " "
 
@@ -137,6 +117,26 @@ vim.api.nvim_create_autocmd("VimResized", {
         vim.cmd("tabnext " .. current_tab)
     end
 })
+
+--[[ MiniDeps ]]
+local path_package = vim.fn.stdpath('data') .. '/site/'
+local mini_path = path_package .. 'pack/deps/start/mini.nvim'
+
+if not (vim.uv or vim.loop).fs_stat(mini_path) then
+    vim.cmd('echo "Installing `mini.nvim`" | redraw')
+    local clone_cmd = {
+        'git', 'clone', '--filter=blob:none',
+        'https://github.com/nvim-mini/mini.nvim', mini_path
+    }
+    vim.fn.system(clone_cmd)
+    vim.cmd('packadd mini.nvim | helptags ALL')
+    vim.cmd('echo "Installed `mini.nvim`" | redraw')
+end
+
+require('mini.deps').setup({ path = { package = path_package } })
+
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local now_if_args = vim.fn.argc(-1) > 0 and now or later
 
 --[[ Colorscheme ]]
 now(function()
