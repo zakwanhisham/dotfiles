@@ -4,22 +4,15 @@
     "height": 18,
     "margin": [0, 0, 0, 0],
     "font-family": "IosevkaTerm Nerd Font",
-    "modules-left": [ "sway/workspaces", "custom/mode", "sway/mode", "sway/window" ],
-    "modules-center": [],
-    "modules-right": [ "custom/cpu", "custom/memory", "custom/disk", "custom/gpu", "custom/volume", "custom/calendar", "tray" ],
+    "modules-left": [ "sway/workspaces", "sway/mode" ],
+    "modules-center": [ "custom/calendar" ],
+    "modules-right": [ "custom/cpu", "custom/memory", "custom/disk", "custom/gpu", "custom/volume", "tray" ],
     "sway/workspaces": {
         "format": "{index}",
         "on-click": "activate",
         "on-scroll-up": "swaymsg workspace next",
         "on-scroll-down": "swaymsg workspace prev",
-        "tooltip": false,
-        "persistent-workspaces": { "1": [], "2": [], "3": [], "4": [], "5": [], "6": [], "7": [], "8": [], "9": [], "10": [] }
-    },
-	"custom/mode": {
-   		"interval": 1,
-   		"exec": "swaymsg -t get_tree | jq -r '.. | objects | select(.focused == true) | if .type == \"floating_con\" then \"T\" else \"[]=\" end'",
-   		"format": "{}",
-   		"tooltip": false
+        "tooltip": false
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>",

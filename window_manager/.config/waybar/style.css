@@ -8,10 +8,9 @@
 }
 
 window#waybar {
-    background: #285577;
+    background: #000000;
 }
 
-#custom-mode,
 #custom-cpu,
 #custom-memory,
 #custom-disk,
@@ -48,21 +47,6 @@ window#waybar {
 #mode {
     padding: 0px 6px;
     background: #900000;
-}
-
-#window {
-    padding: 0px 6px;
-    background: #285577;
-}
-
-window#waybar.empty #window {
-	background-color: transparent;
-	color: transparent;
-}
-
-window#waybar.empty {
-    background: #000000;
-	color: transparent;
 }
 
 #tray > .passive {
