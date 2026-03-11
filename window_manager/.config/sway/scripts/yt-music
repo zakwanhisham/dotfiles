@@ -2,4 +2,4 @@
 
 yt_music='/usr/bin/chromium --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland --app=https://music.youtube.com'
 
-swaymsg "workspace 10; exec ${yt_music}"
+swaymsg "workspace 9; exec ${yt_music}"
