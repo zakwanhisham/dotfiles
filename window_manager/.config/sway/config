@@ -232,5 +232,3 @@ bar {
     wrap_scroll yes
     # status_command waybar
 }
-
-include /etc/sway/config.d/*
