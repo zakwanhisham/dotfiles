@@ -1,12 +1,9 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 18,
-    "margin": [0, 0, 0, 0],
-    "font-family": "IosevkaTerm Nerd Font",
     "modules-left": [ "sway/workspaces", "sway/mode" ],
-    "modules-center": [],
-    "modules-right": [ "custom/cpu", "custom/memory", "custom/disk", "custom/gpu", "custom/volume", "custom/calendar", "tray" ],
+    "modules-center": [ "custom/calendar" ],
+    "modules-right": [ "custom/cpu", "custom/memory", "custom/disk", "custom/gpu", "custom/volume", "tray" ],
     "sway/workspaces": {
         "format": "{index}",
         "on-click": "activate",
@@ -66,8 +63,8 @@
         "format": "{}",
         "exec": "date +'%A-%d-%b %H:%M:%S'",
         "interval": 1,
-        "tooltip": false,
-        "on-click": "$HOME/.config/sway/scripts/calendar"
+        "on-click": "$HOME/.config/sway/scripts/calendar",
+        "tooltip": false
     },
     "tray": {
         "icon-size": 14,
