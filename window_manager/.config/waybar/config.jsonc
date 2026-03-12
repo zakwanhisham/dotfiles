@@ -10,8 +10,8 @@
     "sway/workspaces": {
         "format": "{index}",
         "on-click": "activate",
-        "on-scroll-up": "swaymsg workspace next",
-        "on-scroll-down": "swaymsg workspace prev",
+        "on-scroll-up": "swaymsg workspace prev",
+        "on-scroll-down": "swaymsg workspace next",
         "tooltip": false
     },
     "sway/mode": {
