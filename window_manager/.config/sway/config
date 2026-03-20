@@ -38,7 +38,6 @@ input type:pointer {
     # Start a terminal
     bindsym $mod+Return exec $term
     bindsym $mod+w exec firefox
-    bindsym $mod+g exec steam
     bindsym $mod+c exec chromium
     bindsym $mod+e exec ~/.config/sway/scripts/email
     bindsym $mod+t exec ~/.config/sway/scripts/teams
@@ -216,7 +215,6 @@ bindsym $mod+r mode "resize"
     for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
     for_window [title="sowon*"] floating enable, sticky enable
     for_window [app_id="chrome-music.youtube.com__-Default"] floating enable
-    for_window [class="steam" instance="steamwebhelper"] move workspace 4
 
     # Inhibit idle
     for_window [app_id="firefox"] inhibit_idle fullscreen
