@@ -16,11 +16,6 @@
         "format": "{}",
    		"tooltip": false
     },
-    "sway/window": {
-        "format": "{}",
-        "max-length": 150,
-        "tooltip": false
-    },
     "custom/cpu": {
         "format": "CPU: {}",
         "exec": "$HOME/.config/sway/scripts/cpu_usage",
