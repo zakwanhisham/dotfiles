@@ -59,7 +59,6 @@
         "format": "{}",
         "exec": "date +'%A-%d-%b %H:%M:%S'",
         "interval": 1,
-        "on-click": "$HOME/.config/sway/scripts/calendar",
         "tooltip": false
     },
     "tray": {

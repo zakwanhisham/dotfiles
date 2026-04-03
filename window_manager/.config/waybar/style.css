@@ -3,7 +3,7 @@
     border-radius: 0;
     font-family: "IosevkaTerm Nerd Font";
     font-size: 10pt;
-    min-height: 20px;
+    min-height: 18px;
     color: #ffffff;
 }
 
@@ -29,6 +29,7 @@ window#waybar {
 }
 
 #workspaces button {
+    border: 1px solid #555555;
     padding: 0px 0px;
 }
 
