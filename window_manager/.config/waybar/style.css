@@ -19,7 +19,7 @@ window#waybar {
 #custom-calendar,
 #tray {
     background: #000000;
-    padding: 0 6px;
+    padding: 0px 6px;
     margin: 0;
 }
 
@@ -33,10 +33,6 @@ window#waybar {
     padding: 0px 0px;
 }
 
-#workspaces button.empty {
-    background: #000000;
-}
-
 #workspaces button.focused {
     background: #285577;
 }
@@ -47,6 +43,7 @@ window#waybar {
 
 #mode {
     padding: 0px 6px;
+    border: 1px solid #555555;
     background: #900000;
 }
 
