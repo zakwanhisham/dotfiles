@@ -142,11 +142,7 @@ local now_if_args = vim.fn.argc(-1) > 0 and now or later
 now(function()
     add { source = "sainnhe/gruvbox-material" }
 
-    if os.getenv("TERM") == "xterm-256color" then
-        vim.o.background = "light"
-    else
-        vim.o.background = "dark"
-    end
+    vim.o.background = "dark"
 
     vim.g.gruvbox_material_background = "hard"
     vim.g.gruvbox_material_foreground = "original"
