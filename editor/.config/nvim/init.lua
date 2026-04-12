@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 
 vim.opt.mouse = "a"
 vim.opt.pumheight = 10
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
