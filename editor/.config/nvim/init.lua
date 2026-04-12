@@ -52,6 +52,8 @@ vim.opt.conceallevel = 0
 vim.opt.laststatus = 2
 vim.opt.ruler = true
 vim.opt.linebreak = true
+vim.opt.grepformat = "%f:%l:%c:%m"
+vim.opt.grepprg = "rg --vimgrep"
 
 --[[ Keymaps ]]
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
