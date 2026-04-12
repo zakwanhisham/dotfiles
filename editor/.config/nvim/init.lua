@@ -74,6 +74,8 @@ vim.keymap.set({ "x", "o" }, "n", "'Nn'[v:searchforward]", { expr = true, desc =
 vim.keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search Result" })
 vim.keymap.set({ "x", "o" }, "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
+vim.keymap.set("n", "<leader>u", "<cmd>Undotree<cr>", { desc = "Undotree" })
+
 --[[ Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", { pattern = "*", callback = function() vim.hl.on_yank {} end })
 
@@ -89,7 +91,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "fugitive", "fugitiveblame", "git", "help", "qf", "term", "minideps-confirm" },
+    pattern = { "fugitive", "fugitiveblame", "git", "help", "qf", "term", "minideps-confirm", "nvim-undotree" },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
         vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
@@ -117,6 +119,12 @@ vim.api.nvim_create_autocmd("VimResized", {
         vim.cmd("tabnext " .. current_tab)
     end
 })
+
+--[[ Undotree package ]]
+vim.cmd [[ packadd nvim.undotree ]]
+
+--[[ UI2 feature ]]
+require("vim._core.ui2").enable {}
 
 --[[ MiniDeps ]]
 local path_package = vim.fn.stdpath('data') .. '/site/'
