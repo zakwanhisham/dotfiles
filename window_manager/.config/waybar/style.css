@@ -46,11 +46,3 @@ window#waybar {
     border: 1px solid #555555;
     background: #900000;
 }
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-}
