@@ -4,8 +4,8 @@ vim.g.mapleader = " "
 vim.opt.mouse = "a"
 vim.opt.pumheight = 10
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = false
+vim.opt.relativenumber = false
 vim.opt.numberwidth = 4
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -77,6 +77,15 @@ vim.keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Pr
 vim.keymap.set({ "x", "o" }, "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
 vim.keymap.set("n", "<leader>u", "<cmd>Undotree<cr>", { desc = "Undotree" })
+vim.keymap.set("n","<leader>U", function()
+    if vim.wo.number == true then
+        vim.wo.number = false
+        vim.wo.relativenumber = false
+    else
+        vim.wo.number = true
+        vim.wo.relativenumber = true
+    end
+end, { desc = "Line Number" })
 
 --[[ Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", { pattern = "*", callback = function() vim.hl.on_yank {} end })
@@ -170,10 +179,9 @@ now(function()
             local palette = vim.fn['gruvbox_material#get_palette'](config.background, config.foreground,
                 config.colors_override)
             local set_hl = vim.fn['gruvbox_material#highlight']
-            set_hl('LineNrAbove', palette.grey2, palette.bg4)
-            set_hl('LineNr', palette.yellow, palette.bg4)
-            set_hl('LineNrBelow', palette.grey2, palette.bg4)
-            set_hl('SignColumn', palette.none, palette.bg4)
+            set_hl('LineNrAbove', palette.grey2, palette.none)
+            set_hl('LineNr', palette.yellow, palette.none)
+            set_hl('LineNrBelow', palette.grey2, palette.none)
         end
     })
 
