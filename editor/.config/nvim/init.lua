@@ -52,8 +52,6 @@ vim.opt.conceallevel = 0
 vim.opt.laststatus = 2
 vim.opt.ruler = true
 vim.opt.linebreak = true
-vim.opt.grepformat = "%f:%l:%c:%m"
-vim.opt.grepprg = "rg --vimgrep"
 
 --[[ Keymaps ]]
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
@@ -170,9 +168,9 @@ now(function()
             local palette = vim.fn['gruvbox_material#get_palette'](config.background, config.foreground,
                 config.colors_override)
             local set_hl = vim.fn['gruvbox_material#highlight']
-            set_hl('LineNrAbove', palette.grey2, palette.none)
+            set_hl('LineNrAbove', palette.grey1, palette.none)
             set_hl('LineNr', palette.yellow, palette.none)
-            set_hl('LineNrBelow', palette.grey2, palette.none)
+            set_hl('LineNrBelow', palette.grey1, palette.none)
         end
     })
 
@@ -386,10 +384,7 @@ now_if_args(function()
                 Lua = {
                     runtime = { version = 'LuaJIT' },
                     telemetry = { enable = false },
-                    workspace = {
-                        ignoreSubmodule = true,
-                        library = { vim.env.VIMRUNTIME, vim.fn.stdpath("data") .. "/site/" }
-                    },
+                    workspace = { ignoreSubmodule = true, library = { vim.env.VIMRUNTIME, vim.fn.stdpath("data") .. "/site/" } },
                 },
             },
         },
