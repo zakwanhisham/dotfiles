@@ -32,10 +32,11 @@ set cmdheight=1
 set autoindent
 set iskeyword+=-
 set showmatch
-set number
-set relativenumber
+set nonumber
+set norelativenumber
 set hlsearch
 set incsearch
+set laststatus=2
 let mapleader = " "
 let maplocalleader = ";"
 nnoremap <Space> <Nop>
