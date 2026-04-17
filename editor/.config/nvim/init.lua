@@ -4,8 +4,8 @@ vim.g.mapleader = " "
 vim.opt.mouse = "a"
 vim.opt.pumheight = 10
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
-vim.opt.number = false
-vim.opt.relativenumber = false
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -77,15 +77,6 @@ vim.keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Pr
 vim.keymap.set({ "x", "o" }, "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
 vim.keymap.set("n", "<leader>u", "<cmd>Undotree<cr>", { desc = "Undotree" })
-vim.keymap.set("n","<leader>U", function()
-    if vim.wo.number == true then
-        vim.wo.number = false
-        vim.wo.relativenumber = false
-    else
-        vim.wo.number = true
-        vim.wo.relativenumber = true
-    end
-end, { desc = "Line Number" })
 
 --[[ Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", { pattern = "*", callback = function() vim.hl.on_yank {} end })
