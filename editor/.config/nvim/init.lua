@@ -123,9 +123,6 @@ vim.api.nvim_create_autocmd("VimResized", {
 --[[ Undotree package ]]
 vim.cmd [[ packadd nvim.undotree ]]
 
---[[ UI2 feature ]]
-require("vim._core.ui2").enable {}
-
 --[[ MiniDeps ]]
 local path_package = vim.fn.stdpath('data') .. '/site/'
 local mini_path = path_package .. 'pack/deps/start/mini.nvim'
