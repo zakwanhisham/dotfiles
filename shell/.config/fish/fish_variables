@@ -45,7 +45,7 @@ SETUVAR fish_pager_color_description:brblack
 SETUVAR fish_pager_color_prefix:\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brblack
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/ouraaa/bin\x1e/usr/local/bin\x1e/home/ouraaa/\x2elocal/bin\x1e/home/ouraaa/go/bin\x1e/home/ouraaa/\x2ecargo/bin\x1e/home/ouraaa/\x2erustup/toolchains/nightly\x2dx86_64\x2dunknown\x2dlinux\x2dgnu/bin
+SETUVAR fish_user_paths:/home/ouraaa/\x2eopencode/bin\x1e/home/ouraaa/bin\x1e/usr/local/bin\x1e/home/ouraaa/\x2elocal/bin\x1e/home/ouraaa/go/bin\x1e/home/ouraaa/\x2ecargo/bin\x1e/home/ouraaa/\x2erustup/toolchains/nightly\x2dx86_64\x2dunknown\x2dlinux\x2dgnu/bin
 SETUVAR sponge_allow_previously_successful:true
 SETUVAR sponge_delay:2
 SETUVAR sponge_filters:sponge_filter_failed\x1esponge_filter_matched
