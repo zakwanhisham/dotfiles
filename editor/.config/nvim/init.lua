@@ -342,7 +342,9 @@ later(function()
 end)
 
 now_if_args(function()
-    add { source = "neovim/nvim-lspconfig" }
+    add { source = "neovim/nvim-lspconfig", depends = {"j-hui/fidget.nvim"} }
+
+    require("fidget").setup {}
 
     vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(event)
