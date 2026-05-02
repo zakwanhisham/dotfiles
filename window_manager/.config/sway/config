@@ -213,6 +213,7 @@ bindsym $mod+r mode "resize"
     for_window [title="Picture-in-Picture"] floating enable, sticky enable
     for_window [title="Save File"] floating enable
     for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
+    for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
     for_window [title="sowon*"] floating enable, sticky enable
     for_window [app_id="chrome-music.youtube.com__-Default"] floating enable
     for_window [app_id="org.mozilla.Thunderbird" title="Write:*"] floating enable
