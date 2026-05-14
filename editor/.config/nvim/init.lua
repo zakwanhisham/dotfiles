@@ -74,7 +74,10 @@ vim.keymap.set({ "x", "o" }, "n", "'Nn'[v:searchforward]", { expr = true, desc =
 vim.keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search Result" })
 vim.keymap.set({ "x", "o" }, "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
-vim.keymap.set("n", "<leader>u", "<cmd>Undotree<cr>", { desc = "Undotree" })
+vim.keymap.set("n", "<leader>u", function()
+    vim.cmd.packadd("nvim.undotree")
+    require("undotree").open()
+end, { desc = "Undotree" })
 
 --[[ Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", { pattern = "*", callback = function() vim.hl.on_yank {} end })
@@ -122,9 +125,6 @@ vim.api.nvim_create_autocmd("VimResized", {
 
 --[[ UI2 ]]
 require("vim._core.ui2").enable {}
-
---[[ Undotree package ]]
-vim.cmd [[ packadd nvim.undotree ]]
 
 --[[ MiniDeps ]]
 local path_package = vim.fn.stdpath('data') .. '/site/'
