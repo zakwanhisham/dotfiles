@@ -120,6 +120,9 @@ vim.api.nvim_create_autocmd("VimResized", {
     end
 })
 
+--[[ UI2 ]]
+require("vim._core.ui2").enable {}
+
 --[[ Undotree package ]]
 vim.cmd [[ packadd nvim.undotree ]]
 
@@ -342,7 +345,7 @@ later(function()
 end)
 
 now_if_args(function()
-    add { source = "neovim/nvim-lspconfig", depends = {"j-hui/fidget.nvim"} }
+    add { source = "neovim/nvim-lspconfig", depends = { "j-hui/fidget.nvim" } }
 
     require("fidget").setup {}
 
