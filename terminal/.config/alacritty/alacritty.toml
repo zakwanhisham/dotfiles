@@ -3,7 +3,7 @@ live_config_reload = true
 
 [window]
 dynamic_padding = true
-decorations = "None"
+# decorations = "None"
 # startup_mode = "Maximized"
 
 [scrolling]
