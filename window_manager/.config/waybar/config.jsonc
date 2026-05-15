@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "reload_style_on_change": true,
-    "modules-left": [ "sway/workspaces", "sway/mode" ],
+    "modules-left": [ "sway/workspaces" ],
     "modules-center": [],
-    "modules-right": [ "custom/cpu", "custom/memory", "custom/disk", "custom/gpu", "custom/volume", "custom/calendar", "tray" ],
+    "modules-right": [ "sway/mode", "custom/cpu", "custom/memory", "custom/disk", "custom/gpu", "custom/volume", "custom/calendar", "tray" ],
     "sway/workspaces": {
         "format": "{index}",
         "on-click": "activate",
