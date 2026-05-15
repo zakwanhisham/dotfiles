@@ -4,10 +4,12 @@ width=315
 height=200
 padding=10
 margin=10
+outer-margin=0,0,10
 progress-color=over #eceff480
 icon-path=/usr/share/icons/Papirus
 max-icon-size=70
 layer=overlay
+anchor=bottom-right
 
 border-size=5
 border-radius=0
