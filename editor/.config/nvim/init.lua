@@ -192,25 +192,11 @@ later(function()
             MiniClue.gen_clues.windows(),
             MiniClue.gen_clues.z(),
         },
-        triggers = {
-            { mode = 'n', keys = '<Leader>' },
-            { mode = 'x', keys = '<Leader>' },
-            { mode = 'n', keys = '[' },
-            { mode = 'n', keys = ']' },
-            { mode = 'i', keys = '<C-x>' },
-            { mode = 'n', keys = 'g' },
-            { mode = 'x', keys = 'g' },
-            { mode = 'n', keys = "'" },
-            { mode = 'n', keys = '`' },
-            { mode = 'x', keys = "'" },
-            { mode = 'x', keys = '`' },
-            { mode = 'n', keys = '"' },
-            { mode = 'x', keys = '"' },
-            { mode = 'i', keys = '<C-r>' },
-            { mode = 'c', keys = '<C-r>' },
-            { mode = 'n', keys = '<C-w>' },
-            { mode = 'n', keys = 'z' },
-            { mode = 'x', keys = 'z' },
+        triggers = { { mode = 'n', keys = '<Leader>' }, { mode = 'x', keys = '<Leader>' }, { mode = 'n', keys = '[' },
+            { mode = 'n', keys = ']' }, { mode = 'i', keys = '<C-x>' }, { mode = 'n', keys = 'g' }, { mode = 'x', keys = 'g' },
+            { mode = 'n', keys = "'" }, { mode = 'n', keys = '`' }, { mode = 'x', keys = "'" }, { mode = 'x', keys = '`' },
+            { mode = 'n', keys = '"' }, { mode = 'x', keys = '"' }, { mode = 'i', keys = '<C-r>' }, { mode = 'c', keys = '<C-r>' },
+            { mode = 'n', keys = '<C-w>' }, { mode = 'n', keys = 'z' }, { mode = 'x', keys = 'z' },
         },
         window = { config = { anchor = "SE", width = "auto", row = "auto", col = "auto" } },
     }
@@ -250,7 +236,6 @@ now(function()
                 vim.cmd [[ hi MiniStatuslineModeNormal cterm=NONE gui=NONE ]]
 
                 local highlight   = "MiniStatuslineModeNormal"
-
                 local diagnostics = MiniStatusline.section_diagnostics { trunc_width = 75 }
                 local diff        = MiniStatusline.section_diff { trunc_width = 75 }
                 local filename    = MiniStatusline.section_filename { trunc_width = 140 }
@@ -268,13 +253,10 @@ now(function()
                 }
             end,
             inactive = function()
-                local filename  = MiniStatusline.section_filename { trunc_width = 140 }
                 local highlight = "MiniStatuslineInactive"
+                local filename  = MiniStatusline.section_filename { trunc_width = 140 }
 
-                return MiniStatusline.combine_groups {
-                    "%<",
-                    { hl = highlight, strings = { filename } }
-                }
+                return MiniStatusline.combine_groups { "%<", { hl = highlight, strings = { filename } } }
             end,
         },
         use_icons = false,
@@ -380,8 +362,7 @@ now_if_args(function()
         },
         pyright = {
             settings = {
-                pyright = { openFilesOnly = true, disableOrganizeImports = true },
-                python = { analysis = { ignore = { "*" } } },
+                pyright = { openFilesOnly = true, disableOrganizeImports = true }, python = { analysis = { ignore = { "*" } } },
             },
         },
         ruff = {},
@@ -414,13 +395,7 @@ now(function()
         watch_for_changes = true,
         columns = { "permissions", "size", "birthtime" },
         view_options = { show_hidden = true, case_insensitive = true },
-        keymaps = {
-            ["q"] = "actions.close",
-            ["<C-h>"] = false,
-            ["<C-l>"] = false,
-            ["<C-k>"] = false,
-            ["<C-j>"] = false,
-        },
+        keymaps = { ["q"] = "actions.close", ["<C-h>"] = false, ["<C-l>"] = false, ["<C-k>"] = false, ["<C-j>"] = false },
     }
 
     vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Oil" })
