@@ -7,7 +7,7 @@ set $down j
 set $up k
 set $right l
 set $term /usr/bin/alacritty
-set $menu wmenu-run -i -l 5
+set $menu fuzzel
 
 ### Border and gaps
 default_border none
