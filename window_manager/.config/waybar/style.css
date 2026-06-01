@@ -11,6 +11,10 @@ window#waybar {
     background: #000000;
 }
 
+#window {
+    padding: 0px 0px 0px 10px;
+}
+
 #custom-cpu,
 #custom-memory,
 #custom-disk,

@@ -13,7 +13,7 @@
         "tooltip": false
     },
     "sway/window": {
-        "format": " {}",
+        "format": "{}",
         "tooltip": false
     },
     "sway/mode": {
