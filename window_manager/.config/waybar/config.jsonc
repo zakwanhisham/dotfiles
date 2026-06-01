@@ -3,13 +3,17 @@
     "position": "top",
     "reload_style_on_change": true,
     "modules-left": [ "sway/workspaces" ],
-    "modules-center": [],
+    "modules-center": [ "sway/window" ],
     "modules-right": [ "sway/mode", "custom/cpu", "custom/memory", "custom/disk", "custom/gpu", "custom/volume", "custom/calendar", "tray" ],
     "sway/workspaces": {
         "format": "{index}",
         "on-click": "activate",
         "on-scroll-up": "swaymsg workspace next",
         "on-scroll-down": "swaymsg workspace prev",
+        "tooltip": false
+    },
+    "sway/window": {
+        "format": "{}",
         "tooltip": false
     },
     "sway/mode": {
