@@ -17,7 +17,7 @@ gaps outer 0
 
 ### Output configuration
 output DP-1 {
-    bg ~/dotfiles/wallpaper/animeskull.png fill
+    background ~/dotfiles/wallpaper/eyes.jpg fit
     resolution 3440x1440@200.000Hz position 0,0
 }
 
