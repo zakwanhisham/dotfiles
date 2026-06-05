@@ -4,8 +4,8 @@ vim.g.mapleader = " "
 vim.opt.mouse = "a"
 vim.opt.pumheight = 10
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = false
+vim.opt.relativenumber = false
 vim.opt.numberwidth = 4
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -156,20 +156,6 @@ now(function()
     vim.g.gruvbox_material_disable_terminal_colors = 1
     vim.g.gruvbox_material_statusline_style = "original"
     vim.g.gruvbox_material_better_performance = 1
-
-    vim.api.nvim_create_autocmd('ColorScheme', {
-        group = vim.api.nvim_create_augroup('custom_highlights_gruvboxmaterial', {}),
-        pattern = 'gruvbox-material',
-        callback = function()
-            local config = vim.fn['gruvbox_material#get_configuration']()
-            local palette = vim.fn['gruvbox_material#get_palette'](config.background, config.foreground,
-                config.colors_override)
-            local set_hl = vim.fn['gruvbox_material#highlight']
-            set_hl('LineNrAbove', palette.grey1, palette.none)
-            set_hl('LineNr', palette.yellow, palette.none)
-            set_hl('LineNrBelow', palette.grey1, palette.none)
-        end
-    })
 
     vim.cmd [[ colorscheme gruvbox-material ]]
 end)
