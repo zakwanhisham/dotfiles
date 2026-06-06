@@ -225,4 +225,17 @@ bindsym $mod+r mode "resize"
 
     for_window [workspace="3"] layout tabbed
 
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    swaybar_command waybar
+    mode dock
+    height 18
+    position top
+    icon_theme Papirus
+    wrap_scroll yes
+}
+
 include /etc/sway/config.d/*
