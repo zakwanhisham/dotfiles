@@ -2,17 +2,29 @@
     "layer": "top",
     "position": "top",
     "reload_style_on_change": true,
-    "modules-left": [ "sway/workspaces", "sway/window" ],
-    "modules-center": [],
-    "modules-right": [ "sway/mode", "custom/cpu", "custom/memory", "custom/disk", "custom/gpu", "custom/volume", "custom/calendar", "tray" ],
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "custom/calendar"
+    ],
+    "modules-right": [
+        "sway/scratchpad",
+        "custom/cpu",
+        "custom/memory",
+        "custom/disk",
+        "custom/gpu",
+        "custom/volume",
+        "tray"
+    ],
     "sway/workspaces": {
         "format": "{index}",
         "on-click": "activate",
         "tooltip": false
     },
-    "sway/window": {
-        "format": "{}",
-        "tooltip": false
+    "sway/scratchpad": {
+        "format": "[{count}]"
     },
     "sway/mode": {
         "format": "{}",
