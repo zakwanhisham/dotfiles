@@ -217,6 +217,7 @@ bindsym $mod+r mode "resize"
     for_window [title="sowon*"] floating enable, sticky enable
     for_window [app_id="chrome-music.youtube.com__-Default"] floating enable
     for_window [app_id="org.mozilla.Thunderbird" title="Write:*"] floating enable
+    for_window [app_id="solaar"] floating enable, resize set width 30 ppt height 40 ppt
 
     # Inhibit idle
     for_window [app_id="firefox"] inhibit_idle fullscreen
