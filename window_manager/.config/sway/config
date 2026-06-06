@@ -216,7 +216,7 @@ bindsym $mod+r mode "resize"
     for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
     for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
     for_window [title="sowon*"] floating enable, sticky enable
-    for_window [app_id="chrome-music.youtube.com__-Default"] floating enable
+    for_window [app_id="chrome-music.youtube.com__-Default"] floating enable, resize set width 1600 px height 900 px
     for_window [app_id="org.mozilla.Thunderbird" title="Write:*"] floating enable
     for_window [app_id="solaar"] floating enable, resize set width 30 ppt height 40 ppt
 
