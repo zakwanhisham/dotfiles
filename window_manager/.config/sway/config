@@ -259,7 +259,7 @@ bindsym $mod+r mode "resize"
     client.focused          $border    $focused    $dark    $focused    $focused
     client.focused_inactive $border    $inactive   $light   $inactive   $inactive
     client.unfocused        $border    $unfocused  $light   $unfocused  $unfocused
-    client.urgent           $border    $urgent     $light   $urgent     $urgent
+    client.urgent           $border    $urgent     $dark    $urgent     $urgent
 
 #
 # Status Bar:
