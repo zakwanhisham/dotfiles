@@ -239,6 +239,29 @@ bindsym $mod+r mode "resize"
     for_window [workspace="3"] layout tabbed
 
 #
+# Color
+#
+    set $light #ebdbb2
+    set $dark #1d2021
+    set $focused #ebdbb2
+    set $inactive #1d2021
+    set $unfocused #1d2021
+    set $urgent #fb4934
+    set $border #928374
+
+    ### Colors (see man 5 sway)
+    # border - border around titlebar
+    # bg - titlebar background
+    # text - text on titlebar
+    # indicator - shown where new window will open
+    # child_border - border around the window
+    # class                 border      bg          text     indicator   child_border
+    client.focused          $border    $focused    $dark    $focused    $focused
+    client.focused_inactive $border    $inactive   $light   $inactive   $inactive
+    client.unfocused        $border    $unfocused  $light   $unfocused  $unfocused
+    client.urgent           $border    $urgent     $light   $urgent     $urgent
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
