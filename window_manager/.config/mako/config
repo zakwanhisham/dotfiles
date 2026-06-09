@@ -5,9 +5,12 @@ height=200
 padding=10
 margin=10
 outer-margin=0,0,10
-progress-color=over #eceff480
+background-color=#1d2021
+text-color=#ebdbb2
+progress-color=over #a89984
+border-color=#a89984
 icon-path=/usr/share/icons/Papirus
-max-icon-size=70
+max-icon-size=64
 layer=overlay
 anchor=top-right
 
