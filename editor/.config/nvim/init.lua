@@ -296,7 +296,7 @@ now_if_args(function()
 end)
 
 now(function()
-    add { source = "NeogitOrg/neogit", depends = { "nvim-lua/plenary.nvim" } }
+    add { source = "NeogitOrg/neogit" }
     require("neogit").setup { disable_hint = true }
 
     nmap("<leader>gg", "<cmd>Neogit<cr>", "Neogit")
