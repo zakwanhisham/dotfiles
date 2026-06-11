@@ -23,7 +23,6 @@ vim.opt.wildmode = "longest:full,full"
 vim.opt.inccommand = "split"
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 400
-vim.opt.colorcolumn = "80"
 vim.opt.scrolloff = 12
 vim.opt.sidescrolloff = 12
 vim.opt.smoothscroll = true
