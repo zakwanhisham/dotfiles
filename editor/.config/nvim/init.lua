@@ -1,6 +1,7 @@
 --[[ Options ]]
 vim.g.mapleader = " "
 
+vim.opt.background = "dark"
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -124,8 +125,7 @@ now(function()
     vim.g.gruvbox_material_statusline_style = "original"
     vim.g.gruvbox_material_better_performance = 1
 
-    vim.o.background = "dark"
-    vim.cmd [[ colorscheme gruvbox-material ]]
+    vim.cmd.colorscheme("gruvbox-material")
 end)
 
 --[[ Mini ]]
@@ -166,27 +166,19 @@ end)
 
 later(function()
     local MiniHipatterns = require("mini.hipatterns")
-    MiniHipatterns.setup {
-        highlighters = {
-            fixme = { pattern = 'FIXME', group = 'MiniHipatternsFixme' },
-            hack  = { pattern = 'HACK', group = 'MiniHipatternsHack' },
-            todo  = { pattern = 'TODO', group = 'MiniHipatternsTodo' },
-            note  = { pattern = 'NOTE', group = 'MiniHipatternsNote' },
-            MiniHipatterns.gen_highlighter.hex_color()
-        }
-    }
+    MiniHipatterns.setup { highlighters = { MiniHipatterns.gen_highlighter.hex_color() } }
 end)
 
 later(function() require("mini.indentscope").setup {} end)
 
 later(function() require("mini.move").setup {} end)
 
-now(function()
+later(function()
     local MiniStatusline = require("mini.statusline")
     MiniStatusline.setup {
         content = {
             active = function()
-                vim.cmd [[ hi MiniStatuslineModeNormal cterm=NONE gui=NONE ]]
+                vim.cmd.highlight("MiniStatuslineModeNormal cterm=NONE gui=NONE")
                 return MiniStatusline.combine_groups {
                     "%<",
                     { hl = "MiniStatuslineModeNormal", strings = { MiniStatusline.section_filename { trunc_width = 140 } } },
@@ -254,7 +246,7 @@ later(function()
     nmap("<leader>fm", "<cmd>Marks<cr>", "Marks")
     nmap("<leader>fw", "<cmd>FzfLua grep_cword<cr>", "Word")
     nmap("<leader>fr", "<cmd>FzfLua resume<cr>", "Resume")
-    nmap("<leader>/", "<cmd>BLines<cr>", "Buffer Search")
+    nmap("<leader>/", "<cmd>BLines<cr>", "Search")
 end)
 
 now_if_args(function()
