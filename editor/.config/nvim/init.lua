@@ -214,7 +214,7 @@ later(function()
     add { source = "saghen/blink.cmp", depends = { "saghen/blink.lib", "rafamadriz/friendly-snippets" } }
 
     local cmp = require("blink.cmp")
-    cmp.build():wait(60000)
+    cmp.build():pwait()
 
     cmp.setup {
         keymap = { preset = "enter" },
