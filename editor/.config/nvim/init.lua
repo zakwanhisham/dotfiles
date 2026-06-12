@@ -159,9 +159,7 @@ end)
 later(function() require("mini.comment").setup { options = { ignore_blank_line = true } } end)
 
 later(function()
-    require("mini.diff").setup {
-        view = { style = "sign" }, mappings = { goto_first = '[C', goto_prev = '[c', goto_next = ']c', goto_last = ']C' }
-    }
+    require("mini.diff").setup { view = { style = "sign" }, mappings = { goto_first = '[C', goto_prev = '[c', goto_next = ']c', goto_last = ']C' } }
 end)
 
 later(function()
@@ -212,10 +210,8 @@ end)
 --[[ Plugins ]]
 later(function()
     add { source = "saghen/blink.cmp", depends = { "saghen/blink.lib", "rafamadriz/friendly-snippets" } }
-
     local cmp = require("blink.cmp")
     cmp.build():pwait()
-
     cmp.setup {
         keymap = { preset = "enter" },
         completion = {
@@ -232,7 +228,6 @@ end)
 
 later(function()
     add { source = "ibhagwan/fzf-lua" }
-
     require("fzf-lua").setup {
         { "fzf-vim", "hide" },
         winopts = { height = 0.4, width = 1, row = 1, border = "border-top", backdrop = 100 },
@@ -241,9 +236,7 @@ later(function()
 
     nmap("<leader><space>", "<cmd>Buffers<cr>", "Buffers")
     nmap("<leader>ff", "<cmd>Files<cr>", "Files")
-    nmap("<leader>fg", "<cmd>GFiles<cr>", "Git Files")
     nmap("<leader>fs", "<cmd>Rg<cr>", "Grep")
-    nmap("<leader>fm", "<cmd>Marks<cr>", "Marks")
     nmap("<leader>fw", "<cmd>FzfLua grep_cword<cr>", "Word")
     nmap("<leader>fr", "<cmd>FzfLua resume<cr>", "Resume")
     nmap("<leader>/", "<cmd>BLines<cr>", "Search")
@@ -304,7 +297,6 @@ end)
 
 now(function()
     add { source = "stevearc/oil.nvim" }
-
     require("oil").setup {
         default_file_explorer = true, watch_for_changes = true, columns = { "permissions", "size", "birthtime" },
         view_options = { show_hidden = true, case_insensitive = true },
@@ -321,7 +313,6 @@ now_if_args(function()
         checkout = "main",
         hooks = { post_checkout = function() vim.cmd [[ TSUpdate ]] end },
     }
-
     require("treesitter-context").setup { multiwindow = true, max_lines = 5 }
 
     local languages = require('nvim-treesitter').get_available()
