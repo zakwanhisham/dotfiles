@@ -194,7 +194,7 @@ bindsym $mod+r mode "resize"
     exec dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
     set $gnome-schema org.gnome.desktop.interface
-    exec_always {
+    exec {
         gsettings set $gnome-schema gtk-theme 'Adwaita'
         gsettings set $gnome-schema icon-theme 'Papirus'
         gsettings set $gnome-schema cursor-theme 'Adwaita'
@@ -271,5 +271,10 @@ bar {
     icon_theme Papirus
     wrap_scroll yes
 }
+
+# Workaround for starting xdg-desktop-portal
+# There's another file in $HOME/.config/systemd/user/sway-session.target
+exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
+exec swaymsg -t subscribe '["shutdown"]' && systemctl --user stop sway-session.target
 
 include /etc/sway/config.d/*
