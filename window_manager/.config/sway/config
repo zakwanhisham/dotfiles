@@ -10,8 +10,8 @@ set $term /usr/bin/alacritty
 set $menu fuzzel
 
 ### Border and gaps
-default_border none
 workspace_layout default
+default_border none
 gaps inner 0
 gaps outer 0
 
@@ -240,9 +240,9 @@ bindsym $mod+r mode "resize"
 #
 # Color
 #
-    set $light #ebdbb2
+    set $light #a89984
     set $dark #1d2021
-    set $focused #ebdbb2
+    set $focused #a89984
     set $inactive #1d2021
     set $unfocused #1d2021
     set $urgent #fb4934
@@ -254,7 +254,7 @@ bindsym $mod+r mode "resize"
     # text - text on titlebar
     # indicator - shown where new window will open
     # child_border - border around the window
-    # class                 border      bg          text     indicator   child_border
+    # class                 border     bg          text     indicator   child_border
     client.focused          $border    $focused    $dark    $focused    $focused
     client.focused_inactive $border    $inactive   $light   $inactive   $inactive
     client.unfocused        $border    $unfocused  $light   $unfocused  $unfocused
