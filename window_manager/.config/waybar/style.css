@@ -11,20 +11,8 @@ window#waybar {
     background: #282828;
 }
 
-#scratchpad,
-#custom-cpu,
-#custom-memory,
-#custom-disk,
-#custom-gpu,
-#custom-volume,
-#custom-calendar,
 #tray {
-    background: #282828;
-    padding: 0px 6px;
-}
-
-#workspaces {
-    padding: 0px 0px;
+    padding: 0px 8px 0px 0px;
 }
 
 #workspaces button {

@@ -11,12 +11,12 @@
     ],
     "modules-right": [
         "sway/scratchpad",
+        "tray",
         "custom/cpu",
         "custom/memory",
         "custom/disk",
         "custom/gpu",
-        "custom/volume",
-        "tray"
+        "custom/volume"
     ],
     "sway/workspaces": {
         "format": "{index}",
@@ -31,26 +31,26 @@
    		"tooltip": false
     },
     "custom/cpu": {
-        "format": "CPU: {}",
+        "format": "cpu {} :: ",
         "exec": "$HOME/.config/sway/scripts/cpu_usage",
         "interval": 2,
         "on-click": "alacritty -T \"System Monitor (btop)\" -e btop",
         "tooltip": false
     },
     "custom/memory": {
-        "format": "MEM: {}",
+        "format": "mem {} :: ",
         "exec": "$HOME/.config/sway/scripts/memory",
         "interval": 2,
         "tooltip": false
     },
     "custom/disk": {
-        "format": "DISK: {}",
+        "format": "dsk {} :: ",
         "exec": "$HOME/.config/sway/scripts/disk",
         "interval": 30,
         "tooltip": false
     },
     "custom/gpu": {
-        "format": "GPU: {}",
+        "format": "gpu {} :: ",
         "exec": "$HOME/.config/sway/scripts/gpu_usage",
         "interval": 2,
         "env": {
@@ -60,7 +60,7 @@
         "tooltip": false
     },
     "custom/volume": {
-        "format": "VOL: {}",
+        "format": "vol {} ::",
         "exec": "$HOME/.config/sway/scripts/volume",
         "interval": 1,
         "on-click": "pavucontrol",
@@ -71,7 +71,7 @@
     },
     "custom/calendar": {
         "format": "{}",
-        "exec": "date +'%A-%d-%b %H:%M:%S'",
+        "exec": "date +'%A %d %b %H:%M:%S'",
         "interval": 1,
         "tooltip": false
     },
