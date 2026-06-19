@@ -11,10 +11,6 @@ window#waybar {
     background: #282828;
 }
 
-#tray {
-    padding: 0px 8px 0px 0px;
-}
-
 #workspaces button {
     padding: 0px 0px;
 }

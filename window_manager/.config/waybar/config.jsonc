@@ -11,12 +11,12 @@
     ],
     "modules-right": [
         "sway/scratchpad",
-        "tray",
         "custom/cpu",
         "custom/memory",
         "custom/disk",
         "custom/gpu",
-        "custom/volume"
+        "custom/volume",
+        "tray"
     ],
     "sway/workspaces": {
         "format": "{index}",
@@ -60,7 +60,7 @@
         "tooltip": false
     },
     "custom/volume": {
-        "format": "vol {} ::",
+        "format": "vol {} :: ",
         "exec": "$HOME/.config/sway/scripts/volume",
         "interval": 1,
         "on-click": "pavucontrol",
