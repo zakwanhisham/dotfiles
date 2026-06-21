@@ -60,7 +60,7 @@ end, "Undotree")
 vim.api.nvim_create_autocmd("TextYankPost", { pattern = "*", callback = function() vim.hl.on_yank {} end })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "fugitive", "fugitiveblame", "git", "help", "qf", "term", "nvim-undotree" },
+    pattern = { "fugitive", "fugitiveblame", "git", "help", "qf", "term", "nvim-undotree", "nvim-pack" },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
         vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
