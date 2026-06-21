@@ -1,4 +1,3 @@
---[[ Options ]]
 vim.g.mapleader = " "
 
 vim.opt.background = "dark"
@@ -31,10 +30,8 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.signcolumn = "yes"
 
---[[ Helpers ]]
 local function nmap(keys, func, desc) vim.keymap.set("n", keys, func, { desc = desc }) end
 
---[[ Keymaps ]]
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set({ "n", "x" }, "<esc>", "<cmd>nohlsearch<cr><esc>", { desc = "Escape and clear hlsearch" })
 vim.keymap.set("n", "x", '"_x', { noremap = true, silent = true })
@@ -60,11 +57,10 @@ nmap("<leader>u", function()
     require("undotree").open()
 end, "Undotree")
 
---[[ Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", { pattern = "*", callback = function() vim.hl.on_yank {} end })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "fugitive", "fugitiveblame", "git", "help", "qf", "term", "minideps-confirm", "nvim-undotree" },
+    pattern = { "fugitive", "fugitiveblame", "git", "help", "qf", "term", "nvim-undotree" },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
         vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
@@ -93,30 +89,39 @@ vim.api.nvim_create_autocmd("VimResized", {
     end
 })
 
---[[ MiniDeps ]]
-local path_package = vim.fn.stdpath('data') .. '/site/'
-local mini_path = path_package .. 'pack/deps/start/mini.nvim'
+vim.api.nvim_create_autocmd("PackChanged", {
+    callback = function(ev)
+        local name, kind = ev.data.spec.name, ev.data.kind
+        -- Update tree-sitter parsers after nvim-treesitter updates
+        if name == "nvim-treesitter" and kind == "update" then
+            if not ev.data.active then vim.cmd.packadd("nvim-treesitter") end
+            vim.cmd("TSUpdate")
+        end
+    end
+})
 
-if not (vim.uv or vim.loop).fs_stat(mini_path) then
-    vim.cmd('echo "Installing `mini.nvim`" | redraw')
-    local clone_cmd = {
-        'git', 'clone', '--filter=blob:none',
-        'https://github.com/nvim-mini/mini.nvim', mini_path
-    }
-    vim.fn.system(clone_cmd)
-    vim.cmd('packadd mini.nvim | helptags ALL')
-    vim.cmd('echo "Installed `mini.nvim`" | redraw')
-end
+vim.pack.add({
+    "https://github.com/saghen/blink.lib",
+    "https://github.com/rafamadriz/friendly-snippets",
+    "https://github.com/nvim-treesitter/nvim-treesitter-context",
+    "https://github.com/sainnhe/gruvbox-material",
+    "https://github.com/nvim-mini/mini.nvim",
+    "https://github.com/saghen/blink.cmp",
+    "https://github.com/ibhagwan/fzf-lua",
+    "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/NeogitOrg/neogit",
+    "https://github.com/tpope/vim-fugitive",
+    "https://github.com/stevearc/oil.nvim",
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+    "https://github.com/christoomey/vim-tmux-navigator",
+})
 
-require('mini.deps').setup({ path = { package = path_package } })
-
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local misc = require("mini.misc")
+local now = function(f) misc.safely("now", f) end
+local later = function(f) misc.safely("later", f) end
 local now_if_args = vim.fn.argc(-1) > 0 and now or later
 
---[[ Colorscheme ]]
 now(function()
-    add { source = "sainnhe/gruvbox-material" }
-
     vim.g.gruvbox_material_background = "hard"
     vim.g.gruvbox_material_foreground = "original"
     vim.g.gruvbox_material_disable_italic_comment = 1
@@ -128,7 +133,6 @@ now(function()
     vim.cmd.colorscheme("gruvbox-material")
 end)
 
---[[ Mini ]]
 later(function() require("mini.ai").setup {} end)
 
 later(function()
@@ -146,11 +150,11 @@ later(function()
             MiniClue.gen_clues.windows(),
             MiniClue.gen_clues.z(),
         },
-        triggers = { { mode = 'n', keys = '<Leader>' }, { mode = 'x', keys = '<Leader>' }, { mode = 'n', keys = '[' },
-            { mode = 'n', keys = ']' }, { mode = 'i', keys = '<C-x>' }, { mode = 'n', keys = 'g' }, { mode = 'x', keys = 'g' },
-            { mode = 'n', keys = "'" }, { mode = 'n', keys = '`' }, { mode = 'x', keys = "'" }, { mode = 'x', keys = '`' },
-            { mode = 'n', keys = '"' }, { mode = 'x', keys = '"' }, { mode = 'i', keys = '<C-r>' }, { mode = 'c', keys = '<C-r>' },
-            { mode = 'n', keys = '<C-w>' }, { mode = 'n', keys = 'z' }, { mode = 'x', keys = 'z' },
+        triggers = { { mode = "n", keys = "<Leader>" }, { mode = "x", keys = "<Leader>" }, { mode = "n", keys = "[" },
+            { mode = "n", keys = "]" }, { mode = "i", keys = "<C-x>" }, { mode = "n", keys = "g" }, { mode = "x", keys = "g" },
+            { mode = "n", keys = "'" }, { mode = "n", keys = "`" }, { mode = "x", keys = "'" }, { mode = "x", keys = "`" },
+            { mode = "n", keys = '"' }, { mode = "x", keys = '"' }, { mode = "i", keys = "<C-r>" }, { mode = "c", keys = "<C-r>" },
+            { mode = "n", keys = "<C-w>" }, { mode = "n", keys = "z" }, { mode = "x", keys = "z" },
         },
         window = { config = { anchor = "SE", width = "auto", row = "auto", col = "auto" } },
     }
@@ -159,7 +163,7 @@ end)
 later(function() require("mini.comment").setup { options = { ignore_blank_line = true } } end)
 
 later(function()
-    require("mini.diff").setup { view = { style = "sign" }, mappings = { goto_first = '[C', goto_prev = '[c', goto_next = ']c', goto_last = ']C' } }
+    require("mini.diff").setup { view = { style = "sign" }, mappings = { goto_first = "[C", goto_prev = "[c", goto_next = "]c", goto_last = "]C" } }
 end)
 
 later(function()
@@ -207,9 +211,7 @@ later(function()
     nmap("<leader>tl", function() MiniTrailspace.trim_last_lines() end, "Last lines")
 end)
 
---[[ Plugins ]]
 later(function()
-    add { source = "saghen/blink.cmp", depends = { "saghen/blink.lib", "rafamadriz/friendly-snippets" } }
     local cmp = require("blink.cmp")
     cmp.build():pwait()
     cmp.setup {
@@ -227,7 +229,6 @@ later(function()
 end)
 
 later(function()
-    add { source = "ibhagwan/fzf-lua" }
     require("fzf-lua").setup {
         { "fzf-vim", "hide" },
         winopts = { height = 0.4, width = 1, row = 1, border = "border-top", backdrop = 100 },
@@ -243,8 +244,6 @@ later(function()
 end)
 
 now_if_args(function()
-    add { source = "neovim/nvim-lspconfig" }
-
     vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(event)
             local bufmap = function(keys, func, desc)
@@ -268,7 +267,7 @@ now_if_args(function()
         lua_ls = {
             settings = {
                 Lua = {
-                    runtime = { version = 'LuaJIT' },
+                    runtime = { version = "LuaJIT" },
                     telemetry = { enable = false },
                     workspace = { ignoreSubmodule = true, library = { vim.env.VIMRUNTIME, vim.fn.stdpath("data") .. "/site/" } },
                 },
@@ -289,42 +288,30 @@ now_if_args(function()
 end)
 
 now(function()
-    add { source = "NeogitOrg/neogit" }
     require("neogit").setup { disable_hint = true }
-
     nmap("<leader>gg", "<cmd>Neogit<cr>", "Neogit")
 end)
 
 now(function()
-    add { source = "stevearc/oil.nvim" }
     require("oil").setup {
         default_file_explorer = true, watch_for_changes = true, columns = { "permissions", "size", "birthtime" },
         view_options = { show_hidden = true, case_insensitive = true },
         keymaps = { ["q"] = "actions.close", ["<C-h>"] = false, ["<C-l>"] = false, ["<C-k>"] = false, ["<C-j>"] = false },
     }
-
     vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Oil" })
 end)
 
 now_if_args(function()
-    add {
-        source = "nvim-treesitter/nvim-treesitter",
-        depends = { "nvim-treesitter/nvim-treesitter-context" },
-        checkout = "main",
-        hooks = { post_checkout = function() vim.cmd [[ TSUpdate ]] end },
-    }
     require("treesitter-context").setup { multiwindow = true, max_lines = 5 }
 
-    local languages = require('nvim-treesitter').get_available()
-    require('nvim-treesitter').install(languages)
+    local languages = require("nvim-treesitter").get_available()
+    require("nvim-treesitter").install(languages)
 
     vim.api.nvim_create_autocmd("FileType",
         { pattern = languages, callback = function(ev) vim.treesitter.start(ev.buf) end })
 end)
 
 now(function()
-    add { source = "tpope/vim-fugitive" }
-
     nmap("<leader>gl", "<cmd>Git log --graph --decorate<cr>", "Log")
     nmap("<leader>gb", "<cmd>Git blame<cr>", "Blame")
     nmap("<leader>gd", "<cmd>Git diff<cr>", "Diff")
@@ -332,8 +319,6 @@ now(function()
 end)
 
 later(function()
-    add { source = "christoomey/vim-tmux-navigator" }
-
     nmap("<c-h>", "<cmd>TmuxNavigateLeft<cr>", "Navigate Left")
     nmap("<c-j>", "<cmd>TmuxNavigateDown<cr>", "Navigate Down")
     nmap("<c-k>", "<cmd>TmuxNavigateUp<cr>", "Navigate Up")
