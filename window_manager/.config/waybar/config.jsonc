@@ -80,9 +80,7 @@
         "format": "vol {volume}%{icon} :: ",
         "format-muted": "vol MUTE :: ",
         "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
     "tray": {
         "icon-size": 14,
