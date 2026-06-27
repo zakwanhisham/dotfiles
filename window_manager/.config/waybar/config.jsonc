@@ -7,15 +7,15 @@
         "sway/mode"
     ],
     "modules-center": [
-        "custom/calendar"
+        "clock"
     ],
     "modules-right": [
         "sway/scratchpad",
-        "custom/cpu",
-        "custom/memory",
-        "custom/disk",
+        "cpu",
+        "memory",
+        "disk",
         "custom/gpu",
-        "custom/volume",
+        "pulseaudio",
         "tray"
     ],
     "sway/workspaces": {
@@ -23,31 +23,48 @@
         "on-click": "activate",
         "tooltip": false
     },
+    "clock": {
+        "format": "{:%A %d %b %H:%M:%S}",
+        "interval": 1,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+            "iso8601": true,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
     "sway/scratchpad": {
-        "format": "[{count}]"
+        "format": "[{count}] :: "
     },
     "sway/mode": {
         "format": "{}",
    		"tooltip": false
     },
-    "custom/cpu": {
-        "format": "cpu {} :: ",
-        "exec": "$HOME/.config/sway/scripts/cpu_usage",
+    "cpu": {
+        "format": "cpu {usage}% :: ",
         "interval": 2,
-        "on-click": "alacritty -T \"System Monitor (btop)\" -e btop",
-        "tooltip": false
+        "on-click": "alacritty -T \"System Monitor (btop)\" -e btop"
     },
-    "custom/memory": {
-        "format": "mem {} :: ",
-        "exec": "$HOME/.config/sway/scripts/memory",
-        "interval": 2,
-        "tooltip": false
+    "memory": {
+        "format": "mem {percentage}% :: ",
+        "interval": 2
     },
-    "custom/disk": {
-        "format": "dsk {} :: ",
-        "exec": "$HOME/.config/sway/scripts/disk",
-        "interval": 30,
-        "tooltip": false
+    "disk": {
+        "format": "dsk {free} :: ",
+        "interval": 10
     },
     "custom/gpu": {
         "format": "gpu {} :: ",
@@ -59,21 +76,13 @@
         "on-click": "amdgpu_top --gui",
         "tooltip": false
     },
-    "custom/volume": {
-        "format": "vol {} :: ",
-        "exec": "$HOME/.config/sway/scripts/volume",
-        "interval": 1,
+    "pulseaudio": {
+        "format": "vol {volume}%{icon} :: ",
+        "format-muted": "vol MUTE :: ",
         "on-click": "pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-        "tooltip": false
-    },
-    "custom/calendar": {
-        "format": "{}",
-        "exec": "date +'%A %d %b %H:%M:%S'",
-        "interval": 1,
-        "tooltip": false
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     },
     "tray": {
         "icon-size": 14,
