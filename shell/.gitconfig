@@ -16,8 +16,13 @@
     lg = log --oneline
     last = log -1 HEAD
 [merge]
-    tool = nvim -d
+    tool = nvim
     conflictstyle = zdiff3
+[mergetool]
+    keepBackup = false
+    prompt = false
+[mergetool "nvim"]
+    cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
 [help]
     autocorrect = prompt
 [color]
