@@ -75,7 +75,6 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("BufWritePre", {
     callback = function(event)
         if event.match:match "^%w%w+:[\\/][\\/]" then return end
-        ---@diagnostic disable-next-line: undefined-field
         local file = vim.uv.fs_realpath(event.match) or event.match
         vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
     end,
@@ -92,7 +91,6 @@ vim.api.nvim_create_autocmd("VimResized", {
 vim.api.nvim_create_autocmd("PackChanged", {
     callback = function(ev)
         local name, kind = ev.data.spec.name, ev.data.kind
-        -- Update tree-sitter parsers after nvim-treesitter updates
         if name == "nvim-treesitter" and kind == "update" then
             if not ev.data.active then vim.cmd.packadd("nvim-treesitter") end
             vim.cmd("TSUpdate")
