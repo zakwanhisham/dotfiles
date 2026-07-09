@@ -21,7 +21,7 @@
     "sway/workspaces": {
         "format": "{index}",
         "on-click": "activate",
-        "tooltip": false
+        "enable-bar-scroll": true
     },
     "clock": {
         "format": "{:%A %d %b %H:%M:%S}",
