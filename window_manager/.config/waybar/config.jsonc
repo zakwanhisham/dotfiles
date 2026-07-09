@@ -14,7 +14,7 @@
         "cpu",
         "memory",
         "disk",
-        "custom/gpu",
+        "custom/gpu-usage",
         "pulseaudio",
         "tray"
     ],
@@ -66,15 +66,11 @@
         "format": "dsk {free} :: ",
         "interval": 10
     },
-    "custom/gpu": {
+    "custom/gpu-usage": {
         "format": "gpu {} :: ",
-        "exec": "$HOME/.config/sway/scripts/gpu_usage",
-        "interval": 2,
-        "env": {
-            "GPU_BRAND": "AMD"
-        },
-        "on-click": "amdgpu_top --gui",
-        "tooltip": false
+        "exec": "gpu-usage-waybar",
+        "return-type": "json",
+        "on-click": "amdgpu_top --gui"
     },
     "pulseaudio": {
         "format": "vol {volume}%{icon} :: ",
