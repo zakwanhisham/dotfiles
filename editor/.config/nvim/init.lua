@@ -29,6 +29,8 @@ vim.opt.smoothscroll = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.signcolumn = "yes"
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 local function nmap(keys, func, desc) vim.keymap.set("n", keys, func, { desc = desc }) end
 
