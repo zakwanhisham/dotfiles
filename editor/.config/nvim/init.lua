@@ -158,10 +158,8 @@ later(function()
     }
 end)
 
-later(function() require("mini.comment").setup { options = { ignore_blank_line = true } } end)
-
 later(function()
-    require("mini.diff").setup { view = { style = "sign" }, mappings = { goto_first = "[C", goto_prev = "[c", goto_next = "]c", goto_last = "]C" } }
+    require("mini.diff").setup { view = { style = "sign", signs = { add = '+', change = '~', delete = '-' } }, mappings = { goto_first = "[C", goto_prev = "[c", goto_next = "]c", goto_last = "]C" } }
 end)
 
 later(function()
