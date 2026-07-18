@@ -3,7 +3,6 @@
     name = zakwan hisham
 [core]
     editor = nvim
-    pager = delta
     commentChar = ";"
 [alias]
     a = add
@@ -20,9 +19,7 @@
     conflictstyle = zdiff3
 [mergetool]
     keepBackup = false
-    prompt = false
-[mergetool "nvim"]
-    cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+    prompt = true
 [help]
     autocorrect = prompt
 [color]
@@ -31,12 +28,3 @@
     defaultBranch = main
 [pull]
     rebase = false
-[interactive]
-    diffFilter = delta --color-only
-[delta]
-    true-color = always
-    syntax-theme = ansi
-    navigate = true
-    dark = true
-    line-numbers = true
-    side-by-side = true
