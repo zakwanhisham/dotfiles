@@ -62,7 +62,7 @@ input type:pointer {
     bindsym $mod+Shift+c reload
 
     # Toggle bar
-    bindsym $mod+Shift+m exec pkill waybar || waybar
+    # bindsym $mod+Shift+m exec pkill waybar || waybar
 
     # Move to urgent workspace
     bindsym $mod+x [urgent=latest] focus
