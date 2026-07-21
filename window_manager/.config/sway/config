@@ -61,9 +61,6 @@ input type:pointer {
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # Toggle bar
-    # bindsym $mod+Shift+m exec pkill waybar || waybar
-
     # Move to urgent workspace
     bindsym $mod+x [urgent=latest] focus
 
@@ -76,9 +73,11 @@ input type:pointer {
     # Lock screen
     bindsym $mod+Shift+e exec --no-startup-id ~/.config/sway/scripts/blur-lock
 
-    # Navigate workspace using tab
-    bindsym $mod+Tab workspace next
-    bindsym $mod+Shift+Tab workspace prev
+    # Navigate workspace using mouse wheel
+    bindsym --whole-window {
+        $mod+button4 workspace next
+        $mod+button5 workspace prev
+    }
 #
 # Moving around:
 #
