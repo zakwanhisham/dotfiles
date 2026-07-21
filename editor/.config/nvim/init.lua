@@ -111,7 +111,7 @@ vim.pack.add({
     { src = "https://github.com/saghen/blink.lib" },
     { src = "https://github.com/rafamadriz/friendly-snippets" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
-    { src = "https://github.com/morhetz/gruvbox" },
+    { src = "https://github.com/sainnhe/gruvbox-material" },
     { src = "https://github.com/nvim-mini/mini.nvim" },
     { src = "https://github.com/saghen/blink.cmp" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
@@ -119,7 +119,7 @@ vim.pack.add({
     { src = "https://github.com/NeogitOrg/neogit" },
     { src = "https://github.com/tpope/vim-fugitive" },
     { src = "https://github.com/stevearc/oil.nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter",        version = "main" },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter",       version = "main" },
     { src = "https://github.com/christoomey/vim-tmux-navigator" },
 })
 
@@ -129,16 +129,15 @@ local later = function(f) misc.safely("later", f) end
 local now_if_args = vim.fn.argc(-1) > 0 and now or later
 
 now(function()
-    vim.g.gruvbox_bold = 0
-    vim.g.gruvbox_italic = 0
-    vim.g.gruvbox_underline = 0
-    vim.g.gruvbox_contrast_dark = "hard"
-    vim.g.gruvbox_hls_cursor = "red"
-    vim.g.gruvbox_sign_column = "bg0"
-    vim.g.gruvbox_italicize_comments = 0
-    vim.g.gruvbox_invert_selection = 0
+    vim.g.gruvbox_material_background = "hard"
+    vim.g.gruvbox_material_foreground = "original"
+    vim.g.gruvbox_material_disable_italic_comment = 1
+    vim.g.gruvbox_material_float_style = "dim"
+    vim.g.gruvbox_material_disable_terminal_colors = 1
+    vim.g.gruvbox_material_statusline_style = "original"
+    vim.g.gruvbox_material_better_performance = 1
 
-    vim.cmd.colorscheme("gruvbox")
+    vim.cmd.colorscheme("gruvbox-material")
 
     require("oil").setup {
         default_file_explorer = true, watch_for_changes = true, columns = { "permissions", "size", "birthtime" },
@@ -236,6 +235,7 @@ later(function()
     MiniStatusline.setup {
         content = {
             active = function()
+                vim.cmd.highlight("MiniStatuslineModeNormal cterm=NONE gui=NONE")
                 return MiniStatusline.combine_groups {
                     "%<",
                     { hl = "MiniStatuslineModeNormal", strings = { MiniStatusline.section_filename { trunc_width = 140 } } },
