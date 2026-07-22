@@ -97,20 +97,10 @@ vim.api.nvim_create_autocmd("VimResized", {
         vim.cmd("tabnext " .. current_tab)
     end
 })
-vim.api.nvim_create_autocmd("PackChanged", {
-    callback = function(ev)
-        local name, kind = ev.data.spec.name, ev.data.kind
-        if name == "nvim-treesitter" and kind == "update" then
-            if not ev.data.active then vim.cmd.packadd("nvim-treesitter") end
-            vim.cmd("TSUpdate")
-        end
-    end
-})
 
 vim.pack.add({
     { src = "https://github.com/saghen/blink.lib" },
     { src = "https://github.com/rafamadriz/friendly-snippets" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
     { src = "https://github.com/sainnhe/gruvbox-material" },
     { src = "https://github.com/nvim-mini/mini.nvim" },
     { src = "https://github.com/saghen/blink.cmp" },
@@ -119,7 +109,6 @@ vim.pack.add({
     { src = "https://github.com/NeogitOrg/neogit" },
     { src = "https://github.com/tpope/vim-fugitive" },
     { src = "https://github.com/stevearc/oil.nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter",       version = "main" },
     { src = "https://github.com/christoomey/vim-tmux-navigator" },
 })
 
@@ -188,14 +177,6 @@ now_if_args(function()
 
     for server, config in pairs(servers) do vim.lsp.config[server] = config end
     vim.lsp.enable(vim.tbl_keys(servers))
-
-    require("treesitter-context").setup { multiwindow = true, max_lines = 5 }
-
-    local languages = require("nvim-treesitter").get_available()
-    require("nvim-treesitter").install(languages)
-
-    vim.api.nvim_create_autocmd("FileType",
-        { pattern = languages, callback = function(ev) vim.treesitter.start(ev.buf) end })
 end)
 
 later(function()
