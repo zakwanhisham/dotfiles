@@ -60,7 +60,7 @@ nmap("<leader>fs", "<cmd>Rg<cr>", "Grep")
 nmap("<leader>fw", "<cmd>FzfLua grep_cword<cr>", "Word")
 nmap("<leader>fr", "<cmd>FzfLua resume<cr>", "Resume")
 nmap("<leader>/", "<cmd>BLines<cr>", "Search")
-nmap("<leader>gg", "<cmd>Neogit<cr>", "Neogit")
+nmap("<leader>gg", "<cmd>tab Git<cr>", "Fugitive")
 nmap("<leader>gl", "<cmd>Git log --graph --decorate<cr>", "Log")
 nmap("<leader>gb", "<cmd>Git blame<cr>", "Blame")
 nmap("<leader>gd", "<cmd>Git diff<cr>", "Diff")
@@ -106,7 +106,6 @@ vim.pack.add({
     { src = "https://github.com/saghen/blink.cmp" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/NeogitOrg/neogit" },
     { src = "https://github.com/tpope/vim-fugitive" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/christoomey/vim-tmux-navigator" },
@@ -260,6 +259,4 @@ later(function()
         winopts = { height = 0.4, width = 1, row = 1, border = "border-top", backdrop = 100 },
         keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } },
     }
-
-    require("neogit").setup { disable_hint = true }
 end)
