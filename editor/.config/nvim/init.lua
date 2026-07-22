@@ -29,8 +29,6 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.signcolumn = "yes"
 
-require("vim._core.ui2").enable()
-
 local function nmap(keys, func, desc) vim.keymap.set("n", keys, func, { desc = desc }) end
 
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
