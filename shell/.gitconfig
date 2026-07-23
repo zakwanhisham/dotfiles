@@ -20,6 +20,8 @@
 [mergetool]
     keepBackup = false
     prompt = true
+[mergetool "nvim"]
+    cmd = "nvim -d"
 [help]
     autocorrect = prompt
 [color]
