@@ -75,8 +75,8 @@ input type:pointer {
 
     # Navigate workspace using mouse wheel
     bindsym --whole-window {
-        $mod+button4 workspace next
-        $mod+button5 workspace prev
+        $mod+button4 workspace prev
+        $mod+button5 workspace next
     }
 #
 # Moving around:
