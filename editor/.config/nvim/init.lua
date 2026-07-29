@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.opt.guicursor = ""
 vim.opt.background = "dark"
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 vim.opt.ignorecase = true
