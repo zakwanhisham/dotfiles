@@ -82,7 +82,7 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "fugitive", "fzf", "git", "gitcommit", "help", "man", "mason", "markdown", "term" },
+    pattern = { "fugitive", "fzf", "git", "gitcommit", "help", "man", "pager", "markdown", "term" },
     callback = function() vim.b.miniindentscope_disable = true end,
 })
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -190,24 +190,12 @@ later(function()
 
     local MiniClue = require("mini.clue")
     MiniClue.setup {
-        clues = {
-            { mode = "n", keys = "<leader>f", desc = "+Fzf" },
-            { mode = "n", keys = "<leader>g", desc = "+Git" },
-            { mode = "n", keys = "<leader>t", desc = "+Trail" },
-            MiniClue.gen_clues.square_brackets(),
-            MiniClue.gen_clues.builtin_completion(),
-            MiniClue.gen_clues.g(),
-            MiniClue.gen_clues.marks(),
-            MiniClue.gen_clues.registers(),
-            MiniClue.gen_clues.windows(),
-            MiniClue.gen_clues.z(),
-        },
-        triggers = { { mode = "n", keys = "<Leader>" }, { mode = "x", keys = "<Leader>" }, { mode = "n", keys = "[" },
-            { mode = "n", keys = "]" }, { mode = "i", keys = "<C-x>" }, { mode = "n", keys = "g" }, { mode = "x", keys = "g" },
-            { mode = "n", keys = "'" }, { mode = "n", keys = "`" }, { mode = "x", keys = "'" }, { mode = "x", keys = "`" },
-            { mode = "n", keys = '"' }, { mode = "x", keys = '"' }, { mode = "i", keys = "<C-r>" }, { mode = "c", keys = "<C-r>" },
-            { mode = "n", keys = "<C-w>" }, { mode = "n", keys = "z" }, { mode = "x", keys = "z" },
-        },
+        clues = { { mode = "n", keys = "<leader>f", desc = "+Fzf" }, { mode = "n", keys = "<leader>g", desc = "+Git" }, { mode = "n", keys = "<leader>t", desc = "+Trail" },
+            MiniClue.gen_clues.square_brackets(), MiniClue.gen_clues.builtin_completion(), MiniClue.gen_clues.g(), MiniClue.gen_clues.marks(),
+            MiniClue.gen_clues.registers(), MiniClue.gen_clues.windows(), MiniClue.gen_clues.z() },
+        triggers = { { mode = { "n", "x" }, keys = "<Leader>" }, { mode = { "n", "x" }, keys = "g" }, { mode = { "n", "x" }, keys = "'" }, { mode = { "n", "x" }, keys = "`" },
+            { mode = { "n", "x" }, keys = '"' }, { mode = { "i", "c" }, keys = "<C-r>" }, { mode = { "n", "x" }, keys = "z" }, { mode = "n", keys = "[" }, { mode = "n", keys = "]" },
+            { mode = "n", keys = "<C-w>" }, { mode = "i", keys = "<C-x>" } },
         window = { config = { anchor = "SE", width = "auto", row = "auto", col = "auto" } },
     }
 
@@ -218,7 +206,6 @@ later(function()
     MiniStatusline.setup {
         content = {
             active = function()
-                vim.cmd.highlight("MiniStatuslineModeNormal cterm=NONE gui=NONE")
                 return MiniStatusline.combine_groups {
                     "%<",
                     { hl = "MiniStatuslineModeNormal", strings = { MiniStatusline.section_filename { trunc_width = 140 } } },
@@ -230,9 +217,7 @@ later(function()
                 }
             end,
             inactive = function()
-                return MiniStatusline.combine_groups {
-                    "%<", { hl = "MiniStatuslineInactive", strings = { MiniStatusline.section_filename { trunc_width = 140 } } },
-                }
+                return MiniStatusline.combine_groups { "%<", { hl = "MiniStatuslineInactive", strings = { MiniStatusline.section_filename { trunc_width = 140 } } } }
             end,
         },
         use_icons = false,
@@ -252,7 +237,7 @@ later(function()
             documentation = { auto_show = true, auto_show_delay_ms = 200 },
             ghost_text = { enabled = false },
         },
-        sources = { default = { "lsp", "snippets", "buffer", "path" } },
+        sources = { default = { "lsp", "buffer", "path", "snippets" } },
         signature = { enabled = false },
         fuzzy = { implementation = "prefer_rust_with_warning" },
     }
