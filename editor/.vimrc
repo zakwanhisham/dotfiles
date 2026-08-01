@@ -55,7 +55,6 @@ noremap <leader>y "+y
 noremap <leader>Y "+Y
 noremap <silent> <leader>- :Ex<CR>
 syntax on
-colorscheme retrobox
 set background=dark
 set clipboard=unnamedplus
 if !has('gui_running') && &term =~ '\%(screen\|tmux\)'
