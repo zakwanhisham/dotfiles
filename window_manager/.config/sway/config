@@ -186,7 +186,7 @@ bindsym $mod+r mode "resize"
 # Startup things
 #
     exec /usr/lib/polkit-1/polkit-agent-helper-1
-    exec /usr/bin/autotiling -w 1 2 4 5 6 7 8 9 10 -sw 0.65 -sr 1.61
+    exec /usr/bin/autotiling -sw 0.65 -sr 1.61
     exec /usr/bin/mako -c ~/.config/mako/config
     exec /usr/bin/dex --autostart --environment sway
     exec /usr/bin/solaar --window=hide
