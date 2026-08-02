@@ -169,6 +169,22 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+mode "resize-16:9" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 400px
+    bindsym $down resize grow height 400px
+    bindsym $up resize shrink height 400px
+    bindsym $right resize grow width 400px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+r mode "resize-16:9"
 #
 # Utilities:
 #
