@@ -125,7 +125,6 @@ now(function()
     vim.g.gruvbox_material_dim_inactive_windows = 0
     vim.g.gruvbox_material_ui_contrast = "high"
     vim.g.gruvbox_material_float_style = "dim"
-    vim.g.gruvbox_material_statusline_style = "original"
     vim.g.gruvbox_material_better_performance = 1
 
     vim.cmd.colorscheme("gruvbox-material")
