@@ -1,7 +1,7 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "005f8c859997f40f65bfbec5f4b400c45fecc06a",
+      "rev": "cba53eff1948109ec0f47cbead4f07494d1e25c9",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
@@ -21,11 +21,11 @@
       "src": "https://github.com/sainnhe/gruvbox-material"
     },
     "mini.nvim": {
-      "rev": "8bf5c57bc82dd590932faa41bfde9fd6d40a9433",
+      "rev": "8cef23520832134c05e4524e49f0468623501053",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "9ae2b3b63b924b1329724dae76e9d2c5c40b389c",
+      "rev": "43ed3797b266e1ee8d222e491379ad471c9d3146",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "oil.nvim": {
