@@ -16,9 +16,9 @@
       "rev": "28440c741e927592877514fba3db21eb188caec8",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
-    "gruvbox": {
-      "rev": "5d15b2765f59754d7ac263c88a0f6e3e58124951",
-      "src": "https://github.com/morhetz/gruvbox"
+    "gruvbox-material": {
+      "rev": "11d779b26a9ab2b3db8c22c6ac9fb6e8ed4fea79",
+      "src": "https://github.com/sainnhe/gruvbox-material"
     },
     "mini.nvim": {
       "rev": "8bf5c57bc82dd590932faa41bfde9fd6d40a9433",
