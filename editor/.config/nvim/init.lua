@@ -206,6 +206,7 @@ later(function()
     MiniStatusline.setup {
         content = {
             active = function()
+                vim.cmd.highlight("MiniStatuslineModeNormal cterm=NONE gui=NONE")
                 return MiniStatusline.combine_groups {
                     "%<",
                     { hl = "MiniStatuslineModeNormal", strings = { MiniStatusline.section_filename { trunc_width = 140 } } },
