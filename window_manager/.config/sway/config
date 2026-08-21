@@ -38,8 +38,8 @@ input type:pointer {
     bindsym $mod+Return exec $term
     bindsym $mod+w exec firefox
     bindsym $mod+c exec chromium
-    bindsym $mod+e exec ~/.config/sway/scripts/email
-    bindsym $mod+t exec ~/.config/sway/scripts/teams
+    bindsym $mod+e exec /usr/bin/thunderbird
+    bindsym $mod+t exec /usr/bin/teams-for-linux
     bindsym $mod+m exec ~/.config/sway/scripts/yt-music
     bindsym Print exec flameshot gui
     bindsym $mod+Print exec flameshot full
