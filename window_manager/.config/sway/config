@@ -8,6 +8,9 @@ set $up k
 set $right l
 set $term /usr/bin/alacritty
 set $menu fuzzel
+set $teams /usr/bin/teams-for-linux
+set $email /usr/bin/thunderbird
+set $music /usr/bin/ytubic
 
 ### Border and gaps
 workspace_layout default
@@ -38,9 +41,9 @@ input type:pointer {
     bindsym $mod+Return exec $term
     bindsym $mod+w exec firefox
     bindsym $mod+c exec chromium
-    bindsym $mod+e exec /usr/bin/thunderbird
-    bindsym $mod+t exec /usr/bin/teams-for-linux
-    bindsym $mod+m exec ~/.config/sway/scripts/yt-music
+    bindsym $mod+e exec $email
+    bindsym $mod+t exec $teams
+    bindsym $mod+m exec $music
     bindsym Print exec flameshot gui
     bindsym $mod+Print exec flameshot full
     bindsym $mod+Shift+p exec ~/bin/woomer
@@ -243,7 +246,7 @@ bindsym $mod+Shift+r mode "resize-16:9"
     for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
     for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
     for_window [title="sowon*"] floating enable, sticky enable
-    for_window [app_id="chrome-music.youtube.com__-Default"] floating enable, resize set width 1600 px height 900 px
+    for_window [app_id="ytubic"] floating enable, resize set width 1600 px height 900 px
     for_window [app_id="org.mozilla.Thunderbird" title="Write:*"] floating enable
     for_window [app_id="solaar"] floating enable, resize set width 30 ppt height 40 ppt
 
