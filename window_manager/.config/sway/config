@@ -10,7 +10,7 @@ set $term /usr/bin/alacritty
 set $menu fuzzel
 set $teams /usr/bin/teams-for-linux
 set $email /usr/bin/thunderbird
-set $music /usr/bin/sonora
+set $music /usr/bin/ytubic
 
 ### Border and gaps
 workspace_layout default
@@ -246,7 +246,7 @@ bindsym $mod+Shift+r mode "resize-16:9"
     for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
     for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
     for_window [title="sowon*"] floating enable, sticky enable
-    for_window [app_id="sonora"] floating enable, resize set width 1600 px height 900 px
+    for_window [app_id="ytubic"] floating enable, resize set width 1600 px height 900 px
     for_window [app_id="org.mozilla.Thunderbird" title="Write:*"] floating enable
     for_window [app_id="solaar"] floating enable, resize set width 30 ppt height 40 ppt
 
