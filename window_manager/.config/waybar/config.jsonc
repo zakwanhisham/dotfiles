@@ -65,7 +65,7 @@
         "interval": 2
     },
     "disk": {
-        "format": "dsk {free} :: ",
+        "format": "dsk {percentage_free}% :: ",
         "interval": 10
     },
     "custom/gpu-usage": {
