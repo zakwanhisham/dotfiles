@@ -28,6 +28,8 @@ vim.opt.smoothscroll = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.signcolumn = "yes"
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 vim.diagnostic.config { underline = false }
 
@@ -50,10 +52,8 @@ vim.keymap.set({ "x", "o" }, "n", "'Nn'[v:searchforward]", { expr = true, desc =
 vim.keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search Result" })
 vim.keymap.set({ "x", "o" }, "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 nmap("<leader>u", function()
-    vim.cmd.packadd("nvim.undotree")
-    require("undotree").open()
+    vim.cmd.packadd("nvim.undotree"); require("undotree").open()
 end, "Undotree")
-nmap("-", "<cmd>Oil<cr>", "Oil")
 nmap("<leader>tw", function() MiniTrailspace.trim() end, "Whitespace")
 nmap("<leader>tl", function() MiniTrailspace.trim_last_lines() end, "Last lines")
 nmap("<leader><space>", "<cmd>Buffers<cr>", "Buffers")
@@ -72,6 +72,7 @@ nmap("<c-j>", "<cmd>TmuxNavigateDown<cr>", "Navigate Down")
 nmap("<c-k>", "<cmd>TmuxNavigateUp<cr>", "Navigate Up")
 nmap("<c-l>", "<cmd>TmuxNavigateRight<cr>", "Navigate Right")
 nmap("<c-\\>", "<cmd>TmuxNavigatePrevious<cr>", "Navigate Previous")
+nmap("-", "<cmd>Oil<cr>", "Oil")
 
 vim.api.nvim_create_autocmd("TextYankPost", { pattern = "*", callback = function() vim.hl.on_yank {} end })
 vim.api.nvim_create_autocmd("FileType", {
