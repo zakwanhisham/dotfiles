@@ -28,8 +28,7 @@ vim.opt.smoothscroll = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.signcolumn = "yes"
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.cursorline = true
 
 vim.diagnostic.config { underline = false }
 
