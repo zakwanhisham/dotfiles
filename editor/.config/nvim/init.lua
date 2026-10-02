@@ -101,16 +101,17 @@ vim.api.nvim_create_autocmd("VimResized", {
 })
 
 vim.pack.add({
-    { src = "https://github.com/saghen/blink.lib" },
-    { src = "https://github.com/rafamadriz/friendly-snippets" },
-    { src = "https://github.com/sainnhe/gruvbox-material" },
-    { src = "https://github.com/nvim-mini/mini.nvim" },
-    { src = "https://github.com/saghen/blink.cmp" },
+    { src = "https://github.com/christoomey/vim-tmux-navigator" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/tpope/vim-fugitive" },
+    { src = "https://github.com/nvim-mini/mini.nvim" },
+    { src = "https://github.com/rafamadriz/friendly-snippets" },
+    { src = "https://github.com/saghen/blink.cmp" },
+    { src = "https://github.com/saghen/blink.lib" },
+    { src = "https://github.com/sainnhe/gruvbox-material" },
     { src = "https://github.com/stevearc/oil.nvim" },
-    { src = "https://github.com/christoomey/vim-tmux-navigator" },
+    { src = "https://github.com/tpope/vim-fugitive" },
+    { src = "https://github.com/wellle/context.vim" },
 })
 
 local misc = require("mini.misc")
@@ -134,6 +135,8 @@ now(function()
         view_options = { show_hidden = true, case_insensitive = true },
         keymaps = { ["q"] = "actions.close", ["<C-h>"] = false, ["<C-l>"] = false, ["<C-k>"] = false, ["<C-j>"] = false },
     }
+
+    vim.g.context_highlight_tag = "<hide>"
 end)
 
 now_if_args(function()
