@@ -244,6 +244,9 @@ bindsym $mod+Shift+r mode "resize-16:9"
     # Inhibit idle
     for_window [app_id="firefox"] inhibit_idle fullscreen
     for_window [app_id="Chromium"] inhibit_idle fullscreen
+
+    # Tabbed layout
+    for_window [workspace="3"] layout tabbed
 #
 # Status Bar:
 #
