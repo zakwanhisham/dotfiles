@@ -28,6 +28,9 @@ set -Ux XDG_CONFIG_HOME "$HOME/.config"
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
 set -Ux XDG_BIN_DIR "$HOME/.local/bin"
 
+### ALIAS
+alias ls="ls --group-directories-first --color=always"
+
 ### ABBREVIATIONS
 abbr autoremove "paru --pacman pacman -Rns (paru --pacman pacman -Qtdq)"
 abbr cleanup "paru --pacman pacman -Scc"
