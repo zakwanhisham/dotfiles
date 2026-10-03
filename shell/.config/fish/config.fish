@@ -58,6 +58,14 @@ abbr fishrc "nvim $HOME/.config/fish/config.fish"
 abbr tconf "nvim $HOME/.tmux.conf"
 abbr vimrc "vim $HOME/.vimrc"
 
+### FUNCTION
+function ff -d "Find files and cd into it"
+    set selected_dir (fd --hidden -L --type directory . "$HOME" | fzf --header "Directory Selection" --height 40%)
+    if test -n "$selected_dir"
+        cd "$selected_dir"
+    end
+end
+
 ### PROMPT AND COMPLETIONS
 
 fzf --fish | source
