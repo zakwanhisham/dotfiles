@@ -2,13 +2,15 @@
     "bar-id": "bar-0",
     "ipc": true,
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "reload_style_on_change": true,
     "modules-left": [
         "sway/workspaces",
         "sway/mode"
     ],
-    "modules-center": [],
+    "modules-center": [
+        "clock"
+    ],
     "modules-right": [
         "sway/scratchpad",
         "cpu",
@@ -16,7 +18,6 @@
         "disk",
         "custom/gpu-usage",
         "pulseaudio",
-        "clock",
         "tray"
     ],
     "sway/workspaces": {
@@ -25,7 +26,7 @@
         "enable-bar-scroll": true
     },
     "clock": {
-        "format": "{:%A %d %b %H:%M:%S} :: ",
+        "format": "{:%A %d %b %H:%M:%S}",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
