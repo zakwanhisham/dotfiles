@@ -43,14 +43,12 @@ abbr updatelist "paru --pacman pacman -Syy && paru --pacman pacman -Qu"
 
 # Apps
 abbr cal "cal --monday -3"
-abbr cat "bat"
 abbr cp "cp -iv"
 abbr feh "feh -B black"
 abbr lg "lazygit"
 abbr mkdir "mkdir -pv"
 abbr mv "mv -iv"
 abbr rm "rm -iv"
-abbr timestamp "date +%d%b%H%M%S"
 abbr tree "tree -a -I \"*.git\" -C"
 abbr vim "nvim"
 
@@ -73,9 +71,6 @@ end
 
 fzf --fish | source
 
-function starship_transient_prompt_func
-    starship module character
-end
 starship init fish | source
 enable_transience
 
