@@ -169,19 +169,12 @@ mode "resize" {
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
+    bindsym Return resize shrink width 400px
 
     # Return to default mode
-    bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-mode "resize-16:9" {
-    bindsym Return resize shrink width 400px
-    # Return to default mode
-    bindsym Escape mode "default"
-}
-bindsym $mod+Shift+r mode "resize-16:9"
 #
 # Utilities:
 #
