@@ -6,7 +6,7 @@ search_dir=(
     "$HOME/.config"
     "$HOME/Documents"
     "$HOME/Projects"
-    "$HOME/Work"
+    "$HOME/Works"
     "$HOME/dotfiles"
 )
 

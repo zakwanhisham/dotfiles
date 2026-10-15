@@ -3,8 +3,9 @@ if not status is-interactive
     return
 end
 
-# Use default keybindings
-fish_default_key_bindings
+# keybindings
+fish_vi_key_bindings
+set fish_cursor_insert block
 
 ### EXPORT
 set fish_greeting
@@ -27,50 +28,51 @@ set -Ux XDG_CONFIG_HOME "$HOME/.config"
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
 set -Ux XDG_BIN_DIR "$HOME/.local/bin"
 
+### ALIAS
+alias ls="ls --group-directories-first --color=always"
+
 ### ABBREVIATIONS
 abbr autoremove "paru --pacman pacman -Rns (paru --pacman pacman -Qtdq)"
-abbr laptop "$HOME/.screenlayout/laptop.sh && $HOME/.fehbg"
-abbr monitor "$HOME/.screenlayout/monitor.sh && $HOME/.fehbg"
+abbr cleanup "paru --pacman pacman -Scc"
 abbr reload "source $HOME/.config/fish/config.fish"
 abbr ssn "shutdown now"
 abbr ssr "shutdown -r now"
 abbr todo "nvim $HOME/Documents/NOTES/TODO.md"
+abbr updatemirror "sudo reflector -c Malaysia -c Singapore -c Indonesia -c Thailand -c Worldwide --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 abbr updatelist "paru --pacman pacman -Syy && paru --pacman pacman -Qu"
-abbr updatemirror "sudo reflector --verbose -c ID -c SG -c TH --protocol https --sort rate --latest 10 --download-timeout 5 --save /etc/pacman.d/mirrorlist"
-abbr updatepkg "paru --pacman pacman -Qqe > $HOME/dotfiles/pkglist.txt"
 
 # Apps
 abbr cal "cal --monday -3"
-abbr cat "bat"
 abbr cp "cp -iv"
 abbr feh "feh -B black"
-abbr less "less --use-color -N --mouse"
-abbr ld "lazydocker"
 abbr lg "lazygit"
 abbr mkdir "mkdir -pv"
 abbr mv "mv -iv"
-abbr ng "nvim +'Neogit kind=replace'"
 abbr rm "rm -iv"
-abbr timestamp "date +%d%b%H%M%S"
 abbr tree "tree -a -I \"*.git\" -C"
 abbr vim "nvim"
-abbr zed "zeditor"
 
 # Config
 abbr alarc "nvim $HOME/.config/alacritty/alacritty.toml"
 abbr bashrc "nvim $HOME/.bashrc"
 abbr fishrc "nvim $HOME/.config/fish/config.fish"
-abbr ghostrc "nvim $HOME/.config/ghostty/config"
 abbr tconf "nvim $HOME/.tmux.conf"
 abbr vimrc "vim $HOME/.vimrc"
+
+### FUNCTION
+function ff -d "Find files and cd into it"
+    set selected_dir (fd --hidden -L --type directory . "$HOME" | fzf --header "Directory Selection" --height 40%)
+    if test -n "$selected_dir"
+        cd "$selected_dir"
+    end
+end
 
 ### PROMPT AND COMPLETIONS
 
 fzf --fish | source
-ty generate-shell-completion fish | source
 
-function starship_transient_prompt_func
-    starship module character
-end
 starship init fish | source
 enable_transience
+
+# opencode
+fish_add_path /home/ouraaa/.opencode/bin

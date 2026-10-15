@@ -4,6 +4,4 @@
 #
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-. ~/.cargo/env
-
-. "$HOME/.local/share/../bin/env"
+[[ -f ~/.cargo/env ]] &&. ~/.cargo/env

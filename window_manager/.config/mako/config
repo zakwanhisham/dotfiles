@@ -1,0 +1,24 @@
+font=IosevkaTerm Nerd Font 12
+
+width=315
+height=200
+padding=10
+margin=10
+outer-margin=0,0,10
+background-color=#282828
+text-color=#ffffff
+progress-color=over #333333
+border-color=#333333
+icon-path=/usr/share/icons/Papirus
+max-icon-size=64
+layer=overlay
+anchor=top-right
+
+border-size=5
+border-radius=0
+
+default-timeout=5000
+
+[urgency=high]
+
+ignore-timeout=1

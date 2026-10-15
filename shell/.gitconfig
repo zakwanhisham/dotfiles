@@ -1,34 +1,32 @@
 [user]
-	email = hishamzakwan@gmail.com
-	name = zakwan hisham
+    email = hishamzakwan@gmail.com
+    name = zakwan hisham
 [core]
-	editor = nvim
-	pager = delta
-	commentChar = ";"
+    editor = nvim
+    commentChar = ";"
 [alias]
-	c = commit
+    a = add
+    c = commit
+    co = checkout
+    d = diff
     p = push
-	s = status
-	st = status
-	lg = log --oneline
-	last = log -1 HEAD
+    s = status
+    st = status
+    lg = log --oneline
+    last = log -1 HEAD
 [merge]
-	tool = nvim -d
+    tool = nvim
     conflictstyle = zdiff3
+[mergetool]
+    keepBackup = false
+    prompt = true
+[mergetool "nvim"]
+    cmd = "nvim -d"
 [help]
     autocorrect = prompt
 [color]
-	ui = auto
+    ui = auto
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [pull]
-	rebase = false
-[interactive]
-    diffFilter = delta --color-only
-[delta]
-    true-color = always
-    syntax-theme = ansi
-    navigate = true
-    dark = true
-    line-numbers = true
-    side-by-side = true
+    rebase = false
