@@ -18,9 +18,6 @@ default_border none
 gaps inner 0
 gaps outer 0
 
-### Focus follow
-focus_follows_mouse no
-
 ### Output configuration
 output DP-1 {
     background ~/dotfiles/wallpaper/eyes.jpg fit
