@@ -10,7 +10,7 @@ set $term /usr/bin/alacritty
 set $menu fuzzel
 set $teams /usr/bin/teams-for-linux
 set $email /usr/bin/thunderbird
-set $music /usr/bin/chromium --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland --app=https://music.youtube.com
+set $music /usr/bin/chromium --user-data-dir=$HOME/.config/chromium-music --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland --app=https://music.youtube.com
 
 ### Border and gaps
 workspace_layout default
