@@ -111,7 +111,6 @@ vim.pack.add({
     { src = "https://github.com/sainnhe/gruvbox-material" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/tpope/vim-fugitive" },
-    { src = "https://github.com/wellle/context.vim" },
 })
 
 local misc = require("mini.misc")
@@ -135,8 +134,6 @@ now(function()
         view_options = { show_hidden = true, case_insensitive = true },
         keymaps = { ["q"] = "actions.close", ["<C-h>"] = false, ["<C-l>"] = false, ["<C-k>"] = false, ["<C-j>"] = false },
     }
-
-    vim.g.context_highlight_tag = "<hide>"
 end)
 
 now_if_args(function()
