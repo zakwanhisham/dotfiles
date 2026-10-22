@@ -192,6 +192,8 @@ now_if_args(function()
     local ts = require("nvim-treesitter")
     ts.install "all"
 
+    local no_highlight = { gitcommit = true }
+
     local function start(buf, lang)
         if not vim.api.nvim_buf_is_valid(buf) then return end
         if not vim.treesitter.language.add(lang) then return end
@@ -203,6 +205,7 @@ now_if_args(function()
 
     vim.api.nvim_create_autocmd("FileType", {
         callback = function(args)
+            if no_highlight[args.match] then return end
             local lang = vim.treesitter.language.get_lang(args.match)
             if not lang then return end
             if vim.tbl_contains(ts.get_installed "parsers", lang) then
