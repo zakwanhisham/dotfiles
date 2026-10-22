@@ -191,7 +191,6 @@ now_if_args(function()
 
     local ts = require("nvim-treesitter")
     ts.install "all"
-
     local no_highlight = { gitcommit = true }
 
     local function start(buf, lang)
