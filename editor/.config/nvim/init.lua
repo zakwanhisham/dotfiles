@@ -215,7 +215,7 @@ now_if_args(function()
         end
     })
 
-    require("treesitter-context").setup {max_lines = 5}
+    require("treesitter-context").setup { max_lines = 5 }
 end)
 
 later(function()
