@@ -1,34 +1,34 @@
 vim.g.mapleader = " "
 vim.opt.background = "dark"
-vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.shiftround = true
-vim.opt.expandtab = true
 vim.opt.breakindent = true
-vim.opt.smartindent = true
-vim.opt.wrap = false
+vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 vim.opt.completeopt = "menuone,noselect,preview,noinsert,fuzzy"
-vim.opt.spelllang = "en_us"
-vim.opt.spell = true
-vim.opt.undodir = os.getenv "HOME" .. "/.cache/nvim/undodir"
-vim.opt.undofile = true
-vim.opt.writebackup = false
-vim.opt.termguicolors = true
-vim.opt.wildmode = "longest:full,full"
+vim.opt.expandtab = true
+vim.opt.guicursor = ""
+vim.opt.ignorecase = true
 vim.opt.inccommand = "split"
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 400
 vim.opt.scrolloff = 12
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 4
 vim.opt.sidescrolloff = 12
+vim.opt.signcolumn = "yes"
+vim.opt.smartcase = true
+vim.opt.smartindent = true
 vim.opt.smoothscroll = true
+vim.opt.softtabstop = 4
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.signcolumn = "yes"
-vim.opt.guicursor = ""
+vim.opt.tabstop = 4
+vim.opt.termguicolors = true
+vim.opt.timeoutlen = 400
+vim.opt.undodir = os.getenv "HOME" .. "/.cache/nvim/undodir"
+vim.opt.undofile = true
+vim.opt.updatetime = 250
+vim.opt.wildmode = "longest:full,full"
+vim.opt.wrap = false
+vim.opt.writebackup = false
 
 vim.diagnostic.config { underline = false }
 
@@ -59,7 +59,6 @@ nmap("<leader><space>", "<cmd>Buffers<cr>", "Buffers")
 nmap("<leader>ff", "<cmd>Files<cr>", "Files")
 nmap("<leader>fs", "<cmd>Rg<cr>", "Grep")
 nmap("<leader>fw", "<cmd>FzfLua grep_cword<cr>", "Word")
-nmap("<leader>fr", "<cmd>FzfLua resume<cr>", "Resume")
 nmap("<leader>/", "<cmd>BLines<cr>", "Search")
 nmap("<leader>gg", "<cmd>tab Git<cr>", "Fugitive")
 nmap("<leader>gl", "<cmd>Git log --oneline<cr>", "Log")
@@ -84,20 +83,6 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "fugitive", "fzf", "git", "gitcommit", "help", "man", "pager", "markdown", "term" },
     callback = function() vim.b.miniindentscope_disable = true end,
-})
-vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function(event)
-        if event.match:match "^%w%w+:[\\/][\\/]" then return end
-        local file = vim.uv.fs_realpath(event.match) or event.match
-        vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
-    end,
-})
-vim.api.nvim_create_autocmd("VimResized", {
-    callback = function()
-        local current_tab = vim.fn.tabpagenr()
-        vim.cmd("tabdo wincmd =")
-        vim.cmd("tabnext " .. current_tab)
-    end
 })
 vim.api.nvim_create_autocmd("PackChanged", {
     callback = function(ev)
@@ -163,18 +148,18 @@ now_if_args(function()
     })
 
     local servers = {
-        bashls = {},
         clangd = {},
         eslint = {},
         gopls = {},
         lua_ls = {
-            settings = {
-                Lua = {
-                    runtime = { version = "LuaJIT" },
-                    telemetry = { enable = false },
-                    workspace = { ignoreSubmodule = true, library = { vim.env.VIMRUNTIME, vim.fn.stdpath("data") .. "/site/" } },
-                },
-            },
+            on_init = function(client)
+                local current_settings = client.config.settings
+                client.config.settings.Lua = vim.tbl_deep_extend("force", current_settings.Lua, {
+                    runtime = { version = "LuaJIT", path = { "lua/?.lua", "lua/?/init.lua" } },
+                    workspace = { checkThirdParty = false, library = vim.api.nvim_get_runtime_file("", true) },
+                })
+            end,
+            settings = { Lua = { telemetry = { enable = false } }, },
         },
         pyright = {
             settings = {
@@ -222,24 +207,16 @@ end)
 
 later(function()
     require("mini.ai").setup {}
+    require("mini.diff").setup { view = { style = "sign" }, mappings = { goto_first = "[C", goto_prev = "[c", goto_next = "]c", goto_last = "]C" } }
+    require("mini.indentscope").setup {}
     require("mini.move").setup {}
     require("mini.surround").setup {}
-    require("mini.indentscope").setup {}
-    require("mini.diff").setup { view = { style = "sign" }, mappings = { goto_first = "[C", goto_prev = "[c", goto_next = "]c", goto_last = "]C" } }
-
-    local MiniClue = require("mini.clue")
-    MiniClue.setup {
-        clues = { { mode = "n", keys = "<leader>f", desc = "+Fzf" }, { mode = "n", keys = "<leader>g", desc = "+Git" }, { mode = "n", keys = "<leader>t", desc = "+Trail" },
-            MiniClue.gen_clues.square_brackets(), MiniClue.gen_clues.builtin_completion(), MiniClue.gen_clues.g(), MiniClue.gen_clues.marks(),
-            MiniClue.gen_clues.registers(), MiniClue.gen_clues.windows(), MiniClue.gen_clues.z() },
-        triggers = { { mode = { "n", "x" }, keys = "<Leader>" }, { mode = { "n", "x" }, keys = "g" }, { mode = { "n", "x" }, keys = "'" }, { mode = { "n", "x" }, keys = "`" },
-            { mode = { "n", "x" }, keys = '"' }, { mode = { "i", "c" }, keys = "<C-r>" }, { mode = { "n", "x" }, keys = "z" }, { mode = "n", keys = "[" }, { mode = "n", keys = "]" },
-            { mode = "n", keys = "<C-w>" }, { mode = "i", keys = "<C-x>" } },
-        window = { config = { anchor = "SE", width = "auto", row = "auto", col = "auto" } },
-    }
 
     local MiniHipatterns = require("mini.hipatterns")
     MiniHipatterns.setup { highlighters = { MiniHipatterns.gen_highlighter.hex_color() } }
+
+    local MiniTrailspace = require("mini.trailspace")
+    MiniTrailspace.setup {}
 
     local MiniStatusline = require("mini.statusline")
     MiniStatusline.setup {
@@ -263,9 +240,6 @@ later(function()
         use_icons = false,
     }
 
-    local MiniTrailspace = require("mini.trailspace")
-    MiniTrailspace.setup {}
-
     local cmp = require("blink.cmp")
     cmp.build():pwait()
     cmp.setup {
@@ -283,7 +257,7 @@ later(function()
     }
 
     require("fzf-lua").setup {
-        { "fzf-vim", "hide" },
+        { "fzf-vim" },
         winopts = { height = 0.4, width = 1, row = 1, border = "border-top", backdrop = 100 },
         keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } },
     }
