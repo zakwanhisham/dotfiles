@@ -84,22 +84,12 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "fugitive", "fzf", "git", "gitcommit", "help", "man", "pager", "markdown", "term" },
     callback = function() vim.b.miniindentscope_disable = true end,
 })
-vim.api.nvim_create_autocmd("PackChanged", {
-    callback = function(ev)
-        if ev.data.kind ~= "install" and ev.data.king ~= "update" then return end
-        if ev.data.spec.name ~= "nvim-treesitter" then return end
-        if not ev.data.active then vim.cmd.packadd "nvim-treesitter" end
-        vim.cmd "TSUpdate"
-    end
-})
 
 vim.pack.add({
     { src = "https://github.com/christoomey/vim-tmux-navigator" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/nvim-mini/mini.nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter",        version = "main" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
     { src = "https://github.com/rafamadriz/friendly-snippets" },
     { src = "https://github.com/saghen/blink.cmp" },
     { src = "https://github.com/saghen/blink.lib" },
@@ -173,36 +163,6 @@ now_if_args(function()
 
     for server, config in pairs(servers) do vim.lsp.config[server] = config end
     vim.lsp.enable(vim.tbl_keys(servers))
-
-    local ts = require("nvim-treesitter")
-    ts.install "all"
-    local no_highlight = { gitcommit = true }
-
-    local function start(buf, lang)
-        if not vim.api.nvim_buf_is_valid(buf) then return end
-        if not vim.treesitter.language.add(lang) then return end
-        vim.treesitter.start(buf, lang)
-        if vim.treesitter.query.get(lang, "indents") then
-            vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-        end
-    end
-
-    vim.api.nvim_create_autocmd("FileType", {
-        callback = function(args)
-            if no_highlight[args.match] then return end
-            local lang = vim.treesitter.language.get_lang(args.match)
-            if not lang then return end
-            if vim.tbl_contains(ts.get_installed "parsers", lang) then
-                start(args.buf, lang)
-            elseif vim.tbl_contains(ts.get_available(), lang) then
-                ts.install(lang):await(function() start(args.buf, lang) end)
-            else
-                start(args.buf, lang)
-            end
-        end
-    })
-
-    require("treesitter-context").setup { max_lines = 5 }
 end)
 
 later(function()
