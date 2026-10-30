@@ -53,6 +53,7 @@ vim.keymap.set({ "x", "o" }, "N", "'nN'[v:searchforward]", { expr = true, desc =
 nmap("<leader>u", function()
     vim.cmd.packadd("nvim.undotree"); require("undotree").open()
 end, "Undotree")
+nmap("<leader>z", function() require("mini.misc").zoom() end, "Zoom")
 nmap("<leader>tw", function() MiniTrailspace.trim() end, "Whitespace")
 nmap("<leader>tl", function() MiniTrailspace.trim_last_lines() end, "Last lines")
 nmap("<leader><space>", "<cmd>Buffers<cr>", "Buffers")
