@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.opt.background = "dark"
 vim.opt.breakindent = true
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 vim.opt.completeopt = "menuone,noselect,preview,noinsert,fuzzy"

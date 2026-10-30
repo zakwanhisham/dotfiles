@@ -1,3 +1,5 @@
+vim.opt.background = "dark"
+
 require("mini.hues").apply_palette({
     bg = "#1d2021",
     bg_edge = "#282828",
