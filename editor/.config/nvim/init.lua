@@ -197,7 +197,7 @@ later(function()
         cmdline = { enabled = true, keymap = { preset = "inherit" } },
         completion = {
             list = { selection = { preselect = false, auto_insert = false } },
-            menu = { border = "none", draw = { columns = { { "label", gap = 0 }, { "kind", gap = 0 } } } },
+            menu = { border = "none", draw = { padding = 1, columns = { { "label", gap = 0 }, { "kind", gap = 0 } } } },
             documentation = { auto_show = true, auto_show_delay_ms = 200 },
             ghost_text = { enabled = false },
         },
