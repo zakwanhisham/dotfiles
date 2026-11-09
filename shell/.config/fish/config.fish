@@ -56,6 +56,7 @@ abbr vim "nvim"
 abbr alarc "nvim $HOME/.config/alacritty/alacritty.toml"
 abbr bashrc "nvim $HOME/.bashrc"
 abbr fishrc "nvim $HOME/.config/fish/config.fish"
+abbr footrc "nvim $HOME/.config/foot/foot.ini"
 abbr tconf "nvim $HOME/.tmux.conf"
 abbr vimrc "vim $HOME/.vimrc"
 
