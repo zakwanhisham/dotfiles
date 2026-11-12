@@ -170,10 +170,6 @@ later(function()
     require("mini.indentscope").setup {}
     require("mini.move").setup {}
     require("mini.surround").setup {}
-
-    local MiniHipatterns = require("mini.hipatterns")
-    MiniHipatterns.setup { highlighters = { MiniHipatterns.gen_highlighter.hex_color() } }
-
     local MiniTrailspace = require("mini.trailspace")
     MiniTrailspace.setup {}
 
