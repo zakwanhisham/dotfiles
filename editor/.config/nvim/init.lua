@@ -170,8 +170,7 @@ later(function()
     require("mini.indentscope").setup {}
     require("mini.move").setup {}
     require("mini.surround").setup {}
-    local MiniTrailspace = require("mini.trailspace")
-    MiniTrailspace.setup {}
+    require("mini.trailspace").setup {}
 
     local MiniStatusline = require("mini.statusline")
     MiniStatusline.setup {
