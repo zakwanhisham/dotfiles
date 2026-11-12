@@ -139,9 +139,7 @@ now_if_args(function()
     })
 
     local servers = {
-        clangd = {},
         eslint = {},
-        gopls = {},
         lua_ls = {
             on_init = function(client)
                 local current_settings = client.config.settings
