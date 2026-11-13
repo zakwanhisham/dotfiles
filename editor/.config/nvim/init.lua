@@ -28,7 +28,6 @@ vim.opt.updatetime = 250
 vim.opt.wildmode = "longest:full,full"
 vim.opt.wrap = false
 vim.opt.writebackup = false
-vim.opt.background = "dark"
 
 vim.diagnostic.config { underline = false }
 
@@ -91,7 +90,6 @@ vim.pack.add({
     { src = "https://github.com/rafamadriz/friendly-snippets" },
     { src = "https://github.com/saghen/blink.cmp" },
     { src = "https://github.com/saghen/blink.lib" },
-    { src = "https://github.com/sainnhe/gruvbox-material" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/tpope/vim-fugitive" },
 })
@@ -102,16 +100,6 @@ local later = function(f) misc.safely("later", f) end
 local now_if_args = vim.fn.argc(-1) > 0 and now or later
 
 now(function()
-    vim.g.gruvbox_material_background = "hard"
-    vim.g.gruvbox_material_foreground = "original"
-    vim.g.gruvbox_material_disable_italic_comment = 1
-    vim.g.gruvbox_material_dim_inactive_windows = 0
-    vim.g.gruvbox_material_ui_contrast = "high"
-    vim.g.gruvbox_material_float_style = "dim"
-    vim.g.gruvbox_material_better_performance = 1
-
-    vim.cmd.colorscheme("gruvbox-material")
-
     require("oil").setup {
         default_file_explorer = true, watch_for_changes = true, columns = { "permissions", "size", "birthtime" },
         view_options = { show_hidden = true, case_insensitive = true },
@@ -173,7 +161,6 @@ later(function()
     MiniStatusline.setup {
         content = {
             active = function()
-                vim.cmd.highlight("MiniStatuslineModeNormal cterm=NONE gui=NONE")
                 return MiniStatusline.combine_groups {
                     "%<",
                     { hl = "MiniStatuslineModeNormal", strings = { MiniStatusline.section_filename { trunc_width = 140 } } },
