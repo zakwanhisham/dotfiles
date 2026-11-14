@@ -161,9 +161,11 @@ now_if_args(function()
     vim.lsp.enable(vim.tbl_keys(servers))
 
     require("nvim-treesitter").install("all")
+    local disable_parsers = { "gitcommit" }
     local start_ts = function(buf, lang)
         if not vim.api.nvim_buf_is_valid(buf) then return end
         if not vim.treesitter.language.add(lang) then return end
+        if disable_parsers then return end
 
         vim.treesitter.start(buf, lang)
         local has_indent_query = vim.treesitter.query.get(lang, "indents") ~= nil
