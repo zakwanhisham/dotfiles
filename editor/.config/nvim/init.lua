@@ -161,31 +161,27 @@ now_if_args(function()
     vim.lsp.enable(vim.tbl_keys(servers))
 
     require("nvim-treesitter").install("all")
-
-    local function start_ts(buf, lang)
+    local start_ts = function(buf, lang)
         if not vim.api.nvim_buf_is_valid(buf) then return end
         if not vim.treesitter.language.add(lang) then return end
+
         vim.treesitter.start(buf, lang)
         local has_indent_query = vim.treesitter.query.get(lang, "indents") ~= nil
         if has_indent_query then vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()" end
     end
 
-    local disable_parsers = { "gitcommit" }
     local available_parsers = require("nvim-treesitter").get_available()
     vim.api.nvim_create_autocmd("FileType", {
         callback = function(args)
             local buf, ft = args.buf, args.match
             local lang = vim.treesitter.language.get_lang(ft)
             if not lang then return end
-            if disable_parsers then return end
 
             local installed_parsers = require("nvim-treesitter").get_installed("parsers")
             if vim.tbl_contains(installed_parsers, lang) then
                 start_ts(buf, lang)
             elseif vim.tbl_contains(available_parsers, lang) then
-                if require("nvim-treesitter").install(lang):await(function() start_ts(buf, lang) end) then
-                    print("Done ...")
-                end
+                require("nvim-treesitter").install(lang):await(function() start_ts(buf, lang) end)
             else
                 start_ts(buf, lang)
             end
@@ -202,7 +198,6 @@ later(function()
     require("mini.move").setup {}
     require("mini.surround").setup {}
     require("mini.trailspace").setup {}
-
     local MiniStatusline = require("mini.statusline")
     MiniStatusline.setup {
         content = {
