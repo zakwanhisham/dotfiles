@@ -200,22 +200,22 @@ later(function()
     require("mini.move").setup {}
     require("mini.surround").setup {}
     require("mini.trailspace").setup {}
-    local MiniStatusline = require("mini.statusline")
-    MiniStatusline.setup {
+    local statusline = require("mini.statusline")
+    statusline.setup {
         content = {
             active = function()
-                return MiniStatusline.combine_groups {
+                return statusline.combine_groups {
                     "%<",
-                    { hl = "MiniStatuslineModeNormal", strings = { MiniStatusline.section_filename { trunc_width = 140 } } },
-                    { hl = "MiniStatuslineModeNormal", strings = { MiniStatusline.section_diagnostics { trunc_width = 75 } } },
+                    { hl = "MiniStatuslineModeNormal", strings = { statusline.section_filename { trunc_width = 140 } } },
+                    { hl = "MiniStatuslineModeNormal", strings = { statusline.section_diagnostics { trunc_width = 75 } } },
                     "%=",
                     { hl = "MiniStatuslineModeNormal", strings = { "%{FugitiveStatusline()}" } },
-                    { hl = "MiniStatuslineModeNormal", strings = { MiniStatusline.section_diff { trunc_width = 75 } } },
-                    { hl = "MiniStatuslineModeNormal", strings = { MiniStatusline.section_location { trunc_width = 75 } } },
+                    { hl = "MiniStatuslineModeNormal", strings = { statusline.section_diff { trunc_width = 75 } } },
+                    { hl = "MiniStatuslineModeNormal", strings = { statusline.section_location { trunc_width = 75 } } },
                 }
             end,
             inactive = function()
-                return MiniStatusline.combine_groups { "%<", { hl = "MiniStatuslineInactive", strings = { MiniStatusline.section_filename { trunc_width = 140 } } } }
+                return statusline.combine_groups { "%<", { hl = "MiniStatuslineInactive", strings = { statusline.section_filename { trunc_width = 140 } } } }
             end,
         },
         use_icons = false,
