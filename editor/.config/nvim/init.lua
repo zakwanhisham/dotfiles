@@ -97,8 +97,6 @@ vim.pack.add({
     { src = "https://github.com/ibhagwan/fzf-lua" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/nvim-mini/mini.nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
     { src = "https://github.com/rafamadriz/friendly-snippets" },
     { src = "https://github.com/saghen/blink.cmp" },
     { src = "https://github.com/saghen/blink.lib" },
@@ -159,38 +157,6 @@ now_if_args(function()
 
     for server, config in pairs(servers) do vim.lsp.config[server] = config end
     vim.lsp.enable(vim.tbl_keys(servers))
-
-    require("nvim-treesitter").install("all")
-    local disable_parsers = { "gitcommit" }
-    local start_ts = function(buf, lang)
-        if not vim.api.nvim_buf_is_valid(buf) then return end
-        if not vim.treesitter.language.add(lang) then return end
-        if disable_parsers then return end
-
-        vim.treesitter.start(buf, lang)
-        local has_indent_query = vim.treesitter.query.get(lang, "indents") ~= nil
-        if has_indent_query then vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()" end
-    end
-
-    local available_parsers = require("nvim-treesitter").get_available()
-    vim.api.nvim_create_autocmd("FileType", {
-        callback = function(args)
-            local buf, ft = args.buf, args.match
-            local lang = vim.treesitter.language.get_lang(ft)
-            if not lang then return end
-
-            local installed_parsers = require("nvim-treesitter").get_installed("parsers")
-            if vim.tbl_contains(installed_parsers, lang) then
-                start_ts(buf, lang)
-            elseif vim.tbl_contains(available_parsers, lang) then
-                require("nvim-treesitter").install(lang):await(function() start_ts(buf, lang) end)
-            else
-                start_ts(buf, lang)
-            end
-        end
-    })
-
-    require("treesitter-context").setup { max_lines = 5 }
 end)
 
 later(function()
