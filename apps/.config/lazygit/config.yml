@@ -299,37 +299,6 @@ refresher:
 confirmOnQuit: false
 # If true, exit Lazygit when the user presses escape in a context where there is nothing to cancel/close
 quitOnTopLevelReturn: false
-# Config relating to things outside of Lazygit like how files are opened, copying to clipboard, etc
-os:
-  # Command for editing a file. Should contain "{{filename}}".
-  edit: ""
-  # Command for editing a file at a given line number. Should contain
-  # "{{filename}}", and may optionally contain "{{line}}".
-  editAtLine: ""
-  # Same as EditAtLine, except that the command needs to wait until the
-  # window is closed.
-  editAtLineAndWait: ""
-  # Whether lazygit suspends until an edit process returns
-  editInTerminal: false
-  # For opening a directory in an editor
-  openDirInEditor: ""
-  # A built-in preset that sets all of the above settings. Supported presets
-  # are defined in the getPreset function in editor_presets.go.
-  editPreset: ""
-  # Command for opening a file, as if the file is double-clicked. Should
-  # contain "{{filename}}", but doesn't support "{{line}}".
-  open: ""
-  # Command for opening a link. Should contain "{{link}}".
-  openLink: ""
-  # CopyToClipboardCmd is the command for copying to clipboard.
-  # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-command-for-copying-to-and-pasting-from-clipboard
-  copyToClipboardCmd: ""
-  # ReadFromClipboardCmd is the command for reading the clipboard.
-  # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-command-for-copying-to-and-pasting-from-clipboard
-  readFromClipboardCmd: ""
-  # A shell startup file containing shell aliases or shell functions. This will be sourced before running any shell commands, so that shell functions are available in the `:` command prompt or even in custom commands.
-  # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#using-aliases-or-functions-in-shell-commands
-  shellFunctionsFile: ""
 # If true, don't display introductory popups upon opening Lazygit.
 disableStartupPopups: false
 # User-configured commands that can be invoked from within Lazygit
