@@ -81,16 +81,6 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "fugitive", "fzf", "git", "gitcommit", "help", "man", "pager", "markdown", "term" },
     callback = function() vim.b.miniindentscope_disable = true end,
 })
-vim.api.nvim_create_autocmd("PackChanged", {
-    callback = function(ev)
-        local name, kind = ev.data.spec.name, ev.data.kind
-        if kind ~= "install" and kind ~= "update" then return end
-        if name == "nvim-treesitter" then
-            if not ev.data.active then vim.cmd.packadd "nvim-treesitter" end
-            vim.cmd "TSUpdate"
-        end
-    end
-})
 
 vim.pack.add({
     { src = "https://github.com/christoomey/vim-tmux-navigator" },
