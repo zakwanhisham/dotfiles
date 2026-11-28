@@ -1,7 +1,7 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "7b31e1b6497be70f620bbad83a789929248697ac",
+      "rev": "3d3631f641e6e9b60066f269f435d23c524ceeb0",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
@@ -13,7 +13,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "ded1c96d3d9d74634287d722431c26690968a4bf",
+      "rev": "a3b5e6bebcc604d0286fffa1c4eb05b066a2a198",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gruvbox-material": {
@@ -21,11 +21,11 @@
       "src": "https://github.com/sainnhe/gruvbox-material"
     },
     "mini.nvim": {
-      "rev": "4d32e018f7cfcc0ba95357465516be615c542fef",
+      "rev": "39334e0f4dec24ef159945067e222318392a65c5",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "443d92c6bea761ab54cdde46fb197a2b4d614bdd",
+      "rev": "76f4cafc49677a34dc8ad8142b773d78ab4a041e",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "oil.nvim": {
@@ -37,7 +37,7 @@
       "src": "https://github.com/tpope/vim-fugitive"
     },
     "vim-tmux-navigator": {
-      "rev": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432",
+      "rev": "fb217852efb294a50a10507fc8d53709696b6e23",
       "src": "https://github.com/christoomey/vim-tmux-navigator"
     }
   }
